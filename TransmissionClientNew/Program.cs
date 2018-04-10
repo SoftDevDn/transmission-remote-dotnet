@@ -24,7 +24,8 @@ using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using Jayrock.Json;
-using Troschuetz;
+using TransmissionRemoteDotnet.CustomControls;
+using TransmissionRemoteDotnet.Forms;
 using TransmissionRemoteDotnet.Settings;
 
 namespace TransmissionRemoteDotnet

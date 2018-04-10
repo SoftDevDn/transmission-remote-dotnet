@@ -20,7 +20,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {
 	/// <summary>
 	/// XmlSerializationUtil gets the xml data and write it's through reflection to the strong typed classes.

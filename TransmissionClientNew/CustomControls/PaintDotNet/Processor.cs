@@ -7,12 +7,12 @@
 // .                                                                           //
 /////////////////////////////////////////////////////////////////////////////////
 
-using Microsoft.Win32;
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using Microsoft.Win32;
 
-namespace PaintDotNet.SystemLayer
+namespace TransmissionRemoteDotnet.CustomControls.PaintDotNet
 {
     /// <summary>
     /// Provides static methods and properties related to the CPU.

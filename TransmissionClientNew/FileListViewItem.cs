@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Jayrock.Json;
 using System.Windows.Forms;
-using Etier.IconHelper;
+using TransmissionRemoteDotnet.CustomControls;
+using TransmissionRemoteDotnet.Localization;
 
 namespace TransmissionRemoteDotnet
 {

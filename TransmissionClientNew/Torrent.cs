@@ -23,6 +23,10 @@ using Jayrock.Json;
 using System.Collections;
 using System.Drawing;
 using System.Text.RegularExpressions;
+using TransmissionRemoteDotnet.CustomControls;
+using TransmissionRemoteDotnet.Forms;
+using TransmissionRemoteDotnet.Localization;
+using TransmissionRemoteDotnet.Settings;
 
 namespace TransmissionRemoteDotnet
 {

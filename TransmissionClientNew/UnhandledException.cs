@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Globalization;
 using System.Reflection;
-using PaintDotNet.SystemLayer;
+using TransmissionRemoteDotnet.CustomControls.PaintDotNet;
 
 namespace TransmissionRemoteDotnet
 {

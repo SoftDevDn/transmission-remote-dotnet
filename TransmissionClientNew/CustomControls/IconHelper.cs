@@ -1,13 +1,9 @@
 #if !MONO
 using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using System.Data;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace Etier.IconHelper
+namespace TransmissionRemoteDotnet.CustomControls
 {
     public class IconReader
     {

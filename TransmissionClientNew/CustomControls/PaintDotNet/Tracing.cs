@@ -7,14 +7,13 @@
 // .                                                                           //
 /////////////////////////////////////////////////////////////////////////////////
 
-using PaintDotNet.SystemLayer;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace PaintDotNet.SystemLayer
+namespace TransmissionRemoteDotnet.CustomControls.PaintDotNet
 {
     /// <summary>
     /// Methods for manual profiling and tracing.

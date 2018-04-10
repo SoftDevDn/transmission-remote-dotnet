@@ -18,18 +18,15 @@
 // website http://www.raccoom.net, email support@raccoom.net, msn chrisdarebell@msn.com
 
 using System;
-using System.Xml;
 using System.Xml.Serialization;
-using System.Reflection;
-using System.Net;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {	
 	/// <summary>Enclosure is an optional sub-element of item.</summary>
 	[System.Runtime.InteropServices.ComVisible(true), System.Runtime.InteropServices.Guid("026FF52F-96DF-4879-A355-880832C49A1C")]
 	[System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)]
 	[System.Runtime.InteropServices.ProgId("Raccoom.RssEnclosure")]
-	[System.Xml.Serialization.XmlTypeAttribute("enclosure")]
+	[XmlType("enclosure")]
 	[Serializable]
 	[System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))]
 	public class RssEnclosure
@@ -74,7 +71,7 @@ namespace Raccoom.Xml
 		
 		/// <summary> The url must be an http url.</summary>
 		[System.ComponentModel.Category("RssEnclosure"), System.ComponentModel.Description(" The url must be an http url.")]
-		[System.Xml.Serialization.XmlAttribute("url", DataType="anyURI")]
+		[XmlAttribute("url", DataType="anyURI")]
 		public string Url
 		{
 			get
@@ -94,7 +91,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>length says how big it is in bytes,</summary>
 		[System.ComponentModel.Category("RssEnclosure"), System.ComponentModel.Description("length says how big it is in bytes,")]
-		[System.Xml.Serialization.XmlAttribute("length")]
+		[XmlAttribute("length")]
 		public int Length
 		{
 			get
@@ -132,7 +129,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>type says what its type is, a standard MIME type.</summary>
 		[System.ComponentModel.Category("RssEnclosure"), System.ComponentModel.Description("type says what its type is, a standard MIME type.")]
-		[System.Xml.Serialization.XmlAttribute("type")]
+		[XmlAttribute("type")]
 		public string Type
 		{
 			get

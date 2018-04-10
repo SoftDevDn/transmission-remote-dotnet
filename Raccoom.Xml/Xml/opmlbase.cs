@@ -18,12 +18,8 @@
 // website http://www.raccoom.net, email support@raccoom.net, msn chrisdarebell@msn.com
 
 using System;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Reflection;
-using System.Net;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {	
 	/// <summary>A body contains one or more outline elements</summary>
 	public interface IOpmlBody

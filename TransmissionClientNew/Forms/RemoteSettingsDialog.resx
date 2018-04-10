@@ -1,0 +1,1773 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="timeConstraintBeginDelimLabel.Text" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="&gt;&gt;altUploadLimitUnitLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="noteLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 256</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="portForwardCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 17</value>
+  </data>
+  <data name="&gt;&gt;tabNetwork.Name" xml:space="preserve">
+    <value>tabNetwork</value>
+  </data>
+  <data name="&gt;&gt;incomingPortLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;altUploadLimitField.Name" xml:space="preserve">
+    <value>altUploadLimitField</value>
+  </data>
+  <data name="&gt;&gt;pexEnabledCheckBox.Parent" xml:space="preserve">
+    <value>tabNetwork</value>
+  </data>
+  <data name="cacheSizeValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 87</value>
+  </data>
+  <data name="&gt;&gt;altSpeedLimitEnable.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="&gt;&gt;blocklistEnabledCheckBox.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="&gt;&gt;peerLimitTorrentLabel.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="&gt;&gt;SaveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lpdEnabledCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="altDownloadLimitUnitLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintDelimLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintEndMinutes.Name" xml:space="preserve">
+    <value>timeConstraintEndMinutes</value>
+  </data>
+  <data name="blocklistUrlLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lpdEnabledCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 187</value>
+  </data>
+  <data name="&gt;&gt;peerLimitValue.Name" xml:space="preserve">
+    <value>peerLimitValue</value>
+  </data>
+  <data name="&gt;&gt;seedLimitUpDown.Name" xml:space="preserve">
+    <value>seedLimitUpDown</value>
+  </data>
+  <data name="&gt;&gt;testPortButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="encryptionLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cacheSizeUnitLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;CloseFormButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 38</value>
+  </data>
+  <data name="altUploadLimitUnitLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;encryptionCombobox.Parent" xml:space="preserve">
+    <value>tabNetwork</value>
+  </data>
+  <data name="&gt;&gt;blocklistUrlLabel.Name" xml:space="preserve">
+    <value>blocklistUrlLabel</value>
+  </data>
+  <data name="altUploadLimitLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="updateBlocklistButton.Text" xml:space="preserve">
+    <value>Update Blocklist</value>
+  </data>
+  <data name="&gt;&gt;updateBlocklistLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabNetwork.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabNetwork.Text" xml:space="preserve">
+    <value>Network</value>
+  </data>
+  <data name="updateBlocklistButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="encryptionLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="&gt;&gt;portForwardCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;limitUploadValue.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="timeConstraintEndHours.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;updateBlocklistLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="blocklistEnabledCheckBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;altUploadLimitLabel.Name" xml:space="preserve">
+    <value>altUploadLimitLabel</value>
+  </data>
+  <data name="&gt;&gt;cacheSizeValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cacheSizeUnitLabel.Text" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="peerLimitLabel.Text" xml:space="preserve">
+    <value>Peer Limit</value>
+  </data>
+  <data name="downloadToField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 9</value>
+  </data>
+  <data name="&gt;&gt;limitUploadUnitLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;updateBlocklistButton.Name" xml:space="preserve">
+    <value>updateBlocklistButton</value>
+  </data>
+  <data name="&gt;&gt;noteLabel.Name" xml:space="preserve">
+    <value>noteLabel</value>
+  </data>
+  <data name="altUploadLimitField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 66</value>
+  </data>
+  <data name="cacheSizeUnitLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 91</value>
+  </data>
+  <data name="limitDownloadCheckBox.Text" xml:space="preserve">
+    <value>Limit download</value>
+  </data>
+  <data name="cacheSizeValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="altDownloadLimitLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;altTimeConstraintEnabled.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="tabLimits.Size" type="System.Drawing.Size, System.Drawing">
+    <value>403, 207</value>
+  </data>
+  <data name="altTimeConstraintEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintEndDelimLabel.Name" xml:space="preserve">
+    <value>timeConstraintEndDelimLabel</value>
+  </data>
+  <data name="&gt;&gt;incompleteToCheckBox.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="altDownloadLimitField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 20</value>
+  </data>
+  <data name="peerLimitValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="limitDownloadValue.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="peerLimitTorrentValue.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="utpEnabledCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="timeConstraintBeginHours.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 20</value>
+  </data>
+  <data name="downloadToLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="noteLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;altUploadLimitField.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="&gt;&gt;downloadToLabel.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="altUploadLimitUnitLabel.Text" xml:space="preserve">
+    <value>KB/s</value>
+  </data>
+  <data name="lpdEnabledCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 17</value>
+  </data>
+  <data name="tabGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintBeginHours.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="downloadToLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="seedRatioEnabledCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 17</value>
+  </data>
+  <data name="seedLimitUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 117</value>
+  </data>
+  <data name="limitUploadValue.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="altDownloadLimitUnitLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;encryptionCombobox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;blocklistUrlField.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="&gt;&gt;renamePartialFilesCheckBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="seedIdleEnabledCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="updateBlocklistLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="blocklistEnabledCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 117</value>
+  </data>
+  <data name="&gt;&gt;seedIdleEnabledCheckBox.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="&gt;&gt;incomingPortValue.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="timeConstraintDelimLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="watchdirCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 17</value>
+  </data>
+  <data name="timeConstraintEndHours.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 20</value>
+  </data>
+  <data name="timeConstraintBeginMinutes.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="limitUploadCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="seedIdleEnabledCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 17</value>
+  </data>
+  <data name="&gt;&gt;peerLimitLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintEndDelimLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="altTimeConstraintEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 103</value>
+  </data>
+  <data name="&gt;&gt;incompleteToCheckBox.Name" xml:space="preserve">
+    <value>incompleteToCheckBox</value>
+  </data>
+  <data name="watchdirCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="altUploadLimitField.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cacheSizeLabel.Name" xml:space="preserve">
+    <value>cacheSizeLabel</value>
+  </data>
+  <data name="peerLimitLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="&gt;&gt;altSpeedLimitEnable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altDownloadLimitField.Name" xml:space="preserve">
+    <value>altDownloadLimitField</value>
+  </data>
+  <data name="&gt;&gt;blocklistEnabledCheckBox.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="SaveButton.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;updateBlocklistLabel.Name" xml:space="preserve">
+    <value>updateBlocklistLabel</value>
+  </data>
+  <data name="&gt;&gt;limitUploadCheckBox.Name" xml:space="preserve">
+    <value>limitUploadCheckBox</value>
+  </data>
+  <data name="&gt;&gt;altDownloadLimitLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="peerLimitTorrentValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="altUploadLimitField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 20</value>
+  </data>
+  <data name="seedIdleLimitUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 143</value>
+  </data>
+  <data name="&gt;&gt;updateBlocklistLabel.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="encryptionCombobox.Items" xml:space="preserve">
+    <value>tolerated</value>
+  </data>
+  <data name="dhtEnabledCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="limitUploadUnitLabel.Text" xml:space="preserve">
+    <value>KB/s</value>
+  </data>
+  <data name="renamePartialFilesCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="altUploadLimitLabel.Text" xml:space="preserve">
+    <value>Up:</value>
+  </data>
+  <data name="&gt;&gt;altTimeConstraintEnabled.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="tabAltLimits.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;altDownloadLimitLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CloseFormButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintEndDelimLabel.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="timeConstraintBeginMinutes.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;downloadToField.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="noteLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 33</value>
+  </data>
+  <data name="&gt;&gt;updateBlocklistButton.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="&gt;&gt;encryptionCombobox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="limitDownloadCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;downloadToLabel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;tabNetwork.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="tabAltLimits.Size" type="System.Drawing.Size, System.Drawing">
+    <value>403, 207</value>
+  </data>
+  <data name="&gt;&gt;altTimeConstraintEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="watchdirField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 61</value>
+  </data>
+  <data name="&gt;&gt;encryptionLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;incompleteToField.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="timeConstraintEndMinutes.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;downloadToField.Name" xml:space="preserve">
+    <value>downloadToField</value>
+  </data>
+  <data name="lpdEnabledCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="blocklistUrlField.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="limitUploadCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;blocklistUrlField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altSpeedLimitEnable.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;limitDownloadUnitLabel.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="cacheSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="timeConstraintDelimLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 13</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintEndHours.Name" xml:space="preserve">
+    <value>timeConstraintEndHours</value>
+  </data>
+  <data name="&gt;&gt;blocklistUrlField.Name" xml:space="preserve">
+    <value>blocklistUrlField</value>
+  </data>
+  <data name="pexEnabledCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabLimits.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="blocklistEnabledCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>TransmissionRemoteDotnet.CustomControls.CultureForm, Transmission Remote, Version=3.24.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="portForwardCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="timeConstraintEndDelimLabel.Text" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="incompleteToCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;dhtEnabledCheckBox.Name" xml:space="preserve">
+    <value>dhtEnabledCheckBox</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintEndDelimLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintBeginDelimLabel.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="tabNetwork.Size" type="System.Drawing.Size, System.Drawing">
+    <value>403, 207</value>
+  </data>
+  <data name="testPortButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>251, 6</value>
+  </data>
+  <data name="&gt;&gt;limitUploadCheckBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="utpEnabledCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 167</value>
+  </data>
+  <data name="timeConstraintDelimLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 130</value>
+  </data>
+  <data name="&gt;&gt;tabGeneral.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;testPortButton.Name" xml:space="preserve">
+    <value>testPortButton</value>
+  </data>
+  <data name="&gt;&gt;noteLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;seedLimitUpDown.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="&gt;&gt;altUploadLimitLabel.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="dhtEnabledCheckBox.Text" xml:space="preserve">
+    <value>Enable Distributed Hash Table (DHT)</value>
+  </data>
+  <data name="timeConstraintEndMinutes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>257, 126</value>
+  </data>
+  <data name="timeConstraintEndDelimLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="limitDownloadValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="limitUploadUnitLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="blocklistEnabledCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;portForwardCheckBox.Name" xml:space="preserve">
+    <value>portForwardCheckBox</value>
+  </data>
+  <data name="cacheSizeUnitLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 13</value>
+  </data>
+  <data name="incompleteToField.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="renamePartialFilesCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="updateBlocklistButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 23</value>
+  </data>
+  <data name="limitDownloadUnitLabel.Text" xml:space="preserve">
+    <value>KB/s</value>
+  </data>
+  <data name="altSpeedLimitEnable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 20</value>
+  </data>
+  <data name="tabAltLimits.Text" xml:space="preserve">
+    <value>Alternate limits</value>
+  </data>
+  <data name="tabNetwork.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;limitDownloadUnitLabel.Name" xml:space="preserve">
+    <value>limitDownloadUnitLabel</value>
+  </data>
+  <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="&gt;&gt;downloadToLabel.Name" xml:space="preserve">
+    <value>downloadToLabel</value>
+  </data>
+  <data name="timeConstraintEndDelimLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;cacheSizeLabel.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="&gt;&gt;incomingPortLabel.Name" xml:space="preserve">
+    <value>incomingPortLabel</value>
+  </data>
+  <data name="incomingPortValue.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;limitDownloadUnitLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="watchdirCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;blocklistUrlField.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="utpEnabledCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="altUploadLimitUnitLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 71</value>
+  </data>
+  <data name="altSpeedLimitEnable.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;seedIdleEnabledCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="timeConstraintBeginMinutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 20</value>
+  </data>
+  <data name="peerLimitLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;watchdirField.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="downloadToLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="&gt;&gt;portForwardCheckBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cacheSizeUnitLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;altDownloadLimitUnitLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="blocklistUrlField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 20</value>
+  </data>
+  <data name="incompleteToCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintBeginMinutes.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="&gt;&gt;altUploadLimitField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>403, 207</value>
+  </data>
+  <data name="limitDownloadValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 36</value>
+  </data>
+  <data name="blocklistEnabledCheckBox.Text" xml:space="preserve">
+    <value>Blocklist enabled</value>
+  </data>
+  <data name="seedIdleLimitUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;altDownloadLimitField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabNetwork.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;limitUploadUnitLabel.Name" xml:space="preserve">
+    <value>limitUploadUnitLabel</value>
+  </data>
+  <data name="&gt;&gt;cacheSizeValue.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="&gt;&gt;seedRatioEnabledCheckBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="altTimeConstraintEnabled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintBeginDelimLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;noteLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="encryptionCombobox.Items2" xml:space="preserve">
+    <value>required</value>
+  </data>
+  <data name="encryptionCombobox.Items1" xml:space="preserve">
+    <value>preferred</value>
+  </data>
+  <data name="&gt;&gt;incompleteToField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;seedLimitUpDown.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="seedIdleEnabledCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="altTimeConstraintEnabled.Text" xml:space="preserve">
+    <value>Time constraint</value>
+  </data>
+  <data name="cacheSizeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="limitUploadUnitLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="limitDownloadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 17</value>
+  </data>
+  <data name="dhtEnabledCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 17</value>
+  </data>
+  <data name="limitDownloadCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;SaveButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="dhtEnabledCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;peerLimitLabel.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="watchdirCheckBox.Text" xml:space="preserve">
+    <value>Directory watching:</value>
+  </data>
+  <data name="updateBlocklistLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>282, 118</value>
+  </data>
+  <data name="altDownloadLimitUnitLabel.Text" xml:space="preserve">
+    <value>KB/s</value>
+  </data>
+  <data name="peerLimitLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 65</value>
+  </data>
+  <data name="&gt;&gt;incompleteToField.Name" xml:space="preserve">
+    <value>incompleteToField</value>
+  </data>
+  <data name="encryptionCombobox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="noteLabel.Text" xml:space="preserve">
+    <value>NOTE: Availability of some options may require a transmission-daemon upgrade.</value>
+  </data>
+  <data name="&gt;&gt;incompleteToField.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="blocklistEnabledCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
+  </data>
+  <data name="&gt;&gt;CloseFormButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintDelimLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;updateBlocklistButton.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;limitDownloadCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="timeConstraintBeginDelimLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="SaveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="limitUploadUnitLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 15</value>
+  </data>
+  <data name="&gt;&gt;renamePartialFilesCheckBox.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="altDownloadLimitUnitLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="cacheSizeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="downloadToField.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="incompleteToField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 20</value>
+  </data>
+  <data name="watchdirCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 63</value>
+  </data>
+  <data name="&gt;&gt;dhtEnabledCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altDownloadLimitField.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="&gt;&gt;testPortButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="seedRatioEnabledCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="seedIdleEnabledCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 144</value>
+  </data>
+  <data name="encryptionLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 38</value>
+  </data>
+  <data name="cacheSizeLabel.Text" xml:space="preserve">
+    <value>Disk cache size:</value>
+  </data>
+  <data name="SaveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 256</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintDelimLabel.Name" xml:space="preserve">
+    <value>timeConstraintDelimLabel</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AABVWVelU1dV/VRYVvxUWFb8VFhW/FRYVvxUWFb8VFhW/FRYVvxUWFb8VFhW/FRYVvxUWFb8VFhW/FNX
+        VfxVWVfFVVlX73p/fP9/hIH/foJ//36DgP9+g4D/foOA/36CgP9+goD/foKA/36CgP99gn//fYJ//36D
+        gP9+g4D/VFhW/FhcWteHi4n/bXFv/1ZaWP9WWlj/VlpY/1ZaWP9WWlj/VlpY/1ZaWP9WWlj/VlpY/1Za
+        WP9maWf/jpKQ/1ZaWPBaXly5j5KQ/1tgXf/Jz8v/197Z/9fe2f+9wr3/R0ZA/3Z4c//V3Nf/197Z/9fe
+        2f/T2tX/VlpY/5eamP9ZXVvaWFxalIuOjP9tcm//s7q1/9fe2f+1u7b/QD45/0hKRf9ERED/WlpV/8zS
+        zf/X3tn/vsXB/2VoZv+Xm5n/W19dvFNXVXF7f336fH9+/5yinv+tsq3/PTw2/0lLSP9TV1X/U1dV/0hJ
+        RP9HR0H/vcK9/6etqf90eHb/h4uJ/1hcWplTV1VUbHBu8YaJh/+Ch4T/cHJt/zw6NP89Ozb/U1dV/1NX
+        Vf9APjn/NjQu/21uaP+Nk4//f4OB/3l9e/pTV1V0U1dVOGBkYu+OkpD/am9r/9fe2f/X3tn/NjQu/1RY
+        Vv9TV1X/OTcx/9LZ0//X3tn/c3h0/4mNi/9rb23xU1dVWFNXVRtYXFr0lJiW/1ZaWP/T2tX/197Z/1td
+        Wv9laWf/ZWln/1pcWP/S2dP/1dzX/1tfXf+RlJL/YGRi71NXVTsAAAADVFhW+42Rjv9tcW//V1tZ/1ld
+        W/9laGb/tby5/7S7uP9kaGb/WFxZ/1hcWv9rbmz/j5OR/1dbWfVTV1UfAAAAAFZaWJ9UWFb9VFhW/FRY
+        VvxVWFf8ZWln/7a9uv+2vbr/ZGhm/1NWVPxUWFb8VFhW/FRYVvxWWli/AAAAAQAAAAAAAAAAAAAABwAA
+        AAgAAAAIXGBeEGVpZ/+2vbr/tr26/2RoZv9JSzoQAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAACUZAAA
+        leAAAJT2AACU9wMDk/dkaGj/tr26/7a9uv9kaGb/AACT9wAAlPcAAJT2AACV3AAAk1IAAAAAAAAAAAAA
+        k/wAAK3/AACz/wAAs/8DA7H/ZGhp/8/U0v/O09H/ZGhm/wAAs/8AALP/AACz/wAAq/8AAJTxAAAAAAAA
+        AAAAAJT9RUXl/0VF7f9FRe3/Rkbp/2Vpaf/k5ub/4uTk/2RoZv9FRe3/RUXt/0VF7f9BQeD/AACW8wAA
+        AAAAAAAAAACWdgIClu8CApX8AgKV/AIClfxJTHj+ZGhm/2RoZv9FSHr+AgKV/AIClfwCApX8AgKX7AAA
+        lWIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIABAAD4HwAAgAEAAIAB
+        AACAAQAAgAEAAA==
+</value>
+  </data>
+  <data name="limitUploadCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 15</value>
+  </data>
+  <data name="&gt;&gt;tabNetwork.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="seedLimitUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="&gt;&gt;seedIdleLimitUpDown.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="updateBlocklistLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="altSpeedLimitEnable.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;altTimeConstraintEnabled.Name" xml:space="preserve">
+    <value>altTimeConstraintEnabled</value>
+  </data>
+  <data name="&gt;&gt;peerLimitLabel.Name" xml:space="preserve">
+    <value>peerLimitLabel</value>
+  </data>
+  <data name="&gt;&gt;altDownloadLimitLabel.Name" xml:space="preserve">
+    <value>altDownloadLimitLabel</value>
+  </data>
+  <data name="&gt;&gt;renamePartialFilesCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;limitDownloadValue.Name" xml:space="preserve">
+    <value>limitDownloadValue</value>
+  </data>
+  <data name="blocklistUrlLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="timeConstraintEndMinutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="&gt;&gt;blocklistUrlLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CloseFormButton.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="timeConstraintBeginHours.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="seedLimitUpDown.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="encryptionLabel.Text" xml:space="preserve">
+    <value>Encryption:</value>
+  </data>
+  <data name="tabGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="limitUploadUnitLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="timeConstraintBeginHours.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 126</value>
+  </data>
+  <data name="&gt;&gt;watchdirField.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="timeConstraintBeginMinutes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 126</value>
+  </data>
+  <data name="altUploadLimitLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;SaveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="seedIdleLimitUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="&gt;&gt;limitDownloadValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="peerLimitTorrentLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="seedIdleEnabledCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="timeConstraintEndDelimLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="incompleteToCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altUploadLimitUnitLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="&gt;&gt;tabAltLimits.Name" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="&gt;&gt;dhtEnabledCheckBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cacheSizeValue.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="pexEnabledCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altDownloadLimitField.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintEndHours.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;peerLimitTorrentValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SaveButton.Name" xml:space="preserve">
+    <value>SaveButton</value>
+  </data>
+  <data name="blocklistUrlLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="downloadToField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 20</value>
+  </data>
+  <data name="&gt;&gt;cacheSizeValue.Name" xml:space="preserve">
+    <value>cacheSizeValue</value>
+  </data>
+  <data name="peerLimitLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="seedRatioEnabledCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 117</value>
+  </data>
+  <data name="testPortButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;encryptionLabel.Name" xml:space="preserve">
+    <value>encryptionLabel</value>
+  </data>
+  <data name="&gt;&gt;tabLimits.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="testPortButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;incompleteToCheckBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;portForwardCheckBox.Parent" xml:space="preserve">
+    <value>tabNetwork</value>
+  </data>
+  <data name="&gt;&gt;encryptionLabel.Parent" xml:space="preserve">
+    <value>tabNetwork</value>
+  </data>
+  <data name="pexEnabledCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 17</value>
+  </data>
+  <data name="CloseFormButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>334, 256</value>
+  </data>
+  <data name="&gt;&gt;watchdirField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="altUploadLimitLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 68</value>
+  </data>
+  <data name="tabLimits.Text" xml:space="preserve">
+    <value>Limits</value>
+  </data>
+  <data name="&gt;&gt;downloadToField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;downloadToLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pexEnabledCheckBox.Text" xml:space="preserve">
+    <value>Enable Peer Exchange</value>
+  </data>
+  <data name="cacheSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 91</value>
+  </data>
+  <data name="&gt;&gt;cacheSizeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CloseFormButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 38</value>
+  </data>
+  <data name="&gt;&gt;pexEnabledCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="watchdirCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="watchdirField.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="altUploadLimitUnitLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;peerLimitValue.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="timeConstraintDelimLabel.Text" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="incomingPortLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;limitUploadUnitLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="utpEnabledCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
+  </data>
+  <data name="&gt;&gt;utpEnabledCheckBox.Name" xml:space="preserve">
+    <value>utpEnabledCheckBox</value>
+  </data>
+  <data name="seedRatioEnabledCheckBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="portForwardCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="testPortButton.Text" xml:space="preserve">
+    <value>Test Port</value>
+  </data>
+  <data name="tabSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintBeginMinutes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lpdEnabledCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabAltLimits.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="peerLimitTorrentLabel.Text" xml:space="preserve">
+    <value>Peer limit per torrent</value>
+  </data>
+  <data name="&gt;&gt;seedRatioEnabledCheckBox.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>RemoteSettingsDialog</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintEndMinutes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintEndMinutes.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="&gt;&gt;cacheSizeUnitLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altUploadLimitField.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;limitDownloadValue.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="cacheSizeUnitLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;seedRatioEnabledCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lpdEnabledCheckBox.Text" xml:space="preserve">
+    <value>Enable Local Peer Discovery</value>
+  </data>
+  <data name="&gt;&gt;peerLimitLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.Name" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="tabLimits.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;utpEnabledCheckBox.Parent" xml:space="preserve">
+    <value>tabNetwork</value>
+  </data>
+  <data name="incompleteToCheckBox.Text" xml:space="preserve">
+    <value>Incomplete download to:</value>
+  </data>
+  <data name="timeConstraintBeginDelimLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="&gt;&gt;blocklistUrlLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;watchdirField.Name" xml:space="preserve">
+    <value>watchdirField</value>
+  </data>
+  <data name="&gt;&gt;utpEnabledCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;updateBlocklistButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="altDownloadLimitLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="altDownloadLimitField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 43</value>
+  </data>
+  <data name="&gt;&gt;peerLimitTorrentLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintBeginHours.Name" xml:space="preserve">
+    <value>timeConstraintBeginHours</value>
+  </data>
+  <data name="blocklistUrlLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 145</value>
+  </data>
+  <data name="tabLimits.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="incompleteToCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 37</value>
+  </data>
+  <data name="altSpeedLimitEnable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 17</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintBeginMinutes.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="portForwardCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 147</value>
+  </data>
+  <data name="tabLimits.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="blocklistUrlLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="peerLimitTorrentLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 90</value>
+  </data>
+  <data name="&gt;&gt;seedIdleEnabledCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="downloadToLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="timeConstraintEndDelimLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="portForwardCheckBox.Text" xml:space="preserve">
+    <value>Enable UPnP</value>
+  </data>
+  <data name="&gt;&gt;watchdirCheckBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="renamePartialFilesCheckBox.Text" xml:space="preserve">
+    <value>Rename partial files</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintEndHours.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="limitDownloadCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 41</value>
+  </data>
+  <data name="&gt;&gt;limitDownloadValue.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="altTimeConstraintEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="altDownloadLimitUnitLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 45</value>
+  </data>
+  <data name="peerLimitTorrentValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 90</value>
+  </data>
+  <data name="encryptionCombobox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 21</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintEndMinutes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabNetwork.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;pexEnabledCheckBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tabGeneral.Name" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="&gt;&gt;seedLimitUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;blocklistEnabledCheckBox.Name" xml:space="preserve">
+    <value>blocklistEnabledCheckBox</value>
+  </data>
+  <data name="limitUploadValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 10</value>
+  </data>
+  <data name="timeConstraintBeginDelimLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="downloadToLabel.Text" xml:space="preserve">
+    <value>Download To:</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintBeginDelimLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="incompleteToCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 17</value>
+  </data>
+  <data name="&gt;&gt;tabAltLimits.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="limitUploadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
+  </data>
+  <data name="&gt;&gt;altUploadLimitLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintBeginHours.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;noteLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="blocklistUrlLabel.Text" xml:space="preserve">
+    <value>Blocklist url:</value>
+  </data>
+  <data name="timeConstraintBeginDelimLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 130</value>
+  </data>
+  <data name="incompleteToField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 35</value>
+  </data>
+  <data name="&gt;&gt;tabAltLimits.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;altDownloadLimitUnitLabel.Name" xml:space="preserve">
+    <value>altDownloadLimitUnitLabel</value>
+  </data>
+  <data name="&gt;&gt;cacheSizeLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="blocklistUrlField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 142</value>
+  </data>
+  <data name="incomingPortLabel.Text" xml:space="preserve">
+    <value>Incoming port:</value>
+  </data>
+  <data name="&gt;&gt;altDownloadLimitUnitLabel.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="altDownloadLimitLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 44</value>
+  </data>
+  <data name="&gt;&gt;watchdirCheckBox.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintBeginHours.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="watchdirField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 20</value>
+  </data>
+  <data name="&gt;&gt;altDownloadLimitUnitLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="renamePartialFilesCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="peerLimitTorrentLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="dhtEnabledCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 147</value>
+  </data>
+  <data name="renamePartialFilesCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 164</value>
+  </data>
+  <data name="&gt;&gt;seedIdleLimitUpDown.Name" xml:space="preserve">
+    <value>seedIdleLimitUpDown</value>
+  </data>
+  <data name="tabGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="seedIdleEnabledCheckBox.Text" xml:space="preserve">
+    <value>Seed Idle Limit</value>
+  </data>
+  <data name="altDownloadLimitLabel.Text" xml:space="preserve">
+    <value>Down:</value>
+  </data>
+  <data name="cacheSizeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="limitDownloadUnitLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="&gt;&gt;seedIdleLimitUpDown.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="limitDownloadUnitLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;altUploadLimitUnitLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altDownloadLimitField.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;limitUploadUnitLabel.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="&gt;&gt;incomingPortLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="incomingPortLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 11</value>
+  </data>
+  <data name="&gt;&gt;watchdirCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;peerLimitTorrentLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="timeConstraintDelimLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;peerLimitTorrentLabel.Name" xml:space="preserve">
+    <value>peerLimitTorrentLabel</value>
+  </data>
+  <data name="incomingPortLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altUploadLimitLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 13</value>
+  </data>
+  <data name="&gt;&gt;incompleteToCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="altDownloadLimitUnitLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="incomingPortValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 9</value>
+  </data>
+  <data name="&gt;&gt;cacheSizeUnitLabel.Name" xml:space="preserve">
+    <value>cacheSizeUnitLabel</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintBeginMinutes.Name" xml:space="preserve">
+    <value>timeConstraintBeginMinutes</value>
+  </data>
+  <data name="&gt;&gt;limitUploadValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="altUploadLimitUnitLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;limitDownloadUnitLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="renamePartialFilesCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;blocklistUrlLabel.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintBeginDelimLabel.Name" xml:space="preserve">
+    <value>timeConstraintBeginDelimLabel</value>
+  </data>
+  <data name="utpEnabledCheckBox.Text" xml:space="preserve">
+    <value>Enable uTP</value>
+  </data>
+  <data name="peerLimitTorrentLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="peerLimitValue.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="seedIdleEnabledCheckBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="seedRatioEnabledCheckBox.Text" xml:space="preserve">
+    <value>Seed Ratio Limit</value>
+  </data>
+  <data name="tabAltLimits.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;limitUploadValue.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;altUploadLimitLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>435, 309</value>
+  </data>
+  <data name="&gt;&gt;testPortButton.Parent" xml:space="preserve">
+    <value>tabNetwork</value>
+  </data>
+  <data name="&gt;&gt;encryptionCombobox.Name" xml:space="preserve">
+    <value>encryptionCombobox</value>
+  </data>
+  <data name="&gt;&gt;CloseFormButton.Name" xml:space="preserve">
+    <value>CloseFormButton</value>
+  </data>
+  <data name="&gt;&gt;tabLimits.Name" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="utpEnabledCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;limitDownloadCheckBox.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintEndHours.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;limitUploadValue.Name" xml:space="preserve">
+    <value>limitUploadValue</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Remote Settings</value>
+  </data>
+  <data name="limitDownloadUnitLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 41</value>
+  </data>
+  <data name="encryptionCombobox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 35</value>
+  </data>
+  <data name="&gt;&gt;blocklistEnabledCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabLimits.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;peerLimitTorrentValue.Name" xml:space="preserve">
+    <value>peerLimitTorrentValue</value>
+  </data>
+  <data name="&gt;&gt;lpdEnabledCheckBox.Parent" xml:space="preserve">
+    <value>tabNetwork</value>
+  </data>
+  <data name="incomingPortLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="&gt;&gt;peerLimitValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;limitDownloadCheckBox.Name" xml:space="preserve">
+    <value>limitDownloadCheckBox</value>
+  </data>
+  <data name="&gt;&gt;timeConstraintDelimLabel.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="tabGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="timeConstraintEndDelimLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 130</value>
+  </data>
+  <data name="&gt;&gt;downloadToField.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="limitUploadCheckBox.Text" xml:space="preserve">
+    <value>Limit upload</value>
+  </data>
+  <data name="altSpeedLimitEnable.Text" xml:space="preserve">
+    <value>Enable alternate speed limits</value>
+  </data>
+  <data name="&gt;&gt;incomingPortValue.Name" xml:space="preserve">
+    <value>incomingPortValue</value>
+  </data>
+  <data name="&gt;&gt;cacheSizeUnitLabel.Parent" xml:space="preserve">
+    <value>tabGeneral</value>
+  </data>
+  <data name="peerLimitTorrentLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="updateBlocklistButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;seedIdleLimitUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="altUploadLimitLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;incomingPortLabel.Parent" xml:space="preserve">
+    <value>tabNetwork</value>
+  </data>
+  <data name="&gt;&gt;incomingPortValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;watchdirCheckBox.Name" xml:space="preserve">
+    <value>watchdirCheckBox</value>
+  </data>
+  <data name="&gt;&gt;altDownloadLimitLabel.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="&gt;&gt;seedRatioEnabledCheckBox.Name" xml:space="preserve">
+    <value>seedRatioEnabledCheckBox</value>
+  </data>
+  <data name="&gt;&gt;dhtEnabledCheckBox.Parent" xml:space="preserve">
+    <value>tabNetwork</value>
+  </data>
+  <data name="&gt;&gt;altUploadLimitUnitLabel.Name" xml:space="preserve">
+    <value>altUploadLimitUnitLabel</value>
+  </data>
+  <data name="encryptionLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;incomingPortValue.Parent" xml:space="preserve">
+    <value>tabNetwork</value>
+  </data>
+  <data name="tabSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>411, 233</value>
+  </data>
+  <data name="&gt;&gt;altSpeedLimitEnable.Name" xml:space="preserve">
+    <value>altSpeedLimitEnable</value>
+  </data>
+  <data name="&gt;&gt;renamePartialFilesCheckBox.Name" xml:space="preserve">
+    <value>renamePartialFilesCheckBox</value>
+  </data>
+  <data name="incomingPortValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="&gt;&gt;limitUploadCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CloseFormButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;peerLimitTorrentValue.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;altUploadLimitUnitLabel.Parent" xml:space="preserve">
+    <value>tabAltLimits</value>
+  </data>
+  <data name="&gt;&gt;tabGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;limitDownloadCheckBox.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="&gt;&gt;peerLimitTorrentValue.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="timeConstraintEndHours.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 126</value>
+  </data>
+  <data name="timeConstraintEndMinutes.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lpdEnabledCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lpdEnabledCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="peerLimitValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 63</value>
+  </data>
+  <data name="&gt;&gt;limitUploadCheckBox.Parent" xml:space="preserve">
+    <value>tabLimits</value>
+  </data>
+  <data name="&gt;&gt;tabGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;peerLimitValue.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="testPortButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 23</value>
+  </data>
+  <data name="&gt;&gt;pexEnabledCheckBox.Name" xml:space="preserve">
+    <value>pexEnabledCheckBox</value>
+  </data>
+  <data name="&gt;&gt;lpdEnabledCheckBox.Name" xml:space="preserve">
+    <value>lpdEnabledCheckBox</value>
+  </data>
+  <data name="cacheSizeValue.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="dhtEnabledCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="limitDownloadUnitLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="altDownloadLimitLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="&gt;&gt;seedIdleEnabledCheckBox.Name" xml:space="preserve">
+    <value>seedIdleEnabledCheckBox</value>
+  </data>
+  <data name="&gt;&gt;encryptionLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;utpEnabledCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="limitUploadValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="seedRatioEnabledCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pexEnabledCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 167</value>
+  </data>
+  <data name="seedLimitUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="updateBlocklistButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 113</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>

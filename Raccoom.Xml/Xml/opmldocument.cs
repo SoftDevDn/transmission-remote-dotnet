@@ -20,14 +20,12 @@
 using System;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Reflection;
-using System.Net;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {
     /// <summary>Opml is an XML element, with a single required attribute, version; a head element and a body element, both of which are required. The version attribute is a version string, of the form, x.y, where x and y are both numeric strings.</summary>
     [System.Xml.Serialization.XmlRoot()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "opml")]
+    [XmlType(TypeName = "opml")]
     [Serializable]
     [System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))]
     public class OpmlDocument
@@ -124,10 +122,12 @@ namespace Raccoom.Xml
         {
             Save(filename, System.Text.Encoding.UTF8);
         }
+
         /// <summary>
         /// Saves the object to a local file.
         /// </summary>
         /// <param name="filename">The path and name of the file to create.</param>
+        /// <param name="encoding">Text encoding.</param>
         public virtual void Save(string filename, System.Text.Encoding encoding)
         {
             System.IO.Stream stream = null;
@@ -150,10 +150,12 @@ namespace Raccoom.Xml
         {
             Save(stream, System.Text.Encoding.UTF8);
         }
+
         /// <summary>
         /// Write the object to the specified stream.
         /// </summary>
         /// <param name="stream">The Stream used to write the XML document.</param>
+        /// <param name="encoding">Text encoding.</param>
         public virtual void Save(System.IO.Stream stream, System.Text.Encoding encoding)
         {
             try
@@ -389,7 +391,7 @@ namespace Raccoom.Xml
 
         /// <summary>A head contains zero or more optional elements</summary>
         [System.ComponentModel.Category("Required elements"), System.ComponentModel.Description("A head contains zero or more optional elements")]
-        [System.Xml.Serialization.XmlElementAttribute("head")]
+        [XmlElement("head")]
         public virtual OpmlHead Head
         {
             get
@@ -437,7 +439,7 @@ namespace Raccoom.Xml
 
         /// <summary>A body contains one or more outline elements</summary>
         [System.ComponentModel.Category("Required elements"), System.ComponentModel.Description("A body contains one or more outline elements")]
-        [System.Xml.Serialization.XmlElementAttribute("body")]
+        [XmlElement("body")]
         public virtual OpmlBody Body
         {
             get

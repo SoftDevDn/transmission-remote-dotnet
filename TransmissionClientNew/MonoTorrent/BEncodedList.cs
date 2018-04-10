@@ -27,13 +27,10 @@
 //
 
 
-
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
 
-namespace MonoTorrent.BEncoding
+namespace TransmissionRemoteDotnet.MonoTorrent
 {
     /// <summary>
     /// Class representing a BEncoded list

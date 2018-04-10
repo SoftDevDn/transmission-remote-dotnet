@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace System.Windows.Forms
+namespace TransmissionRemoteDotnet.CustomControls
 {
 	[ToolboxBitmap( typeof( ListBox ) )]
 	public class RefreshingListBox : ListBox

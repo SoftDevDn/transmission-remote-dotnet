@@ -27,11 +27,9 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Net;
 
-namespace MonoTorrent.Client.Messages
+namespace TransmissionRemoteDotnet.MonoTorrent
 {
     public abstract class Message : IMessage
     {

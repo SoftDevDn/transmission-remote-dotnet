@@ -18,18 +18,15 @@
 // website http://www.raccoom.net, email support@raccoom.net, msn chrisdarebell@msn.com
 
 using System;
-using System.Xml;
 using System.Xml.Serialization;
-using System.Reflection;
-using System.Net;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {	
 	/// <summary>Is an optional sub-element of channel.  It specifies a web service that supports the rssCloud interface which can be implemented in HTTP-POST, XML-RPC or SOAP 1.1.</summary>
 	[System.Runtime.InteropServices.ComVisible(true), System.Runtime.InteropServices.Guid("026FF54F-96DF-4879-A355-880832C49A1C")]
 	[System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)]
 	[System.Runtime.InteropServices.ProgId("Raccoom.RssCloud")]
-	[System.Xml.Serialization.XmlTypeAttribute("cloud")]
+	[XmlType("cloud")]
 	[Serializable]
 	[System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))]
 	public class RssCloud
@@ -93,7 +90,7 @@ namespace Raccoom.Xml
 		
 		/// <summary></summary>
 		[System.ComponentModel.Category("RssCloud"), System.ComponentModel.Description("")]
-		[System.Xml.Serialization.XmlAttribute("domain")]
+		[XmlAttribute("domain")]
 		public string Domain
 		{
 			get
@@ -113,7 +110,7 @@ namespace Raccoom.Xml
 		
 		/// <summary></summary>
 		[System.ComponentModel.Category("RssCloud"), System.ComponentModel.Description("")]
-		[System.Xml.Serialization.XmlAttribute("port")]
+		[XmlAttribute("port")]
 		public int Port
 		{
 			get
@@ -134,7 +131,7 @@ namespace Raccoom.Xml
 		/// <summary>
 		/// Instructs the XmlSerializer whether or not to generate the XML element
 		/// </summary>
-		[System.Xml.Serialization.XmlIgnoreAttribute]
+		[XmlIgnore]
 		[System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public bool PortSpecified
 		{
@@ -151,7 +148,7 @@ namespace Raccoom.Xml
 		
 		/// <summary></summary>
 		[System.ComponentModel.Category("RssCloud"), System.ComponentModel.Description("")]
-		[System.Xml.Serialization.XmlAttribute("path")]
+		[XmlAttribute("path")]
 		public string Path
 		{
 			get
@@ -171,7 +168,7 @@ namespace Raccoom.Xml
 		
 		/// <summary></summary>
 		[System.ComponentModel.Category("RssCloud"), System.ComponentModel.Description("")]
-		[System.Xml.Serialization.XmlAttribute("registerProcedure")]
+		[XmlAttribute("registerProcedure")]
 		public string RegisterProcedure
 		{
 			get
@@ -191,7 +188,7 @@ namespace Raccoom.Xml
 		
 		/// <summary></summary>
 		[System.ComponentModel.Category("RssCloud"), System.ComponentModel.Description(""), System.ComponentModel.DefaultValue(CloudProtocol.None)]
-		[System.Xml.Serialization.XmlAttribute("protocol")]
+		[XmlAttribute("protocol")]
 		public CloudProtocol Protocol
 		{
 			get
@@ -213,7 +210,7 @@ namespace Raccoom.Xml
 		/// Instructs the XmlSerializer whether or not to generate the XML element
 		/// </summary>
 		[System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-		[System.Xml.Serialization.XmlIgnoreAttribute]
+		[XmlIgnore]
 		public bool ProtocolSpecified
 		{
 			get

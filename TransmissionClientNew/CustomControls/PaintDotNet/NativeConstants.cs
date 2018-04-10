@@ -7,10 +7,9 @@
 // .                                                                           //
 /////////////////////////////////////////////////////////////////////////////////
 
-using Microsoft.Win32.SafeHandles;
 using System;
 
-namespace PaintDotNet.SystemLayer
+namespace TransmissionRemoteDotnet.CustomControls.PaintDotNet
 {
     internal static class NativeConstants
     {

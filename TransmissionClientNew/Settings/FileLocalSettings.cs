@@ -4,6 +4,7 @@ using System.Text;
 using System.IO;
 using Jayrock.Json;
 using Jayrock.Json.Conversion;
+using TransmissionRemoteDotnet.Localization;
 
 namespace TransmissionRemoteDotnet.Settings
 {

@@ -6,6 +6,8 @@ using Jayrock.Json;
 using Jayrock.Json.Conversion;
 using Microsoft.Win32;
 using System.Windows.Forms;
+using TransmissionRemoteDotnet.CustomControls;
+using TransmissionRemoteDotnet.Localization;
 
 namespace TransmissionRemoteDotnet.Settings
 {

@@ -27,12 +27,10 @@
 //
 
 
-
 using System;
-using System.Text;
 using System.Runtime.Serialization;
 
-namespace MonoTorrent.BEncoding
+namespace TransmissionRemoteDotnet.MonoTorrent
 {
     [Serializable]
     public class BEncodingException : Exception

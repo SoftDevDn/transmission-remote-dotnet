@@ -7,9 +7,7 @@
 // .                                                                           //
 /////////////////////////////////////////////////////////////////////////////////
 
-using System;
-
-namespace PaintDotNet.SystemLayer
+namespace TransmissionRemoteDotnet.CustomControls.PaintDotNet
 {
     // Copied from System.IO.MonoIOError.cs, (C) 2002 Dan Lewis
 

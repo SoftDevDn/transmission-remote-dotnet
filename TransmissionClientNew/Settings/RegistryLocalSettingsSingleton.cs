@@ -19,13 +19,12 @@
 #if !FILECONF
 using System;
 using System.Collections.Generic;
-using System.Text;
-using Microsoft.Win32;
 using System.Windows.Forms;
 using Jayrock.Json;
 using Jayrock.Json.Conversion;
+using Microsoft.Win32;
 
-namespace TransmissionRemoteDotnet
+namespace TransmissionRemoteDotnet.Settings
 {
     public enum ProxyMode
     {

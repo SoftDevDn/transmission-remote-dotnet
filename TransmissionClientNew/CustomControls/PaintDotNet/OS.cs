@@ -7,11 +7,11 @@
 // .                                                                           //
 /////////////////////////////////////////////////////////////////////////////////
 
-using Microsoft.Win32;
 using System;
 using System.Globalization;
+using Microsoft.Win32;
 
-namespace PaintDotNet.SystemLayer
+namespace TransmissionRemoteDotnet.CustomControls.PaintDotNet
 {
     public static class OS
     {

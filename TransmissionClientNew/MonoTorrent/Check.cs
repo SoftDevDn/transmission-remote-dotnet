@@ -1,7 +1,8 @@
 using System;
+
 //using MonoTorrent.Client.PieceWriters;
 
-namespace MonoTorrent
+namespace TransmissionRemoteDotnet.MonoTorrent
 {
     public static class Check
     {

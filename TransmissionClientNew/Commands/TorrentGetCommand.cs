@@ -15,14 +15,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Jayrock.Json;
-using System.Windows.Forms;
 using System.Collections;
+using System.Collections.Generic;
+using Jayrock.Json;
+using TransmissionRemoteDotnet.Forms;
 
-namespace TransmissionRemoteDotnet.Commmands
+namespace TransmissionRemoteDotnet.Commands
 {
     public class TorrentGetCommand : ICommand
     {

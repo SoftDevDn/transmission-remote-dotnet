@@ -18,12 +18,11 @@
 // website http://www.raccoom.net, email support@raccoom.net, msn chrisdarebell@msn.com
 
 using System;
+using System.Reflection;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Reflection;
-using System.Net;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {	
 	/// <summary>A head contains zero or more optional elements</summary>
 	[Serializable]
@@ -127,7 +126,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>The title of the document.</summary>
 		[System.ComponentModel.Category("Required elements"), System.ComponentModel.Description("The title of the document.")]
-		[System.Xml.Serialization.XmlElementAttribute("title")]
+		[XmlElement("title")]
 		public string Title
 		{
 			get
@@ -147,7 +146,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>date-time, indicating when the document was created.</summary>
 		[System.ComponentModel.Category("Required elements"), System.ComponentModel.Description("date-time, indicating when the document was created.")]
-		[System.Xml.Serialization.XmlIgnoreAttribute]
+		[XmlIgnore]
 		public DateTime DateCreated
 		{
 			get
@@ -168,7 +167,7 @@ namespace Raccoom.Xml
 		/// <summary>
 		/// Internal, gets the DateTime RFC822 format
 		/// </summary>
-		[System.Xml.Serialization.XmlElementAttribute("dateCreated")]
+		[XmlElement("dateCreated")]
 		[System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public string DateCreatedRfc
 		{
@@ -207,7 +206,7 @@ namespace Raccoom.Xml
 		/// <summary>
 		/// Internal, gets the DateTime RFC822 format
 		/// </summary>
-		[System.Xml.Serialization.XmlElementAttribute("dateModified")]
+		[XmlElement("dateModified")]
 		[System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public string DateModifiedRfc
 		{
@@ -224,7 +223,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>the owner of the document.</summary>
 		[System.ComponentModel.Category("Optional elements"), System.ComponentModel.Description("the owner of the document.")]
-		[System.Xml.Serialization.XmlElementAttribute("ownerName")]
+		[XmlElement("ownerName")]
 		public string OwnerName
 		{
 			get
@@ -244,7 +243,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>the email address of the owner of the document.</summary>
 		[System.ComponentModel.Category("Optional elements"), System.ComponentModel.Description("the email address of the owner of the document.")]
-		[System.Xml.Serialization.XmlElementAttribute("ownerEmail")]
+		[XmlElement("ownerEmail")]
 		public string OwnerEmail
 		{
 			get
@@ -264,7 +263,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>comma-separated list of line numbers that are expanded. The line numbers in the list tell you which headlines to expand. The order is important. For each element in the list, X, starting at the first summit, navigate flatdown X times and expand. Repeat for each element in the list</summary>
 		[System.ComponentModel.Category("Optional elements"), System.ComponentModel.Description("comma-separated list of line numbers that are expanded. The line numbers in the list tell you which headlines to expand. The order is important. For each element in the list, X, starting at the first summit, navigate flatdown X times and expand. Repeat for each element in the list")]
-		[System.Xml.Serialization.XmlElementAttribute("expansionState")]
+		[XmlElement("expansionState")]
 		public string ExpansionState
 		{
 			get
@@ -284,7 +283,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>is a number, saying which line of the outline is displayed on the top line of the window. This number is calculated with the expansion state already applied.</summary>
 		[System.ComponentModel.Category("Optional elements"), System.ComponentModel.Description("is a number, saying which line of the outline is displayed on the top line of the window. This number is calculated with the expansion state already applied.")]
-		[System.Xml.Serialization.XmlElementAttribute("vertScrollState")]
+		[XmlElement("vertScrollState")]
 		public int VertScrollState
 		{
 			get
@@ -322,7 +321,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>is a number, the pixel location of the top edge of the window.</summary>
 		[System.ComponentModel.Category("Optional elements"), System.ComponentModel.Description("is a number, the pixel location of the top edge of the window.")]
-		[System.Xml.Serialization.XmlElementAttribute("windowTop")]
+		[XmlElement("windowTop")]
 		public int WindowTop
 		{
 			get
@@ -360,7 +359,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>is a number, the pixel location of the left edge of the window.</summary>
 		[System.ComponentModel.Category("Optional elements"), System.ComponentModel.Description("is a number, the pixel location of the left edge of the window.")]
-		[System.Xml.Serialization.XmlElementAttribute("windowLeft")]
+		[XmlElement("windowLeft")]
 		public int WindowLeft
 		{
 			get
@@ -398,7 +397,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>is a number, the pixel location of the bottom edge of the window</summary>
 		[System.ComponentModel.Category("Optional elements"), System.ComponentModel.Description("is a number, the pixel location of the bottom edge of the window")]
-		[System.Xml.Serialization.XmlElementAttribute("windowBottom")]
+		[XmlElement("windowBottom")]
 		public int WindowBottom
 		{
 			get
@@ -436,7 +435,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>is a number, the pixel location of the right edge of the window</summary>
 		[System.ComponentModel.Category("Optional elements"), System.ComponentModel.Description("is a number, the pixel location of the right edge of the window")]
-		[System.Xml.Serialization.XmlElementAttribute("windowRight")]
+		[XmlElement("windowRight")]
 		public int WindowRight
 		{
 			get

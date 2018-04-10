@@ -1,9 +1,8 @@
 using System;
 using System.Collections;
-using System.Text;
 using System.Windows.Forms;
 
-namespace TransmissionRemoteDotnet
+namespace TransmissionRemoteDotnet.Comparers
 {
     public class ListViewDateTimeComparer : IComparer
     {

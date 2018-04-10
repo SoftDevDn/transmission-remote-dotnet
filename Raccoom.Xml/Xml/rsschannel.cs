@@ -20,10 +20,8 @@
 using System;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Reflection;
-using System.Net;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {
     /// <summary>
     /// <seealso cref="IRssChannel"/> strong typed collecton.
@@ -156,7 +154,7 @@ namespace Raccoom.Xml
     [System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)]
     [System.Runtime.InteropServices.ProgId("Raccoom.RssChannel")]
     [System.Xml.Serialization.XmlRoot()]
-    [System.Xml.Serialization.XmlTypeAttribute("channel")]
+    [XmlType("channel")]
     [Serializable]
     [System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))]
     public class RssChannel
@@ -539,7 +537,7 @@ namespace Raccoom.Xml
 
         /// <summary>The name of the channel. It's how people refer to your service. If you have an HTML website that contains the same information as your RSS file, the title of your channel should be the same as the title of your website.</summary>
         [System.ComponentModel.Category("Required channel elements"), System.ComponentModel.Description("The name of the channel. It's how people refer to your service. If you have an HTML website that contains the same information as your RSS file, the title of your channel should be the same as the title of your website.")]
-        [System.Xml.Serialization.XmlElementAttribute("title")]
+        [XmlElement("title")]
         public string Title
         {
             get
@@ -559,7 +557,7 @@ namespace Raccoom.Xml
 
         /// <summary>Phrase or sentence describing the channel.</summary>
         [System.ComponentModel.Category("Required channel elements"), System.ComponentModel.Description("Phrase or sentence describing the channel.")]
-        [System.Xml.Serialization.XmlElementAttribute("description")]
+        [XmlElement("description")]
         public string Description
         {
             get
@@ -579,7 +577,7 @@ namespace Raccoom.Xml
 
         /// <summary>The URL to the HTML website corresponding to the channel.</summary>
         [System.ComponentModel.Category("Required channel elements"), System.ComponentModel.Description("The URL to the HTML website corresponding to the channel.")]
-        [System.Xml.Serialization.XmlElementAttribute("link", DataType = "anyURI")]
+        [XmlElement("link", DataType = "anyURI")]
         public string Link
         {
             get
@@ -620,7 +618,7 @@ namespace Raccoom.Xml
         /// <summary>
         /// Internal, gets the CultureInfo ISO Code
         /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("language", DataType = "language")]
+        [XmlElement("language", DataType = "language")]
         [System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public string LanguageIso
         {
@@ -637,7 +635,7 @@ namespace Raccoom.Xml
 
         /// <summary>Copyright notice for content in the channel.</summary>
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("Copyright notice for content in the channel.")]
-        [System.Xml.Serialization.XmlElementAttribute("copyright")]
+        [XmlElement("copyright")]
         public string Copyright
         {
             get
@@ -657,7 +655,7 @@ namespace Raccoom.Xml
 
         /// <summary> Email address for person responsible for editorial content.</summary>
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description(" Email address for person responsible for editorial content.")]
-        [System.Xml.Serialization.XmlElementAttribute("managingEditor")]
+        [XmlElement("managingEditor")]
         public string ManagingEditor
         {
             get
@@ -677,7 +675,7 @@ namespace Raccoom.Xml
 
         /// <summary>Email address for person responsible for technical issues relating to channel.</summary>
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("Email address for person responsible for technical issues relating to channel.")]
-        [System.Xml.Serialization.XmlElementAttribute("webMaster")]
+        [XmlElement("webMaster")]
         public string WebMaster
         {
             get
@@ -720,7 +718,7 @@ namespace Raccoom.Xml
         /// </summary>
         [System.ComponentModel.Browsable(false)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("pubDate")]
+        [XmlElement("pubDate")]
         public string PubDateRfc
         {
             get
@@ -759,7 +757,7 @@ namespace Raccoom.Xml
         /// Internal, gets the DateTime in RFC822 format
         /// </summary>				
         [System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("lastBuildDate")]
+        [XmlElement("lastBuildDate")]
         public string LastBuildDateRfc
         {
             get
@@ -775,7 +773,7 @@ namespace Raccoom.Xml
 
         /// <summary>Specify one or more categories that the channel belongs to. Follows the same rules as the item-level category element.</summary>
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("Specify one or more categories that the channel belongs to. Follows the same rules as the item-level category element.")]
-        [System.Xml.Serialization.XmlElementAttribute("category")]
+        [XmlElement("category")]
         public string Category
         {
             get
@@ -795,7 +793,7 @@ namespace Raccoom.Xml
 
         /// <summary>A string indicating the program used to generate the channel.</summary>
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("A string indicating the program used to generate the channel.")]
-        [System.Xml.Serialization.XmlElementAttribute("generator"), System.ComponentModel.Browsable(false)]
+        [XmlElement("generator"), System.ComponentModel.Browsable(false)]
         public string Generator
         {
             get
@@ -815,7 +813,7 @@ namespace Raccoom.Xml
 
         /// <summary>A URL that points to the documentation for the format used in the RSS file. It's probably a pointer to this page. It's for people who might stumble across an RSS file on a Web server 25 years from now and wonder what it is.</summary>
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("A URL that points to the documentation for the format used in the RSS file. It's probably a pointer to this page. It's for people who might stumble across an RSS file on a Web server 25 years from now and wonder what it is.")]
-        [System.Xml.Serialization.XmlElementAttribute("docs")]
+        [XmlElement("docs")]
         public string Docs
         {
             get
@@ -834,7 +832,7 @@ namespace Raccoom.Xml
         // end Docs
 
         /// <summary>Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds. </summary>
-        [System.Xml.Serialization.XmlElementAttribute("cloud")]
+        [XmlElement("cloud")]
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds. ")]
         public RssCloud Cloud
         {
@@ -859,7 +857,7 @@ namespace Raccoom.Xml
         // end Cloud
 
         /// <summary>Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds. </summary>
-        [System.Xml.Serialization.XmlElementAttribute("cloud")]
+        [XmlElement("cloud")]
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds. ")]
         IRssCloud IRssChannel.Cloud
         {
@@ -880,7 +878,7 @@ namespace Raccoom.Xml
         /// Instructs the XmlSerializer whether or not to generate the XML element
         /// </summary>
         [System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool CloudSpecified
         {
             get
@@ -896,7 +894,7 @@ namespace Raccoom.Xml
 
         /// <summary>ttl stands for time to live. It's a number of minutes that indicates how long a channel can be cached before refreshing from the source.</summary>
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("ttl stands for time to live. It's a number of minutes that indicates how long a channel can be cached before refreshing from the source.")]
-        [System.Xml.Serialization.XmlElementAttribute("ttl")]
+        [XmlElement("ttl")]
         public int Ttl
         {
             get
@@ -918,7 +916,7 @@ namespace Raccoom.Xml
         /// Instructs the XmlSerializer whether or not to generate the XML element
         /// </summary>
         [System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool TtlSpecified
         {
             get
@@ -933,7 +931,7 @@ namespace Raccoom.Xml
         }
 
         /// <summary>Specifies a GIF, JPEG or PNG image that can be displayed with the channel.</summary>
-        [System.Xml.Serialization.XmlElementAttribute("image")]
+        [XmlElement("image")]
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("Specifies a GIF, JPEG or PNG image that can be displayed with the channel.")]
         public RssImage Image
         {
@@ -958,7 +956,7 @@ namespace Raccoom.Xml
         // end Image
 
         /// <summary>Specifies a GIF, JPEG or PNG image that can be displayed with the channel.</summary>
-        [System.Xml.Serialization.XmlElementAttribute("image")]
+        [XmlElement("image")]
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("Specifies a GIF, JPEG or PNG image that can be displayed with the channel.")]
         IRssImage IRssChannel.Image
         {
@@ -979,7 +977,7 @@ namespace Raccoom.Xml
         /// Instructs the XmlSerializer whether or not to generate the XML element
         /// </summary>
         [System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool ImageSpecified
         {
             get
@@ -995,7 +993,7 @@ namespace Raccoom.Xml
 
         /// <summary>The PICS rating for the channel</summary>
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("The PICS rating for the channel")]
-        [System.Xml.Serialization.XmlElementAttribute("rating")]
+        [XmlElement("rating")]
         public string Rating
         {
             get
@@ -1014,7 +1012,7 @@ namespace Raccoom.Xml
         // end Rating
 
         /// <summary>Specifies a text input box that can be displayed with the channel.</summary>
-        [System.Xml.Serialization.XmlElementAttribute("textInput")]
+        [XmlElement("textInput")]
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("Specifies a text input box that can be displayed with the channel.")]
         public RssTextInput TextInput
         {
@@ -1039,7 +1037,7 @@ namespace Raccoom.Xml
         // end TextInput
 
         /// <summary>Specifies a text input box that can be displayed with the channel.</summary>
-        [System.Xml.Serialization.XmlElementAttribute("textInput")]
+        [XmlElement("textInput")]
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("Specifies a text input box that can be displayed with the channel.")]
         IRssTextInput IRssChannel.TextInput
         {
@@ -1060,7 +1058,7 @@ namespace Raccoom.Xml
         /// Instructs the XmlSerializer whether or not to generate the XML element
         /// </summary>
         [System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool TextInputSpecified
         {
             get
@@ -1081,7 +1079,7 @@ namespace Raccoom.Xml
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("A hint for aggregators telling them which hours they can skip. Contains up to 24  sub-elements whose value is a number between 0 and 23, representing a time in GMT, when aggregators, if they support the feature, may not read the channel on hours listed in the skipHours element. The hour beginning at midnight is hour zero.")]
         [Obsolete]
         [System.Xml.Serialization.XmlArray("skipHours")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("hour")]
+        [XmlArrayItem("hour")]
         public int[] SkipHours
         {
             get
@@ -1125,7 +1123,7 @@ namespace Raccoom.Xml
         /// Internal conversion between <see cref="SkipDays"/> enum and day elements
         /// </summary>
         [System.Xml.Serialization.XmlArray("skipDays")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("day", typeof(string))]
+        [XmlArrayItem("day", typeof(string))]
         [System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public string[] SkipDaysArray
         {
@@ -1154,7 +1152,7 @@ namespace Raccoom.Xml
         }
 
         /// <summary>A channel may contain any number of items. An item may represent a "story" -- much like a story in a newspaper or magazine; if so its description is a synopsis of the story, and the link points to the full story. An item may also be complete in itself, if so, the description contains the text (entity-encoded HTML is allowed), and the link and title may be omitted.</summary>
-        [System.Xml.Serialization.XmlElementAttribute("item")]
+        [XmlElement("item")]
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("A channel may contain any number of items. An item may represent a \"story\" -- much like a story in a newspaper or magazine; if so its description is a synopsis of the story, and the link points to the full story. An item may also be complete in itself, if so, the description contains the text (entity-encoded HTML is allowed), and the link and title may be omitted.")]
         public RssItemCollection Items
         {
@@ -1167,7 +1165,7 @@ namespace Raccoom.Xml
         // end Items
 
         /// <summary>A channel may contain any number of items. An item may represent a "story" -- much like a story in a newspaper or magazine; if so its description is a synopsis of the story, and the link points to the full story. An item may also be complete in itself, if so, the description contains the text (entity-encoded HTML is allowed), and the link and title may be omitted.</summary>
-        [System.Xml.Serialization.XmlElementAttribute("item")]
+        [XmlElement("item")]
         [System.ComponentModel.Category("Optional channel elements"), System.ComponentModel.Description("A channel may contain any number of items. An item may represent a \"story\" -- much like a story in a newspaper or magazine; if so its description is a synopsis of the story, and the link points to the full story. An item may also be complete in itself, if so, the description contains the text (entity-encoded HTML is allowed), and the link and title may be omitted.")]
         System.Collections.ICollection IRssChannel.Items
         {

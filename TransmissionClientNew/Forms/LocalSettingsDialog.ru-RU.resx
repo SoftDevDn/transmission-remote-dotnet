@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SaveButton.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="CloseDialogButton.Text" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="SaveAndConnectButton.Text" xml:space="preserve">
+    <value>Сохранить и подключить</value>
+  </data>
+  <data name="tabGlobalSettings.Text" xml:space="preserve">
+    <value>Глобальные настройки</value>
+  </data>
+  <data name="groupAutoConnect.Text" xml:space="preserve">
+    <value>Автоподключение</value>
+  </data>
+  <data name="groupCurrentProfile.Text" xml:space="preserve">
+    <value>Текущий профиль</value>
+  </data>
+  <data name="PlinkPathButton.Text" xml:space="preserve">
+    <value>Обзор</value>
+  </data>
+  <data name="groupBehavior.Text" xml:space="preserve">
+    <value>Поведение</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="useLocalCookiesWarningButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 111</value>
+  </data>
+  <data name="useLocalCookiesCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
+  </data>
+  <data name="useLocalCookiesCheckBox.Text" xml:space="preserve">
+    <value>Исп. локальные куки</value>
+  </data>
+  <data name="AutoUpdateGeoipCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 17</value>
+  </data>
+  <data name="AutoUpdateGeoipCheckBox.Text" xml:space="preserve">
+    <value>Автообновление БД GeoIp</value>
+  </data>
+  <data name="notificationOnCompletionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 17</value>
+  </data>
+  <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
+    <value>Уведомление о завершении</value>
+  </data>
+  <data name="notificationOnAdditionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 17</value>
+  </data>
+  <data name="notificationOnAdditionCheckBox.Text" xml:space="preserve">
+    <value>Уведомление о добавлении</value>
+  </data>
+  <data name="minimizeOnCloseCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 17</value>
+  </data>
+  <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
+    <value>Минимизировать при закрытии</value>
+  </data>
+  <data name="MinToTrayCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 17</value>
+  </data>
+  <data name="MinToTrayCheckBox.Text" xml:space="preserve">
+    <value>Иконка в трее</value>
+  </data>
+  <data name="StartOnSystemCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 17</value>
+  </data>
+  <data name="StartOnSystemCheckBox.Text" xml:space="preserve">
+    <value>Запускать вместе с Windows</value>
+  </data>
+  <data name="UpdateToBetaCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 17</value>
+  </data>
+  <data name="UpdateToBetaCheckBox.Text" xml:space="preserve">
+    <value>Обновлять до бета-версий</value>
+  </data>
+  <data name="DontSavePasswordsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
+  </data>
+  <data name="DontSavePasswordsCheckBox.Text" xml:space="preserve">
+    <value>Не сохранять пароли</value>
+  </data>
+  <data name="defaultActionComboBox.Items" xml:space="preserve">
+    <value>Свойства торрента</value>
+  </data>
+  <data name="defaultActionComboBox.Items1" xml:space="preserve">
+    <value>Окрыть папку</value>
+  </data>
+  <data name="defaultActionComboBox.Items2" xml:space="preserve">
+    <value>Старт/Стоп торрента</value>
+  </data>
+  <data name="defaultActionLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="defaultActionLabel.Text" xml:space="preserve">
+    <value>По клику:</value>
+  </data>
+  <data name="DeleteTorrentCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 17</value>
+  </data>
+  <data name="DeleteTorrentCheckBox.Text" xml:space="preserve">
+    <value>Удалять торрент после добавления</value>
+  </data>
+  <data name="AutoCheckUpdateCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 17</value>
+  </data>
+  <data name="AutoCheckUpdateCheckBox.Text" xml:space="preserve">
+    <value>Проверка обновлений на старте</value>
+  </data>
+  <data name="tabServersSettings.Text" xml:space="preserve">
+    <value>Настройки подключения</value>
+  </data>
+  <data name="removeServerButton.Text" xml:space="preserve">
+    <value>Удалить сервер</value>
+  </data>
+  <data name="addServerButton.Text" xml:space="preserve">
+    <value>Добавить сервер</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Сервер</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 13</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Частота обновл-я когда скрыт:</value>
+  </data>
+  <data name="SaveServerButton.Text" xml:space="preserve">
+    <value>Сохранить сервер</value>
+  </data>
+  <data name="UseSSLCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="UseSSLCheckBox.Text" xml:space="preserve">
+    <value>Безопасный (SSL)</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Хост:</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Попыток подключения:</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Период обновления:</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Авторизация</value>
+  </data>
+  <data name="ClearPasswordCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 17</value>
+  </data>
+  <data name="ClearPasswordCheckBox.Text" xml:space="preserve">
+    <value>Очистить пароль при сохран-ии</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="EnableAuthCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 17</value>
+  </data>
+  <data name="EnableAuthCheckBox.Text" xml:space="preserve">
+    <value>Разрешить авторизацию</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Имя:</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Прокси</value>
+  </data>
+  <data name="ClearProxyPasswordCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 17</value>
+  </data>
+  <data name="ClearProxyPasswordCheckBox.Text" xml:space="preserve">
+    <value>Очистить пароль при сохран-ии</value>
+  </data>
+  <data name="ProxyAuthEnableCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 17</value>
+  </data>
+  <data name="ProxyAuthEnableCheckBox.Text" xml:space="preserve">
+    <value>Авторизовать</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Хост:</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Имя:</value>
+  </data>
+  <data name="EnableProxyCombo.Items1" xml:space="preserve">
+    <value>Разрешить</value>
+  </data>
+  <data name="EnableProxyCombo.Items2" xml:space="preserve">
+    <value>Запретить</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Порт:</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Справка: </value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Команда: </value>
+  </data>
+  <data name="PlinkEnableCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 17</value>
+  </data>
+  <data name="PlinkEnableCheckBox.Text" xml:space="preserve">
+    <value>Показывать кнопку удаленной команды</value>
+  </data>
+  <data name="tabPage6.Text" xml:space="preserve">
+    <value>Прочие</value>
+  </data>
+  <data name="StartPausedCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 17</value>
+  </data>
+  <data name="StartPausedCheckBox.Text" xml:space="preserve">
+    <value>Добавлять торренты остановленными</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Путь RPC:</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 13</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Ограничения скорости скачив-я:</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Ограничения скорости отдачи:</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Новая привязка:</value>
+  </data>
+  <data name="AddShareButton.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="RemoveShareButton.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="columnName.Text" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="columnHost.Text" xml:space="preserve">
+    <value>Хост</value>
+  </data>
+  <data name="columnPort.Text" xml:space="preserve">
+    <value>Порт</value>
+  </data>
+  <data name="tabRssSettings.Text" xml:space="preserve">
+    <value>RSS-каналы</value>
+  </data>
+  <data name="columnFeedName.Text" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="RemoveFeedButton.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="tabSkinSettings.Text" xml:space="preserve">
+    <value>Скин</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AABVWVelU1dV/VRYVvxUWFb8VFhW/FRYVvxUWFb8VFhW/FRYVvxUWFb8VFhW/FRYVvxUWFb8VFhW/FNX
+        VfxVWVfFVVlX73p/fP9/hIH/foJ//36DgP9+g4D/foOA/36CgP9+goD/foKA/36CgP99gn//fYJ//36D
+        gP9+g4D/VFhW/FhcWteHi4n/bXFv/1ZaWP9WWlj/VlpY/1ZaWP9WWlj/VlpY/1ZaWP9WWlj/VlpY/1Za
+        WP9maWf/jpKQ/1ZaWPBaXly5j5KQ/1tgXf/Jz8v/197Z/9fe2f+9wr3/R0ZA/3Z4c//V3Nf/197Z/9fe
+        2f/T2tX/VlpY/5eamP9ZXVvaWFxalIuOjP9tcm//s7q1/9fe2f+1u7b/QD45/0hKRf9ERED/WlpV/8zS
+        zf/X3tn/vsXB/2VoZv+Xm5n/W19dvFNXVXF7f336fH9+/5yinv+tsq3/PTw2/0lLSP9TV1X/U1dV/0hJ
+        RP9HR0H/vcK9/6etqf90eHb/h4uJ/1hcWplTV1VUbHBu8YaJh/+Ch4T/cHJt/zw6NP89Ozb/U1dV/1NX
+        Vf9APjn/NjQu/21uaP+Nk4//f4OB/3l9e/pTV1V0U1dVOGBkYu+OkpD/am9r/9fe2f/X3tn/NjQu/1RY
+        Vv9TV1X/OTcx/9LZ0//X3tn/c3h0/4mNi/9rb23xU1dVWFNXVRtYXFr0lJiW/1ZaWP/T2tX/197Z/1td
+        Wv9laWf/ZWln/1pcWP/S2dP/1dzX/1tfXf+RlJL/YGRi71NXVTsAAAADVFhW+42Rjv9tcW//V1tZ/1ld
+        W/9laGb/tby5/7S7uP9kaGb/WFxZ/1hcWv9rbmz/j5OR/1dbWfVTV1UfAAAAAFZaWJ9UWFb9VFhW/FRY
+        VvxVWFf8ZWln/7a9uv+2vbr/ZGhm/1NWVPxUWFb8VFhW/FRYVvxWWli/AAAAAQAAAAAAAAAAAAAABwAA
+        AAgAAAAIXGBeEGVpZ/+2vbr/tr26/2RoZv9JSzoQAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAACUZAAA
+        leAAAJT2AACU9wMDk/dkaGj/tr26/7a9uv9kaGb/AACT9wAAlPcAAJT2AACV3AAAk1IAAAAAAAAAAAAA
+        k/wAAK3/AACz/wAAs/8DA7H/ZGhp/8/U0v/O09H/ZGhm/wAAs/8AALP/AACz/wAAq/8AAJTxAAAAAAAA
+        AAAAAJT9RUXl/0VF7f9FRe3/Rkbp/2Vpaf/k5ub/4uTk/2RoZv9FRe3/RUXt/0VF7f9BQeD/AACW8wAA
+        AAAAAAAAAACWdgIClu8CApX8AgKV/AIClfxJTHj+ZGhm/2RoZv9FSHr+AgKV/AIClfwCApX8AgKX7AAA
+        lWIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIABAAD4HwAAgAEAAIAB
+        AACAAQAAgAEAAA==
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Настройки клиента</value>
+  </data>
+</root>

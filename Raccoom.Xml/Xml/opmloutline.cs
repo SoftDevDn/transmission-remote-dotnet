@@ -18,12 +18,10 @@
 // website http://www.raccoom.net, email support@raccoom.net, msn chrisdarebell@msn.com
 
 using System;
-using System.Xml;
-using System.Xml.Serialization;
 using System.Reflection;
-using System.Net;
+using System.Xml.Serialization;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {	
 	/// <summary>
 	/// <see cref="OpmlOutline"/> strong typed collecton.
@@ -220,7 +218,7 @@ namespace Raccoom.Xml
 	}
 	
 	/// <summary>An outline is an XML element, possibly containing one or more attributes, and containing any number of outline sub-elements.</summary>
-	[System.Xml.Serialization.XmlTypeAttribute("outline")]
+	[XmlType("outline")]
 	[Serializable]
 	[System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))]
 	public class OpmlOutline
@@ -374,7 +372,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>Text is the string of characters that's displayed when the outline is being browsed or edited. There is no specific limit on the length of the text attribute.</summary>
 		[System.ComponentModel.Category("Required outline elements"), System.ComponentModel.Description("Text is the string of characters that's displayed when the outline is being browsed or edited. There is no specific limit on the length of the text attribute.")]
-		[System.Xml.Serialization.XmlAttribute("text")]
+		[XmlAttribute("text")]
 		public string Text
 		{
 			get
@@ -394,7 +392,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>Type is a string, it says how the other attributes of the outline are interpreted</summary>
 		[System.ComponentModel.Category("Optional outline elements"), System.ComponentModel.Description("Type is a string, it says how the other attributes of the outline are interpreted")]
-		[System.Xml.Serialization.XmlAttribute("type")]
+		[XmlAttribute("type")]
 		public string Type
 		{
 			get
@@ -414,7 +412,7 @@ namespace Raccoom.Xml
 		
 		/// <summary></summary>
 		[System.ComponentModel.Category("Optional outline elements"), System.ComponentModel.Description("")]
-		[System.Xml.Serialization.XmlAttribute("description")]
+		[XmlAttribute("description")]
 		public string Description
 		{
 			get
@@ -434,7 +432,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>Gets or sets the favorite url.</summary>
 		[System.ComponentModel.Category("Required outline elements"), System.ComponentModel.Description("Gets or sets the favorite url.")]
-		[System.Xml.Serialization.XmlAttribute("xmlUrl")]
+		[XmlAttribute("xmlUrl")]
 		public string XmlUrl
 		{
 			get
@@ -454,7 +452,7 @@ namespace Raccoom.Xml
 		
 		/// <summary></summary>
 		[System.ComponentModel.Category("Optional outline elements"), System.ComponentModel.Description("")]
-		[System.Xml.Serialization.XmlAttribute("htmlUrl")]
+		[XmlAttribute("htmlUrl")]
 		public string HtmlUrl
 		{
 			get
@@ -474,7 +472,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>IsComment is a string, either true or false, indicating whether the outline is commented or not. By convention if an outline is commented, all subordinate outlines are considered to be commented as well. If it's not present, the value is false.</summary>
 		[System.ComponentModel.Category("Optional outline elements"), System.ComponentModel.Description("IsComment is a string, either true or false, indicating whether the outline is commented or not. By convention if an outline is commented, all subordinate outlines are considered to be commented as well. If it's not present, the value is false.")]
-		[System.Xml.Serialization.XmlAttribute("isComment")]
+		[XmlAttribute("isComment")]
 		public bool IsComment
 		{
 			get
@@ -494,7 +492,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>IsBreakpoint is a string, either true or false, indicating whether a breakpoint is set on this outline. This attribute is mainly necessary for outlines used to edit scripts that execute. If it's not present, the value is false.</summary>
 		[System.ComponentModel.Category("Optional outline elements"), System.ComponentModel.Description("IsBreakpoint is a string, either true or false, indicating whether a breakpoint is set on this outline. This attribute is mainly necessary for outlines used to edit scripts that execute. If it's not present, the value is false.")]
-		[System.Xml.Serialization.XmlAttribute("isBreakpoint")]
+		[XmlAttribute("isBreakpoint")]
 		public bool IsBreakpoint
 		{
 			get
@@ -514,7 +512,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>Outline elements.</summary>
 		[System.ComponentModel.Category("Optional outline elements"), System.ComponentModel.Description("Outline elements.")]
-		[System.Xml.Serialization.XmlElementAttribute("outline")]
+		[XmlElement("outline")]
 		public OpmlOutlineCollection Items
 		{
 			get

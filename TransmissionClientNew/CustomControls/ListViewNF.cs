@@ -18,11 +18,9 @@
 /* This class should prevent ListView's flickering. */
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 
-namespace TransmissionRemoteDotnet
+namespace TransmissionRemoteDotnet.CustomControls
 {
     public class ListViewNF : ListView
     {

@@ -27,12 +27,11 @@
 //
 
 using System;
-using System.Collections;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading;
 
-namespace MonoTorrent.Common
+namespace TransmissionRemoteDotnet.MonoTorrent
 {
 	public delegate long Operation<T>(T target);
 

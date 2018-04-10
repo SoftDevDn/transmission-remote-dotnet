@@ -10,9 +10,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 
-namespace PaintDotNet
+namespace TransmissionRemoteDotnet.CustomControls.PaintDotNet
 {
     /// <summary>
     /// Represents an enumerable collection of items. Each item can only be present

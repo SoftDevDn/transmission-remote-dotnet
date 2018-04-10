@@ -27,7 +27,9 @@ using Jayrock.Json;
 using Jayrock.Json.Conversion;
 using System.IO;
 using System.IO.Compression;
-using TransmissionRemoteDotnet.Commmands;
+using TransmissionRemoteDotnet.Commands;
+using TransmissionRemoteDotnet.Forms;
+using TransmissionRemoteDotnet.Localization;
 
 namespace TransmissionRemoteDotnet
 {

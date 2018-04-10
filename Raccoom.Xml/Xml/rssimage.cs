@@ -20,17 +20,15 @@
 using System;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Reflection;
-using System.Net;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {	
 	/// <summary>Image is an optional sub-element of channel, which contains three required and three optional sub-elements.</summary>
 	[System.Runtime.InteropServices.ComVisible(true), System.Runtime.InteropServices.Guid("026FF54F-96DF-4879-A355-880832C49A2C")]
 	[System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)]
 	[System.Runtime.InteropServices.ProgId("Raccoom.RssImage")]
 	[Serializable]
-	[System.Xml.Serialization.XmlTypeAttribute("image")]
+	[XmlType("image")]
 	[System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))]
 	public class RssImage
 	:	IRssImage
@@ -87,7 +85,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>Describes the image, it's used in the ALT attribute of the HTML img tag when the channel is rendered in HTML. </summary>
 		[System.ComponentModel.Category("RssImage"), System.ComponentModel.Description("Describes the image, it's used in the ALT attribute of the HTML img tag when the channel is rendered in HTML. ")]
-		[System.Xml.Serialization.XmlElementAttribute("title")]
+		[XmlElement("title")]
 		public string Title
 		{
 			get
@@ -107,7 +105,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>The URL of a GIF, JPEG or PNG image. </summary>
 		[System.ComponentModel.Category("RssImage"), System.ComponentModel.Description("The URL of a GIF, JPEG or PNG image. ")]
-		[System.Xml.Serialization.XmlElementAttribute("url")]
+		[XmlElement("url")]
 		public string Url
 		{
 			get
@@ -127,7 +125,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>the URL of the site, when the channel is rendered, the image is a link to the site.</summary>
 		[System.ComponentModel.Category("RssImage"), System.ComponentModel.Description("the URL of the site, when the channel is rendered, the image is a link to the site.")]
-		[System.Xml.Serialization.XmlElementAttribute("link")]
+		[XmlElement("link")]
 		public string Link
 		{
 			get
@@ -147,7 +145,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>Contains text that is included in the TITLE attribute of the link formed around the image in the HTML rendering.</summary>
 		[System.ComponentModel.Category("RssImage"), System.ComponentModel.Description("Contains text that is included in the TITLE attribute of the link formed around the image in the HTML rendering.")]
-		[System.Xml.Serialization.XmlElementAttribute("description")]
+		[XmlElement("description")]
 		public string Description
 		{
 			get
@@ -167,7 +165,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>Maximum value for width is 144, default value is 88.</summary>
 		[System.ComponentModel.Category("RssImage"), System.ComponentModel.Description("Maximum value for width is 144, default value is 88."),System.ComponentModel.DefaultValue(88)]
-		[System.Xml.Serialization.XmlElementAttribute("width")]
+		[XmlElement("width")]
 		public int Width
 		{
 			get
@@ -188,7 +186,7 @@ namespace Raccoom.Xml
 		/// <summary>
 		/// Instructs the XmlSerializer whether or not to generate the XML element
 		/// </summary>
-		[System.Xml.Serialization.XmlIgnoreAttribute]
+		[XmlIgnore]
 		[System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public bool WidthSpecified
 		{
@@ -205,7 +203,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>Maximum value for height is 400, default value is 31.</summary>
 		[System.ComponentModel.Category("RssImage"), System.ComponentModel.Description("Maximum value for height is 400, default value is 31."),System.ComponentModel.DefaultValue(31)]
-		[System.Xml.Serialization.XmlElementAttribute("height")]
+		[XmlElement("height")]
 		public int Height
 		{
 			get
@@ -226,7 +224,7 @@ namespace Raccoom.Xml
 		/// <summary>
 		/// Instructs the XmlSerializer whether or not to generate the XML element
 		/// </summary>
-		[System.Xml.Serialization.XmlIgnoreAttribute]
+		[XmlIgnore]
 		[System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public bool HeightSpecified
 		{

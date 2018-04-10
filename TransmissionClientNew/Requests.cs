@@ -21,6 +21,7 @@ using System.Text;
 using Jayrock.Json;
 using System.Windows.Forms;
 using System.IO;
+using TransmissionRemoteDotnet.Localization;
 
 namespace TransmissionRemoteDotnet
 {

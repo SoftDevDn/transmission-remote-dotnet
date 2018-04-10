@@ -18,12 +18,9 @@
 // website http://www.raccoom.net, email support@raccoom.net, msn chrisdarebell@msn.com
 
 using System;
-using System.Xml;
 using System.Xml.Serialization;
-using System.Reflection;
-using System.Net;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {	
 	/// <summary>A body contains one or more outline elements</summary>
 	[Serializable]
@@ -88,7 +85,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>Outline elements.</summary>
 		[System.ComponentModel.Category("OpmlBody"), System.ComponentModel.Description("Outline elements.")]
-		[System.Xml.Serialization.XmlElementAttribute("outline")]
+		[XmlElement("outline")]
 		public virtual OpmlOutlineCollection Items
 		{
 			get

@@ -4,10 +4,9 @@ using System.Text;
 using System.Windows.Forms;
 using Jayrock.Json;
 using System.Net;
-using MaxMind;
 using System.Drawing;
 using System.ComponentModel;
-using TransmissionRemoteDotnet.Commmands;
+using TransmissionRemoteDotnet.CustomControls;
 
 namespace TransmissionRemoteDotnet
 {

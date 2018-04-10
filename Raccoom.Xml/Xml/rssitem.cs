@@ -20,10 +20,8 @@
 using System;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Reflection;
-using System.Net;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {	
 	/// <summary>
 	/// <see cref="IRssItem"/> strong typed collecton.
@@ -312,7 +310,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>The title of the item.</summary>
 		[System.ComponentModel.Category("Required item elements"), System.ComponentModel.Description("The title of the item.")]
-		[System.Xml.Serialization.XmlElementAttribute("title")]
+		[XmlElement("title")]
 		public string Title
 		{
 			get
@@ -332,7 +330,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>The item synopsis.</summary>
 		[System.ComponentModel.Category("Required item elements"), System.ComponentModel.Description("The item synopsis.")]
-		[System.Xml.Serialization.XmlElementAttribute("description")]
+		[XmlElement("description")]
 		public string Description
 		{
 			get
@@ -352,7 +350,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>The URL of the item.</summary>
 		[System.ComponentModel.Category("Optional item elements"), System.ComponentModel.Description("The URL of the item.")]
-		[System.Xml.Serialization.XmlElementAttribute("link")]
+		[XmlElement("link")]
 		public string Link
 		{
 			get
@@ -372,7 +370,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>Email address of the author of the item.</summary>
 		[System.ComponentModel.Category("Optional item elements"), System.ComponentModel.Description("Email address of the author of the item.")]
-		[System.Xml.Serialization.XmlElementAttribute("author")]
+		[XmlElement("author")]
 		public string Author
 		{
 			get
@@ -392,7 +390,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>Includes the item in one or more categories.</summary>
 		[System.ComponentModel.Category("Optional item elements"), System.ComponentModel.Description("Includes the item in one or more categories.")]
-		[System.Xml.Serialization.XmlElementAttribute("category")]
+		[XmlElement("category")]
 		public string Category
 		{
 			get
@@ -435,7 +433,7 @@ namespace Raccoom.Xml
 		/// </summary>		
 		[System.ComponentModel.Browsable(false)]
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-		[System.Xml.Serialization.XmlElementAttribute("pubDate")]
+		[XmlElement("pubDate")]
 		public string PubDateRfc
 		{
 			get
@@ -451,7 +449,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>URL of a page for comments relating to the item. </summary>
 		[System.ComponentModel.Category("Optional item elements"), System.ComponentModel.Description("URL of a page for comments relating to the item. ")]
-		[System.Xml.Serialization.XmlElementAttribute("comments")]
+		[XmlElement("comments")]
 		public string Comments
 		{
 			get
@@ -470,7 +468,7 @@ namespace Raccoom.Xml
 		// end Comments
 		
 		/// <summary>Describes a media object that is attached to the item. </summary>
-		[System.Xml.Serialization.XmlElementAttribute("enclosure")]
+		[XmlElement("enclosure")]
 		[System.ComponentModel.Category("Optional item elements"), System.ComponentModel.Description("Describes a media object that is attached to the item. ")]
 		public RssEnclosure Enclosure
 		{
@@ -495,7 +493,7 @@ namespace Raccoom.Xml
 		// end Enclosure
 		
 		/// <summary>Describes a media object that is attached to the item. </summary>
-		[System.Xml.Serialization.XmlElementAttribute("enclosure")]
+		[XmlElement("enclosure")]
 		[System.ComponentModel.Category("Optional item elements"), System.ComponentModel.Description("Describes a media object that is attached to the item. ")]
 		IRssEnclosure IRssItem.Enclosure
 		{
@@ -532,7 +530,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>A string that uniquely identifies the item.</summary>
 		[System.ComponentModel.Category("Optional item elements"), System.ComponentModel.Description("A string that uniquely identifies the item.")]
-		[System.Xml.Serialization.XmlElementAttribute("guid")]
+		[XmlElement("guid")]
 		public RssGuid Guid
 		{
 			get
@@ -557,7 +555,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>A string that uniquely identifies the item.</summary>
 		[System.ComponentModel.Category("Optional item elements"), System.ComponentModel.Description("A string that uniquely identifies the item.")]
-		[System.Xml.Serialization.XmlElementAttribute("guid")]
+		[XmlElement("guid")]
 		IRssGuid IRssItem.Guid
 		{
 			get
@@ -591,7 +589,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>The RSS channel that the item came from.</summary>
 		[System.ComponentModel.Category("Optional item elements"), System.ComponentModel.Description("The RSS channel that the item came from.")]
-		[System.Xml.Serialization.XmlElementAttribute("source")]
+		[XmlElement("source")]
 		public RssSource Source
 		{
 			get
@@ -616,7 +614,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>The RSS channel that the item came from.</summary>
 		[System.ComponentModel.Category("Optional item elements"), System.ComponentModel.Description("The RSS channel that the item came from.")]
-		[System.Xml.Serialization.XmlElementAttribute("source")]
+		[XmlElement("source")]
 		IRssSource IRssItem.Source
 		{
 			get

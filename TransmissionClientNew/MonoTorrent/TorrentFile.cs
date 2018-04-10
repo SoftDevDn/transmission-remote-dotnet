@@ -27,10 +27,9 @@
 //
 
 using System;
-using System.Collections.Generic;
 using System.Text;
 
-namespace MonoTorrent.Common
+namespace TransmissionRemoteDotnet.MonoTorrent
 {
     /// <summary>
     /// This is the base class for the files available to download from within a .torrent.

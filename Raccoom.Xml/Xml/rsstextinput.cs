@@ -20,16 +20,14 @@
 using System;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Reflection;
-using System.Net;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {	
 	/// <summary>A channel may optionally contain a textInput sub-element, which contains four required sub-elements.</summary>
 	[System.Runtime.InteropServices.ComVisible(true), System.Runtime.InteropServices.Guid("026FF54F-94DF-4879-A355-880835C49A2C")]
 	[System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)]
 	[System.Runtime.InteropServices.ProgId("Raccoom.RssTextInput")]
-	[System.Xml.Serialization.XmlTypeAttribute("textInput")]
+	[XmlType("textInput")]
 	[Serializable]
 	[System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))]
 	public class RssTextInput
@@ -83,7 +81,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>The label of the Submit button in the text input area. </summary>
 		[System.ComponentModel.Category("RssTextInput"), System.ComponentModel.Description("The label of the Submit button in the text input area. ")]
-		[System.Xml.Serialization.XmlElementAttribute("title")]
+		[XmlElement("title")]
 		public string Title
 		{
 			get
@@ -103,7 +101,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>Explains the text input area. </summary>
 		[System.ComponentModel.Category("RssTextInput"), System.ComponentModel.Description("Explains the text input area. ")]
-		[System.Xml.Serialization.XmlElementAttribute("description")]
+		[XmlElement("description")]
 		public string Description
 		{
 			get
@@ -123,7 +121,7 @@ namespace Raccoom.Xml
 		
 		/// <summary> The name of the text object in the text input area. </summary>
 		[System.ComponentModel.Category("RssTextInput"), System.ComponentModel.Description(" The name of the text object in the text input area. ")]
-		[System.Xml.Serialization.XmlElementAttribute("name")]
+		[XmlElement("name")]
 		public string Name
 		{
 			get
@@ -143,7 +141,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>The URL of the CGI script that processes text input requests. </summary>
 		[System.ComponentModel.Category("RssTextInput"), System.ComponentModel.Description("The URL of the CGI script that processes text input requests. ")]
-		[System.Xml.Serialization.XmlElementAttribute("link")]
+		[XmlElement("link")]
 		public string Link
 		{
 			get

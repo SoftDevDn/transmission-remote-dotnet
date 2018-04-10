@@ -10,7 +10,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace PaintDotNet.SystemLayer
+namespace TransmissionRemoteDotnet.CustomControls.PaintDotNet
 {
     internal static class NativeDelegates
     {

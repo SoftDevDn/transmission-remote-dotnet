@@ -9,7 +9,7 @@
 
 using System;
 
-namespace PaintDotNet.SystemLayer
+namespace TransmissionRemoteDotnet.CustomControls.PaintDotNet
 {
     [Flags]
     public enum ProcessorFeature

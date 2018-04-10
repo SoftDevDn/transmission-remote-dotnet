@@ -21,6 +21,7 @@ using System.Text;
 using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using TransmissionRemoteDotnet.Forms;
 using TransmissionRemoteDotnet.Settings;
 
 namespace TransmissionRemoteDotnet

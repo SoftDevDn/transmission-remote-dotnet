@@ -20,10 +20,8 @@
 using System;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Reflection;
-using System.Net;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {	
 	/// <summary>
 	/// Rss Cache Manager handles the following things
@@ -494,7 +492,7 @@ namespace Raccoom.Xml
 		/// <summary>
 		/// Gets or sets the state cache state for this rss channel.
 		/// </summary>
-		[System.Xml.Serialization.XmlAttribute("cacheState")]
+		[XmlAttribute("cacheState")]
 		public CacheState State
 		{
 			get
@@ -515,7 +513,7 @@ namespace Raccoom.Xml
 		/// <summary>
 		/// Gets or sets the expire date for this rss channel.
 		/// </summary>
-		[System.Xml.Serialization.XmlAttribute("expireDate")]
+		[XmlAttribute("expireDate")]
 		public DateTime ExpireDate
 		{
 			get
@@ -534,7 +532,7 @@ namespace Raccoom.Xml
 		/// <summary>
 		/// Gets or sets the last visited date for this rss channel.
 		/// </summary>
-		[System.Xml.Serialization.XmlAttribute("lastVisited")]
+		[XmlAttribute("lastVisited")]
 		public DateTime LastVisited
 		{
 			get
@@ -553,7 +551,7 @@ namespace Raccoom.Xml
 		/// <summary>
 		/// Gets or sets the times visited counter for this rss channel
 		/// </summary>
-		[System.Xml.Serialization.XmlAttribute("timesVisited")]
+		[XmlAttribute("timesVisited")]
 		public int TimesVisited
 		{
 			get

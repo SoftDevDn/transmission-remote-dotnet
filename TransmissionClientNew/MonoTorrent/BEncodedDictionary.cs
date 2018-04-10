@@ -27,13 +27,11 @@
 //
 
 
-
 using System;
-using System.IO;
 using System.Collections.Generic;
-using System.Text;
+using System.IO;
 
-namespace MonoTorrent.BEncoding
+namespace TransmissionRemoteDotnet.MonoTorrent
 {
     /// <summary>
     /// Class representing a BEncoded Dictionary

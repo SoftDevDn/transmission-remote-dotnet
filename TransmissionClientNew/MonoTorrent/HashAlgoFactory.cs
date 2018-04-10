@@ -27,13 +27,11 @@
 //
 
 
-
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Security.Cryptography;
 
-namespace MonoTorrent.Common
+namespace TransmissionRemoteDotnet.MonoTorrent
 {
     public static class HashAlgoFactory
     {

@@ -18,18 +18,15 @@
 // website http://www.raccoom.net, email support@raccoom.net, msn chrisdarebell@msn.com
 
 using System;
-using System.Xml;
 using System.Xml.Serialization;
-using System.Reflection;
-using System.Net;
 
-namespace Raccoom.Xml
+namespace Raccoom.Xml.Xml
 {	
 	/// <summary>Optional sub-element of item. Its value is the name of the RSS channel that the item came from, derived from its title. It has one required attribute, url, which links to the XMLization of the source.The purpose of this element is to propagate credit for links, to publicize the sources of news items. It can be used in the Post command of an aggregator. It should be generated automatically when forwarding an item from an aggregator to a weblog authoring tool.</summary>
 	[System.Runtime.InteropServices.ComVisible(true), System.Runtime.InteropServices.Guid("048FF54F-94DF-4879-A355-880832C49A2C")]
 	[System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)]
 	[System.Runtime.InteropServices.ProgId("Raccoom.RssSource")]
-	[System.Xml.Serialization.XmlTypeAttribute("source")]
+	[XmlType("source")]
 	[Serializable]	
 	[System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))]
 	public class RssSource
@@ -75,7 +72,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>The RSS channel url that the item came from.</summary>
 		[System.ComponentModel.Category("RssSource"), System.ComponentModel.Description("The RSS channel url that the item came from.")]
-		[System.Xml.Serialization.XmlAttribute("url")]
+		[XmlAttribute("url")]
 		public string Url
 		{
 			get
@@ -95,7 +92,7 @@ namespace Raccoom.Xml
 		
 		/// <summary>The RSS channel name that the item came from.</summary>
 		[System.ComponentModel.Category("RssSource"), System.ComponentModel.Description("The RSS channel name that the item came from.")]
-		[System.Xml.Serialization.XmlTextAttribute]
+		[XmlText]
 		public string Value
 		{
 			get

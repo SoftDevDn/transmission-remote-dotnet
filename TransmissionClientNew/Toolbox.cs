@@ -30,6 +30,8 @@ using System.Security.Cryptography;
 using Microsoft.Win32;
 using System.Collections.Specialized;
 using System.Xml.Serialization;
+using TransmissionRemoteDotnet.Forms;
+using TransmissionRemoteDotnet.Localization;
 
 namespace TransmissionRemoteDotnet
 {

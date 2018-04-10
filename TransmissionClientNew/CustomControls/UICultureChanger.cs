@@ -25,21 +25,20 @@
 
 using System;
 using System.CodeDom;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.ComponentModel.Design.Serialization;
-#if Prior2
-using System.Collections;
-#else
 using System.Collections.Generic;
-#endif
+using System.ComponentModel;
+using System.ComponentModel.Design.Serialization;
 using System.Drawing;
 using System.Globalization;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+#if Prior2
+using System.Collections;
+#else
+#endif
 
-namespace Troschuetz
+namespace TransmissionRemoteDotnet.CustomControls
 {
     /// <summary>
     /// Enables changes of the UI culture of a collection of <see cref="Form"/> objects at runtime.

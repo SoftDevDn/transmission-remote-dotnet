@@ -18,16 +18,15 @@
  */
 
 using System;
+using System.Drawing;
 using System.IO;
 using System.Net;
-using TransmissionRemoteDotnet;
 using System.Windows.Forms;
-using System.Drawing;
 
 // This code is based on MaxMind's original C# code, which was ported from Java.
 // This version is very simplified and does not support a majority of features for speed.
 
-namespace MaxMind
+namespace TransmissionRemoteDotnet.CustomControls
 {
     public sealed class GeoIPCountry : IDisposable
     {

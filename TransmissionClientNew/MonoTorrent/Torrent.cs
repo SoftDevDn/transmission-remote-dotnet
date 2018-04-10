@@ -27,17 +27,14 @@
 //
 
 
-
 using System;
-using System.IO;
 using System.Collections.Generic;
-using System.Text;
-using System.Security.Cryptography;
-using MonoTorrent.BEncoding;
-using System.Collections;
+using System.IO;
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
 
-namespace MonoTorrent.Common
+namespace TransmissionRemoteDotnet.MonoTorrent
 {
     /// <summary>
     /// The "Torrent" class for both Tracker and Client should inherit from this

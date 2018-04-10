@@ -27,12 +27,10 @@
 //
 
 
-
 using System;
 using System.IO;
-using System.Text;
 
-namespace MonoTorrent.BEncoding
+namespace TransmissionRemoteDotnet.MonoTorrent
 {
     /// <summary>
     /// Base interface for all BEncoded values.
