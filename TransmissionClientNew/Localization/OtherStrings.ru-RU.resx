@@ -136,13 +136,13 @@
     <value>Трекер уже существует</value>
   </data>
   <data name="GeoipDatabaseUpdateFailed" xml:space="preserve">
-    <value>GeoIP database update failed</value>
+    <value>Ошибка обновления БД Geoip</value>
   </data>
   <data name="GeoipDatabase" xml:space="preserve">
-    <value>Geoip database</value>
+    <value>БД Geoip</value>
   </data>
   <data name="GeoipDatabaseUpdateCompleted" xml:space="preserve">
-    <value>Geoip database update completed</value>
+    <value>БД Geoip обновлена</value>
   </data>
   <data name="SpeedWithAvg" xml:space="preserve">
     <value>{0} (avg. {1})</value>
@@ -176,7 +176,7 @@
     <value>Unix path exists</value>
   </data>
   <data name="InvalidRPCLocation" xml:space="preserve">
-    <value>Invalid RPC location</value>
+    <value>Неправильное расположение RPC</value>
   </data>
   <data name="FeedExists" xml:space="preserve">
     <value>Feed exists</value>
@@ -201,7 +201,7 @@
     <comment>{0} is the newline char</comment>
   </data>
   <data name="NoHostnameSet" xml:space="preserve">
-    <value>No hostname has been set.</value>
+    <value>Не установлено имя хоста.</value>
   </data>
   <data name="MappingSample" xml:space="preserve">
     <value>Sample mapping:</value>
@@ -235,7 +235,7 @@
     <value>Unknown response tag</value>
   </data>
   <data name="GeoipInitError" xml:space="preserve">
-    <value>GeoIP init error ({0})</value>
+    <value>Ошибка инициализации БД Geoip ({0})</value>
   </data>
   <data name="BandwidthAllocation" xml:space="preserve">
     <value>Bandwidth allocation</value>
@@ -253,7 +253,7 @@
     <value>Загрузка {0}...</value>
   </data>
   <data name="InfoObjectToClipboard" xml:space="preserve">
-    <value>Info object to clipboard</value>
+    <value>Скопировать в буфер обмена</value>
   </data>
   <data name="MoveMultipleTorrents" xml:space="preserve">
     <value>Move multiple torrent data</value>
@@ -289,7 +289,7 @@
     <value>Неисправный</value>
   </data>
   <data name="Build" xml:space="preserve">
-    <value>Build</value>
+    <value>Сборка</value>
   </data>
   <data name="Checking" xml:space="preserve">
     <value>Проверяется</value>

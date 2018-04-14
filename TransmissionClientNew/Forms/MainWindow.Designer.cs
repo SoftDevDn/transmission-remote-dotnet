@@ -452,32 +452,32 @@ namespace TransmissionRemoteDotnet.Forms
             // generalTorrentInfo
             // 
             this.generalTableLayoutPanel.SetColumnSpan(this.generalTorrentInfo, 3);
-            this.generalTorrentInfo.comment = "";
-            this.generalTorrentInfo.createdAt = "";
-            this.generalTorrentInfo.createdBy = "";
+            this.generalTorrentInfo.Comment = "";
+            this.generalTorrentInfo.CreatedAt = "";
+            this.generalTorrentInfo.CreatedBy = "";
             resources.ApplyResources(this.generalTorrentInfo, "generalTorrentInfo");
-            this.generalTorrentInfo.downloaded = "";
-            this.generalTorrentInfo.downloadLimit = "";
-            this.generalTorrentInfo.downloadSpeed = "";
-            this.generalTorrentInfo.error = "";
-            this.generalTorrentInfo.errorVisible = false;
-            this.generalTorrentInfo.hash = "";
-            this.generalTorrentInfo.leechers = "";
-            this.generalTorrentInfo.location = "";
+            this.generalTorrentInfo.Downloaded = "";
+            this.generalTorrentInfo.DownloadLimit = "";
+            this.generalTorrentInfo.DownloadSpeed = "";
+            this.generalTorrentInfo.Error = "";
+            this.generalTorrentInfo.ErrorVisible = false;
+            this.generalTorrentInfo.Hash = "";
+            this.generalTorrentInfo.Leechers = "";
             this.generalTorrentInfo.Name = "generalTorrentInfo";
-            this.generalTorrentInfo.piecesInfo = "";
-            this.generalTorrentInfo.ratio = "";
-            this.generalTorrentInfo.remaining = "";
-            this.generalTorrentInfo.seeders = "";
-            this.generalTorrentInfo.startedAt = "";
-            this.generalTorrentInfo.status = "";
-            this.generalTorrentInfo.timeElapsed = "";
-            this.generalTorrentInfo.timeLabelText = "Remaining:";
-            this.generalTorrentInfo.torrentName = "";
-            this.generalTorrentInfo.totalSize = "";
-            this.generalTorrentInfo.uploaded = "";
-            this.generalTorrentInfo.uploadLimit = "";
-            this.generalTorrentInfo.uploadSpeed = "";
+            this.generalTorrentInfo.PiecesInfo = "";
+            this.generalTorrentInfo.Ratio = "";
+            this.generalTorrentInfo.Remaining = "";
+            this.generalTorrentInfo.Seeders = "";
+            this.generalTorrentInfo.StartedAt = "";
+            this.generalTorrentInfo.Status = "";
+            this.generalTorrentInfo.TimeElapsed = "";
+            this.generalTorrentInfo.TimeLabelText = "Remaining:";
+            this.generalTorrentInfo.TorrentLocation = "";
+            this.generalTorrentInfo.TorrentName = "";
+            this.generalTorrentInfo.TotalSize = "";
+            this.generalTorrentInfo.Uploaded = "";
+            this.generalTorrentInfo.UploadLimit = "";
+            this.generalTorrentInfo.UploadSpeed = "";
             // 
             // trackersTabPage
             // 

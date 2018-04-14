@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Windows.Forms;
 
 namespace TransmissionRemoteDotnet.CustomControls
@@ -11,148 +12,148 @@ namespace TransmissionRemoteDotnet.CustomControls
             this.SetStyle(ControlStyles.DoubleBuffer, true);
         }
 
-        public string torrentName
+        public string TorrentName
         {
-            get { return torrentNameGroupBox.Text; }
-            set { torrentNameGroupBox.Text = value; }
+            get => torrentNameGroupBox.Text;
+            set => torrentNameGroupBox.Text = value;
         }
 
-        public string timeElapsed
+        public string TimeElapsed
         {
-            get { return timeElapsedField.Text; }
-            set { timeElapsedField.Text = value; }
+            get => timeElapsedField.Text;
+            set => timeElapsedField.Text = value;
         }
 
-        public string remaining
+        public string Remaining
         {
-            get { return remainingField.Text; }
-            set { remainingField.Text = value; }
+            get => remainingField.Text;
+            set => remainingField.Text = value;
         }
 
-        public string timeLabelText
+        public string TimeLabelText
         {
-            get { return remainingLabel.Text; }
-            set { remainingLabel.Text = value; }
+            get => remainingLabel.Text;
+            set => remainingLabel.Text = value;
         }
 
-        public string piecesInfo
+        public string PiecesInfo
         {
-            get { return piecesInfoField.Text; }
-            set { piecesInfoField.Text = value; }
+            get => piecesInfoField.Text;
+            set => piecesInfoField.Text = value;
         }
 
-        public string downloaded
+        public string Downloaded
         {
-            get { return downloadedField.Text; }
-            set { downloadedField.Text = value; }
+            get => downloadedField.Text;
+            set => downloadedField.Text = value;
         }
 
-        public string uploaded
+        public string Uploaded
         {
-            get { return uploadedField.Text; }
-            set { uploadedField.Text = value; }
+            get => uploadedField.Text;
+            set => uploadedField.Text = value;
         }
 
-        public string seeders
+        public string Seeders
         {
-            get { return seedersField.Text; }
-            set { seedersField.Text = value; }
+            get => seedersField.Text;
+            set => seedersField.Text = value;
         }
 
-        public string downloadSpeed
+        public string DownloadSpeed
         {
-            get { return downloadSpeedField.Text; }
-            set { downloadSpeedField.Text = value; }
+            get => downloadSpeedField.Text;
+            set => downloadSpeedField.Text = value;
         }
 
-        public string uploadSpeed
+        public string UploadSpeed
         {
-            get { return uploadSpeedField.Text; }
-            set { uploadSpeedField.Text = value; }
+            get => uploadSpeedField.Text;
+            set => uploadSpeedField.Text = value;
         }
 
-        public string leechers
+        public string Leechers
         {
-            get { return leechersField.Text; }
-            set { leechersField.Text = value; }
+            get => leechersField.Text;
+            set => leechersField.Text = value;
         }
 
-        public string downloadLimit
+        public string DownloadLimit
         {
-            get { return downloadLimitField.Text; }
-            set { downloadLimitField.Text = value; }
+            get => downloadLimitField.Text;
+            set => downloadLimitField.Text = value;
         }
 
-        public string uploadLimit
+        public string UploadLimit
         {
-            get { return uploadLimitField.Text; }
-            set { uploadLimitField.Text = value; }
+            get => uploadLimitField.Text;
+            set => uploadLimitField.Text = value;
         }
 
-        public string ratio
+        public string Ratio
         {
-            get { return ratioField.Text; }
-            set { ratioField.Text = value; }
+            get => ratioField.Text;
+            set => ratioField.Text = value;
         }
 
-        public string status
+        public string Status
         {
-            get { return statusField.Text; }
-            set { statusField.Text = value; }
+            get => statusField.Text;
+            set => statusField.Text = value;
         }
 
-        public string startedAt
+        public string StartedAt
         {
-            get { return startedAtField.Text; }
-            set { startedAtField.Text = value; }
+            get => startedAtField.Text;
+            set => startedAtField.Text = value;
         }
 
-        public string location
+        public string TorrentLocation
         {
-            get { return locationField.Text; }
-            set { locationField.Text = value; }
+            get => locationField.Text;
+            set => locationField.Text = value;
         }
 
-        public string createdAt
+        public string CreatedAt
         {
-            get { return createdAtField.Text; }
-            set { createdAtField.Text = value; }
+            get => createdAtField.Text;
+            set => createdAtField.Text = value;
         }
 
-        public string totalSize
+        public string TotalSize
         {
-            get { return totalSizeField.Text; }
-            set { totalSizeField.Text = value; }
+            get => totalSizeField.Text;
+            set => totalSizeField.Text = value;
         }
 
-        public string createdBy
+        public string CreatedBy
         {
-            get { return createdByField.Text; }
-            set { createdByField.Text = value; }
+            get => createdByField.Text;
+            set => createdByField.Text = value;
         }
 
-        public string hash
+        public string Hash
         {
-            get { return hashField.Text; }
-            set { hashField.Text = value; }
+            get => hashField.Text;
+            set => hashField.Text = value;
         }
 
-        public string error
+        public string Error
         {
-            get { return errorField.Text; }
-            set { errorField.Text = value; }
+            get => errorField.Text;
+            set => errorField.Text = value;
         }
 
-        public bool errorVisible
+        public bool ErrorVisible
         {
-            get { return errorLabel.Visible; }
-            set { errorLabel.Visible = errorField.Visible = value; }
+            get => errorLabel.Visible;
+            set => errorLabel.Visible = errorField.Visible = value;
         }
 
-        public string comment
+        public string Comment
         {
-            get { return commentField.Text; }
-            set { commentField.Text = value; }
+            get => commentField.Text;
+            set => commentField.Text = value;
         }
 
         public void BeginUpdate()
@@ -166,12 +167,13 @@ namespace TransmissionRemoteDotnet.CustomControls
             Refresh();
         }
 
+        [SuppressMessage("ReSharper", "InconsistentNaming")]
         private const Int32 WM_SETREDRAW = 0xB;
         [System.Runtime.InteropServices.DllImport("user32.dll")]
-        private static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
-        private void SetRedraw(int Param)
+        private static extern IntPtr SendMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
+        private void SetRedraw(int param)
         {
-            SendMessage(this.Handle, WM_SETREDRAW, new IntPtr(Param), IntPtr.Zero);
+            SendMessage(Handle, WM_SETREDRAW, new IntPtr(param), IntPtr.Zero);
         }
     }
 }
