@@ -15,6 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System.ComponentModel;
+using System.Windows.Forms;
 using TransmissionRemoteDotnet.CustomControls;
 
 namespace TransmissionRemoteDotnet.Forms
@@ -24,7 +26,7 @@ namespace TransmissionRemoteDotnet.Forms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -327,31 +329,31 @@ namespace TransmissionRemoteDotnet.Forms
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabProperties;
-        private System.Windows.Forms.TabPage tabGeneral;
-        private System.Windows.Forms.NumericUpDown downloadLimitField;
-        private System.Windows.Forms.NumericUpDown uploadLimitField;
-        private System.Windows.Forms.CheckBox downloadLimitEnableField;
-        private System.Windows.Forms.CheckBox uploadLimitEnableField;
-        private System.Windows.Forms.Label downloadLimitUnitLabel;
-        private System.Windows.Forms.Label uploadLimitUnitLabel;
-        private System.Windows.Forms.Button CancelDialogButton;
-        private System.Windows.Forms.Button OkDialogButton;
-        private System.Windows.Forms.NumericUpDown peerLimitValue;
-        private System.Windows.Forms.Label peerLimitLabel;
-        private System.Windows.Forms.Label noteLabel;
-        private System.Windows.Forms.NumericUpDown seedRatioLimitValue;
-        private System.Windows.Forms.CheckBox seedRatioLimitedCheckBox;
-        private System.Windows.Forms.CheckBox honorsSessionLimits;
-        private System.Windows.Forms.Label bandwidthLabel;
-        private System.Windows.Forms.ComboBox bandwidthComboBox;
-        private System.Windows.Forms.CheckBox seedIdleLimitedCheckBox;
-        private System.Windows.Forms.NumericUpDown seedIdleLimitValue;
-        private System.Windows.Forms.TabPage tabTrackers;
+        private TabControl tabProperties;
+        private TabPage tabGeneral;
+        private NumericUpDown downloadLimitField;
+        private NumericUpDown uploadLimitField;
+        private CheckBox downloadLimitEnableField;
+        private CheckBox uploadLimitEnableField;
+        private Label downloadLimitUnitLabel;
+        private Label uploadLimitUnitLabel;
+        private Button CancelDialogButton;
+        private Button OkDialogButton;
+        private NumericUpDown peerLimitValue;
+        private Label peerLimitLabel;
+        private Label noteLabel;
+        private NumericUpDown seedRatioLimitValue;
+        private CheckBox seedRatioLimitedCheckBox;
+        private CheckBox honorsSessionLimits;
+        private Label bandwidthLabel;
+        private ComboBox bandwidthComboBox;
+        private CheckBox seedIdleLimitedCheckBox;
+        private NumericUpDown seedIdleLimitValue;
+        private TabPage tabTrackers;
         private RefreshingListBox trackersList;
-        private System.Windows.Forms.Panel trackersButtonPanel;
-        private System.Windows.Forms.Button addTrackerButton;
-        private System.Windows.Forms.Button editTrackerButton;
-        private System.Windows.Forms.Button removeTrackerButton;
+        private Panel trackersButtonPanel;
+        private Button addTrackerButton;
+        private Button editTrackerButton;
+        private Button removeTrackerButton;
     }
 }

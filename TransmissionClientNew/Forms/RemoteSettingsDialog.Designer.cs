@@ -15,6 +15,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace TransmissionRemoteDotnet.Forms
 {
     partial class RemoteSettingsDialog
@@ -22,7 +25,7 @@ namespace TransmissionRemoteDotnet.Forms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -652,67 +655,67 @@ namespace TransmissionRemoteDotnet.Forms
 
         #endregion
 
-        private System.Windows.Forms.Label downloadToLabel;
-        private System.Windows.Forms.TextBox downloadToField;
-        private System.Windows.Forms.CheckBox incompleteToCheckBox;
-        private System.Windows.Forms.TextBox incompleteToField;
-        private System.Windows.Forms.TextBox watchdirField;
-        private System.Windows.Forms.CheckBox watchdirCheckBox;
-        private System.Windows.Forms.Label cacheSizeLabel;
-        private System.Windows.Forms.NumericUpDown cacheSizeValue;
-        private System.Windows.Forms.Label cacheSizeUnitLabel;
-        private System.Windows.Forms.CheckBox limitUploadCheckBox;
-        private System.Windows.Forms.NumericUpDown limitUploadValue;
-        private System.Windows.Forms.CheckBox limitDownloadCheckBox;
-        private System.Windows.Forms.NumericUpDown limitDownloadValue;
-        private System.Windows.Forms.Label incomingPortLabel;
-        private System.Windows.Forms.NumericUpDown incomingPortValue;
-        private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.Button CloseFormButton;
-        private System.Windows.Forms.Label encryptionLabel;
-        private System.Windows.Forms.ComboBox encryptionCombobox;
-        private System.Windows.Forms.CheckBox portForwardCheckBox;
-        private System.Windows.Forms.CheckBox renamePartialFilesCheckBox;
-        private System.Windows.Forms.Label peerLimitLabel;
-        private System.Windows.Forms.Label peerLimitTorrentLabel;
-        private System.Windows.Forms.CheckBox pexEnabledCheckBox;
-        private System.Windows.Forms.NumericUpDown peerLimitValue;
-        private System.Windows.Forms.NumericUpDown peerLimitTorrentValue;
-        private System.Windows.Forms.Label limitDownloadUnitLabel;
-        private System.Windows.Forms.Label limitUploadUnitLabel;
-        private System.Windows.Forms.TabControl tabSettings;
-        private System.Windows.Forms.TabPage tabGeneral;
-        private System.Windows.Forms.TabPage tabLimits;
-        private System.Windows.Forms.Label noteLabel;
-        private System.Windows.Forms.TabPage tabAltLimits;
-        private System.Windows.Forms.CheckBox altTimeConstraintEnabled;
-        private System.Windows.Forms.CheckBox altSpeedLimitEnable;
-        private System.Windows.Forms.NumericUpDown timeConstraintEndHours;
-        private System.Windows.Forms.Label timeConstraintDelimLabel;
-        private System.Windows.Forms.NumericUpDown timeConstraintBeginHours;
-        private System.Windows.Forms.NumericUpDown altUploadLimitField;
-        private System.Windows.Forms.NumericUpDown altDownloadLimitField;
-        private System.Windows.Forms.Label altUploadLimitUnitLabel;
-        private System.Windows.Forms.Label altDownloadLimitUnitLabel;
-        private System.Windows.Forms.Label altUploadLimitLabel;
-        private System.Windows.Forms.Label altDownloadLimitLabel;
-        private System.Windows.Forms.CheckBox blocklistEnabledCheckBox;
-        private System.Windows.Forms.TextBox blocklistUrlField;
-        private System.Windows.Forms.Label blocklistUrlLabel;
-        private System.Windows.Forms.Button updateBlocklistButton;
-        private System.Windows.Forms.NumericUpDown seedLimitUpDown;
-        private System.Windows.Forms.CheckBox seedRatioEnabledCheckBox;
-        private System.Windows.Forms.CheckBox seedIdleEnabledCheckBox;
-        private System.Windows.Forms.NumericUpDown seedIdleLimitUpDown;
-        private System.Windows.Forms.Button testPortButton;
-        private System.Windows.Forms.NumericUpDown timeConstraintEndMinutes;
-        private System.Windows.Forms.Label timeConstraintEndDelimLabel;
-        private System.Windows.Forms.Label timeConstraintBeginDelimLabel;
-        private System.Windows.Forms.NumericUpDown timeConstraintBeginMinutes;
-        private System.Windows.Forms.Label updateBlocklistLabel;
-        private System.Windows.Forms.CheckBox dhtEnabledCheckBox;
-        private System.Windows.Forms.CheckBox lpdEnabledCheckBox;
-        private System.Windows.Forms.CheckBox utpEnabledCheckBox;
-        private System.Windows.Forms.TabPage tabNetwork;
+        private Label downloadToLabel;
+        private TextBox downloadToField;
+        private CheckBox incompleteToCheckBox;
+        private TextBox incompleteToField;
+        private TextBox watchdirField;
+        private CheckBox watchdirCheckBox;
+        private Label cacheSizeLabel;
+        private NumericUpDown cacheSizeValue;
+        private Label cacheSizeUnitLabel;
+        private CheckBox limitUploadCheckBox;
+        private NumericUpDown limitUploadValue;
+        private CheckBox limitDownloadCheckBox;
+        private NumericUpDown limitDownloadValue;
+        private Label incomingPortLabel;
+        private NumericUpDown incomingPortValue;
+        private Button SaveButton;
+        private Button CloseFormButton;
+        private Label encryptionLabel;
+        private ComboBox encryptionCombobox;
+        private CheckBox portForwardCheckBox;
+        private CheckBox renamePartialFilesCheckBox;
+        private Label peerLimitLabel;
+        private Label peerLimitTorrentLabel;
+        private CheckBox pexEnabledCheckBox;
+        private NumericUpDown peerLimitValue;
+        private NumericUpDown peerLimitTorrentValue;
+        private Label limitDownloadUnitLabel;
+        private Label limitUploadUnitLabel;
+        private TabControl tabSettings;
+        private TabPage tabGeneral;
+        private TabPage tabLimits;
+        private Label noteLabel;
+        private TabPage tabAltLimits;
+        private CheckBox altTimeConstraintEnabled;
+        private CheckBox altSpeedLimitEnable;
+        private NumericUpDown timeConstraintEndHours;
+        private Label timeConstraintDelimLabel;
+        private NumericUpDown timeConstraintBeginHours;
+        private NumericUpDown altUploadLimitField;
+        private NumericUpDown altDownloadLimitField;
+        private Label altUploadLimitUnitLabel;
+        private Label altDownloadLimitUnitLabel;
+        private Label altUploadLimitLabel;
+        private Label altDownloadLimitLabel;
+        private CheckBox blocklistEnabledCheckBox;
+        private TextBox blocklistUrlField;
+        private Label blocklistUrlLabel;
+        private Button updateBlocklistButton;
+        private NumericUpDown seedLimitUpDown;
+        private CheckBox seedRatioEnabledCheckBox;
+        private CheckBox seedIdleEnabledCheckBox;
+        private NumericUpDown seedIdleLimitUpDown;
+        private Button testPortButton;
+        private NumericUpDown timeConstraintEndMinutes;
+        private Label timeConstraintEndDelimLabel;
+        private Label timeConstraintBeginDelimLabel;
+        private NumericUpDown timeConstraintBeginMinutes;
+        private Label updateBlocklistLabel;
+        private CheckBox dhtEnabledCheckBox;
+        private CheckBox lpdEnabledCheckBox;
+        private CheckBox utpEnabledCheckBox;
+        private TabPage tabNetwork;
     }
 }

@@ -15,6 +15,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace TransmissionRemoteDotnet.Forms
 {
     partial class StatsDialog
@@ -22,7 +25,7 @@ namespace TransmissionRemoteDotnet.Forms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -262,31 +265,31 @@ namespace TransmissionRemoteDotnet.Forms
 
         #endregion
 
-        private System.Windows.Forms.Button CloseFormButton;
-        private System.Windows.Forms.Timer SessionStatsTimer;
-        private System.Windows.Forms.GroupBox CumulativeGroupBox;
-        private System.Windows.Forms.Label secondsActiveValue1;
-        private System.Windows.Forms.Label sessionCountValue1;
-        private System.Windows.Forms.Label filesAddedValue1;
-        private System.Windows.Forms.Label uploadedBytesValue1;
-        private System.Windows.Forms.Label downloadedBytesValue1;
-        private System.Windows.Forms.Label secondsActiveLabel1;
-        private System.Windows.Forms.Label sessionCountLabel1;
-        private System.Windows.Forms.Label filesAddedLabel1;
-        private System.Windows.Forms.Label downloadedBytesLabel1;
-        private System.Windows.Forms.Label uploadedBytesLabel1;
-        private System.Windows.Forms.GroupBox CurrentSessionGroupBox;
-        private System.Windows.Forms.Label filesAddedLabel2;
-        private System.Windows.Forms.Label sessionCountLabel2;
-        private System.Windows.Forms.Label secondsActiveLabel2;
-        private System.Windows.Forms.Label secondsActiveValue2;
-        private System.Windows.Forms.Label sessionCountValue2;
-        private System.Windows.Forms.Label filesAddedValue2;
-        private System.Windows.Forms.Label uploadedBytesValue2;
-        private System.Windows.Forms.Label downloadedBytesValue2;
-        private System.Windows.Forms.Label downloadedBytesLabel2;
-        private System.Windows.Forms.Label uploadedBytesLabel2;
-        private System.Windows.Forms.Label unitFactorLabel;
-        private System.Windows.Forms.ComboBox unitFactorComboBox;
+        private Button CloseFormButton;
+        private Timer SessionStatsTimer;
+        private GroupBox CumulativeGroupBox;
+        private Label secondsActiveValue1;
+        private Label sessionCountValue1;
+        private Label filesAddedValue1;
+        private Label uploadedBytesValue1;
+        private Label downloadedBytesValue1;
+        private Label secondsActiveLabel1;
+        private Label sessionCountLabel1;
+        private Label filesAddedLabel1;
+        private Label downloadedBytesLabel1;
+        private Label uploadedBytesLabel1;
+        private GroupBox CurrentSessionGroupBox;
+        private Label filesAddedLabel2;
+        private Label sessionCountLabel2;
+        private Label secondsActiveLabel2;
+        private Label secondsActiveValue2;
+        private Label sessionCountValue2;
+        private Label filesAddedValue2;
+        private Label uploadedBytesValue2;
+        private Label downloadedBytesValue2;
+        private Label downloadedBytesLabel2;
+        private Label uploadedBytesLabel2;
+        private Label unitFactorLabel;
+        private ComboBox unitFactorComboBox;
     }
 }

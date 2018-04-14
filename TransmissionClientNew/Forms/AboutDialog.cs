@@ -17,6 +17,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -70,7 +72,7 @@ namespace TransmissionRemoteDotnet.Forms
         {
             labelHomepageLink.LinkVisited = true;
             
-            System.Diagnostics.Process.Start(labelHomepageLink.Text.Substring(e.Link.Start, e.Link.Length));
+            Process.Start(labelHomepageLink.Text.Substring(e.Link.Start, e.Link.Length));
         }
 
         private void labelCoders_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -78,7 +80,7 @@ namespace TransmissionRemoteDotnet.Forms
             try
             {
                 e.Link.Visited = true;
-                System.Diagnostics.Process.Start("mailto:" + e.Link.LinkData);
+                Process.Start("mailto:" + e.Link.LinkData);
             }
             catch (Exception)
             {
@@ -100,7 +102,7 @@ namespace TransmissionRemoteDotnet.Forms
                         return titleAttribute.Title;
                     }
                 }
-                return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+                return Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
             }
         }
 

@@ -15,6 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System.ComponentModel;
+using System.Windows.Forms;
 using TransmissionRemoteDotnet.CustomControls;
 
 namespace TransmissionRemoteDotnet.Forms
@@ -24,7 +26,7 @@ namespace TransmissionRemoteDotnet.Forms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -70,10 +72,12 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // splitContainer1.Panel1
             // 
+            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
             this.splitContainer1.Panel1.Controls.Add(this.errorListView);
             // 
             // splitContainer1.Panel2
             // 
+            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
             this.splitContainer1.Panel2.Controls.Add(this.DebugCheckBox);
             this.splitContainer1.Panel2.Controls.Add(this.clearButton);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
@@ -81,11 +85,11 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // errorListView
             // 
+            resources.ApplyResources(this.errorListView, "errorListView");
             this.errorListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            resources.ApplyResources(this.errorListView, "errorListView");
             this.errorListView.FullRowSelect = true;
             this.errorListView.HideSelection = false;
             this.errorListView.Name = "errorListView";
@@ -150,14 +154,14 @@ namespace TransmissionRemoteDotnet.Forms
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private SplitContainer splitContainer1;
         private ListViewNF errorListView;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.Button clearButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox DebugCheckBox;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private Button closeButton;
+        private Button clearButton;
+        private Label label1;
+        private CheckBox DebugCheckBox;
     }
 }

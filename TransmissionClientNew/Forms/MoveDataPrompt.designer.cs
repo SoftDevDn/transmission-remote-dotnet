@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace TransmissionRemoteDotnet.Forms
 {
     partial class MoveDataPrompt
@@ -5,7 +8,7 @@ namespace TransmissionRemoteDotnet.Forms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -86,9 +89,9 @@ namespace TransmissionRemoteDotnet.Forms
 
         #endregion
 
-        private System.Windows.Forms.Label destinationLabel;
-        private System.Windows.Forms.Button moveButton;
-        private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.ComboBox destinationComboBox;
+        private Label destinationLabel;
+        private Button moveButton;
+        private Button closeButton;
+        private ComboBox destinationComboBox;
     }
 }

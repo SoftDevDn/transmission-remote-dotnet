@@ -80,7 +80,7 @@ namespace TransmissionRemoteDotnet.Forms
         {
             try
             {
-                JsonObject session = (JsonObject)Program.DaemonDescriptor.SessionData;
+                JsonObject session = Program.DaemonDescriptor.SessionData;
                 downloadToField.Text = (string)session[ProtocolConstants.DOWNLOAD_DIR];
                 limitDownloadValue.Enabled = limitDownloadCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]);
                 SetLimitField(limitDownloadValue, Toolbox.ToInt(session[ProtocolConstants.FIELD_SPEEDLIMITDOWN]));
@@ -217,8 +217,8 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void CloseAndDispose()
         {
-            this.Close();
-            this.Dispose();
+            Close();
+            Dispose();
         }
 
         private void SetLimitField(NumericUpDown field, int limit)
@@ -329,7 +329,7 @@ namespace TransmissionRemoteDotnet.Forms
                 arguments.Put(ProtocolConstants.FIELD_RENAME_PARTIAL_FILES, renamePartialFilesCheckBox.Checked);
             }
             arguments.Put(ProtocolConstants.DOWNLOAD_DIR, downloadToField.Text);
-            CommandFactory.RequestAsync(request).Completed += new EventHandler<ResultEventArgs>(RemoteSettingsDialog_Completed);
+            CommandFactory.RequestAsync(request).Completed += RemoteSettingsDialog_Completed;
             CloseAndDispose();
         }
 
@@ -337,7 +337,7 @@ namespace TransmissionRemoteDotnet.Forms
         {
             Timer t = new Timer();
             t.Interval = 250;
-            t.Tick += new EventHandler(t_Tick);
+            t.Tick += t_Tick;
             t.Start();
         }
 

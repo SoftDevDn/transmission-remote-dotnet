@@ -17,6 +17,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using TransmissionRemoteDotnet.CustomControls;
@@ -111,7 +112,7 @@ namespace TransmissionRemoteDotnet.Forms
             listRssFeeds.Items.Clear();
             foreach (KeyValuePair<string, string> s in sett.RssFeeds)
             {
-                listRssFeeds.Items.Add(new ListViewItem(new string[] { s.Key, s.Value })).Name = s.Key;
+                listRssFeeds.Items.Add(new ListViewItem(new[] { s.Key, s.Value })).Name = s.Key;
             }
             defaultActionComboBox.SelectedIndex = sett.DefaultDoubleClickAction;
 
@@ -259,7 +260,7 @@ namespace TransmissionRemoteDotnet.Forms
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             linkLabel1.LinkVisited = true;
-            System.Diagnostics.Process.Start(linkLabel1.Text);
+            Process.Start(linkLabel1.Text);
         }
 
         private void HostField_TextChanged(object sender, EventArgs e)
@@ -364,7 +365,7 @@ namespace TransmissionRemoteDotnet.Forms
         {
             if (_serversettingschanged)
             {
-                System.Diagnostics.Trace.Assert(_current != null, "AskToSaveServerIfNeed souldnt called if no server is selected"); // DONT translate this
+                Trace.Assert(_current != null, "AskToSaveServerIfNeed souldnt called if no server is selected"); // DONT translate this
                 if (MessageBox.Show(string.Format(OtherStrings.ConfirmSaveServer, _current.Name), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                     SaveServerButton_Click(this, new EventArgs());
             }
@@ -377,7 +378,7 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void SaveServerButton_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Trace.Assert(_current != null, "SaveServer button sould disabled if no server is selected"); // DONT translate this
+            Trace.Assert(_current != null, "SaveServer button sould disabled if no server is selected"); // DONT translate this
             if (_current.Tag is TransmissionServer ts)
             {
                 ts.StartPaused = StartPausedCheckBox.Checked;
@@ -476,7 +477,7 @@ namespace TransmissionRemoteDotnet.Forms
             string feedName = FeedNameTextBox.Text;
             if (!listRssFeeds.Items.ContainsKey(feedName))
             {
-                listRssFeeds.Items.Add(new ListViewItem(new string[] { feedName, FeedUrlTextBox.Text })).Name = feedName;
+                listRssFeeds.Items.Add(new ListViewItem(new[] { feedName, FeedUrlTextBox.Text })).Name = feedName;
                 FeedNameTextBox.Clear();
                 FeedUrlTextBox.Clear();
             }

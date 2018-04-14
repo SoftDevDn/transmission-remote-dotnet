@@ -96,18 +96,18 @@ namespace TransmissionRemoteDotnet.Forms
             if (trackerAdd.Count > 0)
                 arguments.Put(ProtocolConstants.FIELD_TRACKER_ADD, trackerAdd);
             Program.Form.SetupAction(CommandFactory.RequestAsync(request));
-            this.Close();
+            Close();
         }
 
         private void CancelDialogButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void TorrentPropertiesDialog_Load(object sender, EventArgs e)
         {
             Torrent firstTorrent = (Torrent)selections[0];
-            this.Text = selections.Count == 1 ? firstTorrent.TorrentName : OtherStrings.MultipleTorrentProperties;
+            Text = selections.Count == 1 ? firstTorrent.TorrentName : OtherStrings.MultipleTorrentProperties;
             uploadLimitField.Value = firstTorrent.SpeedLimitUp >= 0 && firstTorrent.SpeedLimitUp <= uploadLimitField.Maximum ? firstTorrent.SpeedLimitUp : 0;
             downloadLimitField.Value = firstTorrent.SpeedLimitDown >= 0 && firstTorrent.SpeedLimitDown <= downloadLimitField.Maximum ? firstTorrent.SpeedLimitDown : 0;
             uploadLimitField.Enabled = uploadLimitEnableField.Checked = firstTorrent.SpeedLimitUpEnabled;
@@ -161,11 +161,11 @@ namespace TransmissionRemoteDotnet.Forms
             {
                 bandwidthLabel.Enabled = bandwidthComboBox.Enabled = false;
             }
-            peerLimitValue.Value = firstTorrent.MaxConnectedPeers >= 0 && (decimal)firstTorrent.MaxConnectedPeers <= peerLimitValue.Maximum ? (decimal)firstTorrent.MaxConnectedPeers : 0;
+            peerLimitValue.Value = firstTorrent.MaxConnectedPeers >= 0 && (decimal)firstTorrent.MaxConnectedPeers <= peerLimitValue.Maximum ? firstTorrent.MaxConnectedPeers : 0;
             // TODO: http://www.codeguru.com/cpp/controls/controls/lists,treesandcombos/article.php/c2291
             removeTrackerButton.Enabled = false;
             trackersList.Items.AddRange(
-                Array.ConvertAll<JsonObject, TrackerListItem>((JsonObject[])firstTorrent.Trackers.ToArray(typeof(JsonObject)), delegate(JsonObject jo)
+                Array.ConvertAll((JsonObject[])firstTorrent.Trackers.ToArray(typeof(JsonObject)), delegate(JsonObject jo)
                     {
                         return new TrackerListItem((string)jo[ProtocolConstants.ANNOUNCE], Toolbox.ToInt(jo[ProtocolConstants.FIELD_ID]));
                     })

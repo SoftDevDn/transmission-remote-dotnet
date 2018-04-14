@@ -15,6 +15,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace TransmissionRemoteDotnet.Forms
 {
     partial class AboutDialog
@@ -22,7 +25,7 @@ namespace TransmissionRemoteDotnet.Forms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -170,16 +173,16 @@ namespace TransmissionRemoteDotnet.Forms
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.Label labelProductName;
-        private System.Windows.Forms.Label labelVersion;
-        private System.Windows.Forms.Label labelCopyright;
-        private System.Windows.Forms.LinkLabel labelHomepageLink;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Panel panelDescription;
-        private System.Windows.Forms.Label labelCredits;
-        private System.Windows.Forms.TextBox textBoxDescription;
-        private System.Windows.Forms.PictureBox logoPictureBox;
-        private System.Windows.Forms.LinkLabel labelDevelopers;
+        private TableLayoutPanel tableLayoutPanel;
+        private Label labelProductName;
+        private Label labelVersion;
+        private Label labelCopyright;
+        private LinkLabel labelHomepageLink;
+        private Button okButton;
+        private Panel panelDescription;
+        private Label labelCredits;
+        private TextBox textBoxDescription;
+        private PictureBox logoPictureBox;
+        private LinkLabel labelDevelopers;
     }
 }

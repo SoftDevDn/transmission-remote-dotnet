@@ -27,11 +27,11 @@ namespace TransmissionRemoteDotnet.Forms
         {
             InitializeComponent();
             rssWebClient.CachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
-            rssWebClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(webClient_DownloadProgressChanged);
-            rssWebClient.DownloadDataCompleted += new DownloadDataCompletedEventHandler(webClient_DownloadRssCompleted);
+            rssWebClient.DownloadProgressChanged += webClient_DownloadProgressChanged;
+            rssWebClient.DownloadDataCompleted += webClient_DownloadRssCompleted;
             imageWebClient.CachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
-            imageWebClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(webClient_DownloadProgressChanged);
-            imageWebClient.DownloadDataCompleted += new DownloadDataCompletedEventHandler(webClient_DownloadImageCompleted);
+            imageWebClient.DownloadProgressChanged += webClient_DownloadProgressChanged;
+            imageWebClient.DownloadDataCompleted += webClient_DownloadImageCompleted;
             rssFeedsListView.Items.Clear();
             foreach (KeyValuePair<string, string> s in Program.Settings.RssFeeds)
             {
@@ -86,20 +86,17 @@ namespace TransmissionRemoteDotnet.Forms
                     {
                         throw e.Error;
                     }
-                    else
+                    toolStripStatusLabel1.Text = "";
+                    RssListViewItem r = e.UserState as RssListViewItem;
+                    r.channel = new RssChannel(new MemoryStream(e.Result));
+                    if (r.channel.Image.Url != null &&
+                        Uri.IsWellFormedUriString(r.channel.Image.Url, UriKind.Absolute) &&
+                        !FeedImageList.Images.ContainsKey(r.Name))
                     {
-                        toolStripStatusLabel1.Text = "";
-                        RssListViewItem r = e.UserState as RssListViewItem;
-                        r.channel = new RssChannel(new MemoryStream(e.Result));
-                        if (r.channel.Image.Url != null &&
-                            Uri.IsWellFormedUriString(r.channel.Image.Url, UriKind.Absolute) &&
-                            !FeedImageList.Images.ContainsKey(r.Name))
-                        {
-                            imageWebClient.CancelAsync();
-                            imageWebClient.DownloadDataAsync(new Uri(r.channel.Image.Url), r);
-                        }
-                        FillListView(r.channel);
+                        imageWebClient.CancelAsync();
+                        imageWebClient.DownloadDataAsync(new Uri(r.channel.Image.Url), r);
                     }
+                    FillListView(r.channel);
                 }
                 catch (Exception ee)
                 {
@@ -228,9 +225,9 @@ namespace TransmissionRemoteDotnet.Forms
                 lvwColumnSorter.SortColumn = e.Column;
                 lvwColumnSorter.Order = SortOrder.Ascending;
             }
-            this.rssItemsListView.Sort();
+            rssItemsListView.Sort();
 #if !MONO
-            this.rssItemsListView.SetSortIcon(lvwColumnSorter.SortColumn, lvwColumnSorter.Order);
+            rssItemsListView.SetSortIcon(lvwColumnSorter.SortColumn, lvwColumnSorter.Order);
 #endif
             Toolbox.StripeListView(rssItemsListView);
         }
@@ -265,7 +262,7 @@ namespace TransmissionRemoteDotnet.Forms
                 toolStripDownloadProgressBar.Value = 0;
                 toolStripDownloadProgressBar.Visible = true;
                 WebClient webClient = new TransmissionWebClient(false, false);
-                webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(webClient_DownloadProgressChanged);
+                webClient.DownloadProgressChanged += webClient_DownloadProgressChanged;
                 webClient.DownloadFileCompleted += delegate(object sender, AsyncCompletedEventArgs e)
                 {
                     webClient_DownloadFileCompleted(sender, e, target, options);
@@ -286,7 +283,7 @@ namespace TransmissionRemoteDotnet.Forms
             }
             else
             {
-                string[] files = new string[] { target };
+                string[] files = { target };
                 if (Program.Connected)
                     Program.Form.Upload(files, withoptions);
                 else
@@ -300,10 +297,10 @@ namespace TransmissionRemoteDotnet.Forms
         public RssListViewItem(string name, string url)
             : base(name, name)
         {
-            this.Name = name;
-            this.Url = url;
+            Name = name;
+            Url = url;
         }
         public string Url;
-        public RssChannel channel = null;
+        public RssChannel channel;
     }
 }

@@ -22,7 +22,7 @@ namespace TransmissionRemoteDotnet.Forms
         {
             if (msg.WParam.ToInt32() == (int)Keys.Escape)
             {
-                this.Close();
+                Close();
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }

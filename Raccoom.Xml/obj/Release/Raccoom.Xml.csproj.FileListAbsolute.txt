@@ -2,3 +2,4 @@ D:\Documents\GIT\transmission-remote-dotnet\Raccoom.Xml\bin\Release\Raccoom.Xml.
 D:\Documents\GIT\transmission-remote-dotnet\Raccoom.Xml\bin\Release\Raccoom.Xml.dll
 D:\Documents\GIT\transmission-remote-dotnet\Raccoom.Xml\obj\Release\Raccoom.Xml.csproj.CoreCompileInputs.cache
 D:\Documents\GIT\transmission-remote-dotnet\Raccoom.Xml\obj\Release\Raccoom.Xml.dll
+D:\Documents\GIT\transmission-remote-dotnet\Raccoom.Xml\obj\Release\Raccoom.Xml.csprojResolveAssemblyReference.cache

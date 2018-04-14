@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace TransmissionRemoteDotnet.Forms
 {
     partial class FindDialog
@@ -5,7 +8,7 @@ namespace TransmissionRemoteDotnet.Forms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -82,9 +85,9 @@ namespace TransmissionRemoteDotnet.Forms
 
         #endregion
 
-        private System.Windows.Forms.Button findButton;
-        private System.Windows.Forms.TextBox findTextbox;
-        private System.Windows.Forms.Label findLabel;
-        private System.Windows.Forms.CheckBox CaseSensitiveCheckBox;
+        private Button findButton;
+        private TextBox findTextbox;
+        private Label findLabel;
+        private CheckBox CaseSensitiveCheckBox;
     }
 }

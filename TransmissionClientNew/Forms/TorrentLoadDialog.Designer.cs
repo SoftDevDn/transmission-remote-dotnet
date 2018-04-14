@@ -1,4 +1,6 @@
-﻿using TransmissionRemoteDotnet.CustomControls;
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using TransmissionRemoteDotnet.CustomControls;
 
 namespace TransmissionRemoteDotnet.Forms
 {
@@ -7,7 +9,7 @@ namespace TransmissionRemoteDotnet.Forms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -71,13 +73,13 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // filesListView
             // 
+            resources.ApplyResources(this.filesListView, "filesListView");
             this.filesListView.CheckBoxes = true;
             this.filesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.filesPathCol,
             this.filesTypeCol,
             this.filesSizeCol,
             this.filesPriorityCol});
-            resources.ApplyResources(this.filesListView, "filesListView");
             this.filesListView.FullRowSelect = true;
             this.filesListView.HideSelection = false;
             this.filesListView.Name = "filesListView";
@@ -131,15 +133,15 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // statusStrip
             // 
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             // 
             // toolStripStatusLabel
             // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             // 
             // peerLimitValue
             // 
@@ -178,27 +180,28 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // PropertiesGroupBox
             // 
+            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.tableLayoutPanel1.SetColumnSpan(this.PropertiesGroupBox, 3);
             this.PropertiesGroupBox.Controls.Add(this.startTorrentCheckBox);
             this.PropertiesGroupBox.Controls.Add(this.destinationComboBox);
             this.PropertiesGroupBox.Controls.Add(this.peerLimitValue);
             this.PropertiesGroupBox.Controls.Add(this.altPeerLimitCheckBox);
             this.PropertiesGroupBox.Controls.Add(this.altDestDirCheckBox);
-            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Name = "PropertiesGroupBox";
             this.PropertiesGroupBox.TabStop = false;
             // 
             // TorrentContentsGroupBox
             // 
+            resources.ApplyResources(this.TorrentContentsGroupBox, "TorrentContentsGroupBox");
             this.tableLayoutPanel1.SetColumnSpan(this.TorrentContentsGroupBox, 3);
             this.TorrentContentsGroupBox.Controls.Add(this.filesListView);
             this.TorrentContentsGroupBox.Controls.Add(this.TorrentContentsPanel);
-            resources.ApplyResources(this.TorrentContentsGroupBox, "TorrentContentsGroupBox");
             this.TorrentContentsGroupBox.Name = "TorrentContentsGroupBox";
             this.TorrentContentsGroupBox.TabStop = false;
             // 
             // TorrentContentsPanel
             // 
+            resources.ApplyResources(this.TorrentContentsPanel, "TorrentContentsPanel");
             this.TorrentContentsPanel.Controls.Add(this.DateLabel);
             this.TorrentContentsPanel.Controls.Add(this.SizeLabel);
             this.TorrentContentsPanel.Controls.Add(this.CommentLabel);
@@ -210,34 +213,33 @@ namespace TransmissionRemoteDotnet.Forms
             this.TorrentContentsPanel.Controls.Add(this.SelectNoneButton);
             this.TorrentContentsPanel.Controls.Add(this.SelectInvertButton);
             this.TorrentContentsPanel.Controls.Add(this.SelectAllButton);
-            resources.ApplyResources(this.TorrentContentsPanel, "TorrentContentsPanel");
             this.TorrentContentsPanel.Name = "TorrentContentsPanel";
             // 
             // DateLabel
             // 
-            this.DateLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.DateLabel, "DateLabel");
+            this.DateLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DateLabel.Name = "DateLabel";
             this.DateLabel.ReadOnly = true;
             // 
             // SizeLabel
             // 
-            this.SizeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.SizeLabel, "SizeLabel");
+            this.SizeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SizeLabel.Name = "SizeLabel";
             this.SizeLabel.ReadOnly = true;
             // 
             // CommentLabel
             // 
-            this.CommentLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.CommentLabel, "CommentLabel");
+            this.CommentLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CommentLabel.Name = "CommentLabel";
             this.CommentLabel.ReadOnly = true;
             // 
             // NameLabel
             // 
-            this.NameLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.NameLabel, "NameLabel");
+            this.NameLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.ReadOnly = true;
             // 
@@ -319,35 +321,35 @@ namespace TransmissionRemoteDotnet.Forms
 
         #endregion
 
-        private System.ComponentModel.BackgroundWorker TorrentLoadBackgroundWorker;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.GroupBox PropertiesGroupBox;
-        private System.Windows.Forms.GroupBox TorrentContentsGroupBox;
-        private System.Windows.Forms.CheckBox altDestDirCheckBox;
-        private System.Windows.Forms.ComboBox destinationComboBox;
-        private System.Windows.Forms.CheckBox startTorrentCheckBox;
-        private System.Windows.Forms.CheckBox altPeerLimitCheckBox;
-        private System.Windows.Forms.NumericUpDown peerLimitValue;
-        private System.Windows.Forms.Panel TorrentContentsPanel;
-        private System.Windows.Forms.Label NameLabelLabel;
-        private System.Windows.Forms.Label CommentLabelLabel;
-        private System.Windows.Forms.Label SizelabelLabel;
-        private System.Windows.Forms.Label DateLabelLabel;
+        private BackgroundWorker TorrentLoadBackgroundWorker;
+        private TableLayoutPanel tableLayoutPanel1;
+        private GroupBox PropertiesGroupBox;
+        private GroupBox TorrentContentsGroupBox;
+        private CheckBox altDestDirCheckBox;
+        private ComboBox destinationComboBox;
+        private CheckBox startTorrentCheckBox;
+        private CheckBox altPeerLimitCheckBox;
+        private NumericUpDown peerLimitValue;
+        private Panel TorrentContentsPanel;
+        private Label NameLabelLabel;
+        private Label CommentLabelLabel;
+        private Label SizelabelLabel;
+        private Label DateLabelLabel;
         private SelectableLabel DateLabel;
         private SelectableLabel SizeLabel;
         private SelectableLabel CommentLabel;
         private SelectableLabel NameLabel;
-        private System.Windows.Forms.Button SelectInvertButton;
-        private System.Windows.Forms.Button SelectNoneButton;
-        private System.Windows.Forms.Button SelectAllButton;
+        private Button SelectInvertButton;
+        private Button SelectNoneButton;
+        private Button SelectAllButton;
         private ListViewNF filesListView;
-        private System.Windows.Forms.ColumnHeader filesPathCol;
-        private System.Windows.Forms.ColumnHeader filesPriorityCol;
-        private System.Windows.Forms.ColumnHeader filesTypeCol;
-        private System.Windows.Forms.ColumnHeader filesSizeCol;
-        private System.Windows.Forms.Button OkButton;
-        private System.Windows.Forms.Button CancelBtn;
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+        private ColumnHeader filesPathCol;
+        private ColumnHeader filesPriorityCol;
+        private ColumnHeader filesTypeCol;
+        private ColumnHeader filesSizeCol;
+        private Button OkButton;
+        private Button CancelBtn;
+        private StatusStrip statusStrip;
+        private ToolStripStatusLabel toolStripStatusLabel;
     }
 }

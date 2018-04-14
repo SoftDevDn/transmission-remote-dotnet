@@ -15,6 +15,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace TransmissionRemoteDotnet.Forms
 {
     partial class UriPromptWindow
@@ -22,7 +25,7 @@ namespace TransmissionRemoteDotnet.Forms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -137,13 +140,13 @@ namespace TransmissionRemoteDotnet.Forms
 
         #endregion
 
-        private System.Windows.Forms.TextBox urlTextBox;
-        private System.Windows.Forms.Button okDialogButton;
-        private System.Windows.Forms.Button cancelDialogButton;
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripProgressBar downloadProgressBar;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
-        private System.Windows.Forms.CheckBox useTorrentLoadDialogCheckBox;
-        private System.Windows.Forms.CheckBox addOurCookiesCheckBox;
+        private TextBox urlTextBox;
+        private Button okDialogButton;
+        private Button cancelDialogButton;
+        private StatusStrip statusStrip;
+        private ToolStripProgressBar downloadProgressBar;
+        private ToolStripStatusLabel toolStripStatusLabel;
+        private CheckBox useTorrentLoadDialogCheckBox;
+        private CheckBox addOurCookiesCheckBox;
     }
 }

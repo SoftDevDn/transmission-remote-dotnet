@@ -15,16 +15,16 @@ namespace TransmissionRemoteDotnet.Forms
             this.selections = selections;
             if (selections.Count < 1)
             {
-                this.Close();
+                Close();
             }
             else if (selections.Count == 1)
             {
                 Torrent t = (Torrent)selections[0];
-                this.Text = String.Format(OtherStrings.MoveX, t.Text);
+                Text = String.Format(OtherStrings.MoveX, t.Text);
             }
             else
             {
-                this.Text = OtherStrings.MoveMultipleTorrents;
+                Text = OtherStrings.MoveMultipleTorrents;
             }
             foreach (string s in Program.Settings.Current.DestPathHistory)
             {
@@ -38,12 +38,12 @@ namespace TransmissionRemoteDotnet.Forms
         {
             Program.Settings.Current.AddDestinationPath(destinationComboBox.Text);
             Program.Form.SetupAction(CommandFactory.RequestAsync(Requests.TorrentSetLocation(Toolbox.ListViewSelectionToIdArray(selections), destinationComboBox.Text, true)));
-            this.Close();
+            Close();
         }
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void ValidateInput()
