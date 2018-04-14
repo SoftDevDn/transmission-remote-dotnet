@@ -65,7 +65,7 @@ namespace TransmissionRemoteDotnet.CustomControls
         {
             foreach (object o in Items)
             {
-                if (o.GetType().Equals(typeof(GListBoxItem)))
+                if (o.GetType() == typeof(GListBoxItem))
                 {
                     GListBoxItem gi = (GListBoxItem)o;
                     if (gi.Text.Equals(key))
@@ -80,7 +80,7 @@ namespace TransmissionRemoteDotnet.CustomControls
             object toRemove = null;
             foreach (object o in Items)
             {
-                if (o.GetType().Equals(typeof(GListBoxItem)))
+                if (o.GetType() == typeof(GListBoxItem))
                 {
                     if (((GListBoxItem)o).Text.Equals(key))
                     {

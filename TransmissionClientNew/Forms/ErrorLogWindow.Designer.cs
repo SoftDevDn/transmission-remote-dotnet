@@ -51,7 +51,7 @@ namespace TransmissionRemoteDotnet.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorLogWindow));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.errorListView = new TransmissionRemoteDotnet.CustomControls.ListViewNF();
+            this.errorListView = new TransmissionRemoteDotnet.CustomControls.ListViewNf();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -155,7 +155,7 @@ namespace TransmissionRemoteDotnet.Forms
         #endregion
 
         private SplitContainer splitContainer1;
-        private ListViewNF errorListView;
+        private ListViewNf errorListView;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;

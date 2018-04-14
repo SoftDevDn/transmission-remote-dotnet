@@ -40,7 +40,7 @@ namespace TransmissionRemoteDotnet.Forms
             this.mainVerticalSplitContainer = new System.Windows.Forms.SplitContainer();
             this.stateListBox = new TransmissionRemoteDotnet.CustomControls.GListBox();
             this.stateListBoxImageList = new System.Windows.Forms.ImageList(this.components);
-            this.torrentListView = new TransmissionRemoteDotnet.CustomControls.ListViewNF();
+            this.torrentListView = new TransmissionRemoteDotnet.CustomControls.ListViewNf();
             this.torrentNameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.torrentNoCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.torrentSizeCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,7 +67,7 @@ namespace TransmissionRemoteDotnet.Forms
             this.generalTorrentInfo = new TransmissionRemoteDotnet.CustomControls.TorrentGeneralInfo();
             this.trackersTabPage = new System.Windows.Forms.TabPage();
             this.trackersTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
-            this.trackersListView = new TransmissionRemoteDotnet.CustomControls.ListViewNF();
+            this.trackersListView = new TransmissionRemoteDotnet.CustomControls.ListViewNf();
             this.trackersTierCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.trackersAnnounceUrlCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.trackersStatusCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -78,7 +78,7 @@ namespace TransmissionRemoteDotnet.Forms
             this.filesTabPage = new System.Windows.Forms.TabPage();
             this.filesTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
             this.filesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.filesListView = new TransmissionRemoteDotnet.CustomControls.ListViewNF();
+            this.filesListView = new TransmissionRemoteDotnet.CustomControls.ListViewNf();
             this.filesPathCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.filesTypeCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.filesSizeCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -92,7 +92,7 @@ namespace TransmissionRemoteDotnet.Forms
             this.filesFilterButton = new System.Windows.Forms.Button();
             this.peersTabPage = new System.Windows.Forms.TabPage();
             this.peersTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
-            this.peersListView = new TransmissionRemoteDotnet.CustomControls.ListViewNF();
+            this.peersListView = new TransmissionRemoteDotnet.CustomControls.ListViewNf();
             this.peersIpAddressCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.peersHostnameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.peersCountryCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -1590,11 +1590,11 @@ namespace TransmissionRemoteDotnet.Forms
         private ToolStripStatusLabel toolStripVersionLabel;
         private NotifyIcon notifyIcon;
         private ToolStripSeparator toolbarToolStripSeparator1;
-        public ListViewNF torrentListView;
+        public ListViewNf torrentListView;
         private ToolStripMenuItem localSettingsToolStripMenuItem;
         private ToolStripMenuItem remoteSettingsToolStripMenuItem;
         public GListBox stateListBox;
-        public ListViewNF filesListView;
+        public ListViewNf filesListView;
         private TextBox filesFilterTextBox;
         private TableLayoutPanel filesTableLayoutPanel;
         private Label filesFilterLabel;
@@ -1608,7 +1608,7 @@ namespace TransmissionRemoteDotnet.Forms
         private PiecesGraph piecesGraph;
         private Label downloadProgressLabel;
         public TabControl torrentTabControl;
-        private ListViewNF trackersListView;
+        private ListViewNf trackersListView;
         private ColumnHeader trackersTierCol;
         private ColumnHeader trackersAnnounceUrlCol;
         private ColumnHeader trackersStatusCol;
@@ -1619,7 +1619,7 @@ namespace TransmissionRemoteDotnet.Forms
         private Timer refreshElapsedTimer;
         private TorrentGeneralInfo generalTorrentInfo;
         private TabPage peersTabPage;
-        private ListViewNF peersListView;
+        private ListViewNf peersListView;
         private GroupBox peersTorrentNameGroupBox;
         private ColumnHeader peersIpAddressCol;
         private ColumnHeader peersHostnameCol;

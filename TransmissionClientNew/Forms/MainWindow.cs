@@ -1629,12 +1629,12 @@ namespace TransmissionRemoteDotnet.Forms
             FilterTorrentTextBox.Clear();
         }
 
-        static bool FilteringProcess;
+        private static bool _filteringProcess;
         private void FilterByStateOrTracker()
         {
-            if (FilteringProcess)
+            if (_filteringProcess)
                 return;
-            FilteringProcess = true; /* Race condition is not important, so we not lock */
+            _filteringProcess = true; /* Race condition is not important, so we not lock */
             try
             {
                 torrentListView.BeginUpdate();
@@ -1689,7 +1689,7 @@ namespace TransmissionRemoteDotnet.Forms
             finally
             {
                 torrentListView.EndUpdate();
-                FilteringProcess = false;
+                _filteringProcess = false;
             }
         }
 

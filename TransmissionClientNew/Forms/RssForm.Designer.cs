@@ -37,7 +37,7 @@ namespace TransmissionRemoteDotnet.Forms
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.rssFeedsListView = new System.Windows.Forms.ListView();
             this.FeedImageList = new System.Windows.Forms.ImageList(this.components);
-            this.rssItemsListView = new TransmissionRemoteDotnet.CustomControls.ListViewNF();
+            this.rssItemsListView = new TransmissionRemoteDotnet.CustomControls.ListViewNf();
             this.titleColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.categoryColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.descriptionColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -224,7 +224,7 @@ namespace TransmissionRemoteDotnet.Forms
         private ToolStripSeparator toolStripSeparator1;
         private SplitContainer splitContainer1;
         private ListView rssFeedsListView;
-        private ListViewNF rssItemsListView;
+        private ListViewNf rssItemsListView;
         private ColumnHeader titleColumnHeader;
         private ColumnHeader categoryColumnHeader;
         private ColumnHeader descriptionColumnHeader;

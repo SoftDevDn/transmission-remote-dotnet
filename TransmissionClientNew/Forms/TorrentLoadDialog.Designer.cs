@@ -33,13 +33,13 @@ namespace TransmissionRemoteDotnet.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TorrentLoadDialog));
-            this.filesListView = new TransmissionRemoteDotnet.CustomControls.ListViewNF();
+            this.filesListView = new TransmissionRemoteDotnet.CustomControls.ListViewNf();
             this.filesPathCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.filesTypeCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.filesSizeCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.filesPriorityCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CancelBtn = new System.Windows.Forms.Button();
-            this.OkButton = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             this.startTorrentCheckBox = new System.Windows.Forms.CheckBox();
             this.destinationComboBox = new System.Windows.Forms.ComboBox();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -49,6 +49,7 @@ namespace TransmissionRemoteDotnet.Forms
             this.altDestDirCheckBox = new System.Windows.Forms.CheckBox();
             this.TorrentLoadBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.PropertiesGroupBox = new System.Windows.Forms.GroupBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.TorrentContentsGroupBox = new System.Windows.Forms.GroupBox();
             this.TorrentContentsPanel = new System.Windows.Forms.Panel();
             this.DateLabel = new TransmissionRemoteDotnet.CustomControls.SelectableLabel();
@@ -104,20 +105,20 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.filesPriorityCol, "filesPriorityCol");
             // 
-            // CancelBtn
+            // btnCancel
             // 
-            resources.ApplyResources(this.CancelBtn, "CancelBtn");
-            this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.UseVisualStyleBackColor = true;
-            this.CancelBtn.Click += new System.EventHandler(this.button2_Click);
+            resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.button2_Click);
             // 
-            // OkButton
+            // btnOk
             // 
-            resources.ApplyResources(this.OkButton, "OkButton");
-            this.OkButton.Name = "OkButton";
-            this.OkButton.UseVisualStyleBackColor = true;
-            this.OkButton.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.btnOk, "btnOk");
+            this.btnOk.Name = "btnOk";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // startTorrentCheckBox
             // 
@@ -169,6 +170,8 @@ namespace TransmissionRemoteDotnet.Forms
             // altDestDirCheckBox
             // 
             resources.ApplyResources(this.altDestDirCheckBox, "altDestDirCheckBox");
+            this.altDestDirCheckBox.Checked = true;
+            this.altDestDirCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.altDestDirCheckBox.Name = "altDestDirCheckBox";
             this.altDestDirCheckBox.UseVisualStyleBackColor = true;
             this.altDestDirCheckBox.CheckedChanged += new System.EventHandler(this.altDestDirCheckBox_CheckedChanged);
@@ -182,6 +185,7 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.tableLayoutPanel1.SetColumnSpan(this.PropertiesGroupBox, 3);
+            this.PropertiesGroupBox.Controls.Add(this.btnBrowse);
             this.PropertiesGroupBox.Controls.Add(this.startTorrentCheckBox);
             this.PropertiesGroupBox.Controls.Add(this.destinationComboBox);
             this.PropertiesGroupBox.Controls.Add(this.peerLimitValue);
@@ -189,6 +193,13 @@ namespace TransmissionRemoteDotnet.Forms
             this.PropertiesGroupBox.Controls.Add(this.altDestDirCheckBox);
             this.PropertiesGroupBox.Name = "PropertiesGroupBox";
             this.PropertiesGroupBox.TabStop = false;
+            // 
+            // btnBrowse
+            // 
+            resources.ApplyResources(this.btnBrowse, "btnBrowse");
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // TorrentContentsGroupBox
             // 
@@ -289,16 +300,16 @@ namespace TransmissionRemoteDotnet.Forms
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.PropertiesGroupBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.TorrentContentsGroupBox, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.CancelBtn, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.OkButton, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancel, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnOk, 1, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // TorrentLoadDialog
             // 
-            this.AcceptButton = this.OkButton;
+            this.AcceptButton = this.btnOk;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.CancelBtn;
+            this.CancelButton = this.btnCancel;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.statusStrip);
             this.KeyPreview = true;
@@ -342,14 +353,15 @@ namespace TransmissionRemoteDotnet.Forms
         private Button SelectInvertButton;
         private Button SelectNoneButton;
         private Button SelectAllButton;
-        private ListViewNF filesListView;
+        private ListViewNf filesListView;
         private ColumnHeader filesPathCol;
         private ColumnHeader filesPriorityCol;
         private ColumnHeader filesTypeCol;
         private ColumnHeader filesSizeCol;
-        private Button OkButton;
-        private Button CancelBtn;
+        private Button btnOk;
+        private Button btnCancel;
         private StatusStrip statusStrip;
         private ToolStripStatusLabel toolStripStatusLabel;
+        private Button btnBrowse;
     }
 }

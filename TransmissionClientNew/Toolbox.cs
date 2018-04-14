@@ -17,21 +17,21 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Diagnostics;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
+using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
-using System.Drawing;
-using Jayrock.Json;
-using System.Net;
-using System.IO;
-using System.Globalization;
-using System.Reflection;
-using System.Resources;
-using System.Security.Cryptography;
-using Microsoft.Win32;
-using System.Collections.Specialized;
 using System.Xml.Serialization;
+using Jayrock.Json;
+using Microsoft.Win32;
 using TransmissionRemoteDotnet.Forms;
 using TransmissionRemoteDotnet.Localization;
+using TransmissionRemoteDotnet.Properties;
 
 namespace TransmissionRemoteDotnet
 {
@@ -39,15 +39,15 @@ namespace TransmissionRemoteDotnet
     {
         public enum MaxSize
         {
-            msByte = 1,
-            msKilo,
-            msMega,
-            msGiga,
-            msTera
+            MsByte = 1,
+            MsKilo,
+            MsMega,
+            MsGiga,
+            MsTera
         }
-        private const int STRIPE_OFFSET = 15;
-        public static readonly NumberFormatInfo NUMBER_FORMAT;
-        static byte[] trueBitCount = new byte[] {
+        private const int StripeOffset = 15;
+        public static readonly NumberFormatInfo NumberFormat;
+        static readonly byte[] TrueBitCount = {
             0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4, 1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
             1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5, 2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
             1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5, 2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
@@ -55,7 +55,7 @@ namespace TransmissionRemoteDotnet
             1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5, 2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
             2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6, 3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
             2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6, 3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
-            3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7, 4, 5, 5, 6, 5, 6, 6, 7, 5, 6, 6, 7, 6, 7, 7, 8,
+            3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7, 4, 5, 5, 6, 5, 6, 6, 7, 5, 6, 6, 7, 6, 7, 7, 8
             /*
             1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5, 2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
             2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6, 3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
@@ -70,8 +70,8 @@ namespace TransmissionRemoteDotnet
         static Toolbox()
         {
             XmlSerializer xml = new XmlSerializer(typeof(NumberFormatInfo));
-            MemoryStream xmldata = new MemoryStream(global::TransmissionRemoteDotnet.Properties.Resources.EngNumberFormatInfo);
-            NUMBER_FORMAT = (NumberFormatInfo)xml.Deserialize(xmldata);
+            MemoryStream xmldata = new MemoryStream(Resources.EngNumberFormatInfo);
+            NumberFormat = (NumberFormatInfo)xml.Deserialize(xmldata);
         }
 
         public static decimal ToProgress(object o)
@@ -88,13 +88,10 @@ namespace TransmissionRemoteDotnet
             {
                 return s.Remove(0, fwdSlashPos + 1);
             }
-            else
+            int bckSlashPos = s.IndexOf('\\');
+            if (bckSlashPos > 0)
             {
-                int bckSlashPos = s.IndexOf('\\');
-                if (bckSlashPos > 0)
-                {
-                    return s.Remove(0, bckSlashPos + 1);
-                }
+                return s.Remove(0, bckSlashPos + 1);
             }
             return s;
         }
@@ -104,18 +101,14 @@ namespace TransmissionRemoteDotnet
             return ToDouble(o, 0.0);
         }
 
-        public static double ToDouble(object o, double Default)
+        private static double ToDouble(object o, double Default)
         {
             if (o != null)
             {
-                if (o.GetType().Equals(typeof(string)))
-                {
-                    return double.Parse((string)o, NUMBER_FORMAT);
-                }
-                else if (o.GetType().Equals(typeof(JsonNumber)))
-                {
-                    return ((JsonNumber)o).ToDouble();
-                }
+                if (o is string s)
+                    return double.Parse(s, NumberFormat);
+                if (o is JsonNumber number)
+                    return number.ToDouble();
             }
             return Default;
         }
@@ -183,9 +176,9 @@ namespace TransmissionRemoteDotnet
             {
                 if (o.GetType().Equals(typeof(string)))
                 {
-                    return decimal.Parse((string)o, NUMBER_FORMAT);
+                    return decimal.Parse((string)o, NumberFormat);
                 }
-                else if (o.GetType().Equals(typeof(JsonNumber)))
+                if (o.GetType().Equals(typeof(JsonNumber)))
                 {
                     return ((JsonNumber)o).ToDecimal();
                 }
@@ -252,9 +245,9 @@ namespace TransmissionRemoteDotnet
                 foreach (ListViewItem item in list.Items)
                 {
                     item.BackColor = item.Index % 2 == 1 ?
-                        Color.FromArgb(window.R - STRIPE_OFFSET,
-                            window.G - STRIPE_OFFSET,
-                            window.B - STRIPE_OFFSET)
+                        Color.FromArgb(window.R - StripeOffset,
+                            window.G - StripeOffset,
+                            window.B - StripeOffset)
                         : window;
                     if (!item.UseItemStyleForSubItems)
                         foreach (ListViewItem.ListViewSubItem lvs in item.SubItems)
@@ -268,12 +261,12 @@ namespace TransmissionRemoteDotnet
 
         public static void JsonGet(ref bool d, object o)
         {
-            if (o != null) d = Toolbox.ToBool(o, d);
+            if (o != null) d = ToBool(o, d);
         }
 
         public static void JsonGet(ref int d, object o)
         {
-            if (o != null) d = Toolbox.ToInt(o, d);
+            if (o != null) d = ToInt(o, d);
         }
 
         public static void JsonGet(ref string d, object o)
@@ -283,7 +276,7 @@ namespace TransmissionRemoteDotnet
 
         public static void JsonPut(JsonObject dest, string key, bool value)
         {
-            JsonPut(dest, key, Toolbox.ToInt(value));
+            JsonPut(dest, key, ToInt(value));
         }
 
         public static void JsonPut(JsonObject dest, string key, object value)
@@ -338,53 +331,41 @@ namespace TransmissionRemoteDotnet
             {
                 return Math.Floor((x / (decimal)total) * 100 * 100) / 100;
             }
-            else
-            {
-                return 100;
-            }
+            return 100;
         }
 
-        public static double CalcRatio(long upload_total, long download_total)
+        public static double CalcRatio(long uploadTotal, long downloadTotal)
         {
-            if (download_total <= 0 || upload_total < 0)
+            if (downloadTotal <= 0 || uploadTotal < 0)
             {
                 return -1;
             }
-            else
-            {
-                return Math.Round((double)upload_total / download_total, 3);
-            }
+            return Math.Round((double)uploadTotal / downloadTotal, 3);
         }
 
         public static string KbpsString(int rate)
         {
-            return String.Format("{0} {1}/{2}", rate, OtherStrings.KilobyteShort, OtherStrings.Second.ToLower()[0]);
+            return $"{rate} {OtherStrings.KilobyteShort}/{OtherStrings.Second.ToLower()[0]}";
         }
 
         public static string FormatTimespanLong(TimeSpan span)
         {
-            return String.Format("{0}{1} {2}{3} {4}{5} {6}{7}", new object[] { span.Days, OtherStrings.Day.ToLower()[0], span.Hours, OtherStrings.Hour.ToLower()[0], span.Minutes, OtherStrings.Minute.ToLower()[0], span.Seconds, OtherStrings.Second.ToLower()[0] });
+            return
+                $"{span.Days}{OtherStrings.Day.ToLower()[0]} {span.Hours}{OtherStrings.Hour.ToLower()[0]} {span.Minutes}{OtherStrings.Minute.ToLower()[0]} {span.Seconds}{OtherStrings.Second.ToLower()[0]}";
         }
 
         public static string FormatPriority(int n)
         {
             if (n < 0)
-            {
                 return OtherStrings.Low;
-            }
-            else if (n > 0)
-            {
+            if (n > 0)
                 return OtherStrings.High;
-            }
-            else
-            {
-                return OtherStrings.Normal;
-            }
+            return OtherStrings.Normal;
         }
 
         public static string GetSpeed(long bytes)
         {
-            return String.Format("{0}/{1}", GetFileSize(bytes), OtherStrings.Second.ToLower()[0]);
+            return $"{GetFileSize(bytes)}/{OtherStrings.Second.ToLower()[0]}";
         }
 
         public static string GetSpeed(object o)
@@ -394,40 +375,37 @@ namespace TransmissionRemoteDotnet
 
         public static string GetFileSize(long bytes)
         {
-            return GetFileSize(bytes, MaxSize.msGiga);
+            return GetFileSize(bytes, MaxSize.MsGiga);
         }
 
         public static string GetFileSize(long bytes, MaxSize maxsize)
         {
-            if (bytes >= 1099511627776 && maxsize >= MaxSize.msTera)
+            if (bytes >= 1099511627776 && maxsize >= MaxSize.MsTera)
             {
                 Decimal size = Decimal.Divide(bytes, 1099511627776);
-                return String.Format("{0:##.##} {1}", size, OtherStrings.TerabyteShort);
+                return $"{size:##.##} {OtherStrings.TerabyteShort}";
             }
-            else if (bytes >= 1073741824 && maxsize >= MaxSize.msGiga)
+            if (bytes >= 1073741824 && maxsize >= MaxSize.MsGiga)
             {
                 Decimal size = Decimal.Divide(bytes, 1073741824);
-                return String.Format("{0:##.##} {1}", size, OtherStrings.GigabyteShort);
+                return $"{size:##.##} {OtherStrings.GigabyteShort}";
             }
-            else if (bytes >= 1048576 && maxsize >= MaxSize.msMega)
+            if (bytes >= 1048576 && maxsize >= MaxSize.MsMega)
             {
                 Decimal size = Decimal.Divide(bytes, 1048576);
-                return String.Format("{0:##.##} {1}", size, OtherStrings.MegabyteShort);
+                return $"{size:##.##} {OtherStrings.MegabyteShort}";
             }
-            else if (bytes >= 1024 && maxsize >= MaxSize.msKilo)
+            if (bytes >= 1024 && maxsize >= MaxSize.MsKilo)
             {
                 Decimal size = Decimal.Divide(bytes, 1024);
-                return String.Format("{0:##.##} {1}", size, OtherStrings.KilobyteShort);
+                return $"{size:##.##} {OtherStrings.KilobyteShort}";
             }
-            else if ((bytes > 0) && maxsize >= MaxSize.msByte)
+            if ((bytes > 0) && maxsize >= MaxSize.MsByte)
             {
                 Decimal size = bytes;
-                return String.Format("{0:##.##} {1}", size, OtherStrings.Byte[0]);
+                return $"{size:##.##} {OtherStrings.Byte[0]}";
             }
-            else
-            {
-                return "0 " + OtherStrings.Byte[0];
-            }
+            return "0 " + OtherStrings.Byte[0];
         }
 
         public static string GetExecuteLocation()
@@ -492,7 +470,7 @@ namespace TransmissionRemoteDotnet
             int bits = 0;
             foreach (byte szam in bitmap)
             {
-                bits += trueBitCount[szam];
+                bits += TrueBitCount[szam];
             }
             return bits;
         }
@@ -503,9 +481,7 @@ namespace TransmissionRemoteDotnet
             {
                 lv.BeginUpdate();
                 foreach (ListViewItem item in lv.Items)
-                {
-                    item.Selected = true;
-                }
+                    item.Checked = true;
                 lv.EndUpdate();
             }
         }
@@ -516,9 +492,7 @@ namespace TransmissionRemoteDotnet
             {
                 lv.BeginUpdate();
                 foreach (ListViewItem item in lv.Items)
-                {
-                    item.Selected = false;
-                }
+                    item.Checked = false;
                 lv.EndUpdate();
             }
         }
@@ -529,22 +503,20 @@ namespace TransmissionRemoteDotnet
             {
                 lv.BeginUpdate();
                 foreach (ListViewItem item in lv.Items)
-                {
-                    item.Selected ^= true;
-                }
+                    item.Checked ^= true;
                 lv.EndUpdate();
             }
         }
 
         public static string GetDomainName(string domain)
         {
-            string[] sectons = domain.Split(new char[] { '.' });
+            string[] sectons = domain.Split('.');
             if (sectons.Length >= 3)
                 domain = string.Join(".", sectons, sectons.Length - 2, 2);
             return domain;
         }
 
-        public static string MD5(string input)
+        public static string Md5(string input)
         {
             MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
             byte[] data = Encoding.ASCII.GetBytes(input);
@@ -557,14 +529,14 @@ namespace TransmissionRemoteDotnet
             return s.ToString();
         }
 
-        public static Bitmap LoadSkinImage(string FileName, int MinHeight, int MaxHeight, int ImageNumber)
+        public static Bitmap LoadSkinImage(string fileName, int minHeight, int maxHeight, int imageNumber)
         {
             try
             {
-                if (File.Exists(FileName))
+                if (File.Exists(fileName))
                 {
-                    Bitmap b = new Bitmap(FileName);
-                    if (MinHeight <= b.Height && b.Height <= MaxHeight && b.Width == b.Height * ImageNumber)
+                    Bitmap b = new Bitmap(fileName);
+                    if (minHeight <= b.Height && b.Height <= maxHeight && b.Width == b.Height * imageNumber)
                     {
                         return b;
                     }
@@ -575,11 +547,11 @@ namespace TransmissionRemoteDotnet
             return null;
         }
 
-        public static void LoadSkinToImagelist(string FileName, int MinHeight, int MaxHeight, ImageList imageList, List<Bitmap> Default)
+        public static void LoadSkinToImagelist(string fileName, int minHeight, int maxHeight, ImageList imageList, List<Bitmap> Default)
         {
             StringCollection keys = imageList.Images.Keys;
             imageList.Images.Clear();
-            Bitmap skin = Toolbox.LoadSkinImage(FileName, MinHeight, MaxHeight, Default.Count);
+            Bitmap skin = LoadSkinImage(fileName, minHeight, maxHeight, Default.Count);
             if (skin != null)
             {
                 imageList.ImageSize = new Size(skin.Height, skin.Height);
@@ -591,7 +563,7 @@ namespace TransmissionRemoteDotnet
                     imageList.ImageSize = new Size(Default[0].Height, Default[0].Height);
                 imageList.Images.AddRange(Default.ToArray());
             }
-            System.Diagnostics.Trace.Assert(imageList.Images.Count <= keys.Count, "Imagelist has more image than image keys!");
+            Trace.Assert(imageList.Images.Count <= keys.Count, "Imagelist has more image than image keys!");
             for (int i = 0; i < imageList.Images.Count; i++)
                 imageList.Images.SetKeyName(i, keys[i]);
         }
@@ -609,7 +581,7 @@ namespace TransmissionRemoteDotnet
         /// Renames a subkey of the passed in registry key since 
         /// the Framework totally forgot to include such a handy feature.
         /// </summary>
-        /// <param name="regKey">The RegistryKey that contains the subkey 
+        /// <param name="parentKey">The RegistryKey that contains the subkey 
         /// you want to rename (must be writeable)</param>
         /// <param name="subKeyName">The name of the subkey that you want to rename
         /// </param>
@@ -670,7 +642,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        static byte[] bytes = ASCIIEncoding.ASCII.GetBytes("TransmissionCool");
+        static readonly byte[] Bytes = Encoding.ASCII.GetBytes("TransmissionCool");
 
         /// <summary>
         /// Encrypt a string.
@@ -689,7 +661,7 @@ namespace TransmissionRemoteDotnet
             TripleDESCryptoServiceProvider cryptoProvider = new TripleDESCryptoServiceProvider();
             MemoryStream memoryStream = new MemoryStream();
             CryptoStream cryptoStream = new CryptoStream(memoryStream,
-                cryptoProvider.CreateEncryptor(bytes, bytes), CryptoStreamMode.Write);
+                cryptoProvider.CreateEncryptor(Bytes, Bytes), CryptoStreamMode.Write);
             StreamWriter writer = new StreamWriter(cryptoStream);
             writer.Write(originalString);
             writer.Flush();
@@ -716,7 +688,7 @@ namespace TransmissionRemoteDotnet
             MemoryStream memoryStream = new MemoryStream
                     (Convert.FromBase64String(cryptedString));
             CryptoStream cryptoStream = new CryptoStream(memoryStream,
-                cryptoProvider.CreateDecryptor(bytes, bytes), CryptoStreamMode.Read);
+                cryptoProvider.CreateDecryptor(Bytes, Bytes), CryptoStreamMode.Read);
             StreamReader reader = new StreamReader(cryptoStream);
             return reader.ReadToEnd();
         }

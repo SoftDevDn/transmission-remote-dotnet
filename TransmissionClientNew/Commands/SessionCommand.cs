@@ -31,10 +31,10 @@ namespace TransmissionRemoteDotnet.Commands
             {
                 for (int i = 0; i < str.Length; i++)
                 {
-                    if ((str[i] < (int)'0' || str[i] > (int)'9') && str[i] != (int)'.')
+                    if ((str[i] < '0' || str[i] > '9') && str[i] != '.')
                     {
-                        descriptor.Version = Double.Parse(str.Substring(0, i), Toolbox.NUMBER_FORMAT);
-                        descriptor.Trunk = str[i] == (int)'+';
+                        descriptor.Version = Double.Parse(str.Substring(0, i), Toolbox.NumberFormat);
+                        descriptor.Trunk = str[i] == '+';
                         break;
                     }
                 }
@@ -43,7 +43,7 @@ namespace TransmissionRemoteDotnet.Commands
             try
             {
                 int spaceIndex = str.IndexOf(' ');
-                descriptor.Revision = Int32.Parse(str.Substring(spaceIndex + 2, str.Length - spaceIndex - 3));
+                descriptor.Revision = int.Parse(str.Substring(spaceIndex + 2, str.Length - spaceIndex - 3));
             }
             catch { }
         }
@@ -78,7 +78,7 @@ namespace TransmissionRemoteDotnet.Commands
             MainWindow form = Program.Form;
             if (form.InvokeRequired)
             {
-                form.Invoke(new ExecuteDelegate(this.Execute));
+                form.Invoke(new ExecuteDelegate(Execute));
             }
             else
             {
@@ -86,20 +86,12 @@ namespace TransmissionRemoteDotnet.Commands
                 {
                     TransmissionDaemonDescriptor descriptor = Program.DaemonDescriptor;
                     Program.Log(
-                        String.Format("({0}) {1}", OtherStrings.Info, OtherStrings.ConnectedTo),
-                        String.Format("{0}={1}, {2}={3}, {4}={5}, {6}={7}, {8}={9}",
-                            new object[] {
-                                OtherStrings.Host,
-                                Program.Settings.Current.Host,
-                                OtherStrings.Version,
-                                descriptor.Version,
-                                OtherStrings.Revision,
-                                descriptor.Revision,
-                                OtherStrings.RpcVersion,
-                                descriptor.RpcVersion > 0 ? descriptor.RpcVersion.ToString() : "unspecified",
-                                OtherStrings.RpcVersionMinimum,
-                                descriptor.RpcVersionMin > 0 ? descriptor.RpcVersionMin.ToString() : "unspecified"
-                            }));
+                        $"({OtherStrings.Info}) {OtherStrings.ConnectedTo}",
+                        $"{OtherStrings.Host}={Program.Settings.Current.Host}, " +
+                        $"{OtherStrings.Version}={descriptor.Version}, " +
+                        $"{OtherStrings.Revision}={descriptor.Revision}, " +
+                        $"{OtherStrings.RpcVersion}={(descriptor.RpcVersion > 0 ? descriptor.RpcVersion.ToString() : "unspecified")}, " +
+                        $"{OtherStrings.RpcVersionMinimum}={(descriptor.RpcVersionMin > 0 ? descriptor.RpcVersionMin.ToString() : "unspecified")}");
                     Program.Connected = true;
                     form.RefreshIfNotRefreshing();
                     if (Program.UploadQueue.Count > 0)

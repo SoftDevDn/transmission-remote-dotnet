@@ -89,14 +89,15 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // tabProperties
             // 
+            resources.ApplyResources(this.tabProperties, "tabProperties");
             this.tabProperties.Controls.Add(this.tabGeneral);
             this.tabProperties.Controls.Add(this.tabTrackers);
-            resources.ApplyResources(this.tabProperties, "tabProperties");
             this.tabProperties.Name = "tabProperties";
             this.tabProperties.SelectedIndex = 0;
             // 
             // tabGeneral
             // 
+            resources.ApplyResources(this.tabGeneral, "tabGeneral");
             this.tabGeneral.Controls.Add(this.seedIdleLimitValue);
             this.tabGeneral.Controls.Add(this.seedIdleLimitedCheckBox);
             this.tabGeneral.Controls.Add(this.bandwidthComboBox);
@@ -112,7 +113,6 @@ namespace TransmissionRemoteDotnet.Forms
             this.tabGeneral.Controls.Add(this.uploadLimitField);
             this.tabGeneral.Controls.Add(this.downloadLimitUnitLabel);
             this.tabGeneral.Controls.Add(this.downloadLimitEnableField);
-            resources.ApplyResources(this.tabGeneral, "tabGeneral");
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.UseVisualStyleBackColor = true;
             // 
@@ -136,9 +136,9 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // bandwidthComboBox
             // 
+            resources.ApplyResources(this.bandwidthComboBox, "bandwidthComboBox");
             this.bandwidthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.bandwidthComboBox.FormattingEnabled = true;
-            resources.ApplyResources(this.bandwidthComboBox, "bandwidthComboBox");
             this.bandwidthComboBox.Name = "bandwidthComboBox";
             // 
             // bandwidthLabel
@@ -162,8 +162,8 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // seedRatioLimitValue
             // 
-            this.seedRatioLimitValue.DecimalPlaces = 2;
             resources.ApplyResources(this.seedRatioLimitValue, "seedRatioLimitValue");
+            this.seedRatioLimitValue.DecimalPlaces = 2;
             this.seedRatioLimitValue.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -232,9 +232,9 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // tabTrackers
             // 
+            resources.ApplyResources(this.tabTrackers, "tabTrackers");
             this.tabTrackers.Controls.Add(this.trackersList);
             this.tabTrackers.Controls.Add(this.trackersButtonPanel);
-            resources.ApplyResources(this.tabTrackers, "tabTrackers");
             this.tabTrackers.Name = "tabTrackers";
             this.tabTrackers.UseVisualStyleBackColor = true;
             // 
@@ -247,10 +247,10 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // trackersButtonPanel
             // 
+            resources.ApplyResources(this.trackersButtonPanel, "trackersButtonPanel");
             this.trackersButtonPanel.Controls.Add(this.removeTrackerButton);
             this.trackersButtonPanel.Controls.Add(this.editTrackerButton);
             this.trackersButtonPanel.Controls.Add(this.addTrackerButton);
-            resources.ApplyResources(this.trackersButtonPanel, "trackersButtonPanel");
             this.trackersButtonPanel.Name = "trackersButtonPanel";
             // 
             // removeTrackerButton
@@ -279,8 +279,8 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // CancelDialogButton
             // 
-            this.CancelDialogButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.CancelDialogButton, "CancelDialogButton");
+            this.CancelDialogButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelDialogButton.Name = "CancelDialogButton";
             this.CancelDialogButton.UseVisualStyleBackColor = true;
             this.CancelDialogButton.Click += new System.EventHandler(this.CancelDialogButton_Click);

@@ -37,7 +37,7 @@ namespace TransmissionRemoteDotnet.Forms
             LocalSettings settings = Program.Settings;
             InitializeComponent();
             unitFactorComboBox.Items.AddRange(OtherStrings.UnitFactors.Split('|'));
-            int defms = settings.Misc.ContainsKey(CONFKEY_UNIT_FACTOR) ? Toolbox.ToInt(settings.GetObject(CONFKEY_UNIT_FACTOR)) : (int)Toolbox.MaxSize.msGiga;
+            int defms = settings.Misc.ContainsKey(CONFKEY_UNIT_FACTOR) ? Toolbox.ToInt(settings.GetObject(CONFKEY_UNIT_FACTOR)) : (int)Toolbox.MaxSize.MsGiga;
             unitFactorComboBox.SelectedIndex = Math.Min(defms, unitFactorComboBox.Items.Count) - 1;
         }
 

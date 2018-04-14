@@ -18,33 +18,33 @@ namespace TransmissionRemoteDotnet.Forms
 {
     public partial class RssForm : CultureForm
     {
-        private RssItemsListViewColumnSorter lvwColumnSorter = new RssItemsListViewColumnSorter();
-        private IsolatedStorageFile isoStore = IsolatedStorageFile.GetStore(IsolatedStorageScope.User | IsolatedStorageScope.Assembly, null, null);
-        private WebClient rssWebClient = new TransmissionWebClient(false, false);
-        private WebClient imageWebClient = new TransmissionWebClient(false, false);
+        private readonly RssItemsListViewColumnSorter _lvwColumnSorter = new RssItemsListViewColumnSorter();
+        private readonly IsolatedStorageFile _isoStore = IsolatedStorageFile.GetStore(IsolatedStorageScope.User | IsolatedStorageScope.Assembly, null, null);
+        private readonly WebClient _rssWebClient = new TransmissionWebClient(false, false);
+        private readonly WebClient _imageWebClient = new TransmissionWebClient(false, false);
 
         private RssForm()
         {
             InitializeComponent();
-            rssWebClient.CachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
-            rssWebClient.DownloadProgressChanged += webClient_DownloadProgressChanged;
-            rssWebClient.DownloadDataCompleted += webClient_DownloadRssCompleted;
-            imageWebClient.CachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
-            imageWebClient.DownloadProgressChanged += webClient_DownloadProgressChanged;
-            imageWebClient.DownloadDataCompleted += webClient_DownloadImageCompleted;
+            _rssWebClient.CachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
+            _rssWebClient.DownloadProgressChanged += webClient_DownloadProgressChanged;
+            _rssWebClient.DownloadDataCompleted += webClient_DownloadRssCompleted;
+            _imageWebClient.CachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
+            _imageWebClient.DownloadProgressChanged += webClient_DownloadProgressChanged;
+            _imageWebClient.DownloadDataCompleted += webClient_DownloadImageCompleted;
             rssFeedsListView.Items.Clear();
             foreach (KeyValuePair<string, string> s in Program.Settings.RssFeeds)
             {
                 rssFeedsListView.Items.Add(new RssListViewItem(s.Key, s.Value));
             }
-            lvwColumnSorter.SortColumn = 3;
-            rssItemsListView.ListViewItemSorter = lvwColumnSorter;
+            _lvwColumnSorter.SortColumn = 3;
+            rssItemsListView.ListViewItemSorter = _lvwColumnSorter;
             foreach (RssListViewItem r in rssFeedsListView.Items)
             {
                 Image i = null;
                 try
                 {
-                    using (IsolatedStorageFileStream iStream = new IsolatedStorageFileStream(Toolbox.MD5(r.Name), FileMode.Open, isoStore))
+                    using (IsolatedStorageFileStream iStream = new IsolatedStorageFileStream(Toolbox.Md5(r.Name), FileMode.Open, _isoStore))
                     {
                         Image img = new Bitmap(iStream);
                         i = new Bitmap(img);
@@ -67,8 +67,8 @@ namespace TransmissionRemoteDotnet.Forms
             try
             {
                 RssListViewItem r = rssFeedsListView.SelectedItems[0] as RssListViewItem;
-                rssWebClient.CancelAsync();
-                rssWebClient.DownloadDataAsync(new Uri(r.Url), r);
+                _rssWebClient.CancelAsync();
+                _rssWebClient.DownloadDataAsync(new Uri(r.Url), r);
             }
             catch (Exception ex)
             {
@@ -88,15 +88,15 @@ namespace TransmissionRemoteDotnet.Forms
                     }
                     toolStripStatusLabel1.Text = "";
                     RssListViewItem r = e.UserState as RssListViewItem;
-                    r.channel = new RssChannel(new MemoryStream(e.Result));
-                    if (r.channel.Image.Url != null &&
-                        Uri.IsWellFormedUriString(r.channel.Image.Url, UriKind.Absolute) &&
+                    r.Channel = new RssChannel(new MemoryStream(e.Result));
+                    if (r.Channel.Image.Url != null &&
+                        Uri.IsWellFormedUriString(r.Channel.Image.Url, UriKind.Absolute) &&
                         !FeedImageList.Images.ContainsKey(r.Name))
                     {
-                        imageWebClient.CancelAsync();
-                        imageWebClient.DownloadDataAsync(new Uri(r.channel.Image.Url), r);
+                        _imageWebClient.CancelAsync();
+                        _imageWebClient.DownloadDataAsync(new Uri(r.Channel.Image.Url), r);
                     }
-                    FillListView(r.channel);
+                    FillListView(r.Channel);
                 }
                 catch (Exception ee)
                 {
@@ -105,7 +105,7 @@ namespace TransmissionRemoteDotnet.Forms
             }
         }
 
-        private Image byteArrayToImage(byte[] byteArrayIn)
+        private Image ByteArrayToImage(byte[] byteArrayIn)
         {
             MemoryStream ms = new MemoryStream(byteArrayIn);
             Image returnImage;
@@ -129,11 +129,11 @@ namespace TransmissionRemoteDotnet.Forms
                     RssListViewItem r = e.UserState as RssListViewItem;
                     try
                     {
-                        Image i = byteArrayToImage(e.Result);
+                        Image i = ByteArrayToImage(e.Result);
                         FeedImageList.Images.Add(r.Name, i);
                         try
                         {
-                            using (IsolatedStorageFileStream oStream = new IsolatedStorageFileStream(Toolbox.MD5(r.Name), FileMode.Create, isoStore))
+                            using (IsolatedStorageFileStream oStream = new IsolatedStorageFileStream(Toolbox.Md5(r.Name), FileMode.Create, _isoStore))
                             {
                                 i.Save(oStream, ImageFormat.Png);
                             }
@@ -173,8 +173,8 @@ namespace TransmissionRemoteDotnet.Forms
                 {
                     ListViewItem i = rssItemsListView.Items.Add(ri.Title);
                     i.Name = ri.Title;
-                    i.SubItems.Add(ri.Category != null ? ri.Category : "");
-                    i.SubItems.Add(ri.Description != null ? ri.Description.Trim() : "");
+                    i.SubItems.Add(ri.Category ?? string.Empty);
+                    i.SubItems.Add(ri.Description?.Trim() ?? string.Empty);
                     i.SubItems.Add(ri.PubDate.ToString()).Tag = ri.PubDate;
                     i.Tag = ri;
                     //                        i.Font = new Font(rssItemsListView.Font, FontStyle.Bold);
@@ -193,13 +193,13 @@ namespace TransmissionRemoteDotnet.Forms
             if (e.IsSelected)
             {
                 RssListViewItem r = e.Item as RssListViewItem;
-                if (r.channel == null)
+                if (r.Channel == null)
                 {
                     RefreshRssFeed();
                 }
                 else
                 {
-                    FillListView(r.channel);
+                    FillListView(r.Channel);
                 }
             }
         }
@@ -216,18 +216,18 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void rssItemsListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            if (e.Column == lvwColumnSorter.SortColumn)
+            if (e.Column == _lvwColumnSorter.SortColumn)
             {
-                lvwColumnSorter.Order = (lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending);
+                _lvwColumnSorter.Order = (_lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending);
             }
             else
             {
-                lvwColumnSorter.SortColumn = e.Column;
-                lvwColumnSorter.Order = SortOrder.Ascending;
+                _lvwColumnSorter.SortColumn = e.Column;
+                _lvwColumnSorter.Order = SortOrder.Ascending;
             }
             rssItemsListView.Sort();
 #if !MONO
-            rssItemsListView.SetSortIcon(lvwColumnSorter.SortColumn, lvwColumnSorter.Order);
+            rssItemsListView.SetSortIcon(_lvwColumnSorter.SortColumn, _lvwColumnSorter.Order);
 #endif
             Toolbox.StripeListView(rssItemsListView);
         }
@@ -301,6 +301,6 @@ namespace TransmissionRemoteDotnet.Forms
             Url = url;
         }
         public string Url;
-        public RssChannel channel;
+        public RssChannel Channel;
     }
 }

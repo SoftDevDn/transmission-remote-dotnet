@@ -16,12 +16,15 @@ namespace TransmissionRemoteDotnet.Forms
 {
     public partial class TorrentLoadDialog : CultureForm
     {
+        #region Fields
         private readonly string _path;
         private MonoTorrent.Torrent _torrent;
         private readonly TorrentFilesListViewItemSorter _filesLvwColumnSorter;
         private readonly ContextMenu _torrentSelectionMenu;
         private readonly ContextMenu _noTorrentSelectionMenu;
+        #endregion
 
+        #region Buttons
         private void SelectAllHandler(object sender, EventArgs e)
         {
             Toolbox.SelectAll(filesListView);
@@ -36,6 +39,70 @@ namespace TransmissionRemoteDotnet.Forms
         {
             Toolbox.SelectInvert(filesListView);
         }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            var fbd = new FolderBrowserDialog();
+            fbd.SelectedPath = destinationComboBox.Text;
+            if (fbd.ShowDialog() != DialogResult.OK)
+                return;
+
+            // TODO: Sync local path with remote path.
+            destinationComboBox.Text = fbd.SelectedPath;
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            JsonArray wanted = new JsonArray();
+            JsonArray unwanted = new JsonArray();
+            JsonArray high = new JsonArray();
+            JsonArray normal = new JsonArray();
+            JsonArray low = new JsonArray();
+            foreach (ListViewItem item in filesListView.Items)
+            {
+                if (!item.Checked)
+                {
+                    unwanted.Add(item.Index);
+                }
+                else
+                {
+                    wanted.Add(item.Index);
+                }
+                if (item.SubItems[3].Text.Equals(OtherStrings.High))
+                {
+                    high.Add(item.Index);
+                }
+                else if (item.SubItems[3].Text.Equals(OtherStrings.Low))
+                {
+                    low.Add(item.Index);
+                }
+                else
+                {
+                    normal.Add(item.Index);
+                }
+            }
+            JsonObject request = Requests.TorrentAddByFile(
+                _path,
+                Program.Settings.DeleteTorrentWhenAdding,
+                high.Count > 0 ? high : null,
+                normal.Count > 0 ? normal : null,
+                low.Count > 0 ? low : null,
+                wanted.Count > 0 ? wanted : null,
+                unwanted.Count > 0 ? unwanted : null,
+                altDestDirCheckBox.Checked ? destinationComboBox.Text : null,
+                altPeerLimitCheckBox.Checked ? (int)peerLimitValue.Value : -1,
+                startTorrentCheckBox.Checked
+            );
+            Program.Settings.Current.AddDestinationPath(destinationComboBox.Text);
+            Program.Form.SetupAction(CommandFactory.RequestAsync(request));
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        #endregion
 
         private void HighPriorityHandler(object sender, EventArgs e)
         {
@@ -99,21 +166,19 @@ namespace TransmissionRemoteDotnet.Forms
             toolStripStatusLabel.Text = Text = string.Format(OtherStrings.LoadingFile, path);
             startTorrentCheckBox.Checked = !Program.Settings.Current.StartPaused;
             foreach (string s in Program.Settings.Current.DestPathHistory)
-            {
                 destinationComboBox.Items.Add(s);
-            }
             JsonObject session = Program.DaemonDescriptor.SessionData;
             string ddir = (string)session[ProtocolConstants.DOWNLOAD_DIR];
             if (!destinationComboBox.Items.Contains(ddir))
                 destinationComboBox.Items.Insert(0, ddir);
             if (destinationComboBox.Items.Count > 0)
-                destinationComboBox.SelectedIndex = 0;
+                destinationComboBox.SelectedIndex = destinationComboBox.Items.Count - 1;
         }
 
         private void TorrentLoadDialog_Load(object sender, EventArgs e)
         {
             TorrentLoadBackgroundWorker.RunWorkerAsync();
-            OkButton.Select();
+            btnOk.Select();
         }
 
         private void TorrentLoadBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -170,7 +235,7 @@ namespace TransmissionRemoteDotnet.Forms
                     filesListView.Items.Add(item);
                 }
                 Toolbox.StripeListView(filesListView);
-                filesListView.Enabled = OkButton.Enabled = altDestDirCheckBox.Enabled = altPeerLimitCheckBox.Enabled = startTorrentCheckBox.Enabled = true;
+                filesListView.Enabled = btnOk.Enabled = altDestDirCheckBox.Enabled = altPeerLimitCheckBox.Enabled = startTorrentCheckBox.Enabled = true;
                 filesListView.EndUpdate();
                 NameLabel.Text = _torrent.Name;
                 CommentLabel.Text = _torrent.Comment;
@@ -184,11 +249,6 @@ namespace TransmissionRemoteDotnet.Forms
                 Exception ex = (Exception)e.Result;
                 MessageBox.Show(ex.Message, OtherStrings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void altDestDirCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -210,53 +270,6 @@ namespace TransmissionRemoteDotnet.Forms
         private void filesListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             filesListView.ContextMenu = filesListView.SelectedItems.Count > 0 ? _torrentSelectionMenu : _noTorrentSelectionMenu;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            JsonArray wanted = new JsonArray();
-            JsonArray unwanted = new JsonArray();
-            JsonArray high = new JsonArray();
-            JsonArray normal = new JsonArray();
-            JsonArray low = new JsonArray();
-            foreach (ListViewItem item in filesListView.Items)
-            {
-                if (!item.Checked)
-                {
-                    unwanted.Add(item.Index);
-                }
-                else
-                {
-                    wanted.Add(item.Index);
-                }
-                if (item.SubItems[3].Text.Equals(OtherStrings.High))
-                {
-                    high.Add(item.Index);
-                }
-                else if (item.SubItems[3].Text.Equals(OtherStrings.Low))
-                {
-                    low.Add(item.Index);
-                }
-                else
-                {
-                    normal.Add(item.Index);
-                }
-            }
-            JsonObject request = Requests.TorrentAddByFile(
-                _path,
-                Program.Settings.DeleteTorrentWhenAdding,
-                high.Count > 0 ? high : null,
-                normal.Count > 0 ? normal : null,
-                low.Count > 0 ? low : null,
-                wanted.Count > 0 ? wanted : null,
-                unwanted.Count > 0 ? unwanted : null,
-                altDestDirCheckBox.Checked ? destinationComboBox.Text : null,
-                altPeerLimitCheckBox.Checked ? (int)peerLimitValue.Value : -1,
-                startTorrentCheckBox.Checked
-            );
-            Program.Settings.Current.AddDestinationPath(destinationComboBox.Text);
-            Program.Form.SetupAction(CommandFactory.RequestAsync(request));
-            Close();
         }
 
         private void altPeerLimitCheckBox_CheckedChanged(object sender, EventArgs e)

@@ -29,7 +29,7 @@ namespace TransmissionRemoteDotnet.Forms
 
         private bool CompareString(string s1, string s2)
         {
-            return s1.Contains(s2) || (s1.ToLower().Contains(s2) && !CaseSensitiveCheckBox.Checked);
+            return s1.Contains(s2) || s1.ToLower().Contains(s2.ToLower()) && CaseSensitiveCheckBox.Checked;
         }
 
         private ListViewItem Search()

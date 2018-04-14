@@ -75,29 +75,29 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // cancelDialogButton
             // 
-            this.cancelDialogButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.cancelDialogButton, "cancelDialogButton");
+            this.cancelDialogButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelDialogButton.Name = "cancelDialogButton";
             this.cancelDialogButton.UseVisualStyleBackColor = true;
             this.cancelDialogButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // statusStrip
             // 
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
             this.downloadProgressBar});
-            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             // 
             // toolStripStatusLabel
             // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             // 
             // downloadProgressBar
             // 
-            this.downloadProgressBar.Name = "downloadProgressBar";
             resources.ApplyResources(this.downloadProgressBar, "downloadProgressBar");
+            this.downloadProgressBar.Name = "downloadProgressBar";
             // 
             // useTorrentLoadDialogCheckBox
             // 

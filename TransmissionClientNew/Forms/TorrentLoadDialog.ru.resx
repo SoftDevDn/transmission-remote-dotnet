@@ -117,94 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="filesPathCol.Text" xml:space="preserve">
-    <value>Путь</value>
-  </data>
-  <data name="filesTypeCol.Text" xml:space="preserve">
-    <value>Тип</value>
-  </data>
-  <data name="filesSizeCol.Text" xml:space="preserve">
-    <value>Размер</value>
-  </data>
-  <data name="filesPriorityCol.Text" xml:space="preserve">
-    <value>Приоритет</value>
+  <data name="btnBrowse.Text" xml:space="preserve">
+    <value>Обзор...</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="startTorrentCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 17</value>
-  </data>
-  <data name="startTorrentCheckBox.Text" xml:space="preserve">
-    <value>Запустить торрент</value>
-  </data>
-  <data name="altPeerLimitCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 17</value>
-  </data>
-  <data name="altPeerLimitCheckBox.Text" xml:space="preserve">
-    <value>Изминить лимит пиров: </value>
-  </data>
-  <data name="altDestDirCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 17</value>
-  </data>
-  <data name="altDestDirCheckBox.Text" xml:space="preserve">
-    <value>Изменить каталог назначения: </value>
-  </data>
-  <data name="DateLabelLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 13</value>
-  </data>
-  <data name="DateLabelLabel.Text" xml:space="preserve">
-    <value>Дата:</value>
-  </data>
-  <data name="SizelabelLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 13</value>
-  </data>
-  <data name="SizelabelLabel.Text" xml:space="preserve">
-    <value>Размер:</value>
-  </data>
-  <data name="CommentLabelLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
-  </data>
-  <data name="CommentLabelLabel.Text" xml:space="preserve">
-    <value>Примечание:</value>
-  </data>
-  <data name="NameLabelLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="NameLabelLabel.Text" xml:space="preserve">
-    <value>Имя:</value>
-  </data>
-  <data name="SelectNoneButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>537, 67</value>
-  </data>
-  <data name="SelectNoneButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
-  </data>
-  <data name="SelectNoneButton.Text" xml:space="preserve">
-    <value>Снять выбор</value>
-  </data>
-  <data name="SelectInvertButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>441, 67</value>
-  </data>
-  <data name="SelectInvertButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
-  </data>
-  <data name="SelectInvertButton.Text" xml:space="preserve">
-    <value>Обратн. выбор</value>
-  </data>
-  <data name="SelectAllButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>633, 67</value>
-  </data>
-  <data name="SelectAllButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
-  </data>
-  <data name="SelectAllButton.Text" xml:space="preserve">
-    <value>Выбрать все</value>
-  </data>
-  <data name="TorrentContentsGroupBox.Text" xml:space="preserve">
-    <value>Содержимое торрента</value>
-  </data>
-  <data name="PropertiesGroupBox.Text" xml:space="preserve">
-    <value>Настройка торрента</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAMDAAAAEAIACoJQAAFgAAACgAAAAwAAAAYAAAAAEAIAAAAAAAgCUAAAAAAAAAAAAAAAAAAAAA
@@ -370,8 +286,5 @@
         AAAAfwAA/wAAAAB/AAD/AAAAAP8AAP+AAAAB/wAA///wD///AAD///////8AAP///////wAA////////
         AAA=
 </value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Загрузка торрента</value>
   </data>
 </root>
