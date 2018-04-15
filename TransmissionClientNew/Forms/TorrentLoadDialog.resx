@@ -117,155 +117,611 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="SizelabelLabel.Text" xml:space="preserve">
-    <value>Size:</value>
+  <data name="filesPathCol.Text" xml:space="preserve">
+    <value>Path</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SizeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="filesPathCol.Width" type="System.Int32, mscorlib">
+    <value>416</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="CommentLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 13</value>
+  <data name="filesTypeCol.Text" xml:space="preserve">
+    <value>Type</value>
   </data>
-  <data name="&gt;&gt;filesListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.ListViewNF, Transmission Remote, Version=3.25.6678.40934, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;DateLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="filesPriorityCol.Width" type="System.Int32, mscorlib">
-    <value>68</value>
-  </data>
-  <data name="SelectAllButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;filesPriorityCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="altDestDirCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 19</value>
-  </data>
-  <data name="SelectNoneButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>567, 67</value>
-  </data>
-  <data name="&gt;&gt;TorrentContentsGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CommentLabelLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectInvertButton.Name" xml:space="preserve">
-    <value>SelectInvertButton</value>
-  </data>
-  <data name="DateLabelLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="DateLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 13</value>
-  </data>
-  <data name="&gt;&gt;SelectNoneButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="btnOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>590, 382</value>
-  </data>
-  <data name="btnBrowse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="NameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 8</value>
-  </data>
-  <data name="&gt;&gt;filesSizeCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startTorrentCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="statusStrip.Text" xml:space="preserve">
-    <value>statusStrip</value>
-  </data>
-  <data name="peerLimitValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>443, 40</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="TorrentContentsGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="SelectAllButton.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;btnOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SizelabelLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;NameLabel.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.40934, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;TorrentContentsPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;TorrentContentsGroupBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;SizelabelLabel.Name" xml:space="preserve">
-    <value>SizelabelLabel</value>
-  </data>
-  <data name="&gt;&gt;CommentLabelLabel.Name" xml:space="preserve">
-    <value>CommentLabelLabel</value>
-  </data>
-  <data name="&gt;&gt;destinationComboBox.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;peerLimitValue.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NameLabelLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>TorrentLoadDialog</value>
-  </data>
-  <data name="CommentLabelLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
-  </data>
-  <data name="NameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 13</value>
-  </data>
-  <data name="filesListView.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SizeLabel.Parent" xml:space="preserve">
-    <value>TorrentContentsPanel</value>
-  </data>
-  <data name="DateLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="filesTypeCol.Width" type="System.Int32, mscorlib">
+    <value>140</value>
   </data>
   <data name="filesSizeCol.Text" xml:space="preserve">
     <value>Size</value>
   </data>
-  <data name="&gt;&gt;SelectNoneButton.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="filesSizeCol.Width" type="System.Int32, mscorlib">
+    <value>80</value>
   </data>
-  <data name="NameLabelLabel.TabIndex" type="System.Int32, mscorlib">
+  <data name="filesPriorityCol.Text" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="filesPriorityCol.Width" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="filesListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="filesListView.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="filesListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 113</value>
+  </data>
+  <data name="filesListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>726, 172</value>
+  </data>
+  <data name="filesListView.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;filesListView.Name" xml:space="preserve">
+    <value>filesListView</value>
+  </data>
+  <data name="&gt;&gt;filesListView.Type" xml:space="preserve">
+    <value>TransmissionRemoteDotnet.CustomControls.ListViewNf, Transmission Remote, Version=3.25.6679.33514, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;filesListView.Parent" xml:space="preserve">
+    <value>TorrentContentsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;filesListView.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>672, 382</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 22</value>
+  </data>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnOk.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnOk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>590, 382</value>
+  </data>
+  <data name="btnOk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 22</value>
+  </data>
+  <data name="btnOk.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnOk.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;btnOk.Name" xml:space="preserve">
+    <value>btnOk</value>
+  </data>
+  <data name="&gt;&gt;btnOk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOk.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;btnOk.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="startTorrentCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="startTorrentCheckBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="startTorrentCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="startTorrentCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 43</value>
+  </data>
+  <data name="startTorrentCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 17</value>
+  </data>
+  <data name="startTorrentCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="startTorrentCheckBox.Text" xml:space="preserve">
+    <value>Start torrent</value>
+  </data>
+  <data name="&gt;&gt;startTorrentCheckBox.Name" xml:space="preserve">
+    <value>startTorrentCheckBox</value>
+  </data>
+  <data name="&gt;&gt;startTorrentCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;startTorrentCheckBox.Parent" xml:space="preserve">
+    <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;startTorrentCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="destinationComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 17</value>
+  </data>
+  <data name="destinationComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 21</value>
+  </data>
+  <data name="destinationComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;destinationComboBox.Name" xml:space="preserve">
+    <value>destinationComboBox</value>
+  </data>
+  <data name="&gt;&gt;destinationComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;destinationComboBox.Parent" xml:space="preserve">
+    <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;destinationComboBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>181, 17</value>
+  </metadata>
+  <data name="toolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 17</value>
+  </data>
+  <data name="toolStripStatusLabel.Text" xml:space="preserve">
+    <value>toolStripStatusLabel</value>
+  </data>
+  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 417</value>
+  </data>
+  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 22</value>
+  </data>
+  <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="statusStrip.Text" xml:space="preserve">
+    <value>statusStrip</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
+    <value>statusStrip</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="peerLimitValue.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="peerLimitValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>443, 40</value>
+  </data>
+  <data name="peerLimitValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 20</value>
+  </data>
+  <data name="peerLimitValue.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;peerLimitValue.Name" xml:space="preserve">
+    <value>peerLimitValue</value>
+  </data>
+  <data name="&gt;&gt;peerLimitValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;peerLimitValue.Parent" xml:space="preserve">
+    <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;peerLimitValue.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="altPeerLimitCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altPeerLimitCheckBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="altPeerLimitCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 43</value>
+  </data>
+  <data name="altPeerLimitCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="altPeerLimitCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="altPeerLimitCheckBox.Text" xml:space="preserve">
+    <value>Alternate peer limit: </value>
+  </data>
+  <data name="&gt;&gt;altPeerLimitCheckBox.Name" xml:space="preserve">
+    <value>altPeerLimitCheckBox</value>
+  </data>
+  <data name="&gt;&gt;altPeerLimitCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altPeerLimitCheckBox.Parent" xml:space="preserve">
+    <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altPeerLimitCheckBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="altDestDirCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altDestDirCheckBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="altDestDirCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 19</value>
+  </data>
+  <data name="altDestDirCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 17</value>
+  </data>
+  <data name="altDestDirCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="altDestDirCheckBox.Text" xml:space="preserve">
+    <value>Alternate destination directory: </value>
+  </data>
+  <data name="&gt;&gt;altDestDirCheckBox.Name" xml:space="preserve">
+    <value>altDestDirCheckBox</value>
+  </data>
+  <data name="&gt;&gt;altDestDirCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altDestDirCheckBox.Parent" xml:space="preserve">
+    <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altDestDirCheckBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="TorrentLoadBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="DateLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 68</value>
+  </data>
+  <data name="DateLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 13</value>
+  </data>
+  <data name="DateLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="DateLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;DateLabel.Name" xml:space="preserve">
+    <value>DateLabel</value>
+  </data>
+  <data name="&gt;&gt;DateLabel.Type" xml:space="preserve">
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.33514, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;DateLabel.Parent" xml:space="preserve">
+    <value>TorrentContentsPanel</value>
+  </data>
+  <data name="&gt;&gt;DateLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SizeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 48</value>
+  </data>
+  <data name="SizeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 13</value>
+  </data>
+  <data name="SizeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="SizeLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;SizeLabel.Name" xml:space="preserve">
+    <value>SizeLabel</value>
+  </data>
+  <data name="&gt;&gt;SizeLabel.Type" xml:space="preserve">
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.33514, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;SizeLabel.Parent" xml:space="preserve">
+    <value>TorrentContentsPanel</value>
+  </data>
+  <data name="&gt;&gt;SizeLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CommentLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 28</value>
+  </data>
+  <data name="CommentLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 13</value>
+  </data>
+  <data name="CommentLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="CommentLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;CommentLabel.Name" xml:space="preserve">
+    <value>CommentLabel</value>
+  </data>
+  <data name="&gt;&gt;CommentLabel.Type" xml:space="preserve">
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.33514, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;CommentLabel.Parent" xml:space="preserve">
+    <value>TorrentContentsPanel</value>
+  </data>
+  <data name="&gt;&gt;CommentLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="NameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 8</value>
+  </data>
+  <data name="NameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 13</value>
+  </data>
+  <data name="NameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="NameLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;NameLabel.Name" xml:space="preserve">
+    <value>NameLabel</value>
+  </data>
+  <data name="&gt;&gt;NameLabel.Type" xml:space="preserve">
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.33514, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;NameLabel.Parent" xml:space="preserve">
+    <value>TorrentContentsPanel</value>
+  </data>
+  <data name="&gt;&gt;NameLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="DateLabelLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DateLabelLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 68</value>
+  </data>
+  <data name="DateLabelLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="DateLabelLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="DateLabelLabel.Text" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="&gt;&gt;DateLabelLabel.Name" xml:space="preserve">
+    <value>DateLabelLabel</value>
+  </data>
+  <data name="&gt;&gt;DateLabelLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DateLabelLabel.Parent" xml:space="preserve">
+    <value>TorrentContentsPanel</value>
+  </data>
+  <data name="&gt;&gt;DateLabelLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="SizelabelLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SizelabelLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 48</value>
+  </data>
+  <data name="SizelabelLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="SizelabelLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="SizelabelLabel.Text" xml:space="preserve">
+    <value>Size:</value>
+  </data>
+  <data name="&gt;&gt;SizelabelLabel.Name" xml:space="preserve">
+    <value>SizelabelLabel</value>
+  </data>
+  <data name="&gt;&gt;SizelabelLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SizelabelLabel.Parent" xml:space="preserve">
+    <value>TorrentContentsPanel</value>
+  </data>
+  <data name="&gt;&gt;SizelabelLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="CommentLabelLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CommentLabelLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 28</value>
+  </data>
+  <data name="CommentLabelLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="CommentLabelLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="CommentLabelLabel.Text" xml:space="preserve">
+    <value>Comment:</value>
+  </data>
+  <data name="&gt;&gt;CommentLabelLabel.Name" xml:space="preserve">
+    <value>CommentLabelLabel</value>
+  </data>
+  <data name="&gt;&gt;CommentLabelLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CommentLabelLabel.Parent" xml:space="preserve">
+    <value>TorrentContentsPanel</value>
   </data>
   <data name="&gt;&gt;CommentLabelLabel.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;PropertiesGroupBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+  <data name="NameLabelLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NameLabelLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 8</value>
+  </data>
+  <data name="NameLabelLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="NameLabelLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="NameLabelLabel.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="&gt;&gt;NameLabelLabel.Name" xml:space="preserve">
+    <value>NameLabelLabel</value>
+  </data>
+  <data name="&gt;&gt;NameLabelLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NameLabelLabel.Parent" xml:space="preserve">
+    <value>TorrentContentsPanel</value>
+  </data>
+  <data name="&gt;&gt;NameLabelLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="SelectNoneButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="SelectNoneButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>567, 67</value>
+  </data>
+  <data name="SelectNoneButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="SelectNoneButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="SelectNoneButton.Text" xml:space="preserve">
+    <value>Select None</value>
+  </data>
+  <data name="&gt;&gt;SelectNoneButton.Name" xml:space="preserve">
+    <value>SelectNoneButton</value>
+  </data>
+  <data name="&gt;&gt;SelectNoneButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectNoneButton.Parent" xml:space="preserve">
+    <value>TorrentContentsPanel</value>
+  </data>
+  <data name="&gt;&gt;SelectNoneButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="SelectInvertButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="SelectInvertButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>486, 67</value>
+  </data>
+  <data name="SelectInvertButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="SelectInvertButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="SelectInvertButton.Text" xml:space="preserve">
+    <value>Select Invert</value>
+  </data>
+  <data name="&gt;&gt;SelectInvertButton.Name" xml:space="preserve">
+    <value>SelectInvertButton</value>
+  </data>
+  <data name="&gt;&gt;SelectInvertButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectInvertButton.Parent" xml:space="preserve">
+    <value>TorrentContentsPanel</value>
+  </data>
+  <data name="&gt;&gt;SelectInvertButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="SelectAllButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="SelectAllButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>648, 67</value>
+  </data>
+  <data name="SelectAllButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="SelectAllButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="SelectAllButton.Text" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="&gt;&gt;SelectAllButton.Name" xml:space="preserve">
+    <value>SelectAllButton</value>
+  </data>
+  <data name="&gt;&gt;SelectAllButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectAllButton.Parent" xml:space="preserve">
+    <value>TorrentContentsPanel</value>
+  </data>
+  <data name="&gt;&gt;SelectAllButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="TorrentContentsPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="TorrentContentsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 17</value>
+  </data>
+  <data name="TorrentContentsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>726, 96</value>
+  </data>
+  <data name="TorrentContentsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TorrentContentsPanel.Name" xml:space="preserve">
+    <value>TorrentContentsPanel</value>
+  </data>
+  <data name="&gt;&gt;TorrentContentsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TorrentContentsPanel.Parent" xml:space="preserve">
+    <value>TorrentContentsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TorrentContentsPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TorrentContentsGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="TorrentContentsGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 87</value>
@@ -273,425 +729,122 @@
   <data name="TorrentContentsGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CommentLabel.Name" xml:space="preserve">
-    <value>CommentLabel</value>
-  </data>
-  <data name="&gt;&gt;SelectNoneButton.Parent" xml:space="preserve">
-    <value>TorrentContentsPanel</value>
-  </data>
-  <data name="TorrentContentsPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>726, 96</value>
-  </data>
-  <data name="NameLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SelectAllButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnBrowse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TorrentContentsPanel.Name" xml:space="preserve">
-    <value>TorrentContentsPanel</value>
-  </data>
-  <data name="&gt;&gt;PropertiesGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TorrentContentsGroupBox.Name" xml:space="preserve">
-    <value>TorrentContentsGroupBox</value>
-  </data>
-  <data name="CommentLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 28</value>
-  </data>
-  <data name="peerLimitValue.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="CommentLabelLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;filesPathCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SelectInvertButton.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="CommentLabelLabel.Text" xml:space="preserve">
-    <value>Comment:</value>
-  </data>
-  <data name="SelectNoneButton.Text" xml:space="preserve">
-    <value>Select None</value>
-  </data>
-  <data name="filesTypeCol.Text" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="altDestDirCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 17</value>
-  </data>
-  <data name="btnOk.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="&gt;&gt;TorrentContentsPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DateLabelLabel.Parent" xml:space="preserve">
-    <value>TorrentContentsPanel</value>
-  </data>
-  <data name="SelectNoneButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="SelectInvertButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>486, 67</value>
-  </data>
-  <data name="&gt;&gt;altDestDirCheckBox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;TorrentContentsGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TorrentContentsPanel.Parent" xml:space="preserve">
-    <value>TorrentContentsGroupBox</value>
-  </data>
-  <data name="DateLabelLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 13</value>
-  </data>
-  <data name="toolStripStatusLabel.Text" xml:space="preserve">
-    <value>toolStripStatusLabel</value>
-  </data>
-  <data name="&gt;&gt;CommentLabel.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.40934, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="startTorrentCheckBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="CommentLabel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tableLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="peerLimitValue.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;filesPathCol.Name" xml:space="preserve">
-    <value>filesPathCol</value>
-  </data>
-  <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="TorrentContentsPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
-    <value>btnCancel</value>
-  </data>
-  <data name="DateLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 68</value>
-  </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>Browse...</value>
-  </data>
-  <data name="startTorrentCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="DateLabelLabel.Text" xml:space="preserve">
-    <value>Date:</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>TorrentLoadDialog</value>
-  </data>
-  <data name="&gt;&gt;altPeerLimitCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SelectAllButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>648, 67</value>
-  </data>
-  <data name="PropertiesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="&gt;&gt;btnOk.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnBrowse.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;peerLimitValue.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;filesListView.Parent" xml:space="preserve">
-    <value>TorrentContentsGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NameLabelLabel.Name" xml:space="preserve">
-    <value>NameLabelLabel</value>
-  </data>
-  <data name="NameLabel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;SizeLabel.Name" xml:space="preserve">
-    <value>SizeLabel</value>
-  </data>
-  <data name="&gt;&gt;SelectInvertButton.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="SelectNoneButton.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;NameLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="peerLimitValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 20</value>
-  </data>
-  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnOk.Name" xml:space="preserve">
-    <value>btnOk</value>
-  </data>
-  <data name="toolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 17</value>
-  </data>
-  <data name="&gt;&gt;peerLimitValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="NameLabelLabel.Text" xml:space="preserve">
-    <value>Name:</value>
-  </data>
-  <data name="filesListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>726, 172</value>
-  </data>
-  <data name="&gt;&gt;SizelabelLabel.Parent" xml:space="preserve">
-    <value>TorrentContentsPanel</value>
+  <data name="TorrentContentsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>734, 289</value>
   </data>
   <data name="TorrentContentsGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="TorrentContentsGroupBox.Text" xml:space="preserve">
+    <value>Torrent Contents</value>
   </data>
-  <data name="&gt;&gt;startTorrentCheckBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TorrentContentsGroupBox.Name" xml:space="preserve">
+    <value>TorrentContentsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TorrentContentsGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TorrentContentsGroupBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TorrentContentsGroupBox.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="TorrentContentsPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="&gt;&gt;DateLabelLabel.Name" xml:space="preserve">
-    <value>DateLabelLabel</value>
-  </data>
-  <data name="SelectNoneButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;SelectAllButton.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="SelectAllButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="startTorrentCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;filesSizeCol.Name" xml:space="preserve">
-    <value>filesSizeCol</value>
-  </data>
-  <data name="startTorrentCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 43</value>
-  </data>
-  <data name="&gt;&gt;SizeLabel.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.40934, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;CommentLabelLabel.Parent" xml:space="preserve">
-    <value>TorrentContentsPanel</value>
-  </data>
-  <data name="NameLabelLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="PropertiesGroupBox" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="TorrentContentsGroupBox" Row="1" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="btnCancel" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnOk" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,82,Absolute,82" /&gt;&lt;Rows Styles="Absolute,74,Percent,100,Absolute,28" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="&gt;&gt;DateLabel.Name" xml:space="preserve">
-    <value>DateLabel</value>
-  </data>
-  <data name="&gt;&gt;filesTypeCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="filesPathCol.Width" type="System.Int32, mscorlib">
-    <value>416</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="NameLabelLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 8</value>
-  </data>
-  <data name="PropertiesGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SizelabelLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 13</value>
-  </data>
-  <data name="&gt;&gt;btnBrowse.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="CommentLabelLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 28</value>
-  </data>
-  <data name="&gt;&gt;altDestDirCheckBox.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="PropertiesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>734, 68</value>
-  </data>
-  <data name="startTorrentCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="SizeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 48</value>
-  </data>
-  <data name="altPeerLimitCheckBox.Text" xml:space="preserve">
-    <value>Alternate peer limit: </value>
-  </data>
-  <data name="&gt;&gt;startTorrentCheckBox.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel.Name" xml:space="preserve">
-    <value>toolStripStatusLabel</value>
-  </data>
-  <data name="btnOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
-  </data>
-  <data name="altPeerLimitCheckBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;filesListView.Name" xml:space="preserve">
-    <value>filesListView</value>
-  </data>
-  <data name="&gt;&gt;TorrentLoadBackgroundWorker.Name" xml:space="preserve">
-    <value>TorrentLoadBackgroundWorker</value>
-  </data>
-  <data name="&gt;&gt;SizelabelLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="altPeerLimitCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 17</value>
-  </data>
-  <data name="btnOk.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;altPeerLimitCheckBox.Name" xml:space="preserve">
-    <value>altPeerLimitCheckBox</value>
-  </data>
-  <data name="SelectAllButton.Text" xml:space="preserve">
-    <value>Select All</value>
-  </data>
-  <data name="DateLabelLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
   </data>
   <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="btnOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;destinationComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tableLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
   </data>
-  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 417</value>
-  </data>
-  <data name="&gt;&gt;SelectInvertButton.Parent" xml:space="preserve">
-    <value>TorrentContentsPanel</value>
-  </data>
-  <data name="NameLabelLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.CultureForm, Transmission Remote, Version=3.25.6678.40934, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="SizeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 13</value>
-  </data>
-  <data name="&gt;&gt;NameLabelLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;PropertiesGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
-  </data>
-  <data name="&gt;&gt;SizeLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="altDestDirCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
-    <value>statusStrip</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnOk.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>760, 417</value>
   </data>
-  <data name="PropertiesGroupBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="filesListView.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
   </data>
-  <data name="destinationComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="startTorrentCheckBox.Text" xml:space="preserve">
-    <value>Start torrent</value>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="DateLabel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;DateLabel.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.40934, Culture=neutral, PublicKeyToken=null</value>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="PropertiesGroupBox" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="TorrentContentsGroupBox" Row="1" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="btnCancel" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnOk" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,82,Absolute,82" /&gt;&lt;Rows Styles="Absolute,74,Percent,100,Absolute,28" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="filesListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 113</value>
-  </data>
-  <data name="filesListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>519, 15</value>
+  </data>
+  <data name="btnBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnBrowse.Text" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
+    <value>btnBrowse</value>
+  </data>
+  <data name="&gt;&gt;btnBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBrowse.Parent" xml:space="preserve">
+    <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;btnBrowse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PropertiesGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="PropertiesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="PropertiesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>734, 68</value>
+  </data>
+  <data name="PropertiesGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="PropertiesGroupBox.Text" xml:space="preserve">
+    <value>Torrent properties</value>
+  </data>
+  <data name="&gt;&gt;PropertiesGroupBox.Name" xml:space="preserve">
+    <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;PropertiesGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PropertiesGroupBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;PropertiesGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>760, 439</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -859,208 +1012,55 @@
         AAA=
 </value>
   </data>
-  <data name="&gt;&gt;destinationComboBox.Name" xml:space="preserve">
-    <value>destinationComboBox</value>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>640, 384</value>
   </data>
-  <data name="&gt;&gt;CommentLabel.Parent" xml:space="preserve">
-    <value>TorrentContentsPanel</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>TorrentLoadDialog</value>
   </data>
-  <data name="&gt;&gt;TorrentLoadBackgroundWorker.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;filesPathCol.Name" xml:space="preserve">
+    <value>filesPathCol</value>
   </data>
-  <data name="&gt;&gt;filesListView.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;altPeerLimitCheckBox.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="btnOk.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="altPeerLimitCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 43</value>
-  </data>
-  <data name="altDestDirCheckBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="destinationComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 21</value>
-  </data>
-  <data name="&gt;&gt;SelectAllButton.Name" xml:space="preserve">
-    <value>SelectAllButton</value>
-  </data>
-  <data name="&gt;&gt;NameLabel.Name" xml:space="preserve">
-    <value>NameLabel</value>
-  </data>
-  <data name="TorrentContentsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>734, 289</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;DateLabelLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="destinationComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 17</value>
-  </data>
-  <data name="&gt;&gt;PropertiesGroupBox.Name" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="filesPathCol.Text" xml:space="preserve">
-    <value>Path</value>
-  </data>
-  <data name="&gt;&gt;startTorrentCheckBox.Name" xml:space="preserve">
-    <value>startTorrentCheckBox</value>
-  </data>
-  <data name="SizelabelLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;filesPriorityCol.Name" xml:space="preserve">
-    <value>filesPriorityCol</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>760, 439</value>
-  </data>
-  <data name="&gt;&gt;DateLabelLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;SizelabelLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
-    <value>btnBrowse</value>
-  </data>
-  <data name="CommentLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;NameLabelLabel.Parent" xml:space="preserve">
-    <value>TorrentContentsPanel</value>
-  </data>
-  <data name="&gt;&gt;destinationComboBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="altDestDirCheckBox.Text" xml:space="preserve">
-    <value>Alternate destination directory: </value>
-  </data>
-  <data name="&gt;&gt;NameLabel.Parent" xml:space="preserve">
-    <value>TorrentContentsPanel</value>
-  </data>
-  <data name="SizeLabel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="altPeerLimitCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="filesTypeCol.Width" type="System.Int32, mscorlib">
-    <value>140</value>
-  </data>
-  <data name="NameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>672, 382</value>
-  </data>
-  <data name="SelectInvertButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;altPeerLimitCheckBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;peerLimitValue.Name" xml:space="preserve">
-    <value>peerLimitValue</value>
-  </data>
-  <data name="CommentLabelLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 22</value>
-  </data>
-  <data name="&gt;&gt;SelectInvertButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;filesPathCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;filesTypeCol.Name" xml:space="preserve">
     <value>filesTypeCol</value>
   </data>
-  <data name="&gt;&gt;SelectNoneButton.Name" xml:space="preserve">
-    <value>SelectNoneButton</value>
+  <data name="&gt;&gt;filesTypeCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;altDestDirCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;filesSizeCol.Name" xml:space="preserve">
+    <value>filesSizeCol</value>
   </data>
-  <data name="DateLabelLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 68</value>
+  <data name="&gt;&gt;filesSizeCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="altDestDirCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;filesPriorityCol.Name" xml:space="preserve">
+    <value>filesPriorityCol</value>
   </data>
-  <data name="&gt;&gt;altDestDirCheckBox.Name" xml:space="preserve">
-    <value>altDestDirCheckBox</value>
+  <data name="&gt;&gt;filesPriorityCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="filesSizeCol.Width" type="System.Int32, mscorlib">
-    <value>80</value>
+  <data name="&gt;&gt;toolStripStatusLabel.Name" xml:space="preserve">
+    <value>toolStripStatusLabel</value>
   </data>
-  <data name="altPeerLimitCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="&gt;&gt;toolStripStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="TorrentContentsGroupBox.Text" xml:space="preserve">
-    <value>Torrent Contents</value>
+  <data name="&gt;&gt;TorrentLoadBackgroundWorker.Name" xml:space="preserve">
+    <value>TorrentLoadBackgroundWorker</value>
   </data>
-  <data name="startTorrentCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 17</value>
+  <data name="&gt;&gt;TorrentLoadBackgroundWorker.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SelectAllButton.Parent" xml:space="preserve">
-    <value>TorrentContentsPanel</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TorrentLoadDialog</value>
   </data>
-  <data name="SelectInvertButton.Text" xml:space="preserve">
-    <value>Select Invert</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>TransmissionRemoteDotnet.CustomControls.CultureForm, Transmission Remote, Version=3.25.6679.33514, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="TorrentContentsPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 17</value>
-  </data>
-  <data name="&gt;&gt;CommentLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="filesPriorityCol.Text" xml:space="preserve">
-    <value>Priority</value>
-  </data>
-  <data name="&gt;&gt;DateLabel.Parent" xml:space="preserve">
-    <value>TorrentContentsPanel</value>
-  </data>
-  <data name="PropertiesGroupBox.Text" xml:space="preserve">
-    <value>Torrent properties</value>
-  </data>
-  <data name="SizelabelLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 48</value>
-  </data>
-  <data name="SelectInvertButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>640, 384</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>181, 17</value>
-  </metadata>
-  <metadata name="TorrentLoadBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

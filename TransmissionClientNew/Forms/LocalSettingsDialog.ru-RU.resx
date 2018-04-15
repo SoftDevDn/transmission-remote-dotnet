@@ -239,10 +239,10 @@
     <value>Проверка обновлений на старте</value>
   </data>
   <data name="UploadPromptCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 17</value>
+    <value>198, 17</value>
   </data>
   <data name="UploadPromptCheckBox.Text" xml:space="preserve">
-    <value>Напоминание об отдаче</value>
+    <value>Настраивать торрент при добавл.</value>
   </data>
   <data name="tabServersSettings.Text" xml:space="preserve">
     <value>Настройки подключения</value>

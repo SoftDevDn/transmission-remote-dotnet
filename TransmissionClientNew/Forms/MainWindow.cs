@@ -42,23 +42,23 @@ namespace TransmissionRemoteDotnet.Forms
     public partial class MainWindow : CultureForm
     {
         private const string
-            DEFAULT_WINDOW_TITLE = "Transmission Remote",
-            CONFKEY_MAINWINDOW_HEIGHT = "mainwindow-height",
-            CONFKEY_MAINWINDOW_WIDTH = "mainwindow-width",
-            CONFKEY_MAINWINDOW_LOCATION_X = "mainwindow-loc-x",
-            CONFKEY_MAINWINDOW_LOCATION_Y = "mainwindow-loc-y",
-            CONFKEY_SPLITTERDISTANCE = "mainwindow-splitterdistance",
-            CONFKEY_MAINWINDOW_STATE = "mainwindow-state",
-            CONFKEYPREFIX_LISTVIEW_WIDTHS = "listview-width-",
-            CONFKEYPREFIX_LISTVIEW_INDEXES = "listview-indexes-",
-            CONFKEYPREFIX_LISTVIEW_SORTINDEX = "listview-sortindex-",
-            CONFKEY_FILTER_SPLITTERDISTANCE = "mainwindow-filter-splitterdistance",
-            CONFKEY_MAINWINDOW_FILTERSPANEL_COLLAPSED = "mainwindow-filterspanel-collapsed",
-            CONFKEY_MAINWINDOW_DETAILSPANEL_COLLAPSED = "mainwindow-detailspanel-collapsed",
-            PROJECT_SITE = "http://code.google.com/p/transmission-remote-dotnet/",
-            LATEST_VERSION = "http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt",
-            LATEST_VERSION_BETA = "http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version_beta.txt",
-            DOWNLOADS_PAGE = "http://code.google.com/p/transmission-remote-dotnet/downloads/list";
+            DefaultWindowTitle = "Transmission Remote",
+            ConfkeyMainwindowHeight = "mainwindow-height",
+            ConfkeyMainwindowWidth = "mainwindow-width",
+            ConfkeyMainwindowLocationX = "mainwindow-loc-x",
+            ConfkeyMainwindowLocationY = "mainwindow-loc-y",
+            ConfkeySplitterdistance = "mainwindow-splitterdistance",
+            ConfkeyMainwindowState = "mainwindow-state",
+            ConfkeyprefixListviewWidths = "listview-width-",
+            ConfkeyprefixListviewIndexes = "listview-indexes-",
+            ConfkeyprefixListviewSortindex = "listview-sortindex-",
+            ConfkeyFilterSplitterdistance = "mainwindow-filter-splitterdistance",
+            ConfkeyMainwindowFilterspanelCollapsed = "mainwindow-filterspanel-collapsed",
+            ConfkeyMainwindowDetailspanelCollapsed = "mainwindow-detailspanel-collapsed",
+            ProjectSite = "http://code.google.com/p/transmission-remote-dotnet/",
+            LatestVersion = "http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt",
+            LatestVersionBeta = "http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version_beta.txt",
+            DownloadsPage = "http://code.google.com/p/transmission-remote-dotnet/downloads/list";
 
         private Boolean _minimise;
         private readonly ListViewItemSorter _lvwColumnSorter;
@@ -107,19 +107,21 @@ namespace TransmissionRemoteDotnet.Forms
             _defaultinfopanelimages.Add(Resources.pipe16);
             speedTabPage.ImageIndex = 4;
             tabControlImageList.Images.AddRange(_defaultinfopanelimages.ToArray());
-            _defaultstateimages = new List<Bitmap>();
-            _defaultstateimages.Add(Resources.all16);
-            _defaultstateimages.Add(Resources.down16);
-            _defaultstateimages.Add(Resources.pause16);
-            _defaultstateimages.Add(Resources.apply16);
-            _defaultstateimages.Add(Resources.up16);
-            _defaultstateimages.Add(Resources.player_reload16);
-            _defaultstateimages.Add(Resources.warning16);
-            _defaultstateimages.Add(Resources.incomplete16);
-            _defaultstateimages.Add(Resources.queue16);
+            _defaultstateimages = new List<Bitmap>
+            {
+                Resources.all16,
+                Resources.down16,
+                Resources.pause16,
+                Resources.apply16,
+                Resources.up16,
+                Resources.player_reload16,
+                Resources.warning16,
+                Resources.incomplete16,
+                Resources.queue16
+            };
             stateListBoxImageList.Images.AddRange(_defaultstateimages.ToArray());
             stateListBoxImageList.Images.Add(tabControlImageList.Images[1]);
-            List<ToolStripBitmap> initialtrayicons = new List<ToolStripBitmap>
+            var initialtrayicons = new List<ToolStripBitmap>
             {
                 new ToolStripBitmap { Name = "transmission", Image = Resources.icon_transmission.ToBitmap()},
                 new ToolStripBitmap { Name = "notransfer", Image = Resources.icon_blue.ToBitmap()},
@@ -135,7 +137,6 @@ namespace TransmissionRemoteDotnet.Forms
                 int idx = _defaulttrayimages.IndexOf(tsb.Image);
                 trayIconImageList.Images.SetKeyName(idx, tsb.Name);
             }
-            LocalSettings settings = Program.Settings;
             /* 
              * ToolStrips havent got ImageList field in design time.
              * We set the Image field, we can see the toolstripbuttons.
@@ -546,10 +547,11 @@ namespace TransmissionRemoteDotnet.Forms
             {
                 trayMenu.MenuItems.Add(OtherStrings.Connect, connectButton_Click);
             }
-            notifyIcon.Text = DEFAULT_WINDOW_TITLE;
+            notifyIcon.Text = DefaultWindowTitle;
             trayMenu.MenuItems.Add("-");
             trayMenu.MenuItems.Add(exitToolStripMenuItem.Text, exitToolStripMenuItem_Click);
             notifyIcon.ContextMenu = trayMenu;
+
         }
 
         //this event can be raised by syetem events thread when power events occur
@@ -575,7 +577,7 @@ namespace TransmissionRemoteDotnet.Forms
                     toolStripStatusLabel.Width = 0;
                 }
                 _lvwColumnSorter.SetupColumn(Program.DaemonDescriptor.RpcVersion);
-                Text = DEFAULT_WINDOW_TITLE + " - " + Program.Settings.Current.Host;
+                Text = DefaultWindowTitle + " - " + Program.Settings.Current.Host;
                 speedGraph.MaxPeekMagnitude = 100;
                 speedGraph.AddLine("Download", Color.Green);
                 speedGraph.AddLine("Upload", Color.Yellow);
@@ -597,7 +599,7 @@ namespace TransmissionRemoteDotnet.Forms
                 toolStripStatusLabel.Text = OtherStrings.Disconnected;
                 toolStripVersionLabel.Visible = false;
                 mainVerticalSplitContainer.Panel1Collapsed = true;
-                Text = DEFAULT_WINDOW_TITLE;
+                Text = DefaultWindowTitle;
                 speedGraph.RemoveLine("Download");
                 speedGraph.RemoveLine("Upload");
                 lock (stateListBox)
@@ -746,24 +748,24 @@ namespace TransmissionRemoteDotnet.Forms
             try
             {
                 LocalSettings settings = Program.Settings;
-                if (settings.Misc.ContainsKey(CONFKEY_MAINWINDOW_HEIGHT) && settings.Misc.ContainsKey(CONFKEY_MAINWINDOW_WIDTH))
-                    Size = new Size(Toolbox.ToInt(settings.Misc[CONFKEY_MAINWINDOW_WIDTH]), Toolbox.ToInt(settings.Misc[CONFKEY_MAINWINDOW_HEIGHT]));
-                if (settings.Misc.ContainsKey(CONFKEY_MAINWINDOW_LOCATION_X) && settings.Misc.ContainsKey(CONFKEY_MAINWINDOW_LOCATION_Y))
+                if (settings.Misc.ContainsKey(ConfkeyMainwindowHeight) && settings.Misc.ContainsKey(ConfkeyMainwindowWidth))
+                    Size = new Size(Toolbox.ToInt(settings.Misc[ConfkeyMainwindowWidth]), Toolbox.ToInt(settings.Misc[ConfkeyMainwindowHeight]));
+                if (settings.Misc.ContainsKey(ConfkeyMainwindowLocationX) && settings.Misc.ContainsKey(ConfkeyMainwindowLocationY))
                 {
-                    Point p = new Point(Toolbox.ToInt(settings.GetObject(CONFKEY_MAINWINDOW_LOCATION_X)), Toolbox.ToInt(settings.GetObject(CONFKEY_MAINWINDOW_LOCATION_Y)));
+                    Point p = new Point(Toolbox.ToInt(settings.GetObject(ConfkeyMainwindowLocationX)), Toolbox.ToInt(settings.GetObject(ConfkeyMainwindowLocationY)));
                     if (Toolbox.ScreenExists(p))
                         Location = p;
                 }
-                if (settings.Misc.ContainsKey(CONFKEY_FILTER_SPLITTERDISTANCE))
-                    mainVerticalSplitContainer.SplitterDistance = Toolbox.ToInt(settings.GetObject(CONFKEY_FILTER_SPLITTERDISTANCE));
-                showCategoriesPanelToolStripMenuItem.Checked = settings.Misc.ContainsKey(CONFKEY_MAINWINDOW_FILTERSPANEL_COLLAPSED) && Toolbox.ToInt(settings.GetObject(CONFKEY_MAINWINDOW_FILTERSPANEL_COLLAPSED)) == 0;
-                showDetailsPanelToolStripMenuItem.Checked = !(torrentAndTabsSplitContainer.Panel2Collapsed = !settings.Misc.ContainsKey(CONFKEY_MAINWINDOW_DETAILSPANEL_COLLAPSED) || Toolbox.ToInt(settings.GetObject(CONFKEY_MAINWINDOW_DETAILSPANEL_COLLAPSED)) == 1);
-                if (settings.Misc.ContainsKey(CONFKEY_MAINWINDOW_STATE))
+                if (settings.Misc.ContainsKey(ConfkeyFilterSplitterdistance))
+                    mainVerticalSplitContainer.SplitterDistance = Toolbox.ToInt(settings.GetObject(ConfkeyFilterSplitterdistance));
+                showCategoriesPanelToolStripMenuItem.Checked = settings.Misc.ContainsKey(ConfkeyMainwindowFilterspanelCollapsed) && Toolbox.ToInt(settings.GetObject(ConfkeyMainwindowFilterspanelCollapsed)) == 0;
+                showDetailsPanelToolStripMenuItem.Checked = !(torrentAndTabsSplitContainer.Panel2Collapsed = !settings.Misc.ContainsKey(ConfkeyMainwindowDetailspanelCollapsed) || Toolbox.ToInt(settings.GetObject(ConfkeyMainwindowDetailspanelCollapsed)) == 1);
+                if (settings.Misc.ContainsKey(ConfkeyMainwindowState))
                 {
-                    FormWindowState _mainWindowState = (FormWindowState)Toolbox.ToInt(settings.GetObject(CONFKEY_MAINWINDOW_STATE));
-                    if (_mainWindowState != FormWindowState.Minimized)
+                    FormWindowState mainWindowState = (FormWindowState)Toolbox.ToInt(settings.GetObject(ConfkeyMainwindowState));
+                    if (mainWindowState != FormWindowState.Minimized)
                     {
-                        notifyIcon.Tag = WindowState = _mainWindowState;
+                        notifyIcon.Tag = WindowState = mainWindowState;
                     }
                     else
                         notifyIcon.Tag = WindowState;
@@ -785,41 +787,37 @@ namespace TransmissionRemoteDotnet.Forms
                 indexes.Add(column.DisplayIndex);
             }
             LocalSettings settings = Program.Settings;
-            settings.SetObject(CONFKEYPREFIX_LISTVIEW_WIDTHS + listView.Name, widths.ToString());
-            settings.SetObject(CONFKEYPREFIX_LISTVIEW_INDEXES + listView.Name, indexes.ToString());
+            settings.SetObject(ConfkeyprefixListviewWidths + listView.Name, widths.ToString());
+            settings.SetObject(ConfkeyprefixListviewIndexes + listView.Name, indexes.ToString());
             lock (listView)
             {
                 IListViewItemSorter listViewItemSorter = (IListViewItemSorter)listView.ListViewItemSorter;
-                settings.SetObject(CONFKEYPREFIX_LISTVIEW_SORTINDEX + listView.Name, listViewItemSorter.Order == SortOrder.Descending ? -listViewItemSorter.SortColumn : listViewItemSorter.SortColumn);
+                settings.SetObject(ConfkeyprefixListviewSortindex + listView.Name, listViewItemSorter.Order == SortOrder.Descending ? -listViewItemSorter.SortColumn : listViewItemSorter.SortColumn);
             }
         }
 
         public void RestoreListViewProperties(ListView listView)
         {
             LocalSettings settings = Program.Settings;
-            string widthsConfKey = CONFKEYPREFIX_LISTVIEW_WIDTHS + listView.Name,
-              indexesConfKey = CONFKEYPREFIX_LISTVIEW_INDEXES + listView.Name,
-              sortIndexConfKey = CONFKEYPREFIX_LISTVIEW_SORTINDEX + listView.Name;
+            string widthsConfKey = ConfkeyprefixListviewWidths + listView.Name,
+              indexesConfKey = ConfkeyprefixListviewIndexes + listView.Name,
+              sortIndexConfKey = ConfkeyprefixListviewSortindex + listView.Name;
 
             if (settings.ContainsKey(widthsConfKey))
             {
                 JsonArray widths = GetListViewPropertyArray(widthsConfKey);
                 for (int i = 0; i < widths.Count; i++)
-                {
                     listView.Columns[i].Width = Toolbox.ToInt(widths[i]);
-                }
             }
             if (settings.ContainsKey(indexesConfKey))
             {
                 JsonArray indexes = GetListViewPropertyArray(indexesConfKey);
                 for (int i = 0; i < indexes.Count; i++)
-                {
                     listView.Columns[i].DisplayIndex = Toolbox.ToInt(indexes[i]);
-                }
             }
             if (settings.ContainsKey(sortIndexConfKey))
             {
-                IListViewItemSorter sorter = (IListViewItemSorter)listView.ListViewItemSorter;
+                var sorter = (IListViewItemSorter)listView.ListViewItemSorter;
                 int sortIndex = Toolbox.ToInt(settings.GetObject(sortIndexConfKey));
                 sorter.Order = sortIndex < 0 ? SortOrder.Descending : SortOrder.Ascending;
                 sorter.SortColumn = sortIndex < 0 ? -sortIndex : sortIndex;
@@ -835,29 +833,20 @@ namespace TransmissionRemoteDotnet.Forms
         {
             _taskbar = new TaskbarHelper();
             LocalSettings settings = Program.Settings;
-            if (notifyIcon.Visible == settings.MinToTray)
-            {
+            notifyIcon.Visible = settings.MinToTray;
+            if (notifyIcon.Visible)
                 foreach (string arg in Environment.GetCommandLineArgs())
-                {
                     if (arg.Equals("/m", StringComparison.CurrentCultureIgnoreCase))
                     {
                         WindowState = FormWindowState.Minimized;
                         _minimise = true;
                     }
-                }
-            }
             if (settings.AutoCheckupdate)
-            {
                 DoCheckVersion(false);
-            }
             if (settings.AutoUpdateGeoip)
-            {
                 DoCheckGeoip(false);
-            }
-            if (!settings.AutoConnect.Equals(""))
-            {
+            if (!settings.AutoConnect.Equals(string.Empty))
                 Connect();
-            }
         }
 
         private delegate void AddQueueDelegate(string[] files, bool uploadprompt);
@@ -883,7 +872,7 @@ namespace TransmissionRemoteDotnet.Forms
         private void PopulateLanguagesMenu()
         {
             ToolStripMenuItem englishItem = new ToolStripMenuItem("English");
-            englishItem.Click += ChangeUICulture;
+            englishItem.Click += ChangeUiCulture;
             englishItem.Tag = new CultureInfo("en-US", true);
             englishItem.Checked = Program.Settings.Locale.Equals("en-US");
             languageToolStripMenuItem.DropDownItems.Add(englishItem);
@@ -899,7 +888,7 @@ namespace TransmissionRemoteDotnet.Forms
                         CultureInfo cInfo = new CultureInfo(dn.Substring(0, 2).ToLower() + "-" + dn.Substring(3, 2).ToUpper(), true);
                         ToolStripMenuItem item = new ToolStripMenuItem(cInfo.NativeName + " / " + cInfo.EnglishName);
                         item.Tag = cInfo;
-                        item.Click += ChangeUICulture;
+                        item.Click += ChangeUiCulture;
                         item.Checked = Program.Settings.Locale.Equals(cInfo.Name);
                         languageToolStripMenuItem.DropDownItems.Add(item);
                     }
@@ -911,7 +900,7 @@ namespace TransmissionRemoteDotnet.Forms
             }
         }
 
-        private void ChangeUICulture(object sender, EventArgs e)
+        private void ChangeUiCulture(object sender, EventArgs e)
         {
             // TODO: fix torrentInfoPanel changing language.
             try
@@ -1518,9 +1507,7 @@ namespace TransmissionRemoteDotnet.Forms
                 openFile.RestoreDirectory = true;
                 openFile.Multiselect = true;
                 if (openFile.ShowDialog() == DialogResult.OK)
-                {
                     Upload(openFile.FileNames, Program.Settings.UploadPrompt);
-                }
             }
         }
 
@@ -1528,7 +1515,7 @@ namespace TransmissionRemoteDotnet.Forms
         {
             foreach (string s in args)
             {
-                if (s == null || s.Length == 0)
+                if (string.IsNullOrEmpty(s))
                     continue;
                 if (File.Exists(s))
                 {
@@ -1885,7 +1872,7 @@ namespace TransmissionRemoteDotnet.Forms
             filesListView.ContextMenu = filesListView.SelectedItems.Count > 0 ? _fileSelectionMenu : _noFileSelectionMenu;
         }
 
-        private void DispatchFilesUpdate(string datatype, JsonArray FileList)
+        private void DispatchFilesUpdate(string datatype, JsonArray fileList)
         {
             Torrent t;
             lock (torrentListView)
@@ -1902,13 +1889,13 @@ namespace TransmissionRemoteDotnet.Forms
             JsonArray ids = new JsonArray();
             ids.Put(t.Id);
             arguments.Put(ProtocolConstants.KEY_IDS, ids);
-            if (FileList.Count == t.Files.Count)
+            if (fileList.Count == t.Files.Count)
             {
                 arguments.Put(datatype, new JsonArray());
             }
-            else if (FileList.Count > 0)
+            else if (fileList.Count > 0)
             {
-                arguments.Put(datatype, FileList);
+                arguments.Put(datatype, fileList);
             }
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
@@ -2103,7 +2090,7 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void projectSiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start(PROJECT_SITE);
+            Process.Start(ProjectSite);
         }
 
         private void showErrorLogToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2230,32 +2217,32 @@ namespace TransmissionRemoteDotnet.Forms
             else
             {
                 if (WindowState != FormWindowState.Minimized)
-                    settings.Misc[CONFKEY_MAINWINDOW_STATE] = (int)WindowState;
+                    settings.Misc[ConfkeyMainwindowState] = (int)WindowState;
                 else
-                    settings.Misc[CONFKEY_MAINWINDOW_STATE] = (int)notifyIcon.Tag;
+                    settings.Misc[ConfkeyMainwindowState] = (int)notifyIcon.Tag;
                 if (WindowState.Equals(FormWindowState.Normal))
                 {
-                    settings.SetObject(CONFKEY_MAINWINDOW_LOCATION_X, Location.X);
-                    settings.SetObject(CONFKEY_MAINWINDOW_LOCATION_Y, Location.Y);
-                    settings.SetObject(CONFKEY_MAINWINDOW_HEIGHT, Size.Height);
-                    settings.SetObject(CONFKEY_MAINWINDOW_WIDTH, Size.Width);
+                    settings.SetObject(ConfkeyMainwindowLocationX, Location.X);
+                    settings.SetObject(ConfkeyMainwindowLocationY, Location.Y);
+                    settings.SetObject(ConfkeyMainwindowHeight, Size.Height);
+                    settings.SetObject(ConfkeyMainwindowWidth, Size.Width);
                 }
                 else
                 {
                     /* The value of the RestoreBounds property is valid only when 
                        the WindowState property of the Form class is not equal to Normal. */
-                    settings.SetObject(CONFKEY_MAINWINDOW_LOCATION_X, RestoreBounds.X);
-                    settings.SetObject(CONFKEY_MAINWINDOW_LOCATION_Y, RestoreBounds.Y);
-                    settings.SetObject(CONFKEY_MAINWINDOW_HEIGHT, RestoreBounds.Height);
-                    settings.SetObject(CONFKEY_MAINWINDOW_WIDTH, RestoreBounds.Width);
+                    settings.SetObject(ConfkeyMainwindowLocationX, RestoreBounds.X);
+                    settings.SetObject(ConfkeyMainwindowLocationY, RestoreBounds.Y);
+                    settings.SetObject(ConfkeyMainwindowHeight, RestoreBounds.Height);
+                    settings.SetObject(ConfkeyMainwindowWidth, RestoreBounds.Width);
                 }
-                settings.SetObject(CONFKEY_FILTER_SPLITTERDISTANCE, mainVerticalSplitContainer.SplitterDistance);
+                settings.SetObject(ConfkeyFilterSplitterdistance, mainVerticalSplitContainer.SplitterDistance);
             }
             SaveListViewProperties(torrentListView);
             SaveListViewProperties(filesListView);
             SaveListViewProperties(peersListView);
-            settings.SetObject(CONFKEY_MAINWINDOW_FILTERSPANEL_COLLAPSED, showCategoriesPanelToolStripMenuItem.Checked ? 0 : 1);
-            settings.SetObject(CONFKEY_MAINWINDOW_DETAILSPANEL_COLLAPSED, torrentAndTabsSplitContainer.Panel2Collapsed ? 1 : 0);
+            settings.SetObject(ConfkeyMainwindowFilterspanelCollapsed, showCategoriesPanelToolStripMenuItem.Checked ? 0 : 1);
+            settings.SetObject(ConfkeyMainwindowDetailspanelCollapsed, torrentAndTabsSplitContainer.Panel2Collapsed ? 1 : 0);
             settings.Commit();
         }
 
@@ -2306,7 +2293,7 @@ namespace TransmissionRemoteDotnet.Forms
                         if (MessageBox.Show(String.Format(OtherStrings.NewerVersion, latestVersion.Major, latestVersion.Minor), OtherStrings.UpgradeAvailable, MessageBoxButtons.YesNo, MessageBoxIcon.Information)
                             == DialogResult.Yes)
                         {
-                            Process.Start(DOWNLOADS_PAGE);
+                            Process.Start(DownloadsPage);
                         }
                     }
                     else
@@ -2321,7 +2308,7 @@ namespace TransmissionRemoteDotnet.Forms
         private void checkVersionWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             TransmissionWebClient client = new TransmissionWebClient(false, false);
-            string response = client.DownloadString(Program.Settings.UpdateToBeta ? LATEST_VERSION_BETA : LATEST_VERSION);
+            string response = client.DownloadString(Program.Settings.UpdateToBeta ? LatestVersionBeta : LatestVersion);
             if (!response.StartsWith("#LATESTVERSION#"))
                 throw new FormatException("Response didn't contain the identification prefix.");
             string[] latestVersion = response.Remove(0, 15).Split('.');
@@ -2622,11 +2609,11 @@ namespace TransmissionRemoteDotnet.Forms
             e.DrawDefault = false;
         }
 
-        readonly Pen LightLightGray = new Pen(Color.FromArgb(-1447447));
-        private void DrawSubItem(DrawListViewSubItemEventArgs e, decimal Width, bool Focused)
+        readonly Pen _lightLightGray = new Pen(Color.FromArgb(-1447447));
+        private void DrawSubItem(DrawListViewSubItemEventArgs e, decimal width, bool focused)
         {
             Rectangle rect, origrect = e.Bounds;
-            if (Focused)
+            if (focused)
             {
                 // Draw the background and focus rectangle for a selected item.
                 e.Graphics.FillRectangle(SystemBrushes.Highlight, origrect);
@@ -2642,7 +2629,7 @@ namespace TransmissionRemoteDotnet.Forms
             origrect.Width -= 3;
             rect = origrect;
             e.Graphics.FillRectangle(new SolidBrush(e.Item.BackColor), rect);
-            rect.Width = (int)((double)Width / 100.0 * origrect.Width);
+            rect.Width = (int)((double)width / 100.0 * origrect.Width);
 
             if (rect.Width > 0 && rect.Height > 0)
             {
@@ -2656,7 +2643,7 @@ namespace TransmissionRemoteDotnet.Forms
                         LinearGradientMode.Horizontal);
                 e.Graphics.FillRectangle(br, rect);
             }
-            e.Graphics.DrawRectangle(LightLightGray, origrect);
+            e.Graphics.DrawRectangle(_lightLightGray, origrect);
 
             e.DrawText(TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
         }

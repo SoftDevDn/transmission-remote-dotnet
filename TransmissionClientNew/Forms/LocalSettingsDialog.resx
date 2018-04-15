@@ -147,20 +147,20 @@
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="groupBehavior.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;DontSavePasswordsCheckBox.Name" xml:space="preserve">
+    <value>DontSavePasswordsCheckBox</value>
   </data>
-  <data name="StartPausedCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 88</value>
-  </data>
-  <data name="&gt;&gt;FeedUrlTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>:</value>
   </data>
   <data name="listServers.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 35</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="UpdateToBetaCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="AutoConnectComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 23</value>
@@ -174,14 +174,8 @@
   <data name="columnHost.Text" xml:space="preserve">
     <value>Host</value>
   </data>
-  <data name="UnixPathPrefixTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 20</value>
-  </data>
-  <data name="FeedUrlLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;infopanelImageBrowse.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="addServerButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="groupCurrentProfile.Text" xml:space="preserve">
     <value>Current profile</value>
@@ -192,8 +186,8 @@
   <data name="PlinkCmdTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 36</value>
   </data>
-  <data name="&gt;&gt;HostField.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tabGlobalSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;RefreshRateValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -201,11 +195,26 @@
   <data name="ClearProxyPasswordCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;ProxyPortField.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
   <data name="&gt;&gt;SambaShareTextBox.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
+  <data name="HostField.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="UserField.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;groupBehavior.Name" xml:space="preserve">
     <value>groupBehavior</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;AddShareButton.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -216,14 +225,11 @@
   <data name="&gt;&gt;UseSSLCheckBox.Name" xml:space="preserve">
     <value>UseSSLCheckBox</value>
   </data>
-  <data name="&gt;&gt;RemoveFeedButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;groupFeed.Parent" xml:space="preserve">
+    <value>tabRssSettings</value>
   </data>
   <data name="&gt;&gt;columnFeedUrl.Name" xml:space="preserve">
     <value>columnFeedUrl</value>
-  </data>
-  <data name="tabSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>453, 401</value>
   </data>
   <data name="PlinkEnableCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -231,8 +237,8 @@
   <data name="UploadPromptCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 88</value>
   </data>
-  <data name="groupFeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 288</value>
+  <data name="&gt;&gt;ProxyAuthEnableCheckBox.Name" xml:space="preserve">
+    <value>ProxyAuthEnableCheckBox</value>
   </data>
   <data name="&gt;&gt;ServersMenuStrip.Name" xml:space="preserve">
     <value>ServersMenuStrip</value>
@@ -249,14 +255,11 @@
   <data name="&gt;&gt;FeedNameLabel.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="AutoUpdateGeoipCheckBox.ToolTip" xml:space="preserve">
-    <value />
+  <data name="minimizeOnCloseCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;infopanelImageBrowse.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SkinImageBrowseTextBox, Transmission Remote, Version=3.25.6679.30185, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SkinImageBrowseTextBox, Transmission Remote, Version=3.25.6679.33743, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;addServerButton.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -264,17 +267,11 @@
   <data name="&gt;&gt;tabGlobalSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label4.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupAutoConnect.Location" type="System.Drawing.Point, System.Drawing">
     <value>223, 302</value>
   </data>
-  <data name="&gt;&gt;FeedNameTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="StartPausedCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="EnableProxyCombo.Items1" xml:space="preserve">
+    <value>Enabled</value>
   </data>
   <data name="ProxyHostField.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 20</value>
@@ -315,14 +312,11 @@
   <data name="&gt;&gt;ProxyAuthEnableCheckBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="AutoUpdateGeoipCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>Download limit menu items:</value>
+  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="UseSSLCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>309, 47</value>
@@ -345,6 +339,9 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 47</value>
+  </data>
   <data name="tabServerSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 212</value>
   </data>
@@ -360,8 +357,8 @@
   <data name="&gt;&gt;notificationOnCompletionCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupPlinkPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>429, 48</value>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="minimizeOnCloseCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -396,8 +393,8 @@
   <data name="removeServerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
-  <data name="&gt;&gt;SaveServerButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="FeedNameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="TrayGroupBox.ToolTip" xml:space="preserve">
     <value />
@@ -408,8 +405,8 @@
   <data name="label8.Text" xml:space="preserve">
     <value>User:</value>
   </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;downloadLimitItems.Name" xml:space="preserve">
+    <value>downloadLimitItems</value>
   </data>
   <data name="&gt;&gt;EnableAuthCheckBox.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -423,8 +420,8 @@
   <data name="tabRssSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="addServerButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
+  <data name="&gt;&gt;HostField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="FeedNameLabel.ToolTip" xml:space="preserve">
     <value />
@@ -435,13 +432,10 @@
   <data name="&gt;&gt;HostField.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>:</value>
+  <data name="&gt;&gt;tabPage6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label6.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="UseSSLCheckBox.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;groupBehavior.Parent" xml:space="preserve">
@@ -492,11 +486,8 @@
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;infopanelImageBrowse.Name" xml:space="preserve">
-    <value>infopanelImageBrowse</value>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="removeServerButton.ToolTip" xml:space="preserve">
     <value />
@@ -522,17 +513,17 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="PlinkPathTextBox.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupPlinkPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>429, 48</value>
   </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Retry limit:</value>
-  </data>
-  <data name="addServerButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="FeedUrlLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="CloseDialogButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;RefreshRateTrayValue.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -555,14 +546,14 @@
   <data name="&gt;&gt;ServersMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="UploadPromptCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="ColorTrayIconCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 17</value>
   </data>
   <data name="&gt;&gt;PlinkPathTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;UnixPathPrefixTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="columnFeedUrl.Text" xml:space="preserve">
     <value>Url</value>
@@ -581,9 +572,6 @@
   </data>
   <data name="groupAutoConnect.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;minimizeOnCloseCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ClearPasswordCheckBox.Name" xml:space="preserve">
     <value>ClearPasswordCheckBox</value>
@@ -615,8 +603,8 @@
   <data name="ProxyAuthEnableCheckBox.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="tabSamba.Text" xml:space="preserve">
-    <value>SambaPaths</value>
+  <data name="&gt;&gt;StartPausedCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;removeServerToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -654,6 +642,9 @@
   <data name="defaultActionLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Upload limit menu items:</value>
+  </data>
   <data name="FeedUrlLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 48</value>
   </data>
@@ -687,14 +678,8 @@
   <data name="AddFeedButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="FeedUrlLabel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Command: </value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 13</value>
   </data>
   <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
     <value>tabServerSettings</value>
@@ -708,17 +693,23 @@
   <data name="RemoveFeedButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="PlinkEnableCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 17</value>
+  </data>
   <data name="tabPage6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;AddShareButton.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="SaveServerButton.Text" xml:space="preserve">
     <value>Save Server</value>
   </data>
-  <data name="label17.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;RemoveFeedButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="defaultActionComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>290, 17</value>
+  <data name="tabSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -726,14 +717,20 @@
   <data name="&gt;&gt;tabGlobalSettings.Name" xml:space="preserve">
     <value>tabGlobalSettings</value>
   </data>
-  <data name="PlinkEnableCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 17</value>
+  <data name="&gt;&gt;ClearDestPathHistoryButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="notificationOnCompletionCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label18.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="tabPage6.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;SaveServerButton.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="addServerButton.Text" xml:space="preserve">
     <value>Add Server</value>
@@ -762,8 +759,14 @@
   <data name="&gt;&gt;StartOnSystemCheckBox.Name" xml:space="preserve">
     <value>StartOnSystemCheckBox</value>
   </data>
+  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="&gt;&gt;notificationOnCompletionCheckBox.Name" xml:space="preserve">
     <value>notificationOnCompletionCheckBox</value>
+  </data>
+  <data name="&gt;&gt;PlinkPathButton.Name" xml:space="preserve">
+    <value>PlinkPathButton</value>
   </data>
   <data name="&gt;&gt;SaveButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -774,8 +777,8 @@
   <data name="&gt;&gt;ProxyUserField.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="useLocalCookiesWarningButton.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="&gt;&gt;RetryLimitValue.Name" xml:space="preserve">
+    <value>RetryLimitValue</value>
   </data>
   <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -804,23 +807,14 @@
   <data name="&gt;&gt;groupAutoConnect.Parent" xml:space="preserve">
     <value>tabGlobalSettings</value>
   </data>
-  <data name="label16.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="DontSavePasswordsCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 65</value>
-  </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="SaveButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label8.ToolTip" xml:space="preserve">
-    <value />
+  <data name="ClearPasswordCheckBox.Text" xml:space="preserve">
+    <value>Clear the password at save</value>
   </data>
-  <data name="&gt;&gt;defaultActionComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="FeedUrlLabel.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="tabSamba.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -847,7 +841,7 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;trayImageBrowse.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SkinImageBrowseTextBox, Transmission Remote, Version=3.25.6679.30185, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SkinImageBrowseTextBox, Transmission Remote, Version=3.25.6679.33743, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -867,8 +861,8 @@
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;AutoConnectComboBox.Name" xml:space="preserve">
-    <value>AutoConnectComboBox</value>
+  <data name="tabServersSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -897,11 +891,11 @@
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;RetryLimitValue.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
   <data name="MinToTrayCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="UploadPromptCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 17</value>
   </data>
   <data name="StartOnSystemCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -909,11 +903,14 @@
   <data name="&gt;&gt;tabServerSettings.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 13</value>
+  </data>
   <data name="addServerButton.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="tabServersSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
+    <value>Minimize on close</value>
   </data>
   <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -960,9 +957,6 @@
   <data name="&gt;&gt;uploadLimitItems.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;UnixPathPrefixTextBox.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
   <data name="useLocalCookiesWarningButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -990,6 +984,9 @@
   <data name="&gt;&gt;ProxyHostField.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 99</value>
+  </data>
   <data name="tabRssSettings.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -1005,11 +1002,20 @@
   <data name="listSambaShareMappings.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
   </data>
-  <data name="ProxyUserField.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="&gt;&gt;useLocalCookiesCheckBox.Parent" xml:space="preserve">
+    <value>groupBehavior</value>
   </data>
   <data name="FeedUrlTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="RefreshRateValue.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="groupFeed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 288</value>
+  </data>
+  <data name="&gt;&gt;columnHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ProxyPortField.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1032,8 +1038,14 @@
   <data name="&gt;&gt;CloseDialogButton.Name" xml:space="preserve">
     <value>CloseDialogButton</value>
   </data>
+  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="HostField.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 20</value>
+  </data>
+  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
   <data name="&gt;&gt;stateImageBrowse.Name" xml:space="preserve">
     <value>stateImageBrowse</value>
@@ -1047,20 +1059,11 @@
   <data name="&gt;&gt;HostField.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 125</value>
-  </data>
   <data name="infopanelImageBrowse.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 68</value>
   </data>
-  <data name="&gt;&gt;AutoUpdateGeoipCheckBox.Name" xml:space="preserve">
-    <value>AutoUpdateGeoipCheckBox</value>
-  </data>
   <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
-  </data>
-  <data name="PlinkPathButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>348, 16</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 65</value>
@@ -1080,8 +1083,17 @@
   <data name="&gt;&gt;AutoUpdateGeoipCheckBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="SaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 23</value>
+  </data>
   <data name="&gt;&gt;groupAutoConnect.Name" xml:space="preserve">
     <value>groupAutoConnect</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1089,8 +1101,14 @@
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
   </data>
+  <data name="&gt;&gt;useLocalCookiesWarningButton.Type" xml:space="preserve">
+    <value>TransmissionRemoteDotnet.CustomControls.USButton, Transmission Remote, Version=3.25.6679.33743, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="&gt;&gt;label12.Name" xml:space="preserve">
     <value>label12</value>
+  </data>
+  <data name="&gt;&gt;DontSavePasswordsCheckBox.Parent" xml:space="preserve">
+    <value>groupBehavior</value>
   </data>
   <data name="tabSamba.Size" type="System.Drawing.Size, System.Drawing">
     <value>425, 134</value>
@@ -1104,8 +1122,8 @@
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="tabSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="RefreshRateValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 44</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -1113,14 +1131,8 @@
   <data name="&gt;&gt;tabServersSettings.Name" xml:space="preserve">
     <value>tabServersSettings</value>
   </data>
-  <data name="SaveServerButton.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
-  </data>
-  <data name="&gt;&gt;UploadPromptCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label5.ToolTip" xml:space="preserve">
     <value />
@@ -1146,8 +1158,8 @@
   <data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="SaveButton.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="RemoveShareButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 23</value>
@@ -1155,17 +1167,11 @@
   <data name="&gt;&gt;UserField.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="AddFeedButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 16</value>
-  </data>
   <data name="&gt;&gt;PlinkPathTextBox.Name" xml:space="preserve">
     <value>PlinkPathTextBox</value>
   </data>
   <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;listRssFeeds.Name" xml:space="preserve">
-    <value>listRssFeeds</value>
   </data>
   <data name="RefreshRateValue.ToolTip" xml:space="preserve">
     <value />
@@ -1179,14 +1185,14 @@
   <data name="uploadLimitItems.Location" type="System.Drawing.Point, System.Drawing">
     <value>182, 10</value>
   </data>
-  <data name="ProxyHostField.TabIndex" type="System.Int32, mscorlib">
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PlinkPathButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;RemoveShareButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PlinkEnableCheckBox.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
   </data>
   <data name="&gt;&gt;label18.Name" xml:space="preserve">
     <value>label18</value>
@@ -1196,6 +1202,9 @@
   </data>
   <data name="&gt;&gt;DeleteTorrentCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RemoveShareButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="notificationOnCompletionCheckBox.ToolTip" xml:space="preserve">
     <value />
@@ -1221,14 +1230,20 @@
   <data name="SaveAndConnectButton.Text" xml:space="preserve">
     <value>Save and Connect</value>
   </data>
+  <data name="&gt;&gt;defaultActionLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="&gt;&gt;toolbarImageBrowse.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tabSkinSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;tabPage5.Parent" xml:space="preserve">
+    <value>tabServerSettings</value>
   </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Win path prefix (SMB):</value>
+  <data name="RefreshRateValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="tabServersSettings.Text" xml:space="preserve">
+    <value>Servers Settings</value>
   </data>
   <data name="downloadLimitItems.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1253,9 +1268,6 @@
   </data>
   <data name="&gt;&gt;listSambaShareMappings.Parent" xml:space="preserve">
     <value>tabSamba</value>
-  </data>
-  <data name="&gt;&gt;CurrentProfileComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="FeedUrlTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>94, 45</value>
@@ -1290,17 +1302,17 @@
   <data name="label1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="SaveServerButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>291, 105</value>
+  </data>
   <data name="AutoUpdateGeoipCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 56</value>
   </data>
-  <data name="&gt;&gt;PlinkPathOpenFileDialog.Name" xml:space="preserve">
-    <value>PlinkPathOpenFileDialog</value>
-  </data>
-  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;TrayGroupBox.Parent" xml:space="preserve">
+    <value>groupBehavior</value>
   </data>
   <data name="PlinkCmdTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 20</value>
@@ -1311,6 +1323,9 @@
   <data name="RefreshRateTrayValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>180, 72</value>
   </data>
+  <data name="&gt;&gt;StartPausedCheckBox.Name" xml:space="preserve">
+    <value>StartPausedCheckBox</value>
+  </data>
   <data name="&gt;&gt;SaveAndConnectButton.Name" xml:space="preserve">
     <value>SaveAndConnectButton</value>
   </data>
@@ -1320,17 +1335,11 @@
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="ClearPasswordCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 17</value>
-  </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="&gt;&gt;ClearProxyPasswordCheckBox.Name" xml:space="preserve">
     <value>ClearProxyPasswordCheckBox</value>
-  </data>
-  <data name="&gt;&gt;groupFeed.Parent" xml:space="preserve">
-    <value>tabRssSettings</value>
   </data>
   <data name="downloadLimitItems.Location" type="System.Drawing.Point, System.Drawing">
     <value>182, 36</value>
@@ -1339,7 +1348,7 @@
     <value>NoControl</value>
   </data>
   <data name="&gt;&gt;stateImageBrowse.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SkinImageBrowseTextBox, Transmission Remote, Version=3.25.6679.30185, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SkinImageBrowseTextBox, Transmission Remote, Version=3.25.6679.33743, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="RemoveFeedButton.Text" xml:space="preserve">
     <value>Remove</value>
@@ -1358,6 +1367,9 @@
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;CurrentProfileComboBox.Parent" xml:space="preserve">
+    <value>groupCurrentProfile</value>
   </data>
   <data name="HostField.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 18</value>
@@ -1395,6 +1407,9 @@
   <data name="CloseDialogButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="TrayGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 161</value>
+  </data>
   <data name="DontSavePasswordsCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
@@ -1410,14 +1425,11 @@
   <data name="&gt;&gt;FeedNameTextBox.Name" xml:space="preserve">
     <value>FeedNameTextBox</value>
   </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 47</value>
+  <data name="&gt;&gt;StartOnSystemCheckBox.Parent" xml:space="preserve">
+    <value>groupBehavior</value>
   </data>
   <data name="label14.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="tabGlobalSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="ClearDestPathHistoryButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 88</value>
@@ -1428,11 +1440,11 @@
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;tabRssSettings.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
   <data name="ServersMenuStrip.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="ClearProxyPasswordCheckBox.Text" xml:space="preserve">
-    <value>Clear the password at save</value>
   </data>
   <data name="&gt;&gt;AutoConnectComboBox.Parent" xml:space="preserve">
     <value>groupAutoConnect</value>
@@ -1440,17 +1452,11 @@
   <data name="UserField.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="AddShareButton.ToolTip" xml:space="preserve">
-    <value />
+  <data name="useLocalCookiesWarningButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
   <data name="ClearProxyPasswordCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>243, 98</value>
-  </data>
-  <data name="tabRssSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="AutoCheckUpdateCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1464,11 +1470,14 @@
   <data name="&gt;&gt;defaultActionComboBox.Parent" xml:space="preserve">
     <value>groupBehavior</value>
   </data>
+  <data name="EnableAuthCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 17</value>
+  </data>
   <data name="columnFeedName.Text" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="&gt;&gt;toolbarImageBrowse.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SkinImageBrowseTextBox, Transmission Remote, Version=3.25.6679.30185, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SkinImageBrowseTextBox, Transmission Remote, Version=3.25.6679.33743, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1478,6 +1487,9 @@
   </data>
   <data name="&gt;&gt;UnixPathPrefixTextBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PortField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>309, 18</value>
   </data>
   <data name="tabSkinSettings.Text" xml:space="preserve">
     <value>Skin</value>
@@ -1500,9 +1512,6 @@
   <data name="StartOnSystemCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 19</value>
   </data>
-  <data name="&gt;&gt;UpdateToBetaCheckBox.Parent" xml:space="preserve">
-    <value>groupBehavior</value>
-  </data>
   <data name="&gt;&gt;StartPausedCheckBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -1515,8 +1524,8 @@
   <data name="&gt;&gt;notificationOnCompletionCheckBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label9.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;ColorTrayIconCheckBox.Name" xml:space="preserve">
+    <value>ColorTrayIconCheckBox</value>
   </data>
   <data name="UpdateToBetaCheckBox.ToolTip" xml:space="preserve">
     <value />
@@ -1526,6 +1535,9 @@
   </data>
   <data name="SaveAndConnectButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 23</value>
+  </data>
+  <data name="ProxyUserField.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;tabSkinSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1554,11 +1566,11 @@
   <data name="&gt;&gt;EnableAuthCheckBox.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;downloadLimitItems.Name" xml:space="preserve">
-    <value>downloadLimitItems</value>
+  <data name="FeedUrlLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="PlinkCmdTextBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;defaultActionLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;DontSavePasswordsCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1587,8 +1599,8 @@
   <data name="&gt;&gt;columnPort.Name" xml:space="preserve">
     <value>columnPort</value>
   </data>
-  <data name="RefreshRateValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 44</value>
+  <data name="&gt;&gt;RetryLimitValue.Parent" xml:space="preserve">
+    <value>tabPage1</value>
   </data>
   <data name="FeedNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>94, 19</value>
@@ -1602,8 +1614,8 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="tabGlobalSettings.Text" xml:space="preserve">
-    <value>Global Settings</value>
+  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="defaultActionLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1629,14 +1641,11 @@
   <data name="groupAutoConnect.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;defaultActionComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="listRssFeeds.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
-  </data>
-  <data name="FeedNameTextBox.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ColorTrayIconCheckBox.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;RemoveShareButton.Parent" xml:space="preserve">
     <value>tabSamba</value>
@@ -1650,14 +1659,20 @@
   <data name="&gt;&gt;tabSkinSettings.Parent" xml:space="preserve">
     <value>tabSettings</value>
   </data>
+  <data name="&gt;&gt;notificationOnCompletionCheckBox.Parent" xml:space="preserve">
+    <value>TrayGroupBox</value>
+  </data>
   <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
   </data>
   <data name="columnHost.Width" type="System.Int32, mscorlib">
     <value>150</value>
   </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 13</value>
+  <data name="&gt;&gt;CloseDialogButton.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
@@ -1695,9 +1710,6 @@
   <data name="useLocalCookiesWarningButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
   </data>
-  <data name="&gt;&gt;addServerToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="AddShareButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 98</value>
   </data>
@@ -1713,8 +1725,11 @@
   <data name="uploadLimitItems.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;ClearDestPathHistoryButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tabSkinSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ProxyHostField.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="StartOnSystemCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 17</value>
@@ -1737,11 +1752,8 @@
   <data name="tabRssSettings.Text" xml:space="preserve">
     <value>Rss Feeds</value>
   </data>
-  <data name="groupBehavior.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;DontSavePasswordsCheckBox.Name" xml:space="preserve">
-    <value>DontSavePasswordsCheckBox</value>
+  <data name="removeServerButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Password:</value>
@@ -1749,14 +1761,8 @@
   <data name="minimizeOnCloseCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>204, 23</value>
   </data>
-  <data name="&gt;&gt;groupPlinkPath.Name" xml:space="preserve">
-    <value>groupPlinkPath</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;trayImageBrowse.Name" xml:space="preserve">
-    <value>trayImageBrowse</value>
+  <data name="groupBehavior.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;downloadLimitItems.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -1769,6 +1775,9 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Host:</value>
+  </data>
+  <data name="AutoUpdateGeoipCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 17</value>
   </data>
   <data name="toolbarImageBrowse.Size" type="System.Drawing.Size, System.Drawing">
     <value>433, 100</value>
@@ -1800,20 +1809,26 @@
   <data name="tabGlobalSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="&gt;&gt;FeedNameLabel.Parent" xml:space="preserve">
-    <value>groupFeed</value>
-  </data>
   <data name="minimizeOnCloseCheckBox.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;ClearDestPathHistoryButton.Parent" xml:space="preserve">
     <value>tabPage6</value>
   </data>
+  <data name="SaveAndConnectButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;label7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="RemoveShareButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="PlinkEnableCheckBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Refresh rate when hidden:</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Server</value>
@@ -1823,6 +1838,9 @@
   </data>
   <data name="&gt;&gt;tabSettings.Name" xml:space="preserve">
     <value>tabSettings</value>
+  </data>
+  <data name="label15.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;FeedUrlLabel.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -1835,9 +1853,6 @@
   </data>
   <data name="columnFeedUrl.Width" type="System.Int32, mscorlib">
     <value>250</value>
-  </data>
-  <data name="&gt;&gt;ClearPasswordCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 13</value>
@@ -1855,9 +1870,6 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label11.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="PassField.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="useLocalCookiesWarningButton.Location" type="System.Drawing.Point, System.Drawing">
@@ -1899,8 +1911,8 @@
   <data name="tabServersSettings.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;RemoveFeedButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tabPage2.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="RefreshRateTrayValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -1908,17 +1920,14 @@
   <data name="infopanelImageBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 186</value>
   </data>
-  <data name="DontSavePasswordsCheckBox.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;AutoConnectComboBox.Name" xml:space="preserve">
+    <value>AutoConnectComboBox</value>
   </data>
   <data name="groupPlinkPath.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MappingHelpButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Center</value>
   </data>
   <data name="FeedNameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1929,17 +1938,17 @@
   <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
     <value>tabPage3</value>
   </data>
-  <data name="UserField.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;RemoveShareButton.Name" xml:space="preserve">
+    <value>RemoveShareButton</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="AutoCheckUpdateCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 42</value>
   </data>
-  <data name="PlinkEnableCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ColorTrayIconCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;addServerButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="UserField.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 20</value>
@@ -1953,9 +1962,6 @@
   <data name="DontSavePasswordsCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
-  </data>
   <data name="&gt;&gt;SaveButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
@@ -1968,17 +1974,23 @@
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
   </data>
-  <data name="EnableProxyCombo.Items1" xml:space="preserve">
-    <value>Enabled</value>
+  <data name="useLocalCookiesWarningButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="tabSamba.Text" xml:space="preserve">
+    <value>SambaPaths</value>
   </data>
   <data name="MinToTrayCheckBox.Text" xml:space="preserve">
     <value>Enable tray icon</value>
   </data>
+  <data name="&gt;&gt;uploadLimitItems.Parent" xml:space="preserve">
+    <value>tabPage6</value>
+  </data>
   <data name="&gt;&gt;label9.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupCurrentProfile.Parent" xml:space="preserve">
-    <value>tabGlobalSettings</value>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Retry limit:</value>
   </data>
   <data name="&gt;&gt;trayImageBrowse.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1994,6 +2006,9 @@
   </data>
   <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBehavior.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
   </data>
   <data name="RemoveFeedButton.ToolTip" xml:space="preserve">
     <value />
@@ -2019,9 +2034,6 @@
   <data name="FeedNameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
   </data>
-  <data name="useLocalCookiesWarningButton.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="ProxyAuthEnableCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
@@ -2043,11 +2055,14 @@
   <data name="&gt;&gt;addServerButton.Name" xml:space="preserve">
     <value>addServerButton</value>
   </data>
-  <data name="&gt;&gt;TrayGroupBox.Parent" xml:space="preserve">
-    <value>groupBehavior</value>
+  <data name="ClearProxyPasswordCheckBox.Text" xml:space="preserve">
+    <value>Clear the password at save</value>
   </data>
-  <data name="&gt;&gt;defaultActionLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;SambaShareTextBox.Name" xml:space="preserve">
+    <value>SambaShareTextBox</value>
+  </data>
+  <data name="&gt;&gt;FeedNameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2055,8 +2070,8 @@
   <data name="useLocalCookiesCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="minimizeOnCloseCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="tabSamba.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="&gt;&gt;ProxyUserField.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2079,9 +2094,6 @@
   <data name="UploadPromptCheckBox.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Port:</value>
-  </data>
   <data name="DeleteTorrentCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
@@ -2091,11 +2103,8 @@
   <data name="groupCurrentProfile.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="&gt;&gt;ProxyAuthEnableCheckBox.Name" xml:space="preserve">
-    <value>ProxyAuthEnableCheckBox</value>
+  <data name="UnixPathPrefixTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 20</value>
   </data>
   <data name="useLocalCookiesCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2103,8 +2112,14 @@
   <data name="customPathTextBox.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label17.ToolTip" xml:space="preserve">
-    <value />
+  <data name="ProxyPassField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 20</value>
+  </data>
+  <data name="&gt;&gt;groupCurrentProfile.Name" xml:space="preserve">
+    <value>groupCurrentProfile</value>
+  </data>
+  <data name="ColorTrayIconCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="ColorTrayIconCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>204, 46</value>
@@ -2139,17 +2154,14 @@
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 13</value>
   </data>
-  <data name="&gt;&gt;defaultActionComboBox.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="FeedNameLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 22</value>
   </data>
   <data name="&gt;&gt;customPathTextBox.Parent" xml:space="preserve">
     <value>tabPage6</value>
   </data>
-  <data name="&gt;&gt;notificationOnAdditionCheckBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="AddShareButton.Text" xml:space="preserve">
+    <value>Add</value>
   </data>
   <data name="label16.ToolTip" xml:space="preserve">
     <value />
@@ -2160,11 +2172,14 @@
   <data name="trayImageBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;StartPausedCheckBox.Name" xml:space="preserve">
-    <value>StartPausedCheckBox</value>
+  <data name="&gt;&gt;RemoveShareButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPage5.Parent" xml:space="preserve">
-    <value>tabServerSettings</value>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>10, 13</value>
@@ -2172,8 +2187,8 @@
   <data name="&gt;&gt;groupFeed.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tabServersSettings.Text" xml:space="preserve">
-    <value>Servers Settings</value>
+  <data name="&gt;&gt;FeedNameLabel.Name" xml:space="preserve">
+    <value>FeedNameLabel</value>
   </data>
   <data name="AddFeedButton.ToolTip" xml:space="preserve">
     <value />
@@ -2232,8 +2247,11 @@
   <data name="&gt;&gt;groupCurrentProfile.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="TrayGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 161</value>
+  <data name="PlinkEnableCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="&gt;&gt;UploadPromptCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;FeedUrlLabel.Parent" xml:space="preserve">
     <value>groupFeed</value>
@@ -2247,6 +2265,9 @@
   <data name="listSambaShareMappings.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 95</value>
   </data>
+  <data name="&gt;&gt;PortField.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
     <value>tabServerSettings</value>
   </data>
@@ -2255,9 +2276,6 @@
   </data>
   <data name="tabPage1.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="&gt;&gt;FeedUrlTextBox.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="&gt;&gt;downloadLimitItems.Parent" xml:space="preserve">
     <value>tabPage6</value>
@@ -2271,8 +2289,8 @@
   <data name="&gt;&gt;RemoveFeedButton.Parent" xml:space="preserve">
     <value>groupFeed</value>
   </data>
-  <data name="tabSamba.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="&gt;&gt;ProxyPassField.Name" xml:space="preserve">
+    <value>ProxyPassField</value>
   </data>
   <data name="MinToTrayCheckBox.ToolTip" xml:space="preserve">
     <value />
@@ -2286,17 +2304,14 @@
   <data name="&gt;&gt;tabSettings.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="groupFeed.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;SaveAndConnectButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="notificationOnAdditionCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;useLocalCookiesWarningButton.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.USButton, Transmission Remote, Version=3.25.6679.30185, Culture=neutral, PublicKeyToken=null</value>
+  <data name="tabSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>453, 401</value>
   </data>
   <data name="SaveAndConnectButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>159, 419</value>
@@ -2304,8 +2319,11 @@
   <data name="ProxyPassField.Location" type="System.Drawing.Point, System.Drawing">
     <value>87, 96</value>
   </data>
-  <data name="&gt;&gt;tabRssSettings.Name" xml:space="preserve">
-    <value>tabRssSettings</value>
+  <data name="listServers.LabelWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CurrentProfileComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 23</value>
   </data>
   <data name="&gt;&gt;EnableProxyCombo.Name" xml:space="preserve">
     <value>EnableProxyCombo</value>
@@ -2325,8 +2343,8 @@
   <data name="&gt;&gt;PlinkCmdTextBox.Parent" xml:space="preserve">
     <value>tabPage5</value>
   </data>
-  <data name="&gt;&gt;AddShareButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="PlinkPathTextBox.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2352,8 +2370,8 @@
   <data name="&gt;&gt;AutoCheckUpdateCheckBox.Name" xml:space="preserve">
     <value>AutoCheckUpdateCheckBox</value>
   </data>
-  <data name="PortField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>309, 18</value>
+  <data name="&gt;&gt;UnixPathPrefixTextBox.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;removeServerToolStripMenuItem.Name" xml:space="preserve">
     <value>removeServerToolStripMenuItem</value>
@@ -2361,20 +2379,17 @@
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
-    <value>Minimize on close</value>
-  </data>
   <data name="&gt;&gt;ProxyPassField.Parent" xml:space="preserve">
     <value>tabPage3</value>
   </data>
-  <data name="UpdateToBetaCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;minimizeOnCloseCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>New mapping:</value>
   </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 99</value>
+  <data name="groupPlinkPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 248</value>
   </data>
   <data name="tabServersSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>445, 375</value>
@@ -2382,8 +2397,8 @@
   <data name="removeServerToolStripMenuItem.Text" xml:space="preserve">
     <value>Remove Server</value>
   </data>
-  <data name="listServers.LabelWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="UseSSLCheckBox.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="PlinkPathButton.ToolTip" xml:space="preserve">
     <value />
@@ -2403,11 +2418,11 @@
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 16</value>
   </data>
-  <data name="UseSSLCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 17</value>
+  <data name="&gt;&gt;tabRssSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;StartOnSystemCheckBox.Parent" xml:space="preserve">
-    <value>groupBehavior</value>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Win path prefix (SMB):</value>
   </data>
   <data name="&gt;&gt;MappingHelpButton.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2418,11 +2433,8 @@
   <data name="groupAutoConnect.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 67</value>
   </data>
-  <data name="&gt;&gt;tabRssSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ProxyPortField.Parent" xml:space="preserve">
-    <value>tabPage3</value>
+  <data name="StartPausedCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="PlinkPathButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -2436,6 +2448,9 @@
   <data name="infopanelImageBrowse.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="MinToTrayCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>477, 454</value>
   </data>
@@ -2443,25 +2458,22 @@
     <value />
   </data>
   <data name="UploadPromptCheckBox.Text" xml:space="preserve">
-    <value>Upload prompt</value>
+    <value>Show options when adding torrent</value>
   </data>
   <data name="&gt;&gt;listServers.Name" xml:space="preserve">
     <value>listServers</value>
   </data>
-  <data name="&gt;&gt;ColorTrayIconCheckBox.Name" xml:space="preserve">
-    <value>ColorTrayIconCheckBox</value>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="FeedNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 20</value>
   </data>
-  <data name="AutoCheckUpdateCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 17</value>
+  <data name="&gt;&gt;ClearDestPathHistoryButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SaveAndConnectButton.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="&gt;&gt;minimizeOnCloseCheckBox.Parent" xml:space="preserve">
-    <value>TrayGroupBox</value>
   </data>
   <data name="tabGlobalSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>445, 375</value>
@@ -2471,6 +2483,9 @@
   </data>
   <data name="listSambaShareMappings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="defaultActionComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>290, 17</value>
   </data>
   <data name="&gt;&gt;AutoUpdateGeoipCheckBox.Parent" xml:space="preserve">
     <value>groupBehavior</value>
@@ -2502,8 +2517,8 @@
   <data name="&gt;&gt;tabSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="HostField.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;UnixPathPrefixTextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;MinToTrayCheckBox.Parent" xml:space="preserve">
     <value>TrayGroupBox</value>
@@ -2532,8 +2547,8 @@
   <data name="&gt;&gt;ProxyHostField.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="tabPage6.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="AutoConnectComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="RetryLimitValue.ToolTip" xml:space="preserve">
     <value />
@@ -2586,8 +2601,11 @@
   <data name="&gt;&gt;UserField.Name" xml:space="preserve">
     <value>UserField</value>
   </data>
-  <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="customPathTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 20</value>
+  </data>
+  <data name="&gt;&gt;AutoUpdateGeoipCheckBox.Name" xml:space="preserve">
+    <value>AutoUpdateGeoipCheckBox</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -2595,14 +2613,17 @@
   <data name="ServersMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 48</value>
   </data>
-  <data name="&gt;&gt;ProxyPassField.Name" xml:space="preserve">
-    <value>ProxyPassField</value>
+  <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;columnHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;CurrentProfileComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
+  <data name="&gt;&gt;notificationOnAdditionCheckBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PlinkPathButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>348, 16</value>
   </data>
   <data name="MinToTrayCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 17</value>
@@ -2622,14 +2643,14 @@
   <data name="ClearDestPathHistoryButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
+  <data name="FeedNameTextBox.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="removeServerButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
+  <data name="minimizeOnCloseCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="StartOnSystemCheckBox.ToolTip" xml:space="preserve">
     <value />
@@ -2646,14 +2667,17 @@
   <data name="DeleteTorrentCheckBox.Text" xml:space="preserve">
     <value>Delete torrent when adding</value>
   </data>
-  <data name="StartOnSystemCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;UseSSLCheckBox.Parent" xml:space="preserve">
+    <value>tabPage1</value>
   </data>
   <data name="FeedNameLabel.Text" xml:space="preserve">
     <value>Feed name:</value>
   </data>
   <data name="&gt;&gt;ProxyAuthEnableCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FeedUrlTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tabSamba.Parent" xml:space="preserve">
     <value>tabServerSettings</value>
@@ -2688,20 +2712,26 @@
   <data name="tabSettings.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="UploadPromptCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 17</value>
+  <data name="UserField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 18</value>
+  </data>
+  <data name="&gt;&gt;minimizeOnCloseCheckBox.Name" xml:space="preserve">
+    <value>minimizeOnCloseCheckBox</value>
+  </data>
+  <data name="&gt;&gt;notificationOnAdditionCheckBox.Name" xml:space="preserve">
+    <value>notificationOnAdditionCheckBox</value>
   </data>
   <data name="UseSSLCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;FeedNameLabel.Parent" xml:space="preserve">
+    <value>groupFeed</value>
   </data>
   <data name="UpdateToBetaCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>210, 42</value>
   </data>
-  <data name="SaveAndConnectButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;PlinkPathOpenFileDialog.Name" xml:space="preserve">
+    <value>PlinkPathOpenFileDialog</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 21</value>
@@ -2709,35 +2739,35 @@
   <data name="label15.Text" xml:space="preserve">
     <value>Help: </value>
   </data>
-  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="DontSavePasswordsCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 65</value>
   </data>
-  <data name="&gt;&gt;CurrentProfileComboBox.Parent" xml:space="preserve">
-    <value>groupCurrentProfile</value>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 125</value>
   </data>
   <data name="&gt;&gt;PortField.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="AutoConnectComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="PlinkCmdTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;ClearDestPathHistoryButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="useLocalCookiesWarningButton.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="groupFeed.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;infopanelImageBrowse.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="AutoUpdateGeoipCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 17</value>
+  <data name="groupBehavior.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;ClearProxyPasswordCheckBox.Parent" xml:space="preserve">
     <value>tabPage3</value>
   </data>
-  <data name="CloseDialogButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="ProxyPassField.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2760,9 +2790,6 @@
   <data name="&gt;&gt;TrayGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="minimizeOnCloseCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="&gt;&gt;UnixPathPrefixTextBox.Name" xml:space="preserve">
     <value>UnixPathPrefixTextBox</value>
   </data>
@@ -2784,11 +2811,8 @@
   <data name="removeServerButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>226, 6</value>
   </data>
-  <data name="groupBehavior.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="SaveButton.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;RemoveFeedButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2811,14 +2835,14 @@
   <data name="SambaShareTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;CloseDialogButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;MinToTrayCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;tabPage6.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="AutoCheckUpdateCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2826,8 +2850,8 @@
   <data name="addServerButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="&gt;&gt;CloseDialogButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="addServerButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
   </data>
   <data name="tabServersSettings.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2838,23 +2862,23 @@
   <data name="downloadLimitItems.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 20</value>
   </data>
-  <data name="&gt;&gt;RetryLimitValue.Name" xml:space="preserve">
-    <value>RetryLimitValue</value>
+  <data name="tabRssSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Proxy</value>
+  <data name="&gt;&gt;listRssFeeds.Name" xml:space="preserve">
+    <value>listRssFeeds</value>
   </data>
-  <data name="RefreshRateValue.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="AutoUpdateGeoipCheckBox.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="useLocalCookiesWarningButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
   </data>
-  <data name="&gt;&gt;tabRssSettings.Parent" xml:space="preserve">
-    <value>tabSettings</value>
+  <data name="&gt;&gt;infopanelImageBrowse.Name" xml:space="preserve">
+    <value>infopanelImageBrowse</value>
   </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 39</value>
@@ -2862,8 +2886,8 @@
   <data name="tabServersSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="label18.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 13</value>
   </data>
   <data name="CurrentProfileComboBox.ToolTip" xml:space="preserve">
     <value />
@@ -2871,8 +2895,8 @@
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
   </data>
-  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>tabPage3</value>
@@ -2886,8 +2910,8 @@
   <data name="MappingHelpButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>Upload limit menu items:</value>
+  <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2895,14 +2919,14 @@
   <data name="PortField.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="UploadPromptCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="label12.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;PortField.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;groupPlinkPath.Name" xml:space="preserve">
+    <value>groupPlinkPath</value>
   </data>
-  <data name="&gt;&gt;DontSavePasswordsCheckBox.Parent" xml:space="preserve">
-    <value>groupBehavior</value>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Download limit menu items:</value>
   </data>
   <data name="linkLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2919,17 +2943,14 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="&gt;&gt;notificationOnAdditionCheckBox.Name" xml:space="preserve">
-    <value>notificationOnAdditionCheckBox</value>
-  </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>239, 3</value>
   </data>
   <data name="CurrentProfileComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="ColorTrayIconCheckBox.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="defaultActionComboBox.ToolTip" xml:space="preserve">
     <value />
@@ -2937,8 +2958,8 @@
   <data name="columnName.Width" type="System.Int32, mscorlib">
     <value>100</value>
   </data>
-  <data name="&gt;&gt;uploadLimitItems.Parent" xml:space="preserve">
-    <value>tabPage6</value>
+  <data name="PassField.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="groupCurrentProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 67</value>
@@ -2946,8 +2967,8 @@
   <data name="CloseDialogButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 23</value>
   </data>
-  <data name="MinToTrayCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Port:</value>
   </data>
   <data name="AutoUpdateGeoipCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 65</value>
@@ -2959,22 +2980,19 @@
     <value>tabPage6</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.CultureForm, Transmission Remote, Version=3.25.6679.30185, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.CultureForm, Transmission Remote, Version=3.25.6679.33743, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;label14.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ClearPasswordCheckBox.Text" xml:space="preserve">
-    <value>Clear the password at save</value>
+  <data name="AutoCheckUpdateCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Authentication</value>
   </data>
-  <data name="&gt;&gt;FeedNameLabel.Name" xml:space="preserve">
-    <value>FeedNameLabel</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;tabRssSettings.Name" xml:space="preserve">
+    <value>tabRssSettings</value>
   </data>
   <data name="groupBehavior.Text" xml:space="preserve">
     <value>Behavior</value>
@@ -2997,14 +3015,11 @@
   <data name="&gt;&gt;downloadLimitItems.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPage6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ProxyPassField.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
-  </data>
-  <data name="tabPage2.ToolTip" xml:space="preserve">
+  <data name="SaveServerButton.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 68</value>
@@ -3042,11 +3057,8 @@
   <data name="RetryLimitValue.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="RefreshRateValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="&gt;&gt;addServerButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;UploadPromptCheckBox.Parent" xml:space="preserve">
     <value>groupBehavior</value>
@@ -3063,8 +3075,8 @@
   <data name="RemoveShareButton.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="tabPage6.Text" xml:space="preserve">
-    <value>Misc</value>
+  <data name="&gt;&gt;minimizeOnCloseCheckBox.Parent" xml:space="preserve">
+    <value>TrayGroupBox</value>
   </data>
   <data name="&gt;&gt;tabServersSettings.Parent" xml:space="preserve">
     <value>tabSettings</value>
@@ -3084,14 +3096,17 @@
   <data name="&gt;&gt;SaveButton.Name" xml:space="preserve">
     <value>SaveButton</value>
   </data>
+  <data name="&gt;&gt;groupCurrentProfile.Parent" xml:space="preserve">
+    <value>tabGlobalSettings</value>
+  </data>
   <data name="ClearDestPathHistoryButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 23</value>
   </data>
   <data name="PlinkEnableCheckBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="AddShareButton.Text" xml:space="preserve">
-    <value>Add</value>
+  <data name="&gt;&gt;trayImageBrowse.Name" xml:space="preserve">
+    <value>trayImageBrowse</value>
   </data>
   <data name="defaultActionLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 13</value>
@@ -3102,11 +3117,11 @@
   <data name="EnableAuthCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="groupPlinkPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 248</value>
+  <data name="listRssFeeds.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;minimizeOnCloseCheckBox.Name" xml:space="preserve">
-    <value>minimizeOnCloseCheckBox</value>
+  <data name="MappingHelpButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;defaultActionComboBox.Name" xml:space="preserve">
     <value>defaultActionComboBox</value>
@@ -3126,17 +3141,14 @@
   <data name="label14.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="listRssFeeds.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;MappingHelpButton.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.USButton, Transmission Remote, Version=3.25.6679.30185, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.USButton, Transmission Remote, Version=3.25.6679.33743, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;groupBehavior.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="SaveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 23</value>
+  <data name="label17.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="PortField.ToolTip" xml:space="preserve">
     <value />
@@ -3144,11 +3156,8 @@
   <data name="tabGlobalSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="customPathTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 20</value>
-  </data>
-  <data name="&gt;&gt;defaultActionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="AddFeedButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>277, 16</value>
   </data>
   <data name="&gt;&gt;tabSamba.Name" xml:space="preserve">
     <value>tabSamba</value>
@@ -3162,8 +3171,8 @@
   <data name="useLocalCookiesCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;UseSSLCheckBox.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+  <data name="&gt;&gt;CloseDialogButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="removeServerButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 23</value>
@@ -3192,23 +3201,26 @@
   <data name="removeServerButton.Text" xml:space="preserve">
     <value>Remove Server</value>
   </data>
-  <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+  <data name="AddShareButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="RetryLimitValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>180, 100</value>
   </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
+  <data name="StartPausedCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 88</value>
   </data>
-  <data name="&gt;&gt;tabPage6.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;ProxyPortField.Name" xml:space="preserve">
+    <value>ProxyPortField</value>
+  </data>
+  <data name="ClearPasswordCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 17</value>
   </data>
   <data name="tabSkinSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>445, 375</value>
-  </data>
-  <data name="&gt;&gt;useLocalCookiesCheckBox.Parent" xml:space="preserve">
-    <value>groupBehavior</value>
   </data>
   <data name="&gt;&gt;FeedUrlLabel.Name" xml:space="preserve">
     <value>FeedUrlLabel</value>
@@ -3219,8 +3231,8 @@
   <data name="&gt;&gt;StartOnSystemCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ProxyPortField.Name" xml:space="preserve">
-    <value>ProxyPortField</value>
+  <data name="groupFeed.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;columnFeedName.Name" xml:space="preserve">
     <value>columnFeedName</value>
@@ -3234,29 +3246,26 @@
   <data name="removeServerButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;StartPausedCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;FeedUrlTextBox.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 39</value>
   </data>
-  <data name="&gt;&gt;RemoveShareButton.Name" xml:space="preserve">
-    <value>RemoveShareButton</value>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;uploadLimitItems.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="EnableAuthCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 17</value>
+  <data name="StartOnSystemCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;notificationOnAdditionCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PlinkPathButton.Name" xml:space="preserve">
-    <value>PlinkPathButton</value>
+  <data name="DontSavePasswordsCheckBox.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="infopanelImageBrowse.Size" type="System.Drawing.Size, System.Drawing">
     <value>433, 68</value>
@@ -3270,11 +3279,11 @@
   <data name="&gt;&gt;FeedUrlTextBox.Name" xml:space="preserve">
     <value>FeedUrlTextBox</value>
   </data>
-  <data name="&gt;&gt;notificationOnCompletionCheckBox.Parent" xml:space="preserve">
-    <value>TrayGroupBox</value>
+  <data name="tabGlobalSettings.Text" xml:space="preserve">
+    <value>Global Settings</value>
   </data>
-  <data name="&gt;&gt;groupCurrentProfile.Name" xml:space="preserve">
-    <value>groupCurrentProfile</value>
+  <data name="tabPage6.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;label11.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3285,17 +3294,17 @@
   <data name="&gt;&gt;FeedUrlTextBox.Parent" xml:space="preserve">
     <value>groupFeed</value>
   </data>
-  <data name="PlinkEnableCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 13</value>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="MappingHelpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>158, 14</value>
+  <data name="tabPage6.Text" xml:space="preserve">
+    <value>Misc</value>
   </data>
   <data name="groupBehavior.Size" type="System.Drawing.Size, System.Drawing">
     <value>429, 236</value>
   </data>
-  <data name="SaveServerButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>291, 105</value>
+  <data name="&gt;&gt;tabServerSettings.Name" xml:space="preserve">
+    <value>tabServerSettings</value>
   </data>
   <data name="&gt;&gt;ProxyPortField.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -3308,9 +3317,6 @@
   </data>
   <data name="SambaShareTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 20</value>
-  </data>
-  <data name="FeedUrlLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="PlinkPathTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 20</value>
@@ -3339,20 +3345,17 @@
   <data name="label12.Text" xml:space="preserve">
     <value>Custom rpc path:</value>
   </data>
-  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="notificationOnCompletionCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="useLocalCookiesWarningButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tabSkinSettings.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="UseSSLCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 17</value>
   </data>
   <data name="EnableProxyCombo.ToolTip" xml:space="preserve">
     <value />
@@ -3360,8 +3363,8 @@
   <data name="&gt;&gt;customPathTextBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="MappingHelpButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 14</value>
   </data>
   <data name="tabSkinSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -3381,26 +3384,26 @@
   <data name="PassField.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
     <value>*</value>
   </data>
-  <data name="CurrentProfileComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 23</value>
+  <data name="PlinkEnableCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;tabPage6.Parent" xml:space="preserve">
     <value>tabServerSettings</value>
   </data>
-  <data name="label12.ToolTip" xml:space="preserve">
+  <data name="&gt;&gt;defaultActionComboBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;addServerToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AutoCheckUpdateCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 17</value>
+  </data>
+  <data name="&gt;&gt;ClearPasswordCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label9.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="label18.Text" xml:space="preserve">
-    <value>Refresh rate when hidden:</value>
-  </data>
-  <data name="&gt;&gt;SambaShareTextBox.Name" xml:space="preserve">
-    <value>SambaShareTextBox</value>
-  </data>
-  <data name="PlinkPathButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="FeedNameTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="notificationOnAdditionCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 23</value>
@@ -3414,11 +3417,8 @@
   <data name="removeServerButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;tabServerSettings.Name" xml:space="preserve">
-    <value>tabServerSettings</value>
-  </data>
-  <data name="UserField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 18</value>
+  <data name="&gt;&gt;UpdateToBetaCheckBox.Parent" xml:space="preserve">
+    <value>groupBehavior</value>
   </data>
   <data name="MinToTrayCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 0</value>

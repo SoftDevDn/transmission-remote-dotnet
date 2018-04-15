@@ -74,13 +74,13 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // filesListView
             // 
-            resources.ApplyResources(this.filesListView, "filesListView");
             this.filesListView.CheckBoxes = true;
             this.filesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.filesPathCol,
             this.filesTypeCol,
             this.filesSizeCol,
             this.filesPriorityCol});
+            resources.ApplyResources(this.filesListView, "filesListView");
             this.filesListView.FullRowSelect = true;
             this.filesListView.HideSelection = false;
             this.filesListView.Name = "filesListView";
@@ -128,21 +128,21 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // destinationComboBox
             // 
-            resources.ApplyResources(this.destinationComboBox, "destinationComboBox");
             this.destinationComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.destinationComboBox, "destinationComboBox");
             this.destinationComboBox.Name = "destinationComboBox";
             // 
             // statusStrip
             // 
-            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             // 
             // toolStripStatusLabel
             // 
-            resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
             // 
             // peerLimitValue
             // 
@@ -183,7 +183,6 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // PropertiesGroupBox
             // 
-            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.tableLayoutPanel1.SetColumnSpan(this.PropertiesGroupBox, 3);
             this.PropertiesGroupBox.Controls.Add(this.btnBrowse);
             this.PropertiesGroupBox.Controls.Add(this.startTorrentCheckBox);
@@ -191,6 +190,7 @@ namespace TransmissionRemoteDotnet.Forms
             this.PropertiesGroupBox.Controls.Add(this.peerLimitValue);
             this.PropertiesGroupBox.Controls.Add(this.altPeerLimitCheckBox);
             this.PropertiesGroupBox.Controls.Add(this.altDestDirCheckBox);
+            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Name = "PropertiesGroupBox";
             this.PropertiesGroupBox.TabStop = false;
             // 
@@ -203,16 +203,15 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // TorrentContentsGroupBox
             // 
-            resources.ApplyResources(this.TorrentContentsGroupBox, "TorrentContentsGroupBox");
             this.tableLayoutPanel1.SetColumnSpan(this.TorrentContentsGroupBox, 3);
             this.TorrentContentsGroupBox.Controls.Add(this.filesListView);
             this.TorrentContentsGroupBox.Controls.Add(this.TorrentContentsPanel);
+            resources.ApplyResources(this.TorrentContentsGroupBox, "TorrentContentsGroupBox");
             this.TorrentContentsGroupBox.Name = "TorrentContentsGroupBox";
             this.TorrentContentsGroupBox.TabStop = false;
             // 
             // TorrentContentsPanel
             // 
-            resources.ApplyResources(this.TorrentContentsPanel, "TorrentContentsPanel");
             this.TorrentContentsPanel.Controls.Add(this.DateLabel);
             this.TorrentContentsPanel.Controls.Add(this.SizeLabel);
             this.TorrentContentsPanel.Controls.Add(this.CommentLabel);
@@ -224,33 +223,38 @@ namespace TransmissionRemoteDotnet.Forms
             this.TorrentContentsPanel.Controls.Add(this.SelectNoneButton);
             this.TorrentContentsPanel.Controls.Add(this.SelectInvertButton);
             this.TorrentContentsPanel.Controls.Add(this.SelectAllButton);
+            resources.ApplyResources(this.TorrentContentsPanel, "TorrentContentsPanel");
             this.TorrentContentsPanel.Name = "TorrentContentsPanel";
             // 
             // DateLabel
             // 
-            resources.ApplyResources(this.DateLabel, "DateLabel");
+            this.DateLabel.BackColor = System.Drawing.SystemColors.Control;
             this.DateLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.DateLabel, "DateLabel");
             this.DateLabel.Name = "DateLabel";
             this.DateLabel.ReadOnly = true;
             // 
             // SizeLabel
             // 
-            resources.ApplyResources(this.SizeLabel, "SizeLabel");
+            this.SizeLabel.BackColor = System.Drawing.SystemColors.Control;
             this.SizeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.SizeLabel, "SizeLabel");
             this.SizeLabel.Name = "SizeLabel";
             this.SizeLabel.ReadOnly = true;
             // 
             // CommentLabel
             // 
-            resources.ApplyResources(this.CommentLabel, "CommentLabel");
+            this.CommentLabel.BackColor = System.Drawing.SystemColors.Control;
             this.CommentLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.CommentLabel, "CommentLabel");
             this.CommentLabel.Name = "CommentLabel";
             this.CommentLabel.ReadOnly = true;
             // 
             // NameLabel
             // 
-            resources.ApplyResources(this.NameLabel, "NameLabel");
+            this.NameLabel.BackColor = System.Drawing.SystemColors.Control;
             this.NameLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.NameLabel, "NameLabel");
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.ReadOnly = true;
             // 
