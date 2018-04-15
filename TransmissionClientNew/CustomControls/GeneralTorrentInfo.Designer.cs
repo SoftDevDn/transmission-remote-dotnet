@@ -137,6 +137,7 @@
             // 
             // errorField
             // 
+            this.errorField.BackColor = System.Drawing.Color.Transparent;
             this.errorField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.errorField, 3);
             resources.ApplyResources(this.errorField, "errorField");
@@ -145,6 +146,7 @@
             // 
             // commentField
             // 
+            this.commentField.BackColor = System.Drawing.Color.Transparent;
             this.commentField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.commentField, 4);
             resources.ApplyResources(this.commentField, "commentField");
@@ -158,6 +160,7 @@
             // 
             // createdByField
             // 
+            this.createdByField.BackColor = System.Drawing.Color.Transparent;
             this.createdByField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.createdByField, 3);
             resources.ApplyResources(this.createdByField, "createdByField");
@@ -166,6 +169,7 @@
             // 
             // hashField
             // 
+            this.hashField.BackColor = System.Drawing.Color.Transparent;
             this.hashField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.hashField, 4);
             resources.ApplyResources(this.hashField, "hashField");
@@ -179,6 +183,7 @@
             // 
             // createdAtField
             // 
+            this.createdAtField.BackColor = System.Drawing.Color.Transparent;
             this.createdAtField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.createdAtField, 3);
             resources.ApplyResources(this.createdAtField, "createdAtField");
@@ -187,6 +192,7 @@
             // 
             // totalSizeField
             // 
+            this.totalSizeField.BackColor = System.Drawing.Color.Transparent;
             this.totalSizeField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.totalSizeField, 4);
             resources.ApplyResources(this.totalSizeField, "totalSizeField");
@@ -200,6 +206,7 @@
             // 
             // startedAtField
             // 
+            this.startedAtField.BackColor = System.Drawing.Color.Transparent;
             this.startedAtField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.startedAtField, 3);
             resources.ApplyResources(this.startedAtField, "startedAtField");
@@ -208,6 +215,7 @@
             // 
             // locationField
             // 
+            this.locationField.BackColor = System.Drawing.Color.Transparent;
             this.locationField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.locationField, 4);
             resources.ApplyResources(this.locationField, "locationField");
@@ -228,6 +236,7 @@
             // 
             // statusField
             // 
+            this.statusField.BackColor = System.Drawing.Color.Transparent;
             this.statusField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.statusField, 4);
             resources.ApplyResources(this.statusField, "statusField");
@@ -241,6 +250,7 @@
             // 
             // ratioField
             // 
+            this.ratioField.BackColor = System.Drawing.Color.Transparent;
             this.ratioField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.ratioField, 2);
             resources.ApplyResources(this.ratioField, "ratioField");
@@ -254,6 +264,7 @@
             // 
             // uploadLimitField
             // 
+            this.uploadLimitField.BackColor = System.Drawing.Color.Transparent;
             this.uploadLimitField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.uploadLimitField, 2);
             resources.ApplyResources(this.uploadLimitField, "uploadLimitField");
@@ -267,6 +278,7 @@
             // 
             // downloadLimitField
             // 
+            this.downloadLimitField.BackColor = System.Drawing.Color.Transparent;
             this.downloadLimitField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.downloadLimitField, 2);
             resources.ApplyResources(this.downloadLimitField, "downloadLimitField");
@@ -281,6 +293,7 @@
             // 
             // leechersField
             // 
+            this.leechersField.BackColor = System.Drawing.Color.Transparent;
             this.leechersField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.leechersField, 2);
             resources.ApplyResources(this.leechersField, "leechersField");
@@ -294,6 +307,7 @@
             // 
             // uploadSpeedField
             // 
+            this.uploadSpeedField.BackColor = System.Drawing.Color.Transparent;
             this.uploadSpeedField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.uploadSpeedField, 2);
             resources.ApplyResources(this.uploadSpeedField, "uploadSpeedField");
@@ -307,6 +321,7 @@
             // 
             // downloadSpeedField
             // 
+            this.downloadSpeedField.BackColor = System.Drawing.Color.Transparent;
             this.downloadSpeedField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.downloadSpeedField, 2);
             resources.ApplyResources(this.downloadSpeedField, "downloadSpeedField");
@@ -320,6 +335,7 @@
             // 
             // seedersField
             // 
+            this.seedersField.BackColor = System.Drawing.Color.Transparent;
             this.seedersField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.seedersField, 2);
             resources.ApplyResources(this.seedersField, "seedersField");
@@ -333,6 +349,7 @@
             // 
             // uploadedField
             // 
+            this.uploadedField.BackColor = System.Drawing.Color.Transparent;
             this.uploadedField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.uploadedField, 2);
             resources.ApplyResources(this.uploadedField, "uploadedField");
@@ -346,6 +363,7 @@
             // 
             // downloadedField
             // 
+            this.downloadedField.BackColor = System.Drawing.Color.Transparent;
             this.downloadedField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.downloadedField, 2);
             resources.ApplyResources(this.downloadedField, "downloadedField");
@@ -359,6 +377,7 @@
             // 
             // piecesInfoField
             // 
+            this.piecesInfoField.BackColor = System.Drawing.Color.Transparent;
             this.piecesInfoField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.piecesInfoField, 2);
             resources.ApplyResources(this.piecesInfoField, "piecesInfoField");
@@ -372,6 +391,7 @@
             // 
             // remainingField
             // 
+            this.remainingField.BackColor = System.Drawing.Color.Transparent;
             this.remainingField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.remainingField, 2);
             resources.ApplyResources(this.remainingField, "remainingField");
@@ -385,6 +405,7 @@
             // 
             // timeElapsedField
             // 
+            this.timeElapsedField.BackColor = System.Drawing.Color.Transparent;
             this.timeElapsedField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generalTableLayoutPanel.SetColumnSpan(this.timeElapsedField, 2);
             resources.ApplyResources(this.timeElapsedField, "timeElapsedField");

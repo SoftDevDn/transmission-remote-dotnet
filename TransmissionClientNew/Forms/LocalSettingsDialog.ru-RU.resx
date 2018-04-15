@@ -126,6 +126,9 @@
   <data name="SaveAndConnectButton.Text" xml:space="preserve">
     <value>Сохранить и подключить</value>
   </data>
+  <data name="tabGlobalSettings.Text" xml:space="preserve">
+    <value>Глобальные настройки</value>
+  </data>
   <data name="groupAutoConnect.Text" xml:space="preserve">
     <value>Автоподключение</value>
   </data>
@@ -136,6 +139,15 @@
     <value>plink.exe или ssh.exe:</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PlinkPathButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>348, 17</value>
+  </data>
+  <data name="PlinkPathButton.Text" xml:space="preserve">
+    <value>Обзор</value>
+  </data>
+  <data name="groupBehavior.Text" xml:space="preserve">
+    <value>Поведение</value>
+  </data>
   <data name="useLocalCookiesWarningButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>146, 111</value>
   </data>
@@ -150,6 +162,36 @@
   </data>
   <data name="AutoUpdateGeoipCheckBox.Text" xml:space="preserve">
     <value>Автообновление БД GeoIP</value>
+  </data>
+  <data name="ColorTrayIconCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 17</value>
+  </data>
+  <data name="ColorTrayIconCheckBox.Text" xml:space="preserve">
+    <value>Цветная иконка</value>
+  </data>
+  <data name="notificationOnCompletionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 17</value>
+  </data>
+  <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
+    <value>Уведомление о завершении</value>
+  </data>
+  <data name="notificationOnAdditionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 17</value>
+  </data>
+  <data name="notificationOnAdditionCheckBox.Text" xml:space="preserve">
+    <value>Уведомление о добавлении</value>
+  </data>
+  <data name="minimizeOnCloseCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 17</value>
+  </data>
+  <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
+    <value>Минимизировать при закрытии</value>
+  </data>
+  <data name="MinToTrayCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 17</value>
+  </data>
+  <data name="MinToTrayCheckBox.Text" xml:space="preserve">
+    <value>Иконка в трее</value>
   </data>
   <data name="StartOnSystemCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 17</value>
@@ -202,56 +244,8 @@
   <data name="UploadPromptCheckBox.Text" xml:space="preserve">
     <value>Напоминание об отдаче</value>
   </data>
-  <data name="groupBehavior.Text" xml:space="preserve">
-    <value>Поведение</value>
-  </data>
-  <data name="tabGlobalSettings.Text" xml:space="preserve">
-    <value>Глобальные настройки</value>
-  </data>
   <data name="tabServersSettings.Text" xml:space="preserve">
     <value>Настройки подключения</value>
-  </data>
-  <data name="tabRssSettings.Text" xml:space="preserve">
-    <value>RSS-каналы</value>
-  </data>
-  <data name="tabSkinSettings.Text" xml:space="preserve">
-    <value>Скин</value>
-  </data>
-  <data name="PlinkPathButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>348, 17</value>
-  </data>
-  <data name="PlinkPathButton.Text" xml:space="preserve">
-    <value>Обзор</value>
-  </data>
-  <data name="ColorTrayIconCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 17</value>
-  </data>
-  <data name="ColorTrayIconCheckBox.Text" xml:space="preserve">
-    <value>Цветная иконка</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 17</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
-    <value>Уведомление о завершении</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 17</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.Text" xml:space="preserve">
-    <value>Уведомление о добавлении</value>
-  </data>
-  <data name="minimizeOnCloseCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
-  </data>
-  <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
-    <value>Минимизировать при закрытии</value>
-  </data>
-  <data name="MinToTrayCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 17</value>
-  </data>
-  <data name="MinToTrayCheckBox.Text" xml:space="preserve">
-    <value>Иконка в трее</value>
   </data>
   <data name="removeServerButton.Text" xml:space="preserve">
     <value>Удалить сервер</value>
@@ -445,6 +439,9 @@
   <data name="columnPort.Text" xml:space="preserve">
     <value>Порт</value>
   </data>
+  <data name="tabRssSettings.Text" xml:space="preserve">
+    <value>RSS-каналы</value>
+  </data>
   <data name="columnFeedName.Text" xml:space="preserve">
     <value>Имя канала</value>
   </data>
@@ -471,6 +468,9 @@
   </data>
   <data name="FeedNameLabel.Text" xml:space="preserve">
     <value>Имя канала:</value>
+  </data>
+  <data name="tabSkinSettings.Text" xml:space="preserve">
+    <value>Скин</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

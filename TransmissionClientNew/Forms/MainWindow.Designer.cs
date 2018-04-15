@@ -63,7 +63,7 @@ namespace TransmissionRemoteDotnet.Forms
             this.progressOrPiecesPanel = new System.Windows.Forms.Panel();
             this.piecesGraph = new TransmissionRemoteDotnet.CustomControls.PiecesGraph();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.percentageLabel = new TransmissionRemoteDotnet.CustomControls.SelectableLabel();
+            this.percentageLabel = new System.Windows.Forms.Label();
             this.generalTorrentInfo = new TransmissionRemoteDotnet.CustomControls.TorrentGeneralInfo();
             this.trackersTabPage = new System.Windows.Forms.TabPage();
             this.trackersTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
@@ -444,10 +444,9 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // percentageLabel
             // 
+            this.percentageLabel.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.percentageLabel, "percentageLabel");
-            this.percentageLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.percentageLabel.Name = "percentageLabel";
-            this.percentageLabel.ReadOnly = true;
             // 
             // generalTorrentInfo
             // 
@@ -1504,7 +1503,6 @@ namespace TransmissionRemoteDotnet.Forms
             this.torrentTabControl.ResumeLayout(false);
             this.generalTabPage.ResumeLayout(false);
             this.generalTableLayoutPanel.ResumeLayout(false);
-            this.generalTableLayoutPanel.PerformLayout();
             this.progressOrPiecesPanel.ResumeLayout(false);
             this.trackersTabPage.ResumeLayout(false);
             this.trackersTorrentNameGroupBox.ResumeLayout(false);
@@ -1604,7 +1602,7 @@ namespace TransmissionRemoteDotnet.Forms
         private TableLayoutPanel generalTableLayoutPanel;
         private ProgressBar progressBar;
         private Panel progressOrPiecesPanel;
-        private SelectableLabel percentageLabel;
+        private Label percentageLabel;
         private PiecesGraph piecesGraph;
         private Label downloadProgressLabel;
         public TabControl torrentTabControl;

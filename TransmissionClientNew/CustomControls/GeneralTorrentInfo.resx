@@ -148,7 +148,7 @@
     <value>errorField</value>
   </data>
   <data name="&gt;&gt;errorField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;errorField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -178,7 +178,7 @@
     <value>commentField</value>
   </data>
   <data name="&gt;&gt;commentField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;commentField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -244,7 +244,7 @@
     <value>createdByField</value>
   </data>
   <data name="&gt;&gt;createdByField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;createdByField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -274,7 +274,7 @@
     <value>hashField</value>
   </data>
   <data name="&gt;&gt;hashField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;hashField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -340,7 +340,7 @@
     <value>createdAtField</value>
   </data>
   <data name="&gt;&gt;createdAtField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;createdAtField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -370,7 +370,7 @@
     <value>totalSizeField</value>
   </data>
   <data name="&gt;&gt;totalSizeField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;totalSizeField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -436,7 +436,7 @@
     <value>startedAtField</value>
   </data>
   <data name="&gt;&gt;startedAtField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;startedAtField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -466,7 +466,7 @@
     <value>locationField</value>
   </data>
   <data name="&gt;&gt;locationField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;locationField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -571,7 +571,7 @@
     <value>statusField</value>
   </data>
   <data name="&gt;&gt;statusField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;statusField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -637,7 +637,7 @@
     <value>ratioField</value>
   </data>
   <data name="&gt;&gt;ratioField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ratioField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -703,7 +703,7 @@
     <value>uploadLimitField</value>
   </data>
   <data name="&gt;&gt;uploadLimitField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uploadLimitField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -769,7 +769,7 @@
     <value>downloadLimitField</value>
   </data>
   <data name="&gt;&gt;downloadLimitField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;downloadLimitField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -835,7 +835,7 @@
     <value>leechersField</value>
   </data>
   <data name="&gt;&gt;leechersField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;leechersField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -901,7 +901,7 @@
     <value>uploadSpeedField</value>
   </data>
   <data name="&gt;&gt;uploadSpeedField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uploadSpeedField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -967,7 +967,7 @@
     <value>downloadSpeedField</value>
   </data>
   <data name="&gt;&gt;downloadSpeedField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;downloadSpeedField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -1033,7 +1033,7 @@
     <value>seedersField</value>
   </data>
   <data name="&gt;&gt;seedersField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;seedersField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -1099,7 +1099,7 @@
     <value>uploadedField</value>
   </data>
   <data name="&gt;&gt;uploadedField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uploadedField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -1165,7 +1165,7 @@
     <value>downloadedField</value>
   </data>
   <data name="&gt;&gt;downloadedField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;downloadedField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -1231,7 +1231,7 @@
     <value>piecesInfoField</value>
   </data>
   <data name="&gt;&gt;piecesInfoField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;piecesInfoField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -1297,7 +1297,7 @@
     <value>remainingField</value>
   </data>
   <data name="&gt;&gt;remainingField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;remainingField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -1366,7 +1366,7 @@
     <value>timeElapsedField</value>
   </data>
   <data name="&gt;&gt;timeElapsedField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6678.38286, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.32522, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;timeElapsedField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>

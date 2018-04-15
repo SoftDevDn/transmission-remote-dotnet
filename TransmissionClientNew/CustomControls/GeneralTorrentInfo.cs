@@ -9,7 +9,7 @@ namespace TransmissionRemoteDotnet.CustomControls
         public TorrentGeneralInfo()
         {
             InitializeComponent();
-            this.SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
         }
 
         public string TorrentName

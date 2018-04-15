@@ -271,7 +271,7 @@
     <value>Новый торрент {0}.</value>
   </data>
   <data name="Pieces" xml:space="preserve">
-    <value>Pieces</value>
+    <value>Загружено</value>
   </data>
   <data name="Progress" xml:space="preserve">
     <value>Прогресс</value>

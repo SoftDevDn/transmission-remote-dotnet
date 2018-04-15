@@ -177,9 +177,6 @@
   <data name="downloadProgressLabel.Text" xml:space="preserve">
     <value>Загружено:</value>
   </data>
-  <data name="percentageLabel.Text" xml:space="preserve">
-    <value>This is selectable text</value>
-  </data>
   <data name="trackersTierCol.Text" xml:space="preserve">
     <value>№</value>
   </data>
@@ -314,7 +311,7 @@
     <value>Последние активные</value>
   </data>
   <data name="openNetworkShareButton.Text" xml:space="preserve">
-    <value>Open on Network Share</value>
+    <value>Открыть папку, содержащую объект</value>
   </data>
   <data name="AltSpeedButton.Text" xml:space="preserve">
     <value>Альтернативная скорость</value>
@@ -446,88 +443,91 @@
     <value>Торрент</value>
   </data>
   <data name="findToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="findToolStripMenuItem.Text" xml:space="preserve">
     <value>Поиск...</value>
   </data>
   <data name="torrentMenuToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 6</value>
+    <value>315, 6</value>
   </data>
   <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="startToolStripMenuItem.Text" xml:space="preserve">
     <value>Запустить</value>
   </data>
   <data name="pauseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="pauseToolStripMenuItem.Text" xml:space="preserve">
     <value>Остановить</value>
   </data>
   <data name="recheckToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="recheckToolStripMenuItem.Text" xml:space="preserve">
     <value>Перепроверить</value>
   </data>
   <data name="propertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
     <value>Свойства</value>
   </data>
   <data name="removeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="removeToolStripMenuItem.Text" xml:space="preserve">
     <value>Удалить</value>
   </data>
   <data name="removeDeleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="removeDeleteToolStripMenuItem.Text" xml:space="preserve">
     <value>Удалить вместе с файлами</value>
   </data>
   <data name="reannounceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="reannounceToolStripMenuItem.Text" xml:space="preserve">
     <value>Переанонсировать</value>
   </data>
   <data name="moveTorrentDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="moveTorrentDataToolStripMenuItem.Text" xml:space="preserve">
     <value>Переместить данные торрента</value>
   </data>
   <data name="openNetworkShareToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="openNetworkShareToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open on Network Share</value>
+    <value>Открыть</value>
   </data>
   <data name="openNetworkShareDirToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
+  </data>
+  <data name="openNetworkShareDirToolStripMenuItem.Text" xml:space="preserve">
+    <value>Открыть папку, содержащую объект</value>
   </data>
   <data name="cSVInfoToClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="cSVInfoToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>Скопировать как CSV</value>
   </data>
   <data name="torrentMenuToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 6</value>
+    <value>315, 6</value>
   </data>
   <data name="startAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="startAllToolStripMenuItem.Text" xml:space="preserve">
     <value>Запустить все</value>
   </data>
   <data name="stopAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 22</value>
+    <value>318, 22</value>
   </data>
   <data name="stopAllToolStripMenuItem.Text" xml:space="preserve">
     <value>Остановить все</value>

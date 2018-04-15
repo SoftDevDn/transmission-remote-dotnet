@@ -913,6 +913,7 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void ChangeUICulture(object sender, EventArgs e)
         {
+            // TODO: fix torrentInfoPanel changing language.
             try
             {
                 LocalSettings settings = Program.Settings;
@@ -942,6 +943,7 @@ namespace TransmissionRemoteDotnet.Forms
                 {
                     item.StatusCode = item.StatusCode; //StatusCode field set update the language
                 }
+
                 int oldindex = speedResComboBox.SelectedIndex;
                 speedResComboBox.Items.Clear();
                 speedResComboBox.Items.AddRange(OtherStrings.SpeedResolutions.Split('|'));
@@ -1995,17 +1997,13 @@ namespace TransmissionRemoteDotnet.Forms
                 generalTorrentInfo.PiecesInfo = String.Format(OtherStrings.PiecesInfo, t.PieceCount, Toolbox.GetFileSize(t.PieceSize), t.HavePieces);
             }
             else
-                generalTorrentInfo.PiecesInfo = String.Format("{0} x {1}", t.PieceCount, Toolbox.GetFileSize(t.PieceSize));
+                generalTorrentInfo.PiecesInfo = $"{t.PieceCount} x {Toolbox.GetFileSize(t.PieceSize)}";
             generalTorrentInfo.TorrentLocation = t.DownloadDir + "/" + t.TorrentName;
             percentageLabel.Text = t.Percentage + "%";
             if (t.TotalSize == t.SizeWhenDone)
-            {
-                generalTorrentInfo.TotalSize = String.Format(OtherStrings.TotalDoneValidSize, Toolbox.GetFileSize(t.SizeWhenDone), t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid));
-            }
+                generalTorrentInfo.TotalSize = string.Format(OtherStrings.TotalDoneValidSize, Toolbox.GetFileSize(t.SizeWhenDone), t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid));
             else
-            {
-                generalTorrentInfo.TotalSize = String.Format(OtherStrings.TotalDoneValidTotalSize, Toolbox.GetFileSize(t.SizeWhenDone), t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid), Toolbox.GetFileSize(t.TotalSize));
-            }
+                generalTorrentInfo.TotalSize = string.Format(OtherStrings.TotalDoneValidTotalSize, Toolbox.GetFileSize(t.SizeWhenDone), t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid), Toolbox.GetFileSize(t.TotalSize));
             //totalSizeLabel.Text = String.Format(OtherStrings.DownloadedValid, t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid));
             generalTorrentInfo.Downloaded = Toolbox.GetFileSize(t.Downloaded);
             generalTorrentInfo.DownloadSpeed = t.SecondsDownloading >= 0 ? string.Format(OtherStrings.SpeedWithAvg, t.DownloadRateString, t.DownloadAvgRateString) : t.DownloadRateString;

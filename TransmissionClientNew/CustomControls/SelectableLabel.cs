@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -8,31 +9,34 @@ namespace TransmissionRemoteDotnet.CustomControls
     {
         public SelectableLabel()
         {
-            base.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            base.ReadOnly = true;
-            base.Text = "";
-            base.Visible = false;
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            BorderStyle = BorderStyle.None;
+            ReadOnly = true;
+            BackColor = Color.Transparent;
+            base.Text = string.Empty;
+            Visible = false;
 #if !MONO
-            base.MouseUp += new MouseEventHandler(
-                delegate(object sender, MouseEventArgs e) { HideCaret((sender as Control).Handle); }
-            );
+            MouseUp += delegate(object sender, MouseEventArgs e) { HideCaret(((Control) sender).Handle); };
 #endif
+        }
+
+        public sealed override Color BackColor
+        {
+            get { return base.BackColor; }
+            set { base.BackColor = value; }
         }
 
 #if !MONO
         [DllImport("User32.dll")]
-        static extern Boolean HideCaret(IntPtr hWnd);
+        static extern bool HideCaret(IntPtr hWnd);
 
         public override string Text
         {
-            get
-            {
-                return base.Text;
-            }
+            get => base.Text;
             set
             {
                 base.Text = value;
-                base.Visible = value.Length > 0;
+                Visible = value.Length > 0;
             }
         }
 #endif
