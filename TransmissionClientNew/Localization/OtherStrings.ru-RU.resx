@@ -130,7 +130,7 @@
     <value>Изменить URL</value>
   </data>
   <data name="InvalidUrl" xml:space="preserve">
-    <value>Неправильный url</value>
+    <value>Неправильный URL</value>
   </data>
   <data name="TrackerExists" xml:space="preserve">
     <value>Трекер уже существует</value>
@@ -151,10 +151,10 @@
     <value>Не удалось открыть сетевой ресурс</value>
   </data>
   <data name="OpenNetworkShareDir" xml:space="preserve">
-    <value>Open Folder on Network Share</value>
+    <value>Открыть папку, содержащую объект</value>
   </data>
   <data name="ItemsSelected" xml:space="preserve">
-    <value>items selected</value>
+    <value>элементов выбрано</value>
   </data>
   <data name="TerabyteShort" xml:space="preserve">
     <value>TB</value>
@@ -219,7 +219,7 @@
     <value>Пароль</value>
   </data>
   <data name="SpeedResolutions" xml:space="preserve">
-    <value>5 sec|10 sec|30 sec|5 min</value>
+    <value>5 cек|10 cек|30 cек|5 мин</value>
     <comment>delim with | char!!</comment>
   </data>
   <data name="PiecesInfo" xml:space="preserve">
@@ -241,7 +241,7 @@
     <value>Bandwidth allocation</value>
   </data>
   <data name="MultipleTorrentProperties" xml:space="preserve">
-    <value>Multiple Torrent Properties</value>
+    <value>Свойства группы торрентов</value>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>Неизвестный</value>
@@ -256,10 +256,10 @@
     <value>Скопировать в буфер обмена</value>
   </data>
   <data name="MoveMultipleTorrents" xml:space="preserve">
-    <value>Move multiple torrent data</value>
+    <value>Переместить данные группы торрентов</value>
   </data>
   <data name="MoveTorrentData" xml:space="preserve">
-    <value>Move torrent data</value>
+    <value>Переместить данные торрента</value>
   </data>
   <data name="MoveX" xml:space="preserve">
     <value>Переместить {0}</value>
@@ -277,7 +277,7 @@
     <value>Прогресс</value>
   </data>
   <data name="OpenNetworkShare" xml:space="preserve">
-    <value>Open on Network Share</value>
+    <value>Открыть</value>
   </data>
   <data name="All" xml:space="preserve">
     <value>Все</value>
@@ -430,13 +430,13 @@
     <value>Удалить вместе с файлами</value>
   </data>
   <data name="Revision" xml:space="preserve">
-    <value>Revision</value>
+    <value>Ревизия</value>
   </data>
   <data name="RpcVersion" xml:space="preserve">
-    <value>RpcVersion</value>
+    <value>Версия RPC</value>
   </data>
   <data name="RpcVersionMinimum" xml:space="preserve">
-    <value>RpcVersionMinimum</value>
+    <value>Мин. версия RPC</value>
   </data>
   <data name="Seeding" xml:space="preserve">
     <value>Раздаётся</value>
@@ -554,6 +554,6 @@
     <value>{0} в блоклисте.</value>
   </data>
   <data name="Reannounce" xml:space="preserve">
-    <value>Переанонсировать</value>
+    <value>Переанонсировать (получить больше пиров)</value>
   </data>
 </root>

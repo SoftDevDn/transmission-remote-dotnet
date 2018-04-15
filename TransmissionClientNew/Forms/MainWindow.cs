@@ -983,21 +983,15 @@ namespace TransmissionRemoteDotnet.Forms
         private void MainWindow_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
-            {
                 e.Effect = DragDropEffects.All;
-            }
         }
 
         private void MainWindow_DragDrop(object sender, DragEventArgs e)
         {
             if (Program.Connected)
-            {
                 Upload((string[])e.Data.GetData(DataFormats.FileDrop), Program.Settings.UploadPrompt);
-            }
             else
-            {
                 ShowMustBeConnectedDialog((string[])e.Data.GetData(DataFormats.FileDrop), Program.Settings.UploadPrompt);
-            }
         }
 
         public void ShowMustBeConnectedDialog(string[] args, bool uploadPrompt)
@@ -1027,9 +1021,7 @@ namespace TransmissionRemoteDotnet.Forms
         void twc_Completed(object sender, ResultEventArgs e)
         {
             if (e.Result.GetType() != typeof(ErrorCommand))
-            {
                 RefreshIfNotRefreshing();
-            }
         }
 
         private JsonArray BuildIdArray()
@@ -1038,9 +1030,7 @@ namespace TransmissionRemoteDotnet.Forms
             lock (torrentListView)
             {
                 foreach (Torrent t in torrentListView.SelectedItems)
-                {
                     ids.Put(t.Id);
-                }
             }
             return ids;
         }
@@ -1049,14 +1039,10 @@ namespace TransmissionRemoteDotnet.Forms
         {
             if (torrentListView.SelectedItems.Count == 1
                 && MessageBox.Show(String.Format(OtherStrings.ConfirmSingleRemove, torrentListView.SelectedItems[0].Text), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
                 RemoveTorrents(false);
-            }
             else if (torrentListView.SelectedItems.Count > 1
                 && MessageBox.Show(String.Format(OtherStrings.ConfirmMultipleRemove, torrentListView.SelectedItems.Count), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
                 RemoveTorrents(false);
-            }
         }
 
         private void RemoveAndDeleteTorrentsPrompt()
@@ -1065,14 +1051,10 @@ namespace TransmissionRemoteDotnet.Forms
             {
                 if (torrentListView.SelectedItems.Count == 1
                     && MessageBox.Show(String.Format(OtherStrings.ConfirmSingleRemoveAndDelete, torrentListView.SelectedItems[0].Text, Environment.NewLine + Environment.NewLine), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
                     RemoveTorrents(true);
-                }
                 else if (torrentListView.SelectedItems.Count > 1
                     && MessageBox.Show(String.Format(OtherStrings.ConfirmMultipleRemoveAndDelete, torrentListView.SelectedItems.Count, Environment.NewLine + Environment.NewLine), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
                     RemoveTorrents(true);
-                }
             }
         }
 
@@ -1108,9 +1090,7 @@ namespace TransmissionRemoteDotnet.Forms
             {
                 Show();
                 if (WindowState == FormWindowState.Minimized)
-                {
-                    WindowState = notifyIcon.Tag != null ? (FormWindowState)notifyIcon.Tag : FormWindowState.Normal;
-                }
+                    WindowState = (FormWindowState?) notifyIcon.Tag ?? FormWindowState.Normal;
                 Activate();
                 BringToFront();
             }
@@ -1120,9 +1100,7 @@ namespace TransmissionRemoteDotnet.Forms
         public void Connect()
         {
             if (InvokeRequired)
-            {
                 Invoke(new ConnectDelegate(Connect));
-            }
             else
             {
                 if (Program.Settings.Current.Host.Equals(""))
@@ -1150,13 +1128,9 @@ namespace TransmissionRemoteDotnet.Forms
         public void RefreshIfNotRefreshing()
         {
             if (!_sessionWebClient.IsBusy)
-            {
                 _sessionWebClient = CommandFactory.RequestAsync(Requests.SessionGet());
-            }
             if (!_refreshWebClient.IsBusy)
-            {
                 _refreshWebClient = CommandFactory.RequestAsync(Requests.TorrentGet());
-            }
         }
 
         private void localConfigureButton_Click(object sender, EventArgs e)
