@@ -13,52 +13,60 @@ namespace TransmissionRemoteDotnet.Settings
 {
     public class LocalSettings
     {
+        #region Fields
+        private bool _dontsavepasswords;
+        private string _currentprofile = string.Empty;
+
         /*
          * Modify this in MONO to right settings storage
          */
         public ILocalSettingsStore DefaultLocalStore;
         public bool CompletedBaloon = true;
-        public bool MinOnClose = false;
-        public bool MinToTray = false;
-        public bool ColorTray = false;
-        public bool AutoCheckupdate = false;
-        public bool UpdateToBeta = false;
-        public bool AutoUpdateGeoip = false;
-        public bool DeleteTorrentWhenAdding = false;
-        public bool NoGradientTorrentList = false;
-        public int DefaultDoubleClickAction = 0;
+        public bool MinOnClose;
+        public bool MinToTray;
+        public bool ColorTray;
+        public bool AutoCheckupdate;
+        public bool UpdateToBeta;
+        public bool AutoUpdateGeoip;
+        public bool DeleteTorrentWhenAdding;
+        public bool NoGradientTorrentList;
+        public int DefaultDoubleClickAction;
         public bool StartedBalloon = true;
         public bool UseLocalCookies = true;
-        private bool dontsavepasswords = false;
         public string StateImagePath = "";
-        public string InfopanelImagePath = "";
-        public string ToolbarImagePath = "";
-        public string TrayImagePath = "";
+        public string InfopanelImagePath = string.Empty;
+        public string ToolbarImagePath = string.Empty;
+        public string TrayImagePath = string.Empty;
         public string Locale = "en-US";
-        public string PlinkPath = null;
-        public bool UploadPrompt = false;
-        public string AutoConnect = "";
-        private string currentprofile = "";
+        public string PlinkPath;
+        public bool UploadPrompt;
+        public string AutoConnect = string.Empty;
 
+        public Dictionary<string, TransmissionServer> Servers = new Dictionary<string, TransmissionServer>();
+        public Dictionary<string, string> RssFeeds = new Dictionary<string, string>();
+        public Dictionary<string, object> Misc = new Dictionary<string, object>();
+        #endregion
+
+        #region Properties
         public string CurrentProfile
         {
-            get { return currentprofile; }
+            get { return _currentprofile; }
             set
             {
                 if (Servers.ContainsKey(value))
-                    currentprofile = value;
+                    _currentprofile = value;
             }
         }
 
         public bool DontSavePasswords
         {
-            get { return dontsavepasswords; }
+            get { return _dontsavepasswords; }
             set
             {
-                dontsavepasswords = value;
+                _dontsavepasswords = value;
                 foreach (KeyValuePair<string, TransmissionServer> s in Servers)
                 {
-                    s.Value.SetDontSavePasswords(dontsavepasswords);
+                    s.Value.SetDontSavePasswords(_dontsavepasswords);
                 }
             }
         }
@@ -67,18 +75,14 @@ namespace TransmissionRemoteDotnet.Settings
         {
             get
             {
-                TransmissionServer ts;
-                if (Servers.ContainsKey(CurrentProfile))
-                    ts = Servers[CurrentProfile];
-                else
-                    ts = new TransmissionServer();
+                var ts = Servers.ContainsKey(CurrentProfile) ? Servers[CurrentProfile] : new TransmissionServer();
                 return ts;
             }
         }
 
-        public Dictionary<string, TransmissionServer> Servers = new Dictionary<string, TransmissionServer>();
-        public Dictionary<string, string> RssFeeds = new Dictionary<string, string>();
-        public Dictionary<string, object> Misc = new Dictionary<string, object>();
+        public string RemoteToLocalPathsMapping { get; set; }
+
+        #endregion
 
         public JsonObject SaveToJson()
         {
@@ -156,12 +160,12 @@ namespace TransmissionRemoteDotnet.Settings
                     Servers.Add(n, new TransmissionServer(ja[n] as JsonObject));
                 }
             }
-            Toolbox.JsonGet(ref currentprofile, o[SettingsKey.REGKEY_CURRENTPROFILE]);
+            Toolbox.JsonGet(ref _currentprofile, o[SettingsKey.REGKEY_CURRENTPROFILE]);
             bool dsp = false;
             Toolbox.JsonGet(ref dsp, o[SettingsKey.REGKEY_DONTSAVEPASSWORDS]);
             DontSavePasswords = dsp;
-            if (!Servers.ContainsKey(currentprofile))
-                currentprofile = "";
+            if (!Servers.ContainsKey(_currentprofile))
+                _currentprofile = "";
             RssFeeds.Clear();
             ja = (JsonObject)o[SettingsKey.REGKEY_RSSFEEDS];
             if (ja != null)
@@ -211,21 +215,21 @@ namespace TransmissionRemoteDotnet.Settings
 
         public void Commit()
         {
-            if (!DefaultLocalStore.Save(this.SaveToJson()))
+            if (!DefaultLocalStore.Save(SaveToJson()))
                 MessageBox.Show("Failed to save settings", OtherStrings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public static LocalSettings TryLoad()
         {
             LocalSettings newsettings = null;
-            ILocalSettingsStore[] SettingsSource = new ILocalSettingsStore[] { 
+            ILocalSettingsStore[] settingsSource = { 
 #if !PORTABLE
                 new RegistryLocalSettingsStore(), 
                 new RegistryJsonLocalSettingsStore(), 
 #endif
                 new FileLocalSettingsStore() 
             };
-            foreach (ILocalSettingsStore ls in SettingsSource)
+            foreach (ILocalSettingsStore ls in settingsSource)
             {
                 try
                 {
@@ -268,20 +272,21 @@ namespace TransmissionRemoteDotnet.Settings
                         ts.RefreshRateTray = oldsettings.RefreshRate * 10;
                         ts.StartPaused = oldsettings.StartPaused;
                         ts.Username = oldsettings.User;
-                        ts.UseSSL = oldsettings.UseSSL;
+                        ts.UseSsl = oldsettings.UseSSL;
                         JsonObject mappings = oldsettings.SambaShareMappings;
                         foreach (string key in mappings.Names)
                         {
                             ts.AddSambaMapping(key, (string)mappings[key]);
                         }
-                        ts.destpathhistory.AddRange(oldsettings.DestPathHistory);
+                        ts.NativeDestPathHistory.AddRange(oldsettings.DestPathHistory);
                         ProxyServer ps = new ProxyServer();
                         ps.Host = oldsettings.ProxyHost;
                         ps.Password = oldsettings.ProxyPass;
                         ps.Port = oldsettings.ProxyPort;
                         ps.Username = oldsettings.ProxyUser;
-                        ps.ProxyMode = (ProxyMode)oldsettings.ProxyMode;
+                        ps.ProxyMode = oldsettings.ProxyMode;
                         ts.Proxy = ps;
+                        //ts.LocalTo
                         tempsettings.Servers.Add(p, ts);
                         if (origcurrentprofile.Equals(p))
                             tempsettings.CurrentProfile = p;
@@ -311,10 +316,10 @@ namespace TransmissionRemoteDotnet.Settings
     public class Server
     {
         public string Host = "";
-        public int Port = 0;
+        public int Port;
         public string Username = "";
-        private string password = null;
-        private bool dontsavepasswords = false;
+        private string password;
+        private bool dontsavepasswords;
 
         public virtual void LoadFromJson(JsonObject o)
         {
@@ -367,24 +372,24 @@ namespace TransmissionRemoteDotnet.Settings
     }
     public class TransmissionServer : Server
     {
-        public bool UseSSL = false;
-        public string CustomPath = null;
-        public bool StartPaused = false;
+        public bool UseSsl;
+        public string CustomPath;
+        public bool StartPaused;
         public int RefreshRate = 3;
         public int RefreshRateTray = 30;
         public int RetryLimit = 3;
-        public Dictionary<string, string> SambaShareMappings = new Dictionary<string, string>();
+        public readonly Dictionary<string, string> SambaShareMappings = new Dictionary<string, string>();
         public string DownLimit = "10,50,100,200,300,400,500,700,1000,1500,2000,3000,5000";
         public string UpLimit = "10,50,100,200,300,400,500,700,1000,1500,2000,3000,5000";
-        public bool PlinkEnable = false;
+        public bool PlinkEnable;
         public string PlinkCmd = "ls -lh \"$DATA\"; read";
-        public List<string> destpathhistory = new List<string>();
+        public readonly List<string> NativeDestPathHistory = new List<string>();
         public ProxyServer Proxy = new ProxyServer();
 
         public override JsonObject SaveToJson()
         {
             JsonObject jo = base.SaveToJson();
-            Toolbox.JsonPut(jo, SettingsKey.REGKEY_USESSL, UseSSL);
+            Toolbox.JsonPut(jo, SettingsKey.REGKEY_USESSL, UseSsl);
             Toolbox.JsonPut(jo, SettingsKey.REGKEY_REFRESHRATE, RefreshRate);
             Toolbox.JsonPut(jo, SettingsKey.REGKEY_REFRESHRATETRAY, RefreshRateTray);
             Toolbox.JsonPut(jo, SettingsKey.REGKEY_CUSTOMPATH, CustomPath);
@@ -395,7 +400,7 @@ namespace TransmissionRemoteDotnet.Settings
             Toolbox.JsonPut(jo, SettingsKey.REGKEY_PLINKENABLE, PlinkEnable);
             Toolbox.JsonPut(jo, SettingsKey.REGKEY_PLINKCMD, PlinkCmd);
             Toolbox.JsonPut(jo, SettingsKey.REGKEY_PROXY, Proxy.SaveToJson());
-            Toolbox.JsonPut(jo, SettingsKey.REGKEY_DESTINATION_PATH_HISTORY, new JsonArray(destpathhistory));
+            Toolbox.JsonPut(jo, SettingsKey.REGKEY_DESTINATION_PATH_HISTORY, new JsonArray(NativeDestPathHistory));
             JsonObject ja = new JsonObject();
             foreach (KeyValuePair<string, string> s in SambaShareMappings)
             {
@@ -408,7 +413,7 @@ namespace TransmissionRemoteDotnet.Settings
         public override void LoadFromJson(JsonObject o)
         {
             base.LoadFromJson(o);
-            Toolbox.JsonGet(ref UseSSL, o[SettingsKey.REGKEY_USESSL]);
+            Toolbox.JsonGet(ref UseSsl, o[SettingsKey.REGKEY_USESSL]);
             Toolbox.JsonGet(ref RefreshRate, o[SettingsKey.REGKEY_REFRESHRATE]);
             Toolbox.JsonGet(ref RefreshRateTray, o[SettingsKey.REGKEY_REFRESHRATETRAY]);
             Toolbox.JsonGet(ref CustomPath, o[SettingsKey.REGKEY_CUSTOMPATH]);
@@ -427,7 +432,7 @@ namespace TransmissionRemoteDotnet.Settings
             foreach (string s in ja.ToArray())
             {
                 if (s.Length > 0)
-                    destpathhistory.Add(s);
+                    NativeDestPathHistory.Add(s);
             }
             JsonObject jo = (JsonObject)o[SettingsKey.REGKEY_SAMBASHAREMAPPINGS];
             if (jo != null)
@@ -477,22 +482,22 @@ namespace TransmissionRemoteDotnet.Settings
         public void AddDestinationPath(string path)
         {
             const int maximum_history = 15;
-            destpathhistory.Remove(path);
-            destpathhistory.Insert(0, path);
-            if (destpathhistory.Count > maximum_history) 
-                destpathhistory.RemoveRange(maximum_history, destpathhistory.Count - maximum_history);
+            NativeDestPathHistory.Remove(path);
+            NativeDestPathHistory.Insert(0, path);
+            if (NativeDestPathHistory.Count > maximum_history) 
+                NativeDestPathHistory.RemoveRange(maximum_history, NativeDestPathHistory.Count - maximum_history);
         }
 
         public void ClearDestPathHistory()
         {
-            destpathhistory.Clear();
+            NativeDestPathHistory.Clear();
         }
 
         public string[] DestPathHistory
         {
             get
             {
-                return destpathhistory.ToArray();
+                return NativeDestPathHistory.ToArray();
             }
         }
 
@@ -508,7 +513,7 @@ namespace TransmissionRemoteDotnet.Settings
         {
             get
             {
-                return String.Format("{0}://{1}:{2}{3}rpc", new object[] { UseSSL ? "https" : "http", Host, Port, (CustomPath == null || CustomPath.Length == 0) ? "/transmission/" : CustomPath });
+                return String.Format("{0}://{1}:{2}{3}rpc", new object[] { UseSsl ? "https" : "http", Host, Port, (CustomPath == null || CustomPath.Length == 0) ? "/transmission/" : CustomPath });
             }
         }
 
@@ -542,13 +547,7 @@ namespace TransmissionRemoteDotnet.Settings
             LoadFromJson(o);
         }
 
-        public bool AuthEnabled
-        {
-            get
-            {
-                return !Username.Equals("");
-            }
-        }
+        public bool AuthEnabled => !Username.Equals(String.Empty);
     }
     internal class SettingsKey
     {
@@ -603,6 +602,7 @@ namespace TransmissionRemoteDotnet.Settings
             REGKEY_SAMBASHAREMAPPINGS = "sambaShareMappings",
             REGKEY_UPLOADPROMPT = "uploadPrompt",
             REGKEY_DESTINATION_PATH_HISTORY = "destPathHistory";
+        //REGKEY_PATHS_MAPPING = "pathsMapping";
     }
     public class PasswordEmptyException : Exception
     {

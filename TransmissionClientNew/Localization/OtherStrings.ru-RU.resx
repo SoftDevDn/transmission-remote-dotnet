@@ -173,7 +173,7 @@
     <value>Unable to run plink</value>
   </data>
   <data name="UnixPathExists" xml:space="preserve">
-    <value>Unix path exists</value>
+    <value>Unix-путь существует</value>
   </data>
   <data name="InvalidRPCLocation" xml:space="preserve">
     <value>Неправильное расположение RPC</value>
@@ -204,13 +204,13 @@
     <value>Не установлено имя хоста.</value>
   </data>
   <data name="MappingSample" xml:space="preserve">
-    <value>Sample mapping:</value>
+    <value>Пример привязки:</value>
   </data>
   <data name="SambaShare" xml:space="preserve">
-    <value>Samba share:</value>
+    <value>Префикс Win-пути (SMB):</value>
   </data>
   <data name="UnixPathPrefix" xml:space="preserve">
-    <value>UNIX path prefix:</value>
+    <value>Префикс Unix-пути:</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Отмена</value>

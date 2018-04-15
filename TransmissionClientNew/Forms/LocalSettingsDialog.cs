@@ -28,12 +28,15 @@ namespace TransmissionRemoteDotnet.Forms
 {
     public partial class LocalSettingsDialog : CultureForm
     {
+        #region Fields
         private ListViewItem _current;
         private bool _serversettingschanged;
+        #endregion
 
         public LocalSettingsDialog()
         {
             InitializeComponent();
+            InitializeTooltips();
             /* We cannot do this in a one line, becasue some controls already has Event */
             HostField.TextChanged += Field_ValueChanged;
             UserField.TextChanged += Field_ValueChanged;
@@ -63,8 +66,20 @@ namespace TransmissionRemoteDotnet.Forms
 
             AddShareButton.Click += Field_ValueChanged;
             RemoveShareButton.Click += Field_ValueChanged;
+
             for (int i = 0; i < MinToTrayCheckBox.Text.Length; i++)
                 TrayGroupBox.Text += "  ";
+        }
+
+        private void InitializeTooltips()
+        {
+            string sambaSample = $@"{OtherStrings.MappingSample}
+
+{OtherStrings.UnixPathPrefix} /mnt/transmission
+{OtherStrings.SambaShare} \\routerName\hddName\transmission";
+
+            toolTip.SetToolTip(MappingHelpButton, sambaSample);
+            toolTip.SetToolTip(useLocalCookiesWarningButton, OtherStrings.UpgradeNote);
         }
 
         public void SetImageNumbers(int toolbar, int state, int infopanel, int tray)
@@ -109,6 +124,10 @@ namespace TransmissionRemoteDotnet.Forms
                 if (s.Key.Equals(sett.CurrentProfile))
                     CurrentProfileComboBox.SelectedIndex = c;
             }
+
+            if (listServers.Items.Count > 0)
+                listServers.Items[0].Selected = true;
+
             listRssFeeds.Items.Clear();
             foreach (KeyValuePair<string, string> s in sett.RssFeeds)
             {
@@ -210,6 +229,16 @@ namespace TransmissionRemoteDotnet.Forms
             Close();
         }
 
+        private void SaveAndConnectButton_Click(object sender, EventArgs e)
+        {
+            AskToSaveServerIfNeed();
+            SaveSettings();
+            if (Program.Connected)
+                Program.Connected = false;
+            Program.Form.Connect();
+            Close();
+        }
+
         private void EnableAuthCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             PassField.Enabled = UserField.Enabled = EnableAuthCheckBox.Checked;
@@ -217,25 +246,13 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void EnableProxyCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ProxyAuthEnableCheckBox.Enabled = ProxyHostField.Enabled = ProxyPortField.Enabled = (EnableProxyCombo.SelectedIndex == 1);
-            ProxyUserField.Enabled = ProxyPassField.Enabled = (ProxyAuthEnableCheckBox.Checked && EnableProxyCombo.SelectedIndex == 1);
+            ProxyAuthEnableCheckBox.Enabled = ProxyHostField.Enabled = ProxyPortField.Enabled = EnableProxyCombo.SelectedIndex == 1;
+            ProxyUserField.Enabled = ProxyPassField.Enabled = ProxyAuthEnableCheckBox.Checked && EnableProxyCombo.SelectedIndex == 1;
         }
 
         private void ProxyAuthEnableCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             ProxyUserField.Enabled = ProxyPassField.Enabled = ProxyAuthEnableCheckBox.Checked;
-        }
-
-        private void SaveAndConnectButton_Click(object sender, EventArgs e)
-        {
-            AskToSaveServerIfNeed();
-            SaveSettings();
-            if (Program.Connected)
-            {
-                Program.Connected = false;
-            }
-            Program.Form.Connect();
-            Close();
         }
 
         private void MinToTrayCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -327,7 +344,7 @@ namespace TransmissionRemoteDotnet.Forms
                     PortField.Value = ts.Port;
                     RefreshRateValue.Value = ts.RefreshRate;
                     RefreshRateTrayValue.Value = ts.RefreshRateTray;
-                    UseSSLCheckBox.Checked = ts.UseSSL;
+                    UseSSLCheckBox.Checked = ts.UseSsl;
                     PassField.Enabled = UserField.Enabled = EnableAuthCheckBox.Checked = ts.AuthEnabled;
                     UserField.Text = ts.Username;
                     PassField.Text = ts.Password;
@@ -337,7 +354,7 @@ namespace TransmissionRemoteDotnet.Forms
                     ProxyPortField.Value = ts.Proxy.Port;
                     ProxyAuthEnableCheckBox.Checked = ts.Proxy.AuthEnabled;
                     ProxyUserField.Enabled = ProxyPassField.Enabled =
-                        (ts.Proxy.AuthEnabled && ts.Proxy.ProxyMode == ProxyMode.Enabled);
+                        ts.Proxy.AuthEnabled && ts.Proxy.ProxyMode == ProxyMode.Enabled;
                     ProxyUserField.Text = ts.Proxy.Username;
                     ProxyPassField.Text = ts.Proxy.Password;
                     RetryLimitValue.Value = ts.RetryLimit;
@@ -358,7 +375,7 @@ namespace TransmissionRemoteDotnet.Forms
                 AskToSaveServerIfNeed();
             }
             _serversettingschanged = false;
-            removeServerToolStripMenuItem.Enabled = removeServerButton.Enabled = tabServerSettings.Enabled = (listServers.SelectedItems.Count > 0);
+            removeServerToolStripMenuItem.Enabled = removeServerButton.Enabled = tabServerSettings.Enabled = listServers.SelectedItems.Count > 0;
         }
 
         private void AskToSaveServerIfNeed()
@@ -387,7 +404,7 @@ namespace TransmissionRemoteDotnet.Forms
                 _current.SubItems[2].Text = ts.Port.ToString();
                 ts.RefreshRate = (int)RefreshRateValue.Value;
                 ts.RefreshRateTray = (int)RefreshRateTrayValue.Value;
-                ts.UseSSL = UseSSLCheckBox.Checked;
+                ts.UseSsl = UseSSLCheckBox.Checked;
                 ts.Username = UserField.Text;
                 ts.Password = !ClearPasswordCheckBox.Checked ? PassField.Text : null;
                 ts.Proxy.ProxyMode = (ProxyMode)EnableProxyCombo.SelectedIndex;
@@ -425,7 +442,7 @@ namespace TransmissionRemoteDotnet.Forms
             int counter = 0;
             do
             {
-                name = "Server " + (counter++);
+                name = "Server " + counter++;
             } while (listServers.Items.ContainsKey(name));
             listServers.Items.Add(CreateServerItem(name, ts));
             CurrentProfileComboBox.Items.Add(name);
@@ -434,7 +451,7 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void listServers_AfterLabelEdit(object sender, LabelEditEventArgs e)
         {
-            e.CancelEdit = e.Label == null || e.Label.Length == 0 ||
+            e.CancelEdit = string.IsNullOrEmpty(e.Label) ||
                 listServers.Items.ContainsKey(e.Label) || e.Label.Equals("-");
             if (!e.CancelEdit)
             {
@@ -444,14 +461,6 @@ namespace TransmissionRemoteDotnet.Forms
                 CurrentProfileComboBox.Items[icurrent] = e.Label;
                 AutoConnectComboBox.Items[iauto] = e.Label;
             }
-        }
-
-        private void MappingHelpButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(
-                string.Format(@"{0}{1}{1}{2} /storage/torrent{1}{3} \\sambaserver\torrentshare",
-                    OtherStrings.MappingSample, Environment.NewLine, OtherStrings.UnixPathPrefix, OtherStrings.SambaShare),
-                OtherStrings.Info, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void CurrentProfileComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -513,11 +522,6 @@ namespace TransmissionRemoteDotnet.Forms
         private void useLocalCookiesCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             useLocalCookiesWarningButton.Visible = ((CheckBox)sender).Checked;
-        }
-
-        private void useLocalCookiesWarningButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(OtherStrings.UpgradeNote, OtherStrings.Info, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

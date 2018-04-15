@@ -1361,7 +1361,6 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void torrentListView_DoubleClick(object sender, EventArgs e)
         {
-            Torrent t = null;
             switch (Program.Settings.DefaultDoubleClickAction)
             {
                 case 1:
@@ -1371,7 +1370,7 @@ namespace TransmissionRemoteDotnet.Forms
                         ShowTorrentPropsHandler(sender, e);
                     break;
                 case 2:
-                    t = (Torrent)torrentListView.SelectedItems[0];
+                    var t = (Torrent)torrentListView.SelectedItems[0];
                     if (IfTorrentStatus(t, ProtocolConstants.STATUS_STOPPED))
                         startTorrentButton.PerformClick();
                     else
@@ -2427,6 +2426,16 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void openNetworkShareDir_Click(object sender, EventArgs e)
         {
+            OpenNetworkShareDir();
+        }
+
+        private void openNetworkShare_Click(object sender, EventArgs e)
+        {
+            OpenNetworkShare();
+        }
+
+        private void OpenNetworkShareDir()
+        {
             if (torrentListView.SelectedItems.Count == 1)
             {
                 Torrent t = (Torrent)torrentListView.SelectedItems[0];
@@ -2445,7 +2454,7 @@ namespace TransmissionRemoteDotnet.Forms
             }
         }
 
-        private void openNetworkShare_Click(object sender, EventArgs e)
+        private void OpenNetworkShare()
         {
             if (torrentListView.SelectedItems.Count == 1)
             {

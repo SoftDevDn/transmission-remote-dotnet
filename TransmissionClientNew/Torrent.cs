@@ -32,75 +32,73 @@ namespace TransmissionRemoteDotnet
 {
     public class Torrent : ListViewItem
     {
-        private string SeedersColumnFormat = "{1}";
+        // TODO: Maybe do static because it's might not used.
+        private readonly string _seedersColumnFormat = "{1}";
 
-        private long updateSerial;
+        private long _updateSerial;
 
-        public long UpdateSerial
-        {
-            get { return updateSerial; }
-        }
+        public long UpdateSerial => _updateSerial;
 
         private void UpdateIcon()
         {
-            if (this.HasError)
+            if (HasError)
             {
-                base.ImageIndex = 6;
+                ImageIndex = 6;
             }
-            else if (this.StatusCode == ProtocolConstants.STATUS_CHECK || this.StatusCode == ProtocolConstants.STATUS_CHECK_WAIT)
+            else if (StatusCode == ProtocolConstants.STATUS_CHECK || StatusCode == ProtocolConstants.STATUS_CHECK_WAIT)
             {
-                base.ImageIndex = 5;
+                ImageIndex = 5;
             }
-            else if (this.StatusCode == ProtocolConstants.STATUS_SEED)
+            else if (StatusCode == ProtocolConstants.STATUS_SEED)
             {
-                base.ImageIndex = 4;
+                ImageIndex = 4;
             }
-            else if (this.StatusCode == ProtocolConstants.STATUS_DOWNLOAD)
+            else if (StatusCode == ProtocolConstants.STATUS_DOWNLOAD)
             {
-                base.ImageIndex = 1;
+                ImageIndex = 1;
             }
-            else if (this.StatusCode == ProtocolConstants.STATUS_STOPPED)
+            else if (StatusCode == ProtocolConstants.STATUS_STOPPED)
             {
-                base.ImageIndex = 2;
+                ImageIndex = 2;
             }
-            else if (this.StatusCode == ProtocolConstants.STATUS_SEED_WAIT || this.StatusCode == ProtocolConstants.STATUS_DOWNLOAD_WAIT)
+            else if (StatusCode == ProtocolConstants.STATUS_SEED_WAIT || StatusCode == ProtocolConstants.STATUS_DOWNLOAD_WAIT)
             {
-                base.ImageIndex = 9;
+                ImageIndex = 9;
             }
             else
             {
-                base.ImageIndex = -1;
+                ImageIndex = -1;
             }
         }
 
         private void SetText(int idx, string str)
         {
-            if (!str.Equals(base.SubItems[idx].Text))
-                base.SubItems[idx].Text = str;
+            if (!str.Equals(SubItems[idx].Text))
+                SubItems[idx].Text = str;
         }
 
         public Color GetRatioColor()
         {
             double seedratio;
-            if (this.SeedRatioMode == ProtocolConstants.TR_RATIOLIMIT_UNLIMITED)
+            if (SeedRatioMode == ProtocolConstants.TR_RATIOLIMIT_UNLIMITED)
                 seedratio = -1;
             else
             {
-                if (this.SeedRatioMode == ProtocolConstants.TR_RATIOLIMIT_SINGLE)
+                if (SeedRatioMode == ProtocolConstants.TR_RATIOLIMIT_SINGLE)
                 {
-                    seedratio = this.SeedRatioLimit;
+                    seedratio = SeedRatioLimit;
                 }
                 else
                 {
-                    JsonObject session = (JsonObject)Program.DaemonDescriptor.SessionData;
+                    JsonObject session = Program.DaemonDescriptor.SessionData;
                     seedratio = Toolbox.ToBool(session[ProtocolConstants.FIELD_SEEDRATIOLIMITED]) ? Toolbox.ToDouble(session[ProtocolConstants.FIELD_SEEDRATIOLIMIT]) : -1;
                 }
             }
-            if (this.LocalRatio < 0 || seedratio < 0)
+            if (LocalRatio < 0 || seedratio < 0)
                 return SystemColors.WindowText;
-            if (this.LocalRatio > seedratio)
+            if (LocalRatio > seedratio)
                 return Color.Green;
-            if (this.LocalRatio > seedratio * 0.9)
+            if (LocalRatio > seedratio * 0.9)
                 return Color.Gold;
             else
                 return Color.Red;
@@ -115,152 +113,152 @@ namespace TransmissionRemoteDotnet
                 form.Invoke(new UpdateUIDelegate(UpdateUi), new object[] { first });
                 return;
             }
-            SetText(1, this.Id.ToString());
-            base.SubItems[1].Tag = this.Id;
-            SetText(2, Toolbox.GetFileSize(this.SizeWhenDone));
-            base.SubItems[2].Tag = this.SizeWhenDone;
-            SetText(3, this.Percentage + "%");
-            base.SubItems[3].Tag = this.Percentage;
-            SetText(4, this.Status);
-            SetText(5, string.Format(SeedersColumnFormat, (this.Seeders < 0 ? "?" : this.Seeders.ToString()), this.PeersSendingToUs));
-            this.SubItems[5].Tag = this.Seeders;
-            SetText(6, string.Format(SeedersColumnFormat, (this.Leechers < 0 ? "?" : this.Leechers.ToString()), this.PeersGettingFromUs));
-            this.SubItems[6].Tag = this.Leechers;
-            SetText(7, this.DownloadRate > 0 ? Toolbox.GetSpeed(this.DownloadRate) : "");
-            base.SubItems[7].Tag = this.DownloadRate;
-            SetText(8, this.UploadRate > 0 ? Toolbox.GetSpeed(this.UploadRate) : "");
-            base.SubItems[8].Tag = this.UploadRate;
-            SetText(9, this.Eta > 0 ? TimeSpan.FromSeconds(this.Eta).ToString() : "");
-            base.SubItems[9].Tag = this.Eta;
-            SetText(10, Toolbox.GetFileSize(this.Uploaded));
-            base.SubItems[10].Tag = this.Uploaded;
-            SetText(11, this.LocalRatio < 0 ? "∞" : this.LocalRatio.ToString());
-            base.SubItems[11].Tag = this.LocalRatio;
-            this.SubItems[11].ForeColor = GetRatioColor();
-            SetText(12, this.Added.ToString());
-            base.SubItems[12].Tag = this.Added;
-            if (this.DoneDate != null)
+            SetText(1, Id.ToString());
+            SubItems[1].Tag = Id;
+            SetText(2, Toolbox.GetFileSize(SizeWhenDone));
+            SubItems[2].Tag = SizeWhenDone;
+            SetText(3, Percentage + "%");
+            SubItems[3].Tag = Percentage;
+            SetText(4, Status);
+            SetText(5, string.Format(_seedersColumnFormat, (Seeders < 0 ? "?" : Seeders.ToString()), PeersSendingToUs));
+            SubItems[5].Tag = Seeders;
+            SetText(6, string.Format(_seedersColumnFormat, (Leechers < 0 ? "?" : Leechers.ToString()), PeersGettingFromUs));
+            SubItems[6].Tag = Leechers;
+            SetText(7, DownloadRate > 0 ? Toolbox.GetSpeed(DownloadRate) : "");
+            SubItems[7].Tag = DownloadRate;
+            SetText(8, UploadRate > 0 ? Toolbox.GetSpeed(UploadRate) : "");
+            SubItems[8].Tag = UploadRate;
+            SetText(9, Eta > 0 ? TimeSpan.FromSeconds(Eta).ToString() : "");
+            SubItems[9].Tag = Eta;
+            SetText(10, Toolbox.GetFileSize(Uploaded));
+            SubItems[10].Tag = Uploaded;
+            SetText(11, LocalRatio < 0 ? "∞" : LocalRatio.ToString());
+            SubItems[11].Tag = LocalRatio;
+            SubItems[11].ForeColor = GetRatioColor();
+            SetText(12, Added.ToString());
+            SubItems[12].Tag = Added;
+            if (DoneDate != null)
             {
-                base.SubItems[13].Tag = this.DoneDate;
-                SetText(13, this.DoneDate.ToString());
+                SubItems[13].Tag = DoneDate;
+                SetText(13, DoneDate.ToString());
             }
-            SetText(14, this.FirstTrackerTrimmed);
+            SetText(14, FirstTrackerTrimmed);
 
             if (first)
             {
                 lock (form.stateListBox)
                 {
-                    if (this.FirstTrackerTrimmed.Length > 0 && form.stateListBox.FindItem(this.FirstTrackerTrimmed) == null)
+                    if (FirstTrackerTrimmed.Length > 0 && form.stateListBox.FindItem(FirstTrackerTrimmed) == null)
                     {
-                        form.stateListBox.Items.Add(new GListBoxItem(this.FirstTrackerTrimmed, 9));
+                        form.stateListBox.Items.Add(new GListBoxItem(FirstTrackerTrimmed, 9));
                     }
                 }
-                if (Program.Settings.MinToTray && Program.Settings.StartedBalloon && this.updateSerial > 2)
+                if (Program.Settings.MinToTray && Program.Settings.StartedBalloon && _updateSerial > 2)
                 {
-                    form.ShowTrayTip(LocalSettingsSingleton.BALLOON_TIMEOUT, this.TorrentName, String.Format(OtherStrings.NewTorrentIs, this.Status.ToLower()), ToolTipIcon.Info);
+                    form.ShowTrayTip(LocalSettingsSingleton.BALLOON_TIMEOUT, TorrentName, String.Format(OtherStrings.NewTorrentIs, Status.ToLower()), ToolTipIcon.Info);
                 }
                 LogError();
             }
-            else if (Program.Settings.MinToTray && this.CompletionPopupPending)
+            else if (Program.Settings.MinToTray && CompletionPopupPending)
             {
-                this.CompletionPopupPending = false;
-                form.ShowTrayTip(LocalSettingsSingleton.BALLOON_TIMEOUT, this.TorrentName, OtherStrings.TorrentFinished, ToolTipIcon.Info);
+                CompletionPopupPending = false;
+                form.ShowTrayTip(LocalSettingsSingleton.BALLOON_TIMEOUT, TorrentName, OtherStrings.TorrentFinished, ToolTipIcon.Info);
             }
-            base.ForeColor = this.HasError ? Color.Red : SystemColors.WindowText;
+            ForeColor = HasError ? Color.Red : SystemColors.WindowText;
             UpdateIcon();
         }
 
         public bool Update(JsonObject info, bool first)
         {
-            this.HaveValid = Toolbox.ToLong(info[ProtocolConstants.FIELD_HAVEVALID]);
-            this.HaveTotal = this.HaveValid + Toolbox.ToLong(info[ProtocolConstants.FIELD_HAVEUNCHECKED]);
-            this.SizeWhenDone = Toolbox.ToLong(info[ProtocolConstants.FIELD_SIZEWHENDONE]);
+            HaveValid = Toolbox.ToLong(info[ProtocolConstants.FIELD_HAVEVALID]);
+            HaveTotal = HaveValid + Toolbox.ToLong(info[ProtocolConstants.FIELD_HAVEUNCHECKED]);
+            SizeWhenDone = Toolbox.ToLong(info[ProtocolConstants.FIELD_SIZEWHENDONE]);
 
             if (info.Contains(ProtocolConstants.FIELD_TRACKERSTATS))
-                this.TrackerStats = (JsonArray)info[ProtocolConstants.FIELD_TRACKERSTATS];
+                TrackerStats = (JsonArray)info[ProtocolConstants.FIELD_TRACKERSTATS];
 
-            this.Eta = Toolbox.ToDouble(info[ProtocolConstants.FIELD_ETA]);
+            Eta = Toolbox.ToDouble(info[ProtocolConstants.FIELD_ETA]);
 
-            this.DownloadDir = (string)info[ProtocolConstants.FIELD_DOWNLOADDIR];
-            this.Trackers = (JsonArray)info[ProtocolConstants.FIELD_TRACKERS];
-            this.Seeders = GetSeeders(info);
-            this.Leechers = GetLeechers(info);
-            this.PeersSendingToUs = Toolbox.ToInt(info[ProtocolConstants.FIELD_PEERSSENDINGTOUS]);
-            this.PeersGettingFromUs = Toolbox.ToInt(info[ProtocolConstants.FIELD_PEERSGETTINGFROMUS]);
+            DownloadDir = (string)info[ProtocolConstants.FIELD_DOWNLOADDIR];
+            Trackers = (JsonArray)info[ProtocolConstants.FIELD_TRACKERS];
+            Seeders = GetSeeders(info);
+            Leechers = GetLeechers(info);
+            PeersSendingToUs = Toolbox.ToInt(info[ProtocolConstants.FIELD_PEERSSENDINGTOUS]);
+            PeersGettingFromUs = Toolbox.ToInt(info[ProtocolConstants.FIELD_PEERSGETTINGFROMUS]);
 
             if (Program.DaemonDescriptor.Trunk && Program.DaemonDescriptor.Revision >= 10937 && Program.DaemonDescriptor.Revision < 11194)
             {
-                this.DownloadRate = (long)(Toolbox.ToDouble(info[ProtocolConstants.FIELD_RATEDOWNLOAD]) * 1024);
-                this.UploadRate = (long)(Toolbox.ToDouble(info[ProtocolConstants.FIELD_RATEUPLOAD]) * 1024);
+                DownloadRate = (long)(Toolbox.ToDouble(info[ProtocolConstants.FIELD_RATEDOWNLOAD]) * 1024);
+                UploadRate = (long)(Toolbox.ToDouble(info[ProtocolConstants.FIELD_RATEUPLOAD]) * 1024);
             }
             else
             {
-                this.DownloadRate = Toolbox.ToLong(info[ProtocolConstants.FIELD_RATEDOWNLOAD]);
-                this.UploadRate = Toolbox.ToLong(info[ProtocolConstants.FIELD_RATEUPLOAD]);
+                DownloadRate = Toolbox.ToLong(info[ProtocolConstants.FIELD_RATEDOWNLOAD]);
+                UploadRate = Toolbox.ToLong(info[ProtocolConstants.FIELD_RATEUPLOAD]);
             }
-            this.BandwidthPriority = Toolbox.ToInt(info[ProtocolConstants.FIELD_BANDWIDTHPRIORITY]);
-            this.Downloaded = Toolbox.ToLong(info[ProtocolConstants.FIELD_DOWNLOADEDEVER]);
-            this.Uploaded = Toolbox.ToLong(info[ProtocolConstants.FIELD_UPLOADEDEVER]);
-            long downloadedForRatio = this.Downloaded > 0 ? this.Downloaded : this.HaveValid;
-            this.LocalRatio = Toolbox.CalcRatio(this.Uploaded, downloadedForRatio);
+            BandwidthPriority = Toolbox.ToInt(info[ProtocolConstants.FIELD_BANDWIDTHPRIORITY]);
+            Downloaded = Toolbox.ToLong(info[ProtocolConstants.FIELD_DOWNLOADEDEVER]);
+            Uploaded = Toolbox.ToLong(info[ProtocolConstants.FIELD_UPLOADEDEVER]);
+            long downloadedForRatio = Downloaded > 0 ? Downloaded : HaveValid;
+            LocalRatio = Toolbox.CalcRatio(Uploaded, downloadedForRatio);
 
             if (info.Contains(ProtocolConstants.FIELD_SECONDSDOWNLOADING))
-                this.SecondsDownloading = Toolbox.ToInt(info[ProtocolConstants.FIELD_SECONDSDOWNLOADING]);
+                SecondsDownloading = Toolbox.ToInt(info[ProtocolConstants.FIELD_SECONDSDOWNLOADING]);
             else
-                this.SecondsDownloading = -1;
+                SecondsDownloading = -1;
             if (info.Contains(ProtocolConstants.FIELD_SECONDSSEEDING))
-                this.SecondsSeeding = Toolbox.ToInt(info[ProtocolConstants.FIELD_SECONDSSEEDING]);
+                SecondsSeeding = Toolbox.ToInt(info[ProtocolConstants.FIELD_SECONDSSEEDING]);
             else
-                this.SecondsSeeding = -1;
+                SecondsSeeding = -1;
 
             if (info.Contains(ProtocolConstants.FIELD_DONEDATE))
             {
                 DateTime dateTime = Toolbox.DateFromEpoch(Toolbox.ToDouble(info[ProtocolConstants.FIELD_DONEDATE]));
                 if (!dateTime.Year.Equals(1970))
-                    this.DoneDate = dateTime.ToLocalTime();
+                    DoneDate = dateTime.ToLocalTime();
             }
 
-            this.PieceCount = Toolbox.ToInt(info[ProtocolConstants.FIELD_PIECECOUNT]);
+            PieceCount = Toolbox.ToInt(info[ProtocolConstants.FIELD_PIECECOUNT]);
 
             long leftUntilDone = Toolbox.ToLong(info[ProtocolConstants.FIELD_LEFTUNTILDONE]);
             short statusCode = Toolbox.ToShort(info[ProtocolConstants.FIELD_STATUS]);
             string errorString = (string)info[ProtocolConstants.FIELD_ERRORSTRING];
 
-            bool statusChange = (this.StatusCode != statusCode) || (this.HasError != IsErrorString(errorString));
+            bool statusChange = (StatusCode != statusCode) || (HasError != IsErrorString(errorString));
 
-            if (this.StatusCode == ProtocolConstants.STATUS_DOWNLOAD
-                && this.LeftUntilDone > 0 && (leftUntilDone == 0))
+            if (StatusCode == ProtocolConstants.STATUS_DOWNLOAD
+                && LeftUntilDone > 0 && (leftUntilDone == 0))
             {
-                this.CompletionPopupPending = !first && Program.Settings.CompletedBaloon;
+                CompletionPopupPending = !first && Program.Settings.CompletedBaloon;
             }
 
-            this.LeftUntilDone = leftUntilDone;
-            this.StatusCode = statusCode;
-            this.ErrorString = errorString;
+            LeftUntilDone = leftUntilDone;
+            StatusCode = statusCode;
+            ErrorString = errorString;
 
-            if (this.StatusCode == ProtocolConstants.STATUS_CHECK)
-                this.Percentage = Toolbox.ToProgress(info[ProtocolConstants.FIELD_RECHECKPROGRESS]);
+            if (StatusCode == ProtocolConstants.STATUS_CHECK)
+                Percentage = Toolbox.ToProgress(info[ProtocolConstants.FIELD_RECHECKPROGRESS]);
             else
-                this.Percentage = Toolbox.CalcPercentage(this.HaveTotal, this.SizeWhenDone);
+                Percentage = Toolbox.CalcPercentage(HaveTotal, SizeWhenDone);
 
-            this.updateSerial = Program.DaemonDescriptor.UpdateSerial;
-            this.Peers = (JsonArray)info[ProtocolConstants.FIELD_PEERS];
-            this.PieceSize = Toolbox.ToInt(info[ProtocolConstants.FIELD_PIECESIZE]);
+            _updateSerial = Program.DaemonDescriptor.UpdateSerial;
+            Peers = (JsonArray)info[ProtocolConstants.FIELD_PEERS];
+            PieceSize = Toolbox.ToInt(info[ProtocolConstants.FIELD_PIECESIZE]);
 
             if (info.Contains(ProtocolConstants.FIELD_PIECES))
             {
                 string pieces = (string)info[ProtocolConstants.FIELD_PIECES];
-                this.Pieces = pieces.Length > 0 ? Convert.FromBase64CharArray(pieces.ToCharArray(), 0, pieces.Length) : new byte[0];
+                Pieces = pieces.Length > 0 ? Convert.FromBase64CharArray(pieces.ToCharArray(), 0, pieces.Length) : new byte[0];
             }
 
-            this.SeedRatioLimit = Toolbox.ToDouble(info[ProtocolConstants.FIELD_SEEDRATIOLIMIT]);
-            this.SeedRatioMode = Toolbox.ToInt(info[ProtocolConstants.FIELD_SEEDRATIOMODE]);
-            this.SeedIdleLimit = Toolbox.ToDouble(info[ProtocolConstants.FIELD_SEEDIDLELIMIT]);
-            this.SeedIdleMode = Toolbox.ToInt(info[ProtocolConstants.FIELD_SEEDIDLEMODE]);
+            SeedRatioLimit = Toolbox.ToDouble(info[ProtocolConstants.FIELD_SEEDRATIOLIMIT]);
+            SeedRatioMode = Toolbox.ToInt(info[ProtocolConstants.FIELD_SEEDRATIOMODE]);
+            SeedIdleLimit = Toolbox.ToDouble(info[ProtocolConstants.FIELD_SEEDIDLELIMIT]);
+            SeedIdleMode = Toolbox.ToInt(info[ProtocolConstants.FIELD_SEEDIDLEMODE]);
 
-            this.HonorsSessionLimits = Toolbox.ToBool(info[ProtocolConstants.FIELD_HONORSSESSIONLIMITS]);
-            this.MaxConnectedPeers = Toolbox.ToInt(info[ProtocolConstants.FIELD_MAXCONNECTEDPEERS]);
-            this.SwarmSpeed = Toolbox.GetSpeed(info[ProtocolConstants.FIELD_SWARMSPEED]);
+            HonorsSessionLimits = Toolbox.ToBool(info[ProtocolConstants.FIELD_HONORSSESSIONLIMITS]);
+            MaxConnectedPeers = Toolbox.ToInt(info[ProtocolConstants.FIELD_MAXCONNECTEDPEERS]);
+            SwarmSpeed = Toolbox.GetSpeed(info[ProtocolConstants.FIELD_SWARMSPEED]);
             SetSpeedLimits(info);
 
             return statusChange;
@@ -276,35 +274,35 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return base.Text;
+                return Text;
             }
         }
 
         public Torrent(JsonObject info)
             : base((string)info[ProtocolConstants.FIELD_NAME])
         {
-            this.Id = Toolbox.ToInt(info[ProtocolConstants.FIELD_ID]);
+            Id = Toolbox.ToInt(info[ProtocolConstants.FIELD_ID]);
             for (int i = 0; i < 14; i++)
-                base.SubItems.Add("");
-            this.UseItemStyleForSubItems = false;
-            SeedersColumnFormat = "{0} ({1})";
-            base.ToolTipText = base.Text;
-            this.Created = Toolbox.DateFromEpoch(Toolbox.ToDouble(info[ProtocolConstants.FIELD_DATECREATED])).ToLocalTime().ToString();
-            this.Creator = (string)info[ProtocolConstants.FIELD_CREATOR];
-            this.Added = Toolbox.DateFromEpoch(Toolbox.ToDouble(info[ProtocolConstants.FIELD_ADDEDDATE])).ToLocalTime();
-            base.Name = this.Hash = (string)info[ProtocolConstants.FIELD_HASHSTRING];
-            this.TotalSize = Toolbox.ToLong(info[ProtocolConstants.FIELD_TOTALSIZE]);
-            this.Comment = (string)info[ProtocolConstants.FIELD_COMMENT];
-            this.Update(info, true);
-            this.UpdateUi(true);
+                SubItems.Add("");
+            UseItemStyleForSubItems = false;
+            _seedersColumnFormat = "{0} ({1})";
+            ToolTipText = Text;
+            Created = Toolbox.DateFromEpoch(Toolbox.ToDouble(info[ProtocolConstants.FIELD_DATECREATED])).ToLocalTime().ToString();
+            Creator = (string)info[ProtocolConstants.FIELD_CREATOR];
+            Added = Toolbox.DateFromEpoch(Toolbox.ToDouble(info[ProtocolConstants.FIELD_ADDEDDATE])).ToLocalTime();
+            Name = Hash = (string)info[ProtocolConstants.FIELD_HASHSTRING];
+            TotalSize = Toolbox.ToLong(info[ProtocolConstants.FIELD_TOTALSIZE]);
+            Comment = (string)info[ProtocolConstants.FIELD_COMMENT];
+            Update(info, true);
+            UpdateUi(true);
             MainWindow form = Program.Form;
             lock (Program.TorrentIndex)
-                Program.TorrentIndex.Add(this.Hash, this);
+                Program.TorrentIndex.Add(Hash, this);
         }
 
         private void LogError()
         {
-            if (this.HasError)
+            if (HasError)
             {
                 List<LogListViewItem> logItems = Program.LogItems;
                 lock (logItems)
@@ -313,15 +311,15 @@ namespace TransmissionRemoteDotnet
                     {
                         foreach (LogListViewItem item in logItems)
                         {
-                            if (item.UpdateSerial >= 0 && this.updateSerial - item.UpdateSerial < 2 && item.SubItems[1].Text.Equals(this.TorrentName) && item.SubItems[2].Text.Equals(this.ErrorString))
+                            if (item.UpdateSerial >= 0 && _updateSerial - item.UpdateSerial < 2 && item.SubItems[1].Text.Equals(TorrentName) && item.SubItems[2].Text.Equals(ErrorString))
                             {
-                                item.UpdateSerial = this.updateSerial;
+                                item.UpdateSerial = _updateSerial;
                                 return;
                             }
                         }
                     }
                 }
-                Program.Log(this.TorrentName, this.ErrorString, this.updateSerial);
+                Program.Log(TorrentName, ErrorString, _updateSerial);
             }
         }
 
@@ -334,7 +332,7 @@ namespace TransmissionRemoteDotnet
                 {
                     if (!itemCollection.Contains(this))
                     {
-                        this.UpdateUi(false);
+                        UpdateUi(false);
                         itemCollection.Add(this);
                     }
                 }
@@ -361,14 +359,14 @@ namespace TransmissionRemoteDotnet
                 return;
             }
 
-            if (this.FirstTrackerTrimmed == null)
+            if (FirstTrackerTrimmed == null)
                 return;
 
             lock (Program.TorrentIndex)
             {
                 foreach (KeyValuePair<string, Torrent> torrent in Program.TorrentIndex)
                 {
-                    if (torrent.Value.FirstTrackerTrimmed.Equals(this.FirstTrackerTrimmed))
+                    if (torrent.Value.FirstTrackerTrimmed.Equals(FirstTrackerTrimmed))
                         matchingTrackers++;
                 }
             }
@@ -377,7 +375,7 @@ namespace TransmissionRemoteDotnet
             {
                 lock (form.stateListBox)
                 {
-                    form.stateListBox.RemoveItem(this.FirstTrackerTrimmed);
+                    form.stateListBox.RemoveItem(FirstTrackerTrimmed);
                 }
             }
         }
@@ -422,7 +420,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.Pieces != null ? Toolbox.BitCount(this.Pieces) : -1;
+                return Pieces != null ? Toolbox.BitCount(Pieces) : -1;
             }
         }
 
@@ -473,28 +471,28 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this._trackers;
+                return _trackers;
             }
             set
             {
-                this._trackers = value;
+                _trackers = value;
                 try
                 {
                     if (value.Length == 0)
                     {
-                        this.FirstTracker = this.FirstTrackerTrimmed = "";
+                        FirstTracker = FirstTrackerTrimmed = "";
                     }
                     else
                     {
                         JsonObject tracker = (JsonObject)value[0];
                         Uri announceUrl = new Uri((string)tracker[ProtocolConstants.ANNOUNCE]);
-                        this.FirstTracker = announceUrl.Host;
-                        this.FirstTrackerTrimmed = Toolbox.GetDomainName(announceUrl.Host);
+                        FirstTracker = announceUrl.Host;
+                        FirstTrackerTrimmed = Toolbox.GetDomainName(announceUrl.Host);
                     }
                 }
                 catch
                 {
-                    this.FirstTracker = this.FirstTrackerTrimmed = "";
+                    FirstTracker = FirstTrackerTrimmed = "";
                 }
             }
         }
@@ -515,13 +513,13 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                if (this.StatusCode.Equals(ProtocolConstants.STATUS_CHECK_WAIT)) return OtherStrings.WaitingToCheck;
-                else if (this.StatusCode.Equals(ProtocolConstants.STATUS_CHECK)) return OtherStrings.Checking;
-                else if (this.StatusCode.Equals(ProtocolConstants.STATUS_DOWNLOAD)) return OtherStrings.Downloading;
-                else if (ProtocolConstants.STATUS_DOWNLOAD_WAIT != -1 && this.StatusCode.Equals(ProtocolConstants.STATUS_DOWNLOAD_WAIT)) return OtherStrings.DownloadWait;
-                else if (this.StatusCode.Equals(ProtocolConstants.STATUS_SEED)) return OtherStrings.Seeding;
-                else if (ProtocolConstants.STATUS_SEED_WAIT != -1 && this.StatusCode.Equals(ProtocolConstants.STATUS_SEED_WAIT)) return OtherStrings.SeedWait;
-                else if (this.StatusCode.Equals(ProtocolConstants.STATUS_STOPPED)) return OtherStrings.Paused;
+                if (StatusCode.Equals(ProtocolConstants.STATUS_CHECK_WAIT)) return OtherStrings.WaitingToCheck;
+                else if (StatusCode.Equals(ProtocolConstants.STATUS_CHECK)) return OtherStrings.Checking;
+                else if (StatusCode.Equals(ProtocolConstants.STATUS_DOWNLOAD)) return OtherStrings.Downloading;
+                else if (ProtocolConstants.STATUS_DOWNLOAD_WAIT != -1 && StatusCode.Equals(ProtocolConstants.STATUS_DOWNLOAD_WAIT)) return OtherStrings.DownloadWait;
+                else if (StatusCode.Equals(ProtocolConstants.STATUS_SEED)) return OtherStrings.Seeding;
+                else if (ProtocolConstants.STATUS_SEED_WAIT != -1 && StatusCode.Equals(ProtocolConstants.STATUS_SEED_WAIT)) return OtherStrings.SeedWait;
+                else if (StatusCode.Equals(ProtocolConstants.STATUS_STOPPED)) return OtherStrings.Paused;
                 else return OtherStrings.Unknown;
             }
         }
@@ -536,31 +534,19 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                string downloadDir = this.DownloadDir;
-                string name = this.Files.Count > 1 ? this.TorrentName : "";
+                string downloadDir = DownloadDir;
+                string name = Files.Count > 1 ? TorrentName : string.Empty;
                 Dictionary<string, string> mappings = Program.Settings.Current.SambaShareMappings;
                 foreach (string key in mappings.Keys)
-                {
                     if (downloadDir.StartsWith(key))
-                        return String.Format(@"{0}\{1}{2}", (string)mappings[key], downloadDir.Length > key.Length ? downloadDir.Substring(key.Length + 1).Replace(@"/", @"\") + @"\" : null, name);
-                }
+                        return $"{mappings[key]}\\{(downloadDir.Length > key.Length ? downloadDir.Substring(key.Length).Replace("/", "\\") + "\\" : null)}{name}";
                 return null;
             }
         }
 
-        public int Id
-        {
-            get;
-            set;
-        }
+        public int Id { get; set; }
 
-        public bool HasError
-        {
-            get
-            {
-                return IsErrorString(this.ErrorString);
-            }
-        }
+        public bool HasError => IsErrorString(ErrorString);
 
         private static bool IsErrorString(string s)
         {
@@ -595,7 +581,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.FormatTimespanLong(TimeSpan.FromSeconds(this.Eta));
+                return Toolbox.FormatTimespanLong(TimeSpan.FromSeconds(Eta));
             }
         }
 
@@ -619,10 +605,10 @@ namespace TransmissionRemoteDotnet
 
         private int GetSeeders(JsonObject info)
         {
-            if (this.TrackerStats != null)
+            if (TrackerStats != null)
             {
                 int seedersMax = 0;
-                foreach (JsonObject tracker in this.TrackerStats)
+                foreach (JsonObject tracker in TrackerStats)
                 {
                     int trackerSeeders = Toolbox.ToInt(tracker[ProtocolConstants.TRACKERSTAT_SEEDERCOUNT]);
                     if (seedersMax < trackerSeeders)
@@ -654,10 +640,10 @@ namespace TransmissionRemoteDotnet
 
         private int GetLeechers(JsonObject info)
         {
-            if (this.TrackerStats != null)
+            if (TrackerStats != null)
             {
                 int leechersMax = 0;
-                foreach (JsonObject tracker in this.TrackerStats)
+                foreach (JsonObject tracker in TrackerStats)
                 {
                     int trackerLeechers = Toolbox.ToInt(tracker[ProtocolConstants.TRACKERSTAT_LEECHERCOUNT]);
                     if (leechersMax < trackerLeechers)
@@ -727,7 +713,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return base.SubItems[10].Text;
+                return SubItems[10].Text;
             }
         }
 
@@ -753,7 +739,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.GetFileSize(this.HaveTotal);
+                return Toolbox.GetFileSize(HaveTotal);
             }
         }
 
@@ -767,7 +753,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.LeftUntilDone <= 0;
+                return LeftUntilDone <= 0;
             }
         }
 
@@ -787,7 +773,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.DownloadRate > 0 ? base.SubItems[7].Text : Toolbox.GetSpeed(0);
+                return DownloadRate > 0 ? SubItems[7].Text : Toolbox.GetSpeed(0);
             }
         }
 
@@ -795,9 +781,9 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                if (this.SecondsDownloading >= 0)
+                if (SecondsDownloading >= 0)
                 {
-                    long speed = (long)Math.Round((double)this.Downloaded / this.SecondsDownloading, 0);
+                    long speed = (long)Math.Round((double)Downloaded / SecondsDownloading, 0);
                     return Toolbox.GetSpeed(speed);
                 }
                 else return "";
@@ -814,7 +800,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.UploadRate > 0 ? base.SubItems[8].Text : Toolbox.GetSpeed(0);
+                return UploadRate > 0 ? SubItems[8].Text : Toolbox.GetSpeed(0);
             }
         }
 
@@ -822,9 +808,9 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                if (this.SecondsDownloading >= 0 && this.SecondsSeeding >= 0)
+                if (SecondsDownloading >= 0 && SecondsSeeding >= 0)
                 {
-                    long speed = (long)Math.Round((double)this.Downloaded / (this.SecondsDownloading + this.SecondsSeeding), 0);
+                    long speed = (long)Math.Round((double)Downloaded / (SecondsDownloading + SecondsSeeding), 0);
                     return Toolbox.GetSpeed(speed);
                 }
                 else return "";
@@ -841,7 +827,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return base.SubItems[11].Text;
+                return SubItems[11].Text;
             }
         }
 
@@ -858,36 +844,36 @@ namespace TransmissionRemoteDotnet
             if (info.Contains(ProtocolConstants.FIELD_DOWNLOADLIMIT))
             {
                 if (Program.DaemonDescriptor.RpcVersion > 9 && Program.DaemonDescriptor.Revision >= 10937)
-                    this.SpeedLimitDown = (int)Toolbox.ToDouble(info[ProtocolConstants.FIELD_DOWNLOADLIMIT]);
+                    SpeedLimitDown = (int)Toolbox.ToDouble(info[ProtocolConstants.FIELD_DOWNLOADLIMIT]);
                 else
-                    this.SpeedLimitDown = Toolbox.ToInt(info[ProtocolConstants.FIELD_DOWNLOADLIMIT]);
+                    SpeedLimitDown = Toolbox.ToInt(info[ProtocolConstants.FIELD_DOWNLOADLIMIT]);
             }
             else
-                this.SpeedLimitDown = Toolbox.ToInt(info[ProtocolConstants.FIELD_SPEEDLIMITDOWN]);
+                SpeedLimitDown = Toolbox.ToInt(info[ProtocolConstants.FIELD_SPEEDLIMITDOWN]);
 
             if (info.Contains(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED))
-                this.SpeedLimitDownEnabled = Toolbox.ToBool(info[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]);
+                SpeedLimitDownEnabled = Toolbox.ToBool(info[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]);
             else if (info.Contains(ProtocolConstants.FIELD_DOWNLOADLIMITED))
-                this.SpeedLimitDownEnabled = Toolbox.ToBool(info[ProtocolConstants.FIELD_DOWNLOADLIMITED]);
+                SpeedLimitDownEnabled = Toolbox.ToBool(info[ProtocolConstants.FIELD_DOWNLOADLIMITED]);
             else
-                this.SpeedLimitDownEnabled = Toolbox.ToBool(info[ProtocolConstants.FIELD_DOWNLOADLIMITMODE]);
+                SpeedLimitDownEnabled = Toolbox.ToBool(info[ProtocolConstants.FIELD_DOWNLOADLIMITMODE]);
 
             if (info.Contains(ProtocolConstants.FIELD_UPLOADLIMIT))
             {
                 if (Program.DaemonDescriptor.RpcVersion > 9 && Program.DaemonDescriptor.Revision >= 10937)
-                    this.SpeedLimitUp = (int)Toolbox.ToDouble(info[ProtocolConstants.FIELD_UPLOADLIMIT]);
+                    SpeedLimitUp = (int)Toolbox.ToDouble(info[ProtocolConstants.FIELD_UPLOADLIMIT]);
                 else
-                    this.SpeedLimitUp = Toolbox.ToInt(info[ProtocolConstants.FIELD_UPLOADLIMIT]);
+                    SpeedLimitUp = Toolbox.ToInt(info[ProtocolConstants.FIELD_UPLOADLIMIT]);
             }
             else
-                this.SpeedLimitUp = Toolbox.ToInt(info[ProtocolConstants.FIELD_SPEEDLIMITUP]);
+                SpeedLimitUp = Toolbox.ToInt(info[ProtocolConstants.FIELD_SPEEDLIMITUP]);
 
             if (info.Contains(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED))
-                this.SpeedLimitUpEnabled = Toolbox.ToBool(info[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]);
+                SpeedLimitUpEnabled = Toolbox.ToBool(info[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]);
             else if (info.Contains(ProtocolConstants.FIELD_UPLOADLIMITED))
-                this.SpeedLimitUpEnabled = Toolbox.ToBool(info[ProtocolConstants.FIELD_UPLOADLIMITED]);
+                SpeedLimitUpEnabled = Toolbox.ToBool(info[ProtocolConstants.FIELD_UPLOADLIMITED]);
             else
-                this.SpeedLimitUpEnabled = Toolbox.ToBool(info[ProtocolConstants.FIELD_UPLOADLIMITMODE]);
+                SpeedLimitUpEnabled = Toolbox.ToBool(info[ProtocolConstants.FIELD_UPLOADLIMITMODE]);
         }
 
         public int SpeedLimitDown
@@ -927,11 +913,11 @@ namespace TransmissionRemoteDotnet
     {
         public FileListViewItem Find(string Key)
         {
-            return Find(delegate(FileListViewItem fi) { return fi.FileName.Equals(Key); });
+            return Find(delegate (FileListViewItem fi) { return fi.FileName.Equals(Key); });
         }
         public List<FileListViewItem> FindAll(string filter)
         {
-            return FindAll(delegate(FileListViewItem fi) { return fi.FileName.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0; });
+            return FindAll(delegate (FileListViewItem fi) { return fi.FileName.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0; });
         }
     }
 }

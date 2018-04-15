@@ -1009,12 +1009,14 @@
     <Compile Include="Forms\RssForm.Designer.cs">
       <DependentUpon>RssForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Settings\FileLocalSettings.cs" />
     <Compile Include="Settings\ILocalSettingsStore.cs" />
     <Compile Include="Settings\RegistryJsonLocalSettings.cs" />
     <Compile Include="Settings\RegistryLocalSettings.cs" />
     <Compile Include="Settings\LocalSettings.cs" />
     <Compile Include="Settings\RegistryLocalSettingsSingleton.cs" />
+    <Compile Include="Settings\RemoteToLocalPathMap.cs" />
     <Compile Include="Settings\SambaShareMappings.cs" />
     <Compile Include="CustomControls\SplitContainerFix.cs">
       <SubType>Component</SubType>

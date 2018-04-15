@@ -440,10 +440,9 @@ namespace TransmissionRemoteDotnet
 
         public static string LocateFile(string file, bool require, params string[] paths)
         {
-            string fullpath;
             foreach (string path in paths)
             {
-                fullpath = Path.Combine(path, file);
+                string fullpath = Path.Combine(path, file);
                 if (!require || File.Exists(fullpath))
                     return fullpath;
             }

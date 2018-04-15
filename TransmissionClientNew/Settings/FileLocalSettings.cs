@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using Jayrock.Json;
@@ -10,39 +9,37 @@ namespace TransmissionRemoteDotnet.Settings
 {
     public class FileLocalSettingsStore : ILocalSettingsStore
     {
-        private const string CONF_FILE = @"settings.json";
+        private const string ConfFile = @"settings.json";
         public override JsonObject Load()
         {
-            return Load(Toolbox.LocateFile(CONF_FILE));
+            return Load(Toolbox.LocateFile(ConfFile));
         }
 
-        public JsonObject Load(string Filename)
+        public JsonObject Load(string filename)
         {
             JsonObject jo;
-            using (FileStream inFile = new FileStream(Filename, FileMode.Open, FileAccess.Read))
+            using (var inFile = new FileStream(filename, FileMode.Open, FileAccess.Read))
             {
-                byte[] binaryData = new Byte[inFile.Length];
+                byte[] binaryData = new byte[inFile.Length];
                 if (inFile.Read(binaryData, 0, (int)inFile.Length) < 1)
-                {
                     throw new Exception(OtherStrings.EmptyFile);
-                }
-                jo = (JsonObject)JsonConvert.Import(UTF8Encoding.UTF8.GetString(binaryData));
+                jo = (JsonObject)JsonConvert.Import(Encoding.UTF8.GetString(binaryData));
             }
             return jo;
         }
 
         public override bool Save(JsonObject s)
         {
-            return Save(Toolbox.LocateFile(CONF_FILE, false), s);
+            return Save(Toolbox.LocateFile(ConfFile, false), s);
         }
 
-        public bool Save(string Filename, JsonObject s)
+        public bool Save(string filename, JsonObject s)
         {
             try
             {
-                using (FileStream outFile = new FileStream(Filename, FileMode.Create, FileAccess.Write))
+                using (var outFile = new FileStream(filename, FileMode.Create, FileAccess.Write))
                 {
-                    using (StreamWriter writer = new StreamWriter(outFile))
+                    using (var writer = new StreamWriter(outFile))
                     {
                         writer.Write(s.ToString());
                     }

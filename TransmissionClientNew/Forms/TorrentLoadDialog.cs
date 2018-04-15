@@ -47,7 +47,6 @@ namespace TransmissionRemoteDotnet.Forms
             if (fbd.ShowDialog() != DialogResult.OK)
                 return;
 
-            // TODO: Sync local path with remote path.
             destinationComboBox.Text = fbd.SelectedPath;
         }
 
