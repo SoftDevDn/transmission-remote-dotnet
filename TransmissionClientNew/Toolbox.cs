@@ -35,8 +35,18 @@ using TransmissionRemoteDotnet.Properties;
 
 namespace TransmissionRemoteDotnet
 {
-    public class Toolbox
+    public static class Toolbox
     {
+
+        #region Fields
+        // TODO: Move same checks to save settings.
+        private const string UnixPathDelimiter = "/";
+        private const string WinPathDelimiter = "\\";
+        private const int StripeOffset = 15;
+
+        public static readonly NumberFormatInfo NumberFormat;
+        #endregion
+
         public enum MaxSize
         {
             MsByte = 1,
@@ -45,8 +55,6 @@ namespace TransmissionRemoteDotnet
             MsGiga,
             MsTera
         }
-        private const int StripeOffset = 15;
-        public static readonly NumberFormatInfo NumberFormat;
         static readonly byte[] TrueBitCount = {
             0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4, 1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
             1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5, 2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
@@ -69,8 +77,8 @@ namespace TransmissionRemoteDotnet
 
         static Toolbox()
         {
-            XmlSerializer xml = new XmlSerializer(typeof(NumberFormatInfo));
-            MemoryStream xmldata = new MemoryStream(Resources.EngNumberFormatInfo);
+            var xml = new XmlSerializer(typeof(NumberFormatInfo));
+            var xmldata = new MemoryStream(Resources.EngNumberFormatInfo);
             NumberFormat = (NumberFormatInfo)xml.Deserialize(xmldata);
         }
 
@@ -103,14 +111,12 @@ namespace TransmissionRemoteDotnet
 
         private static double ToDouble(object o, double Default)
         {
-            if (o != null)
+            switch (o)
             {
-                if (o is string s)
-                    return double.Parse(s, NumberFormat);
-                if (o is JsonNumber number)
-                    return number.ToDouble();
+                case string s: return double.Parse(s, NumberFormat);
+                case JsonNumber number: return number.ToDouble();
+                default: return Default;
             }
-            return Default;
         }
 
         public static long ToLong(object o)
@@ -120,22 +126,13 @@ namespace TransmissionRemoteDotnet
 
         public static long ToLong(object o, long Default)
         {
-            if (o != null)
+            switch (o)
             {
-                if (o.GetType().Equals(typeof(long)))
-                {
-                    return (long)o;
-                }
-                if (o.GetType().Equals(typeof(bool)))
-                {
-                    return (bool)o ? 1 : 0;
-                }
-                if (o.GetType().Equals(typeof(JsonNumber)))
-                {
-                    return ((JsonNumber)o).ToInt64();
-                }
+                case long l: return l;
+                case bool b: return b ? 1 : 0;
+                case JsonNumber number: return number.ToInt64();
+                default: return Default;
             }
-            return Default;
         }
 
         private static int ToInt(bool b)
@@ -148,22 +145,13 @@ namespace TransmissionRemoteDotnet
         }
         public static int ToInt(object o, int Default)
         {
-            if (o != null)
+            switch (o)
             {
-                if (o.GetType().Equals(typeof(int)))
-                {
-                    return (int)o;
-                }
-                if (o.GetType().Equals(typeof(bool)))
-                {
-                    return (bool)o ? 1 : 0;
-                }
-                if (o.GetType().Equals(typeof(JsonNumber)))
-                {
-                    return ((JsonNumber)o).ToInt32();
-                }
+                case int i: return i;
+                case bool b: return b ? 1 : 0;
+                case JsonNumber number: return number.ToInt32();
+                default: return Default;
             }
-            return Default;
         }
 
         public static decimal ToDecimal(object o)
@@ -172,27 +160,19 @@ namespace TransmissionRemoteDotnet
         }
         public static decimal ToDecimal(object o, decimal Default)
         {
-            if (o != null)
+            switch (o)
             {
-                if (o.GetType().Equals(typeof(string)))
-                {
-                    return decimal.Parse((string)o, NumberFormat);
-                }
-                if (o.GetType().Equals(typeof(JsonNumber)))
-                {
-                    return ((JsonNumber)o).ToDecimal();
-                }
+                case string s: return decimal.Parse(s, NumberFormat);
+                case JsonNumber number: return number.ToDecimal();
+                default: return Default;
             }
-            return Default;
         }
 
         public static JsonArray ListViewSelectionToIdArray(ListView.SelectedListViewItemCollection selections)
         {
-            JsonArray ids = new JsonArray();
+            var ids = new JsonArray();
             foreach (Torrent item in selections)
-            {
                 ids.Put(item.Id);
-            }
             return ids;
         }
 
@@ -205,33 +185,23 @@ namespace TransmissionRemoteDotnet
                 {
                     sb.Append(listView.Columns[i].Text);
                     if (i != listView.Columns.Count - 1)
-                    {
                         sb.Append(',');
-                    }
                     else
-                    {
                         sb.Append(Environment.NewLine);
-                    }
                 }
             }
             lock (listView)
             {
                 foreach (ListViewItem item in listView.SelectedItems)
-                {
                     for (int i = 0; i < item.SubItems.Count; i++)
                     {
                         ListViewItem.ListViewSubItem si = item.SubItems[i];
                         sb.Append(si.Text.Contains(",") ? "\"" + si.Text + "\"" : si.Text);
                         if (i != item.SubItems.Count - 1)
-                        {
                             sb.Append(',');
-                        }
                         else
-                        {
                             sb.Append(Environment.NewLine);
-                        }
                     }
-                }
             }
             Clipboard.SetText(sb.ToString());
         }
@@ -251,9 +221,7 @@ namespace TransmissionRemoteDotnet
                         : window;
                     if (!item.UseItemStyleForSubItems)
                         foreach (ListViewItem.ListViewSubItem lvs in item.SubItems)
-                        {
                             lvs.BackColor = item.BackColor;
-                        }
                 }
                 list.EndUpdate();
             }
@@ -291,32 +259,23 @@ namespace TransmissionRemoteDotnet
 
         public static short ToShort(object o, short Default)
         {
-            return o != null ? ((JsonNumber)o).ToInt16() : Default;
+            return ((JsonNumber?)o)?.ToInt16() ?? Default;
         }
 
-        public static Boolean ToBool(object o)
+        public static bool ToBool(object o)
         {
             return ToBool(o, true);
         }
 
-        public static Boolean ToBool(object o, Boolean Default)
+        public static bool ToBool(object o, bool Default)
         {
-            if (o != null)
+            switch (o)
             {
-                if (o.GetType().Equals(typeof(Boolean)))
-                {
-                    return (Boolean)o;
-                }
-                if (o.GetType().Equals(typeof(int)))
-                {
-                    return (int)o != 0;
-                }
-                if (o.GetType().Equals(typeof(JsonNumber)))
-                {
-                    return ((JsonNumber)o).ToBoolean();
-                }
+                case bool b: return b;
+                case int i: return i != 0;
+                case JsonNumber number: return number.ToBoolean();
+                default: return Default;
             }
-            return Default;
         }
 
         public static DateTime DateFromEpoch(double e)
@@ -382,27 +341,27 @@ namespace TransmissionRemoteDotnet
         {
             if (bytes >= 1099511627776 && maxsize >= MaxSize.MsTera)
             {
-                Decimal size = Decimal.Divide(bytes, 1099511627776);
+                decimal size = decimal.Divide(bytes, 1099511627776);
                 return $"{size:##.##} {OtherStrings.TerabyteShort}";
             }
             if (bytes >= 1073741824 && maxsize >= MaxSize.MsGiga)
             {
-                Decimal size = Decimal.Divide(bytes, 1073741824);
+                decimal size = decimal.Divide(bytes, 1073741824);
                 return $"{size:##.##} {OtherStrings.GigabyteShort}";
             }
             if (bytes >= 1048576 && maxsize >= MaxSize.MsMega)
             {
-                Decimal size = Decimal.Divide(bytes, 1048576);
+                decimal size = decimal.Divide(bytes, 1048576);
                 return $"{size:##.##} {OtherStrings.MegabyteShort}";
             }
             if (bytes >= 1024 && maxsize >= MaxSize.MsKilo)
             {
-                Decimal size = Decimal.Divide(bytes, 1024);
+                decimal size = decimal.Divide(bytes, 1024);
                 return $"{size:##.##} {OtherStrings.KilobyteShort}";
             }
             if ((bytes > 0) && maxsize >= MaxSize.MsByte)
             {
-                Decimal size = bytes;
+                decimal size = bytes;
                 return $"{size:##.##} {OtherStrings.Byte[0]}";
             }
             return "0 " + OtherStrings.Byte[0];
@@ -652,7 +611,7 @@ namespace TransmissionRemoteDotnet
         /// thrown when the original string is null or empty.</exception>
         public static string Encrypt(string originalString)
         {
-            if (String.IsNullOrEmpty(originalString))
+            if (string.IsNullOrEmpty(originalString))
             {
                 throw new ArgumentNullException
                        ("The string which needs to be encrypted can not be null.");
@@ -678,7 +637,7 @@ namespace TransmissionRemoteDotnet
         /// when the crypted string is null or empty.</exception>
         public static string Decrypt(string cryptedString)
         {
-            if (String.IsNullOrEmpty(cryptedString))
+            if (string.IsNullOrEmpty(cryptedString))
             {
                 throw new ArgumentNullException
                    ("The string which needs to be decrypted can not be null.");
@@ -691,5 +650,53 @@ namespace TransmissionRemoteDotnet
             StreamReader reader = new StreamReader(cryptoStream);
             return reader.ReadToEnd();
         }
+
+        #region ConvertSambaPaths
+        public static string ConvertUnixPathToWinPath(string path)
+        {
+
+            var mappings = Program.Settings.Current.SambaShareMappings;
+
+            foreach (var row in mappings)
+            {
+                string key = row.Key;
+                string value = row.Value;
+
+                if (!key.EndsWith(UnixPathDelimiter))
+                    key += UnixPathDelimiter;
+                if (!value.EndsWith(WinPathDelimiter))
+                    value += WinPathDelimiter;
+
+                path = path.Replace(key, value);
+            }
+
+            path = path.Replace("/", "\\");
+
+            return path;
+        }
+
+        public static string ConvertWinPathToUnixPath(string path)
+        {
+            var mappings = Program.Settings.Current.SambaShareMappings;
+
+            foreach (var row in mappings)
+            {
+                string key = row.Key;
+                string value = row.Value;
+
+                if (!key.EndsWith(UnixPathDelimiter))
+                    key += UnixPathDelimiter;
+                if (!value.EndsWith(WinPathDelimiter))
+                    value += WinPathDelimiter;
+
+                path = path.Replace(value, key);
+            }
+
+            path = path.Replace("\\", "/");
+
+            return path;
+        }
+        #endregion
+
     }
 }

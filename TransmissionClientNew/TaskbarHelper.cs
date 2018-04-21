@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
 using System.Reflection;
 using TransmissionRemoteDotnet.Forms;
 using TransmissionRemoteDotnet.Localization;
@@ -10,48 +7,53 @@ namespace TransmissionRemoteDotnet
 {
     class TaskbarHelper
     {
-        private object windowsTaskbar = null;
-        private IntPtr WindowHandle;
-        private static MainWindow ProgramForm;
-        private System.Drawing.Icon iconPause, iconPauseAll, iconStartAll, iconAddTorrent;
-        private Assembly MicrosoftWindowsAPICodePackShell = null;
+        private readonly object _windowsTaskbar;
+        private IntPtr _windowHandle;
+        private static MainWindow _programForm;
+        private readonly System.Drawing.Icon _iconPause;
+        private readonly System.Drawing.Icon _iconPauseAll;
+        private readonly System.Drawing.Icon _iconStartAll;
+        private readonly System.Drawing.Icon _iconAddTorrent;
+        private readonly Assembly _microsoftWindowsApiCodePackShell;
 
-        private object buttonStartAll = null, buttonPauseAll = null, buttonAddTorrent = null;
+        private readonly object _buttonStartAll;
+        private readonly object _buttonPauseAll;
+        private readonly object _buttonAddTorrent;
 
         public TaskbarHelper()
         {
-            ProgramForm = Program.Form;
-            WindowHandle = ProgramForm.Handle;
+            _programForm = Program.Form;
+            _windowHandle = _programForm.Handle;
             try
             {
-                MicrosoftWindowsAPICodePackShell = Assembly.LoadFrom("Microsoft.WindowsAPICodePack.Shell.dll");
+                _microsoftWindowsApiCodePackShell = Assembly.LoadFrom("Microsoft.WindowsAPICodePack.Shell.dll");
 
-                Type TaskbarManager = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager");
-                windowsTaskbar = TaskbarManager.GetProperty("Instance").GetValue(TaskbarManager, null);
+                Type taskbarManager = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager");
+                _windowsTaskbar = taskbarManager.GetProperty("Instance").GetValue(taskbarManager, null);
 
                 /* windowsTaskbar.ApplicationId = "Transmission Remote Dotnet"; */
-                TaskbarManager.GetProperty("ApplicationId").SetValue(windowsTaskbar, "Transmission Remote Dotnet", null);
+                taskbarManager.GetProperty("ApplicationId").SetValue(_windowsTaskbar, "Transmission Remote Dotnet", null);
 
                 /* windowsTaskbar.SetApplicationIdForSpecificWindow(WindowHandle, windowsTaskbar.ApplicationId); */
-                MethodInfo SetApplicationIdForSpecificWindow = TaskbarManager.GetMethod("SetApplicationIdForSpecificWindow", new Type[] { WindowHandle.GetType(), typeof(System.String) });
-                SetApplicationIdForSpecificWindow.Invoke(windowsTaskbar, new object[] {
-                    WindowHandle,
-                    TaskbarManager.GetProperty("ApplicationId").GetValue(windowsTaskbar, null)
+                MethodInfo SetApplicationIdForSpecificWindow = taskbarManager.GetMethod("SetApplicationIdForSpecificWindow", new Type[] { _windowHandle.GetType(), typeof(String) });
+                SetApplicationIdForSpecificWindow.Invoke(_windowsTaskbar, new object[] {
+                    _windowHandle,
+                    taskbarManager.GetProperty("ApplicationId").GetValue(_windowsTaskbar, null)
                 });
 
-                iconPause = System.Drawing.Icon.FromHandle(Properties.Resources.pause16.GetHicon());
-                iconPauseAll = System.Drawing.Icon.FromHandle(Properties.Resources.player_pause_all.GetHicon());
-                iconStartAll = System.Drawing.Icon.FromHandle(Properties.Resources.player_play_all.GetHicon());
-                iconAddTorrent = System.Drawing.Icon.FromHandle(Properties.Resources.add16.GetHicon());
+                _iconPause = System.Drawing.Icon.FromHandle(Properties.Resources.pause16.GetHicon());
+                _iconPauseAll = System.Drawing.Icon.FromHandle(Properties.Resources.player_pause_all.GetHicon());
+                _iconStartAll = System.Drawing.Icon.FromHandle(Properties.Resources.player_play_all.GetHicon());
+                _iconAddTorrent = System.Drawing.Icon.FromHandle(Properties.Resources.add16.GetHicon());
                 /*
                  * buttonStartAll = new ThumbnailToolbarButton(iconStartAll, OtherStrings.StartAll);
                  * buttonPauseAll = new ThumbnailToolbarButton(iconPauseAll, OtherStrings.PauseAll);
                  * buttonAddTorrent = new ThumbnailToolbarButton(iconAddTorrent, OtherStrings.NewTorrentIs);
                  */
-                Type ThumbnailToolbarButton = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.ThumbnailToolBarButton");
-                buttonStartAll = Activator.CreateInstance(ThumbnailToolbarButton, new object[] { iconStartAll, OtherStrings.StartAll });
-                buttonPauseAll = Activator.CreateInstance(ThumbnailToolbarButton, new object[] { iconPauseAll, OtherStrings.PauseAll });
-                buttonAddTorrent = Activator.CreateInstance(ThumbnailToolbarButton, new object[] { iconAddTorrent, ProgramForm.AddTorrentString });
+                Type ThumbnailToolbarButton = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.ThumbnailToolBarButton");
+                _buttonStartAll = Activator.CreateInstance(ThumbnailToolbarButton, _iconStartAll, OtherStrings.StartAll);
+                _buttonPauseAll = Activator.CreateInstance(ThumbnailToolbarButton, _iconPauseAll, OtherStrings.PauseAll);
+                _buttonAddTorrent = Activator.CreateInstance(ThumbnailToolbarButton, _iconAddTorrent, _programForm.AddTorrentString);
 
                 SetConnected(false);
 
@@ -60,22 +62,22 @@ namespace TransmissionRemoteDotnet
                  * buttonPauseAll.Click += new EventHandler<ThumbnailButtonClickedEventArgs>(buttonPauseAll_Click);
                  * buttonAddTorrent.Click += new EventHandler<ThumbnailButtonClickedEventArgs>(buttonAddTorrent_Click);
                  */
-                Type ThumbnailButtonClickedEventArgs = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.ThumbnailButtonClickedEventArgs");
+                Type ThumbnailButtonClickedEventArgs = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.ThumbnailButtonClickedEventArgs");
                 EventInfo ei = ThumbnailToolbarButton.GetEvent("Click");
-                ei.AddEventHandler(buttonStartAll, Delegate.CreateDelegate(ei.EventHandlerType, null, this.GetType().GetMethod("buttonStartAll_Click")));
-                ei.AddEventHandler(buttonPauseAll, Delegate.CreateDelegate(ei.EventHandlerType, null, this.GetType().GetMethod("buttonPauseAll_Click")));
-                ei.AddEventHandler(buttonAddTorrent, Delegate.CreateDelegate(ei.EventHandlerType, null, this.GetType().GetMethod("buttonAddTorrent_Click")));
+                ei.AddEventHandler(_buttonStartAll, Delegate.CreateDelegate(ei.EventHandlerType, null, GetType().GetMethod("buttonStartAll_Click")));
+                ei.AddEventHandler(_buttonPauseAll, Delegate.CreateDelegate(ei.EventHandlerType, null, GetType().GetMethod("buttonPauseAll_Click")));
+                ei.AddEventHandler(_buttonAddTorrent, Delegate.CreateDelegate(ei.EventHandlerType, null, GetType().GetMethod("buttonAddTorrent_Click")));
 
                 /* windowsTaskbar.ThumbnailToolbars.AddButtons(WindowHandle, buttonStartAll, buttonPauseAll, buttonAddTorrent); */
-                object ThumbnailToolbars = TaskbarManager.GetProperty("ThumbnailToolBars").GetValue(windowsTaskbar, null);
-                Type ThumbnailToolBarManager = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.ThumbnailToolBarManager");
-                Type ThumbnailToolbarButtonArray = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.ThumbnailToolBarButton[]");
-                MethodInfo AddButtons = ThumbnailToolBarManager.GetMethod("AddButtons", new Type[] { WindowHandle.GetType(), ThumbnailToolbarButtonArray });
+                object ThumbnailToolbars = taskbarManager.GetProperty("ThumbnailToolBars").GetValue(_windowsTaskbar, null);
+                Type ThumbnailToolBarManager = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.ThumbnailToolBarManager");
+                Type ThumbnailToolbarButtonArray = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.ThumbnailToolBarButton[]");
+                MethodInfo AddButtons = ThumbnailToolBarManager.GetMethod("AddButtons", new Type[] { _windowHandle.GetType(), ThumbnailToolbarButtonArray });
                 Array ThumbnailToolbarButtons = Array.CreateInstance(ThumbnailToolbarButton, 3);
-                ThumbnailToolbarButtons.SetValue(buttonStartAll, 0);
-                ThumbnailToolbarButtons.SetValue(buttonPauseAll, 1);
-                ThumbnailToolbarButtons.SetValue(buttonAddTorrent, 2);
-                AddButtons.Invoke(ThumbnailToolbars, new object[] { WindowHandle, ThumbnailToolbarButtons });
+                ThumbnailToolbarButtons.SetValue(_buttonStartAll, 0);
+                ThumbnailToolbarButtons.SetValue(_buttonPauseAll, 1);
+                ThumbnailToolbarButtons.SetValue(_buttonAddTorrent, 2);
+                AddButtons.Invoke(ThumbnailToolbars, new object[] { _windowHandle, ThumbnailToolbarButtons });
             }
             catch (TargetInvocationException)
             { // this is normal: this is only supported on Windows 7 or newer.
@@ -88,96 +90,96 @@ namespace TransmissionRemoteDotnet
 
         public void ChangeUICulture()
         {
-            if (MicrosoftWindowsAPICodePackShell != null)
+            if (_microsoftWindowsApiCodePackShell != null)
             {
-                Type ThumbnailToolbarButton = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.ThumbnailToolBarButton");
-                if (buttonStartAll != null) ThumbnailToolbarButton.GetProperty("Tooltip").SetValue(buttonStartAll, OtherStrings.StartAll, null);
-                if (buttonPauseAll != null) ThumbnailToolbarButton.GetProperty("Tooltip").SetValue(buttonPauseAll, OtherStrings.PauseAll, null);
-                if (buttonAddTorrent != null) ThumbnailToolbarButton.GetProperty("Tooltip").SetValue(buttonAddTorrent, ProgramForm.AddTorrentString, null);
+                Type ThumbnailToolbarButton = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.ThumbnailToolBarButton");
+                if (_buttonStartAll != null) ThumbnailToolbarButton.GetProperty("Tooltip").SetValue(_buttonStartAll, OtherStrings.StartAll, null);
+                if (_buttonPauseAll != null) ThumbnailToolbarButton.GetProperty("Tooltip").SetValue(_buttonPauseAll, OtherStrings.PauseAll, null);
+                if (_buttonAddTorrent != null) ThumbnailToolbarButton.GetProperty("Tooltip").SetValue(_buttonAddTorrent, _programForm.AddTorrentString, null);
             }
         }
         public void buttonPauseAll_Click(object sender, EventArgs e)
         {
-            ProgramForm.Perform_stopAllMenuItem_Click();
+            _programForm.Perform_stopAllMenuItem_Click();
         }
 
         public void buttonAddTorrent_Click(object sender, EventArgs e)
         {
-            ProgramForm.addTorrentButton_Click(sender, e);
+            _programForm.addTorrentButton_Click(sender, e);
         }
 
         public void buttonStartAll_Click(object sender, EventArgs e)
         {
-            ProgramForm.Perform_startAllMenuItem_Click();
+            _programForm.Perform_startAllMenuItem_Click();
         }
 
         public void SetConnected(bool connected)
         {
-            if (MicrosoftWindowsAPICodePackShell != null)
+            if (_microsoftWindowsApiCodePackShell != null)
             {
-                Type ThumbnailToolbarButton = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.ThumbnailToolBarButton");
-                if (buttonStartAll != null) ThumbnailToolbarButton.GetProperty("Enabled").SetValue(buttonStartAll, connected, null);
-                if (buttonPauseAll != null) ThumbnailToolbarButton.GetProperty("Enabled").SetValue(buttonPauseAll, connected, null);
-                if (buttonAddTorrent != null) ThumbnailToolbarButton.GetProperty("Enabled").SetValue(buttonAddTorrent, connected, null);
+                Type ThumbnailToolbarButton = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.ThumbnailToolBarButton");
+                if (_buttonStartAll != null) ThumbnailToolbarButton.GetProperty("Enabled").SetValue(_buttonStartAll, connected, null);
+                if (_buttonPauseAll != null) ThumbnailToolbarButton.GetProperty("Enabled").SetValue(_buttonPauseAll, connected, null);
+                if (_buttonAddTorrent != null) ThumbnailToolbarButton.GetProperty("Enabled").SetValue(_buttonAddTorrent, connected, null);
             }
         }
 
         public void UpdateProgress(decimal value)
         {
-            if (windowsTaskbar != null && MicrosoftWindowsAPICodePackShell != null)
+            if (_windowsTaskbar != null && _microsoftWindowsApiCodePackShell != null)
             {
                 /* windowsTaskbar.SetProgressValue(, 100, WindowHandle); */
-                Type TaskbarManager = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager");
-                MethodInfo SetProgressValue = TaskbarManager.GetMethod("SetProgressValue", new Type[] { typeof(int), typeof(int), WindowHandle.GetType() });
-                SetProgressValue.Invoke(windowsTaskbar, new object[] { (int)value, 100, WindowHandle });
+                Type TaskbarManager = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager");
+                MethodInfo SetProgressValue = TaskbarManager.GetMethod("SetProgressValue", new Type[] { typeof(int), typeof(int), _windowHandle.GetType() });
+                SetProgressValue.Invoke(_windowsTaskbar, new object[] { (int)value, 100, _windowHandle });
             }
         }
 
         public void SetPaused()
         {
-            if (windowsTaskbar != null && MicrosoftWindowsAPICodePackShell != null)
+            if (_windowsTaskbar != null && _microsoftWindowsApiCodePackShell != null)
             {
-                Type TaskbarManager = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager");
+                Type TaskbarManager = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager");
                 //windowsTaskbar.SetProgressState(Microsoft.WindowsAPICodePack.Taskbar.TaskbarProgressBarState.Paused, WindowHandle);
-                Type TaskbarProgressBarState = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarProgressBarState");
+                Type TaskbarProgressBarState = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarProgressBarState");
                 MethodInfo SetProgressState = TaskbarManager.GetMethod("SetProgressState", new Type[] { TaskbarProgressBarState, typeof(IntPtr) });
                 FieldInfo Paused = TaskbarProgressBarState.GetField("Paused");
-                SetProgressState.Invoke(windowsTaskbar, new object[] { Paused.GetValue(TaskbarProgressBarState), WindowHandle });
+                SetProgressState.Invoke(_windowsTaskbar, new object[] { Paused.GetValue(TaskbarProgressBarState), _windowHandle });
                 /* windowsTaskbar.SetOverlayIcon(iconPause, "pause"); */
                 MethodInfo SetOverlayIcon = TaskbarManager.GetMethod("SetOverlayIcon", new Type[] { typeof(System.Drawing.Icon), typeof(string) });
-                SetOverlayIcon.Invoke(windowsTaskbar, new object[] { iconPause, "pause" });
+                SetOverlayIcon.Invoke(_windowsTaskbar, new object[] { _iconPause, "pause" });
             }
         }
 
         public void SetNormal(bool none)
         {
-            if (windowsTaskbar != null && MicrosoftWindowsAPICodePackShell != null)
+            if (_windowsTaskbar != null && _microsoftWindowsApiCodePackShell != null)
             {
-                Type TaskbarManager = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager");
+                Type TaskbarManager = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager");
                 //if (none)
                 //  windowsTaskbar.SetProgressState(Microsoft.WindowsAPICodePack.Taskbar.TaskbarProgressBarState.Paused, WindowHandle);
                 //else 
                 //  windowsTaskbar.SetProgressState(Microsoft.WindowsAPICodePack.Taskbar.TaskbarProgressBarState.Normal, WindowHandle);
-                Type TaskbarProgressBarState = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarProgressBarState");
+                Type TaskbarProgressBarState = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarProgressBarState");
                 MethodInfo SetProgressState = TaskbarManager.GetMethod("SetProgressState", new Type[] { TaskbarProgressBarState, typeof(IntPtr) });
                 FieldInfo ProgressState = TaskbarProgressBarState.GetField(none ? "Paused" : "Normal");
-                SetProgressState.Invoke(windowsTaskbar, new object[] { ProgressState.GetValue(TaskbarProgressBarState), WindowHandle });
+                SetProgressState.Invoke(_windowsTaskbar, new object[] { ProgressState.GetValue(TaskbarProgressBarState), _windowHandle });
 
                 //windowsTaskbar.SetOverlayIcon(null, null);
                 MethodInfo SetOverlayIcon = TaskbarManager.GetMethod("SetOverlayIcon", new Type[] { typeof(System.Drawing.Icon), typeof(string) });
-                SetOverlayIcon.Invoke(windowsTaskbar, new object[] { null, null });
+                SetOverlayIcon.Invoke(_windowsTaskbar, new object[] { null, null });
             }
         }
         public void SetNoProgress()
         {
-            if (windowsTaskbar != null && MicrosoftWindowsAPICodePackShell != null)
+            if (_windowsTaskbar != null && _microsoftWindowsApiCodePackShell != null)
             {
                 //windowsTaskbar.SetProgressState(Microsoft.WindowsAPICodePack.Taskbar.TaskbarProgressBarState.NoProgress, WindowHandle);
-                Type TaskbarManager = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager");
-                Type TaskbarProgressBarState = MicrosoftWindowsAPICodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarProgressBarState");
+                Type TaskbarManager = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager");
+                Type TaskbarProgressBarState = _microsoftWindowsApiCodePackShell.GetType("Microsoft.WindowsAPICodePack.Taskbar.TaskbarProgressBarState");
                 MethodInfo SetProgressState = TaskbarManager.GetMethod("SetProgressState", new Type[] { TaskbarProgressBarState, typeof(IntPtr) });
                 FieldInfo NoProgress = TaskbarProgressBarState.GetField("NoProgress");
-                SetProgressState.Invoke(windowsTaskbar, new object[] { NoProgress.GetValue(TaskbarProgressBarState), WindowHandle });
+                SetProgressState.Invoke(_windowsTaskbar, new object[] { NoProgress.GetValue(TaskbarProgressBarState), _windowHandle });
             }
         }
     }

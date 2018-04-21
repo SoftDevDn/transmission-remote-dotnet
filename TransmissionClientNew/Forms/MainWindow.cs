@@ -41,6 +41,7 @@ namespace TransmissionRemoteDotnet.Forms
 {
     public partial class MainWindow : CultureForm
     {
+        // TODO: Customize all speed information (tray, statusBar).
         private const string
             DefaultWindowTitle = "Transmission Remote",
             ConfkeyMainwindowHeight = "mainwindow-height",
@@ -60,7 +61,7 @@ namespace TransmissionRemoteDotnet.Forms
             LatestVersionBeta = "http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version_beta.txt",
             DownloadsPage = "http://code.google.com/p/transmission-remote-dotnet/downloads/list";
 
-        private Boolean _minimise;
+        private bool _minimise;
         private readonly ListViewItemSorter _lvwColumnSorter;
         private readonly FilesListViewItemSorter _filesLvwColumnSorter;
         private readonly PeersListViewItemSorter _peersLvwColumnSorter;
@@ -579,8 +580,8 @@ namespace TransmissionRemoteDotnet.Forms
                 _lvwColumnSorter.SetupColumn(Program.DaemonDescriptor.RpcVersion);
                 Text = DefaultWindowTitle + " - " + Program.Settings.Current.Host;
                 speedGraph.MaxPeekMagnitude = 100;
-                speedGraph.AddLine("Download", Color.Green);
-                speedGraph.AddLine("Upload", Color.Yellow);
+                speedGraph.AddLine("Download", lblDownload.ForeColor);
+                speedGraph.AddLine("Upload", lblUpload.ForeColor);
                 speedGraph.Push(0, "Download");
                 speedGraph.Push(0, "Upload");
             }
@@ -852,6 +853,7 @@ namespace TransmissionRemoteDotnet.Forms
         private delegate void AddQueueDelegate(string[] files, bool uploadprompt);
         public void AddQueue(string[] files, bool uploadprompt)
         {
+            // TODO: Fix magnet URI.
             if (InvokeRequired)
             {
                 Invoke(new AddQueueDelegate(AddQueue), files, uploadprompt);
@@ -1038,10 +1040,10 @@ namespace TransmissionRemoteDotnet.Forms
         private void RemoveTorrentsPrompt()
         {
             if (torrentListView.SelectedItems.Count == 1
-                && MessageBox.Show(String.Format(OtherStrings.ConfirmSingleRemove, torrentListView.SelectedItems[0].Text), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                && MessageBox.Show(string.Format(OtherStrings.ConfirmSingleRemove, torrentListView.SelectedItems[0].Text), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 RemoveTorrents(false);
             else if (torrentListView.SelectedItems.Count > 1
-                && MessageBox.Show(String.Format(OtherStrings.ConfirmMultipleRemove, torrentListView.SelectedItems.Count), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                && MessageBox.Show(string.Format(OtherStrings.ConfirmMultipleRemove, torrentListView.SelectedItems.Count), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 RemoveTorrents(false);
         }
 
@@ -1050,10 +1052,10 @@ namespace TransmissionRemoteDotnet.Forms
             if (Program.DaemonDescriptor.Version >= 1.5)
             {
                 if (torrentListView.SelectedItems.Count == 1
-                    && MessageBox.Show(String.Format(OtherStrings.ConfirmSingleRemoveAndDelete, torrentListView.SelectedItems[0].Text, Environment.NewLine + Environment.NewLine), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    && MessageBox.Show(string.Format(OtherStrings.ConfirmSingleRemoveAndDelete, torrentListView.SelectedItems[0].Text, Environment.NewLine + Environment.NewLine), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     RemoveTorrents(true);
                 else if (torrentListView.SelectedItems.Count > 1
-                    && MessageBox.Show(String.Format(OtherStrings.ConfirmMultipleRemoveAndDelete, torrentListView.SelectedItems.Count, Environment.NewLine + Environment.NewLine), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    && MessageBox.Show(string.Format(OtherStrings.ConfirmMultipleRemoveAndDelete, torrentListView.SelectedItems.Count, Environment.NewLine + Environment.NewLine), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     RemoveTorrents(true);
             }
         }
@@ -1460,7 +1462,7 @@ namespace TransmissionRemoteDotnet.Forms
             else
                 _taskbar.SetNoProgress();
 
-            return String.Format(
+            return string.Format(
                 selected > 1 ? "{0} {1}, {2} {3} | {4} {5}: {6} {7}, {8} {9} | {12} {13}: {14} / {15}"
                       : "{0} {1}, {2} {3} | {4} {5}: {6} {7}, {8} {9} | {10} / {11}", Toolbox.GetSpeed(totalDownload), OtherStrings.Down.ToLower(), Toolbox.GetSpeed(totalUpload), OtherStrings.Up.ToLower(), totalTorrents, OtherStrings.Torrents.ToLower(), totalDownloading, OtherStrings.Downloading.ToLower(), totalSeeding, OtherStrings.Seeding.ToLower(), Toolbox.GetFileSize(totalDownloadedSize), Toolbox.GetFileSize(totalSize), selected, OtherStrings.ItemsSelected, Toolbox.GetFileSize(selectedDownloadedSize), Toolbox.GetFileSize(selectedSize));
         }
@@ -1905,7 +1907,7 @@ namespace TransmissionRemoteDotnet.Forms
                     ListViewItem item = new ListViewItem(tier.ToString());
                     item.SubItems.Add(announceUrl);
                     while (item.SubItems.Count < 7)
-                        item.SubItems.Add("");
+                        item.SubItems.Add(string.Empty);
                     item.Name = Toolbox.ToInt(tracker[ProtocolConstants.FIELD_IDENTIFIER], -1).ToString();
                     trackersListView.Items.Add(item);
                 }
@@ -1935,10 +1937,10 @@ namespace TransmissionRemoteDotnet.Forms
                             item.SubItems[3].Text = ts.Ticks > 0 ? Toolbox.FormatTimespanLong(ts) : OtherStrings.UnknownNegativeResult;
                         }
                         else
-                            item.SubItems[3].Text = "";
-                        item.SubItems[4].Text = seederCount >= 0 ? seederCount.ToString() : "";
-                        item.SubItems[5].Text = leecherCount >= 0 ? leecherCount.ToString() : "";
-                        item.SubItems[6].Text = downloadCount >= 0 ? downloadCount.ToString() : "";
+                            item.SubItems[3].Text = string.Empty;
+                        item.SubItems[4].Text = seederCount >= 0 ? seederCount.ToString() : string.Empty;
+                        item.SubItems[5].Text = leecherCount >= 0 ? leecherCount.ToString() : string.Empty;
+                        item.SubItems[6].Text = downloadCount >= 0 ? downloadCount.ToString() : string.Empty;
                     }
                 }
                 trackersListView.EndUpdate();
@@ -1948,14 +1950,14 @@ namespace TransmissionRemoteDotnet.Forms
             generalTorrentInfo.Uploaded = t.UploadedString;
             generalTorrentInfo.UploadLimit = t.SpeedLimitUpEnabled ? Toolbox.KbpsString(t.SpeedLimitUp) : "∞";
             generalTorrentInfo.UploadSpeed = t.SecondsDownloading >= 0 && t.SecondsSeeding >= 0 ? string.Format(OtherStrings.SpeedWithAvg, t.UploadRateString, t.UploadAvgRateString) : t.UploadRateString;
-            generalTorrentInfo.Seeders = String.Format(OtherStrings.XOfYConnected, t.PeersSendingToUs, t.Seeders < 0 ? "?" : t.Seeders.ToString());
-            generalTorrentInfo.Leechers = String.Format(OtherStrings.XOfYConnected, t.PeersGettingFromUs, t.Leechers < 0 ? "?" : t.Leechers.ToString());
+            generalTorrentInfo.Seeders = string.Format(OtherStrings.XOfYConnected, t.PeersSendingToUs, t.Seeders < 0 ? "?" : t.Seeders.ToString());
+            generalTorrentInfo.Leechers = string.Format(OtherStrings.XOfYConnected, t.PeersGettingFromUs, t.Leechers < 0 ? "?" : t.Leechers.ToString());
             generalTorrentInfo.Ratio = t.LocalRatioString;
             progressBar.Value = (int)t.Percentage;
             if (t.Pieces != null)
             {
                 piecesGraph.ApplyBits(t.Pieces, t.PieceCount);
-                generalTorrentInfo.PiecesInfo = String.Format(OtherStrings.PiecesInfo, t.PieceCount, Toolbox.GetFileSize(t.PieceSize), t.HavePieces);
+                generalTorrentInfo.PiecesInfo = string.Format(OtherStrings.PiecesInfo, t.PieceCount, Toolbox.GetFileSize(t.PieceSize), t.HavePieces);
             }
             else
                 generalTorrentInfo.PiecesInfo = $"{t.PieceCount} x {Toolbox.GetFileSize(t.PieceSize)}";
@@ -2132,34 +2134,26 @@ namespace TransmissionRemoteDotnet.Forms
         private void torrentListView_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.A)
-            {
                 Toolbox.SelectAll(torrentListView);
-            }
         }
 
 
         private void torrentDetailsTabListView_KeyDown(object sender, KeyEventArgs e)
         {
-            ListView listView = (ListView)sender;
+            var listView = (ListView)sender;
             if (e.KeyCode == Keys.A && e.Control)
-            {
                 Toolbox.SelectAll(listView);
-            }
             else if (e.KeyCode == Keys.C && e.Control)
-            {
                 Toolbox.CopyListViewToClipboard(listView);
-            }
         }
 
         private void recheckTorrentButton_Click(object sender, EventArgs e)
         {
             if (torrentListView.SelectedItems.Count > 0)
             {
-                string question = torrentListView.SelectedItems.Count == 1 ? String.Format(OtherStrings.ConfirmSingleRecheck, torrentListView.SelectedItems[0].Text) : String.Format(OtherStrings.ConfirmMultipleRecheck, torrentListView.SelectedItems.Count);
+                string question = torrentListView.SelectedItems.Count == 1 ? string.Format(OtherStrings.ConfirmSingleRecheck, torrentListView.SelectedItems[0].Text) : string.Format(OtherStrings.ConfirmMultipleRecheck, torrentListView.SelectedItems.Count);
                 if (MessageBox.Show(question, OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
                     Program.Form.SetupAction(CommandFactory.RequestAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTVERIFY, BuildIdArray())));
-                }
             }
         }
 
@@ -2264,7 +2258,7 @@ namespace TransmissionRemoteDotnet.Forms
                     Version thisVersion = Assembly.GetEntryAssembly().GetName().Version;
                     if (latestVersion > thisVersion)
                     {
-                        if (MessageBox.Show(String.Format(OtherStrings.NewerVersion, latestVersion.Major, latestVersion.Minor), OtherStrings.UpgradeAvailable, MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+                        if (MessageBox.Show(string.Format(OtherStrings.NewerVersion, latestVersion.Major, latestVersion.Minor), OtherStrings.UpgradeAvailable, MessageBoxButtons.YesNo, MessageBoxIcon.Information)
                             == DialogResult.Yes)
                         {
                             Process.Start(DownloadsPage);
@@ -2273,7 +2267,7 @@ namespace TransmissionRemoteDotnet.Forms
                     else
                     {
                         if (alwaysnotify)
-                            MessageBox.Show(String.Format(OtherStrings.LatestVersion, thisVersion.Major, thisVersion.Minor), OtherStrings.NoUpgradeAvailable, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(string.Format(OtherStrings.LatestVersion, thisVersion.Major, thisVersion.Minor), OtherStrings.NoUpgradeAvailable, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -2288,7 +2282,7 @@ namespace TransmissionRemoteDotnet.Forms
             string[] latestVersion = response.Remove(0, 15).Split('.');
             if (latestVersion.Length != 4)
                 throw new FormatException("Incorrect number format");
-            e.Result = new Version(Int32.Parse(latestVersion[0]), Int32.Parse(latestVersion[1]), Int32.Parse(latestVersion[2]), Int32.Parse(latestVersion[3]));
+            e.Result = new Version(int.Parse(latestVersion[0]), int.Parse(latestVersion[1]), int.Parse(latestVersion[2]), int.Parse(latestVersion[3]));
         }
 
         private void updateGeoipDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2348,12 +2342,12 @@ namespace TransmissionRemoteDotnet.Forms
                     Torrent t = (Torrent)torrentListView.SelectedItems[0];
                     Process.Start(
                         Program.Settings.PlinkPath,
-                        String.Format(
+                        string.Format(
                             "-t \"{0}\" \"{1}\"",
                             Program.Settings.Current.Host,
-                            String.Format(
+                            string.Format(
                                 Program.Settings.Current.PlinkCmd.Replace("$DATA", "{0}").Replace("$TORRENTID", t.Id.ToString()),
-                                String.Format("{0}{1}{2}", t.DownloadDir, !t.DownloadDir.EndsWith("/") ? "/" : null, t.TorrentName))
+                                string.Format("{0}{1}{2}", t.DownloadDir, !t.DownloadDir.EndsWith("/") ? "/" : null, t.TorrentName))
                         ));
                 }
                 catch (Exception ex)

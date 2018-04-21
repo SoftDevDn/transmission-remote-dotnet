@@ -100,8 +100,7 @@ namespace TransmissionRemoteDotnet
                 return Color.Green;
             if (LocalRatio > seedratio * 0.9)
                 return Color.Gold;
-            else
-                return Color.Red;
+            return Color.Red;
         }
 
         private delegate void UpdateUIDelegate(bool first);
@@ -120,9 +119,9 @@ namespace TransmissionRemoteDotnet
             SetText(3, Percentage + "%");
             SubItems[3].Tag = Percentage;
             SetText(4, Status);
-            SetText(5, string.Format(_seedersColumnFormat, (Seeders < 0 ? "?" : Seeders.ToString()), PeersSendingToUs));
+            SetText(5, string.Format(_seedersColumnFormat, Seeders < 0 ? "?" : Seeders.ToString(), PeersSendingToUs));
             SubItems[5].Tag = Seeders;
-            SetText(6, string.Format(_seedersColumnFormat, (Leechers < 0 ? "?" : Leechers.ToString()), PeersGettingFromUs));
+            SetText(6, string.Format(_seedersColumnFormat, Leechers < 0 ? "?" : Leechers.ToString(), PeersGettingFromUs));
             SubItems[6].Tag = Leechers;
             SetText(7, DownloadRate > 0 ? Toolbox.GetSpeed(DownloadRate) : "");
             SubItems[7].Tag = DownloadRate;
@@ -149,14 +148,10 @@ namespace TransmissionRemoteDotnet
                 lock (form.stateListBox)
                 {
                     if (FirstTrackerTrimmed.Length > 0 && form.stateListBox.FindItem(FirstTrackerTrimmed) == null)
-                    {
                         form.stateListBox.Items.Add(new GListBoxItem(FirstTrackerTrimmed, 9));
-                    }
                 }
                 if (Program.Settings.MinToTray && Program.Settings.StartedBalloon && _updateSerial > 2)
-                {
                     form.ShowTrayTip(LocalSettingsSingleton.BALLOON_TIMEOUT, TorrentName, String.Format(OtherStrings.NewTorrentIs, Status.ToLower()), ToolTipIcon.Info);
-                }
                 LogError();
             }
             else if (Program.Settings.MinToTray && CompletionPopupPending)
@@ -224,10 +219,10 @@ namespace TransmissionRemoteDotnet
             short statusCode = Toolbox.ToShort(info[ProtocolConstants.FIELD_STATUS]);
             string errorString = (string)info[ProtocolConstants.FIELD_ERRORSTRING];
 
-            bool statusChange = (StatusCode != statusCode) || (HasError != IsErrorString(errorString));
+            bool statusChange = StatusCode != statusCode || HasError != IsErrorString(errorString);
 
             if (StatusCode == ProtocolConstants.STATUS_DOWNLOAD
-                && LeftUntilDone > 0 && (leftUntilDone == 0))
+                && LeftUntilDone > 0 && leftUntilDone == 0)
             {
                 CompletionPopupPending = !first && Program.Settings.CompletedBaloon;
             }
@@ -270,13 +265,7 @@ namespace TransmissionRemoteDotnet
             set;
         }
 
-        public string TorrentName
-        {
-            get
-            {
-                return Text;
-            }
-        }
+        public string TorrentName => Text;
 
         public Torrent(JsonObject info)
             : base((string)info[ProtocolConstants.FIELD_NAME])
@@ -514,13 +503,13 @@ namespace TransmissionRemoteDotnet
             get
             {
                 if (StatusCode.Equals(ProtocolConstants.STATUS_CHECK_WAIT)) return OtherStrings.WaitingToCheck;
-                else if (StatusCode.Equals(ProtocolConstants.STATUS_CHECK)) return OtherStrings.Checking;
-                else if (StatusCode.Equals(ProtocolConstants.STATUS_DOWNLOAD)) return OtherStrings.Downloading;
-                else if (ProtocolConstants.STATUS_DOWNLOAD_WAIT != -1 && StatusCode.Equals(ProtocolConstants.STATUS_DOWNLOAD_WAIT)) return OtherStrings.DownloadWait;
-                else if (StatusCode.Equals(ProtocolConstants.STATUS_SEED)) return OtherStrings.Seeding;
-                else if (ProtocolConstants.STATUS_SEED_WAIT != -1 && StatusCode.Equals(ProtocolConstants.STATUS_SEED_WAIT)) return OtherStrings.SeedWait;
-                else if (StatusCode.Equals(ProtocolConstants.STATUS_STOPPED)) return OtherStrings.Paused;
-                else return OtherStrings.Unknown;
+                if (StatusCode.Equals(ProtocolConstants.STATUS_CHECK)) return OtherStrings.Checking;
+                if (StatusCode.Equals(ProtocolConstants.STATUS_DOWNLOAD)) return OtherStrings.Downloading;
+                if (ProtocolConstants.STATUS_DOWNLOAD_WAIT != -1 && StatusCode.Equals(ProtocolConstants.STATUS_DOWNLOAD_WAIT)) return OtherStrings.DownloadWait;
+                if (StatusCode.Equals(ProtocolConstants.STATUS_SEED)) return OtherStrings.Seeding;
+                if (ProtocolConstants.STATUS_SEED_WAIT != -1 && StatusCode.Equals(ProtocolConstants.STATUS_SEED_WAIT)) return OtherStrings.SeedWait;
+                if (StatusCode.Equals(ProtocolConstants.STATUS_STOPPED)) return OtherStrings.Paused;
+                return OtherStrings.Unknown;
             }
         }
 
@@ -616,14 +605,11 @@ namespace TransmissionRemoteDotnet
                 }
                 return seedersMax;
             }
-            else if (info.Contains(ProtocolConstants.FIELD_SEEDERS))
+            if (info.Contains(ProtocolConstants.FIELD_SEEDERS))
             {
                 return Toolbox.ToInt(info[ProtocolConstants.FIELD_SEEDERS]);
             }
-            else
-            {
-                return -1;
-            }
+            return -1;
         }
 
         public int Seeders
@@ -651,14 +637,11 @@ namespace TransmissionRemoteDotnet
                 }
                 return leechersMax;
             }
-            else if (info.Contains(ProtocolConstants.FIELD_LEECHERS))
+            if (info.Contains(ProtocolConstants.FIELD_LEECHERS))
             {
                 return Toolbox.ToInt(info[ProtocolConstants.FIELD_LEECHERS]);
             }
-            else
-            {
-                return -1;
-            }
+            return -1;
         }
 
         public int Leechers
@@ -786,7 +769,7 @@ namespace TransmissionRemoteDotnet
                     long speed = (long)Math.Round((double)Downloaded / SecondsDownloading, 0);
                     return Toolbox.GetSpeed(speed);
                 }
-                else return "";
+                return "";
             }
         }
 
@@ -813,7 +796,7 @@ namespace TransmissionRemoteDotnet
                     long speed = (long)Math.Round((double)Downloaded / (SecondsDownloading + SecondsSeeding), 0);
                     return Toolbox.GetSpeed(speed);
                 }
-                else return "";
+                return "";
             }
         }
 

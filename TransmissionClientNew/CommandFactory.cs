@@ -35,8 +35,8 @@ namespace TransmissionRemoteDotnet
 {
     public class CommandFactory
     {
-        private static Encoding TransmissionEncoding = Encoding.UTF8;
-        private static int requestid = 0;
+        private static readonly Encoding TransmissionEncoding = Encoding.UTF8;
+        private static int _requestid;
         /* 
          * If this doesnt good, we should write a own converter like T:
          * libtransmission/bencode.c:1308
@@ -59,7 +59,7 @@ namespace TransmissionRemoteDotnet
         {
             TransmissionWebClient wc = new TransmissionWebClient(true, true);
             byte[] bdata = GetBytes(data.ToString());
-            int r = requestid++;
+            int r = _requestid++;
 #if LOGRPC
             Program.LogDebug("RPC request: " + r, data.ToString());
 #endif
@@ -85,9 +85,9 @@ namespace TransmissionRemoteDotnet
                             try
                             {
                                 string sessionid = ex.Response.Headers["X-Transmission-Session-Id"];
-                                if (sessionid != null && sessionid.Length > 0)
+                                if (!string.IsNullOrEmpty(sessionid))
                                 {
-                                    TransmissionWebClient.X_transmission_session_id = sessionid;
+                                    TransmissionWebClient.XTransmissionSessionId = sessionid;
                                     (sender as TransmissionWebClient).UploadDataAsync(new Uri(Program.Settings.Current.RpcUrl), null, ((TransmissonRequest)e.UserState).data, new TransmissonRequest(((TransmissonRequest)e.UserState).requestid, ((TransmissonRequest)e.UserState).data, false));
                                     return;
                                 }

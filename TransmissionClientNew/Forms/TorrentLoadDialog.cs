@@ -24,6 +24,14 @@ namespace TransmissionRemoteDotnet.Forms
         private readonly ContextMenu _noTorrentSelectionMenu;
         #endregion
 
+        #region Properties
+        private string DestinationPath
+        {
+            get => destinationComboBox.Text;
+            set => destinationComboBox.Text = value;
+        }
+        #endregion
+
         #region Buttons
         private void SelectAllHandler(object sender, EventArgs e)
         {
@@ -42,43 +50,35 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
+            string destination = Toolbox.ConvertUnixPathToWinPath(DestinationPath);
+
             var fbd = new FolderBrowserDialog();
-            fbd.SelectedPath = destinationComboBox.Text;
+            fbd.SelectedPath = destination;
             if (fbd.ShowDialog() != DialogResult.OK)
                 return;
 
-            destinationComboBox.Text = fbd.SelectedPath;
+            DestinationPath = Toolbox.ConvertWinPathToUnixPath(fbd.SelectedPath);
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            JsonArray wanted = new JsonArray();
-            JsonArray unwanted = new JsonArray();
-            JsonArray high = new JsonArray();
-            JsonArray normal = new JsonArray();
-            JsonArray low = new JsonArray();
+            var wanted = new JsonArray();
+            var unwanted = new JsonArray();
+            var high = new JsonArray();
+            var normal = new JsonArray();
+            var low = new JsonArray();
             foreach (ListViewItem item in filesListView.Items)
             {
                 if (!item.Checked)
-                {
                     unwanted.Add(item.Index);
-                }
                 else
-                {
                     wanted.Add(item.Index);
-                }
                 if (item.SubItems[3].Text.Equals(OtherStrings.High))
-                {
                     high.Add(item.Index);
-                }
                 else if (item.SubItems[3].Text.Equals(OtherStrings.Low))
-                {
                     low.Add(item.Index);
-                }
                 else
-                {
                     normal.Add(item.Index);
-                }
             }
             JsonObject request = Requests.TorrentAddByFile(
                 _path,
@@ -106,41 +106,31 @@ namespace TransmissionRemoteDotnet.Forms
         private void HighPriorityHandler(object sender, EventArgs e)
         {
             foreach (ListViewItem item in filesListView.SelectedItems)
-            {
                 item.SubItems[3].Text = OtherStrings.High;
-            }
         }
 
         private void LowPriorityHandler(object sender, EventArgs e)
         {
             foreach (ListViewItem item in filesListView.SelectedItems)
-            {
                 item.SubItems[3].Text = OtherStrings.Low;
-            }
         }
 
         private void NormalPriorityHandler(object sender, EventArgs e)
         {
             foreach (ListViewItem item in filesListView.SelectedItems)
-            {
                 item.SubItems[3].Text = OtherStrings.Normal;
-            }
         }
 
         private void DownloadHandler(object sender, EventArgs e)
         {
             foreach (ListViewItem item in filesListView.SelectedItems)
-            {
                 item.Checked = true;
-            }
         }
 
         private void SkipHandler(object sender, EventArgs e)
         {
             foreach (ListViewItem item in filesListView.SelectedItems)
-            {
                 item.Checked = false;
-            }
         }
 
         public TorrentLoadDialog(string path)
@@ -200,14 +190,10 @@ namespace TransmissionRemoteDotnet.Forms
                             item.SubItems.Add(IconReader.GetTypeName(extension));
                         }
                         else
-                        {
                             item.SubItems.Add("");
-                        }
                     }
                     else
-                    {
                         item.SubItems.Add("");
-                    }
 #else
                     item.SubItems.Add("");
 #endif
@@ -226,13 +212,11 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void TorrentLoadBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Result.GetType().Equals(typeof(List<ListViewItem>)))
+            if (e.Result.GetType() == typeof(List<ListViewItem>))
             {
                 filesListView.BeginUpdate();
                 foreach (ListViewItem item in (List<ListViewItem>)e.Result)
-                {
                     filesListView.Items.Add(item);
-                }
                 Toolbox.StripeListView(filesListView);
                 filesListView.Enabled = btnOk.Enabled = altDestDirCheckBox.Enabled = altPeerLimitCheckBox.Enabled = startTorrentCheckBox.Enabled = true;
                 filesListView.EndUpdate();
@@ -279,9 +263,7 @@ namespace TransmissionRemoteDotnet.Forms
         private void filesListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             if (e.Column == _filesLvwColumnSorter.SortColumn)
-            {
-                _filesLvwColumnSorter.Order = (_filesLvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending);
-            }
+                _filesLvwColumnSorter.Order = _filesLvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
             else
             {
                 _filesLvwColumnSorter.SortColumn = e.Column;

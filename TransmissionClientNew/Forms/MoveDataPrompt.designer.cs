@@ -36,6 +36,8 @@ namespace TransmissionRemoteDotnet.Forms
             this.moveButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.destinationComboBox = new System.Windows.Forms.ComboBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.lblSeparator = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // destinationLabel
@@ -66,12 +68,27 @@ namespace TransmissionRemoteDotnet.Forms
             this.destinationComboBox.SelectedIndexChanged += new System.EventHandler(this.destinationComboBox_SelectedIndexChanged);
             this.destinationComboBox.TextChanged += new System.EventHandler(this.destinationComboBox_SelectedIndexChanged);
             // 
+            // btnBrowse
+            // 
+            resources.ApplyResources(this.btnBrowse, "btnBrowse");
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // lblSeparator
+            // 
+            resources.ApplyResources(this.lblSeparator, "lblSeparator");
+            this.lblSeparator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblSeparator.Name = "lblSeparator";
+            // 
             // MoveDataPrompt
             // 
             this.AcceptButton = this.moveButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.closeButton;
+            this.Controls.Add(this.lblSeparator);
+            this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.destinationComboBox);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.moveButton);
@@ -93,5 +110,7 @@ namespace TransmissionRemoteDotnet.Forms
         private Button moveButton;
         private Button closeButton;
         private ComboBox destinationComboBox;
+        private Button btnBrowse;
+        private Label lblSeparator;
     }
 }

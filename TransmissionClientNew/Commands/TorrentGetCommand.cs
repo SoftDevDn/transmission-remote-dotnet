@@ -45,13 +45,11 @@ namespace TransmissionRemoteDotnet.Commands
             {
                 JsonObject torrent = (JsonObject)torrents[i];
                 string hash = (string)torrent[ProtocolConstants.FIELD_HASHSTRING];
-                Torrent t = null;
+                Torrent t;
                 lock (Program.TorrentIndex)
                 {
                     if (!Program.TorrentIndex.ContainsKey(hash))
-                    {
                         t = new Torrent(torrent);
-                    }
                     else
                     {
                         t = Program.TorrentIndex[hash];

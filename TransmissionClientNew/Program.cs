@@ -110,12 +110,12 @@ namespace TransmissionRemoteDotnet
             culturechanger.ApplyLocation = culturechanger.ApplySize = false;
             settings = LocalSettings.TryLoad();
             uploadPrompt = settings.UploadPrompt;
-            args = Array.FindAll<string>(args, delegate(string str) { return !str.Equals("/m"); });
+            args = Array.FindAll(args, str => !str.Equals("/m"));
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(settings.Locale, true);
 #if DOTNET35
             using (NamedPipeSingleInstance singleInstance = new TCPSingleInstance(TCP_SINGLE_INSTANCE_PORT))
 #else
-            using (TCPSingleInstance singleInstance = new TCPSingleInstance(TCP_SINGLE_INSTANCE_PORT))
+            using (TcpSingleInstance singleInstance = new TcpSingleInstance(TCP_SINGLE_INSTANCE_PORT))
 #endif
             {
                 if (singleInstance.IsFirstInstance)
@@ -136,18 +136,16 @@ namespace TransmissionRemoteDotnet
 
                     /* Store a list of torrents to upload after connect? */
                     if (args.Length > 0)
-                    {
                         singleInstance.PassArgumentsToFirstInstance(args);
-                    }
                     singleInstance.ArgumentsReceived += singleInstance_ArgumentsReceived;
-                    SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler(SystemEvents_PowerModeChanged);
+                    SystemEvents.PowerModeChanged += SystemEvents_PowerModeChanged;
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
                     form = new MainWindow();
-                    form.Load += new EventHandler(delegate(object sender, EventArgs e)
+                    form.Load += delegate
                     {
                         singleInstance.ListenForArgumentsFromSuccessiveInstances();
-                    });
+                    };
                     Application.Run(form);
                 }
                 else
@@ -225,28 +223,21 @@ namespace TransmissionRemoteDotnet
                 OnError(null, null);
             }
         }
-
+        
         static void singleInstance_ArgumentsReceived(object sender, ArgumentsReceivedEventArgs e)
         {
             if (form != null)
             {
                 if (e.Args.Length > 0)
-                {
                     form.AddQueue(e.Args, uploadPrompt);
-                }
                 else
-                {
                     form.InvokeShow();
-                }
             }
         }
 
         public static void RaisePostUpdateEvent()
         {
-            if (OnTorrentsUpdated != null)
-            {
-                OnTorrentsUpdated(null, null);
-            }
+            OnTorrentsUpdated?.Invoke(null, null);
         }
 
         public static bool Connected

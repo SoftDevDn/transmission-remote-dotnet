@@ -18,7 +18,6 @@
 #if !DOTNET35
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
@@ -28,25 +27,24 @@ using Jayrock.Json.Conversion;
 
 namespace TransmissionRemoteDotnet
 {
-    class TCPSingleInstance : IDisposable
+    class TcpSingleInstance : IDisposable
     {
-        private int port;
-        private TcpListener listener;
-        private bool isFirstInstance;
+        private readonly int _port;
+        private readonly TcpListener _listener;
 
-        public TCPSingleInstance(int port)
+        public TcpSingleInstance(int port)
         {
             try
             {
-                this.listener = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
-                listener.Start();
-                this.port = (listener.LocalEndpoint as IPEndPoint).Port;
-                this.isFirstInstance = true;
+                _listener = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
+                _listener.Start();
+                _port = ((IPEndPoint) _listener.LocalEndpoint).Port;
+                IsFirstInstance = true;
             }
             catch
             {
-                this.port = port;
-                this.isFirstInstance = false;
+                _port = port;
+                IsFirstInstance = false;
             }
         }
 
@@ -54,58 +52,51 @@ namespace TransmissionRemoteDotnet
 
         public event EventHandler<ArgumentsReceivedEventArgs> ArgumentsReceived;
 
-        public bool IsFirstInstance
-        {
-            get
-            {
-                return this.isFirstInstance;
-            }
-        }
+        public bool IsFirstInstance { get; }
 
         public void ListenForArgumentsFromSuccessiveInstances()
         {
-            if (!isFirstInstance)
+            if (!IsFirstInstance)
                 throw new InvalidOperationException("This is not the first instance.");
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ListenForArguments));
+            ThreadPool.QueueUserWorkItem(ListenForArguments);
         }
 
-        private void ListenForArguments(Object state)
+        private void ListenForArguments(object state)
         {
+            // TODO: Do something with recursive execution.
             StreamReader reader = null;
             try
             {
-                Stream clientStream = listener.AcceptTcpClient().GetStream();
+                Stream clientStream = _listener.AcceptTcpClient().GetStream();
                 reader = new StreamReader(clientStream);
                 List<string> arguments = new List<string>();
                 foreach (string arg in (JsonArray)JsonConvert.Import(reader.ReadLine()))
                 {
-                    if (arg != null && arg.Length > 0)
+                    if (!string.IsNullOrEmpty(arg))
                         arguments.Add(arg);
                 }
-                ThreadPool.QueueUserWorkItem(new WaitCallback(CallOnArgumentsReceived), arguments.ToArray());
+                ThreadPool.QueueUserWorkItem(CallOnArgumentsReceived, arguments.ToArray());
             }
             catch
             { }
             finally
             {
-                if (reader != null)
-                    reader.Close();
+                reader?.Close();
                 ListenForArguments(null);
             }
         }
 
-        private void CallOnArgumentsReceived(Object state)
+        private void CallOnArgumentsReceived(object state)
         {
-            if (ArgumentsReceived != null)
-                ArgumentsReceived(this, new ArgumentsReceivedEventArgs() { Args = (string[])state });
+            ArgumentsReceived?.Invoke(this, new ArgumentsReceivedEventArgs { Args = (string[])state });
         }
 
         public bool PassArgumentsToFirstInstance(string[] arguments)
         {
-            TcpClient client = new TcpClient();
-            client.Connect("127.0.0.1", this.port);
+            var client = new TcpClient();
+            client.Connect("127.0.0.1", _port);
             StreamWriter writer = new StreamWriter(client.GetStream());
-            writer.WriteLine((new JsonArray(arguments)).ToString());
+            writer.WriteLine(new JsonArray(arguments).ToString());
             writer.Close();
             return true;
         }
@@ -113,18 +104,18 @@ namespace TransmissionRemoteDotnet
         #endregion
 
         #region IDisposable
-        private Boolean disposed = false;
+        private bool _disposed;
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposed)
+            if (!_disposed)
             {
-                this.listener.Stop();
-                disposed = true;
+                _listener.Stop();
+                _disposed = true;
             }
         }
 
-        ~TCPSingleInstance()
+        ~TcpSingleInstance()
         {
             Dispose(false);
         }

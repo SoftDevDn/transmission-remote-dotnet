@@ -198,27 +198,23 @@ namespace TransmissionRemoteDotnet.Forms
             // SaveButton
             // 
             resources.ApplyResources(this.SaveButton, "SaveButton");
-            this.SaveButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.SaveButton.Name = "SaveButton";
-            this.toolTip.SetToolTip(this.SaveButton, resources.GetString("SaveButton.ToolTip"));
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // CloseDialogButton
             // 
-            resources.ApplyResources(this.CloseDialogButton, "CloseDialogButton");
             this.CloseDialogButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.CloseDialogButton, "CloseDialogButton");
             this.CloseDialogButton.Name = "CloseDialogButton";
-            this.toolTip.SetToolTip(this.CloseDialogButton, resources.GetString("CloseDialogButton.ToolTip"));
             this.CloseDialogButton.UseVisualStyleBackColor = true;
             this.CloseDialogButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // SaveAndConnectButton
             // 
-            resources.ApplyResources(this.SaveAndConnectButton, "SaveAndConnectButton");
             this.SaveAndConnectButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            resources.ApplyResources(this.SaveAndConnectButton, "SaveAndConnectButton");
             this.SaveAndConnectButton.Name = "SaveAndConnectButton";
-            this.toolTip.SetToolTip(this.SaveAndConnectButton, resources.GetString("SaveAndConnectButton.ToolTip"));
             this.SaveAndConnectButton.UseVisualStyleBackColor = true;
             this.SaveAndConnectButton.Click += new System.EventHandler(this.SaveAndConnectButton_Click);
             // 
@@ -228,73 +224,65 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // tabSettings
             // 
-            resources.ApplyResources(this.tabSettings, "tabSettings");
             this.tabSettings.Controls.Add(this.tabGlobalSettings);
             this.tabSettings.Controls.Add(this.tabServersSettings);
             this.tabSettings.Controls.Add(this.tabRssSettings);
             this.tabSettings.Controls.Add(this.tabSkinSettings);
+            resources.ApplyResources(this.tabSettings, "tabSettings");
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.SelectedIndex = 0;
-            this.toolTip.SetToolTip(this.tabSettings, resources.GetString("tabSettings.ToolTip"));
             // 
             // tabGlobalSettings
             // 
-            resources.ApplyResources(this.tabGlobalSettings, "tabGlobalSettings");
             this.tabGlobalSettings.Controls.Add(this.groupAutoConnect);
             this.tabGlobalSettings.Controls.Add(this.groupCurrentProfile);
             this.tabGlobalSettings.Controls.Add(this.groupPlinkPath);
             this.tabGlobalSettings.Controls.Add(this.groupBehavior);
+            resources.ApplyResources(this.tabGlobalSettings, "tabGlobalSettings");
             this.tabGlobalSettings.Name = "tabGlobalSettings";
-            this.toolTip.SetToolTip(this.tabGlobalSettings, resources.GetString("tabGlobalSettings.ToolTip"));
             this.tabGlobalSettings.UseVisualStyleBackColor = true;
             // 
             // groupAutoConnect
             // 
-            resources.ApplyResources(this.groupAutoConnect, "groupAutoConnect");
             this.groupAutoConnect.Controls.Add(this.AutoConnectComboBox);
+            resources.ApplyResources(this.groupAutoConnect, "groupAutoConnect");
             this.groupAutoConnect.Name = "groupAutoConnect";
             this.groupAutoConnect.TabStop = false;
-            this.toolTip.SetToolTip(this.groupAutoConnect, resources.GetString("groupAutoConnect.ToolTip"));
             // 
             // AutoConnectComboBox
             // 
-            resources.ApplyResources(this.AutoConnectComboBox, "AutoConnectComboBox");
             this.AutoConnectComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AutoConnectComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.AutoConnectComboBox, "AutoConnectComboBox");
             this.AutoConnectComboBox.Name = "AutoConnectComboBox";
-            this.toolTip.SetToolTip(this.AutoConnectComboBox, resources.GetString("AutoConnectComboBox.ToolTip"));
             // 
             // groupCurrentProfile
             // 
-            resources.ApplyResources(this.groupCurrentProfile, "groupCurrentProfile");
             this.groupCurrentProfile.Controls.Add(this.CurrentProfileComboBox);
+            resources.ApplyResources(this.groupCurrentProfile, "groupCurrentProfile");
             this.groupCurrentProfile.Name = "groupCurrentProfile";
             this.groupCurrentProfile.TabStop = false;
-            this.toolTip.SetToolTip(this.groupCurrentProfile, resources.GetString("groupCurrentProfile.ToolTip"));
             // 
             // CurrentProfileComboBox
             // 
-            resources.ApplyResources(this.CurrentProfileComboBox, "CurrentProfileComboBox");
             this.CurrentProfileComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CurrentProfileComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.CurrentProfileComboBox, "CurrentProfileComboBox");
             this.CurrentProfileComboBox.Name = "CurrentProfileComboBox";
-            this.toolTip.SetToolTip(this.CurrentProfileComboBox, resources.GetString("CurrentProfileComboBox.ToolTip"));
             this.CurrentProfileComboBox.SelectedIndexChanged += new System.EventHandler(this.CurrentProfileComboBox_SelectedIndexChanged);
             // 
             // groupPlinkPath
             // 
-            resources.ApplyResources(this.groupPlinkPath, "groupPlinkPath");
             this.groupPlinkPath.Controls.Add(this.PlinkPathButton);
             this.groupPlinkPath.Controls.Add(this.PlinkPathTextBox);
+            resources.ApplyResources(this.groupPlinkPath, "groupPlinkPath");
             this.groupPlinkPath.Name = "groupPlinkPath";
             this.groupPlinkPath.TabStop = false;
-            this.toolTip.SetToolTip(this.groupPlinkPath, resources.GetString("groupPlinkPath.ToolTip"));
             // 
             // PlinkPathButton
             // 
             resources.ApplyResources(this.PlinkPathButton, "PlinkPathButton");
             this.PlinkPathButton.Name = "PlinkPathButton";
-            this.toolTip.SetToolTip(this.PlinkPathButton, resources.GetString("PlinkPathButton.ToolTip"));
             this.PlinkPathButton.UseVisualStyleBackColor = true;
             this.PlinkPathButton.Click += new System.EventHandler(this.PlinkPathButton_Click);
             // 
@@ -303,12 +291,10 @@ namespace TransmissionRemoteDotnet.Forms
             resources.ApplyResources(this.PlinkPathTextBox, "PlinkPathTextBox");
             this.PlinkPathTextBox.Name = "PlinkPathTextBox";
             this.PlinkPathTextBox.ReadOnly = true;
-            this.toolTip.SetToolTip(this.PlinkPathTextBox, resources.GetString("PlinkPathTextBox.ToolTip"));
             this.PlinkPathTextBox.TextChanged += new System.EventHandler(this.PlinkPathTextBox_TextChanged);
             // 
             // groupBehavior
             // 
-            resources.ApplyResources(this.groupBehavior, "groupBehavior");
             this.groupBehavior.Controls.Add(this.useLocalCookiesWarningButton);
             this.groupBehavior.Controls.Add(this.useLocalCookiesCheckBox);
             this.groupBehavior.Controls.Add(this.AutoUpdateGeoipCheckBox);
@@ -321,18 +307,17 @@ namespace TransmissionRemoteDotnet.Forms
             this.groupBehavior.Controls.Add(this.DeleteTorrentCheckBox);
             this.groupBehavior.Controls.Add(this.AutoCheckUpdateCheckBox);
             this.groupBehavior.Controls.Add(this.UploadPromptCheckBox);
+            resources.ApplyResources(this.groupBehavior, "groupBehavior");
             this.groupBehavior.Name = "groupBehavior";
             this.groupBehavior.TabStop = false;
-            this.toolTip.SetToolTip(this.groupBehavior, resources.GetString("groupBehavior.ToolTip"));
             // 
             // useLocalCookiesWarningButton
             // 
-            resources.ApplyResources(this.useLocalCookiesWarningButton, "useLocalCookiesWarningButton");
             this.useLocalCookiesWarningButton.BackgroundImage = global::TransmissionRemoteDotnet.Properties.Resources.warning16;
+            resources.ApplyResources(this.useLocalCookiesWarningButton, "useLocalCookiesWarningButton");
             this.useLocalCookiesWarningButton.FlatAppearance.BorderSize = 0;
             this.useLocalCookiesWarningButton.Name = "useLocalCookiesWarningButton";
             this.useLocalCookiesWarningButton.TabStop = false;
-            this.toolTip.SetToolTip(this.useLocalCookiesWarningButton, resources.GetString("useLocalCookiesWarningButton.ToolTip"));
             this.useLocalCookiesWarningButton.UseMnemonic = false;
             this.useLocalCookiesWarningButton.UseVisualStyleBackColor = false;
             // 
@@ -340,7 +325,6 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.useLocalCookiesCheckBox, "useLocalCookiesCheckBox");
             this.useLocalCookiesCheckBox.Name = "useLocalCookiesCheckBox";
-            this.toolTip.SetToolTip(this.useLocalCookiesCheckBox, resources.GetString("useLocalCookiesCheckBox.ToolTip"));
             this.useLocalCookiesCheckBox.UseVisualStyleBackColor = true;
             this.useLocalCookiesCheckBox.CheckedChanged += new System.EventHandler(this.useLocalCookiesCheckBox_CheckedChanged);
             // 
@@ -348,54 +332,47 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.AutoUpdateGeoipCheckBox, "AutoUpdateGeoipCheckBox");
             this.AutoUpdateGeoipCheckBox.Name = "AutoUpdateGeoipCheckBox";
-            this.toolTip.SetToolTip(this.AutoUpdateGeoipCheckBox, resources.GetString("AutoUpdateGeoipCheckBox.ToolTip"));
             this.AutoUpdateGeoipCheckBox.UseVisualStyleBackColor = true;
             // 
             // TrayGroupBox
             // 
-            resources.ApplyResources(this.TrayGroupBox, "TrayGroupBox");
             this.TrayGroupBox.Controls.Add(this.ColorTrayIconCheckBox);
             this.TrayGroupBox.Controls.Add(this.notificationOnCompletionCheckBox);
             this.TrayGroupBox.Controls.Add(this.notificationOnAdditionCheckBox);
             this.TrayGroupBox.Controls.Add(this.minimizeOnCloseCheckBox);
             this.TrayGroupBox.Controls.Add(this.MinToTrayCheckBox);
+            resources.ApplyResources(this.TrayGroupBox, "TrayGroupBox");
             this.TrayGroupBox.Name = "TrayGroupBox";
             this.TrayGroupBox.TabStop = false;
-            this.toolTip.SetToolTip(this.TrayGroupBox, resources.GetString("TrayGroupBox.ToolTip"));
             // 
             // ColorTrayIconCheckBox
             // 
             resources.ApplyResources(this.ColorTrayIconCheckBox, "ColorTrayIconCheckBox");
             this.ColorTrayIconCheckBox.Name = "ColorTrayIconCheckBox";
-            this.toolTip.SetToolTip(this.ColorTrayIconCheckBox, resources.GetString("ColorTrayIconCheckBox.ToolTip"));
             this.ColorTrayIconCheckBox.UseVisualStyleBackColor = true;
             // 
             // notificationOnCompletionCheckBox
             // 
             resources.ApplyResources(this.notificationOnCompletionCheckBox, "notificationOnCompletionCheckBox");
             this.notificationOnCompletionCheckBox.Name = "notificationOnCompletionCheckBox";
-            this.toolTip.SetToolTip(this.notificationOnCompletionCheckBox, resources.GetString("notificationOnCompletionCheckBox.ToolTip"));
             this.notificationOnCompletionCheckBox.UseVisualStyleBackColor = true;
             // 
             // notificationOnAdditionCheckBox
             // 
             resources.ApplyResources(this.notificationOnAdditionCheckBox, "notificationOnAdditionCheckBox");
             this.notificationOnAdditionCheckBox.Name = "notificationOnAdditionCheckBox";
-            this.toolTip.SetToolTip(this.notificationOnAdditionCheckBox, resources.GetString("notificationOnAdditionCheckBox.ToolTip"));
             this.notificationOnAdditionCheckBox.UseVisualStyleBackColor = true;
             // 
             // minimizeOnCloseCheckBox
             // 
             resources.ApplyResources(this.minimizeOnCloseCheckBox, "minimizeOnCloseCheckBox");
             this.minimizeOnCloseCheckBox.Name = "minimizeOnCloseCheckBox";
-            this.toolTip.SetToolTip(this.minimizeOnCloseCheckBox, resources.GetString("minimizeOnCloseCheckBox.ToolTip"));
             this.minimizeOnCloseCheckBox.UseVisualStyleBackColor = true;
             // 
             // MinToTrayCheckBox
             // 
             resources.ApplyResources(this.MinToTrayCheckBox, "MinToTrayCheckBox");
             this.MinToTrayCheckBox.Name = "MinToTrayCheckBox";
-            this.toolTip.SetToolTip(this.MinToTrayCheckBox, resources.GetString("MinToTrayCheckBox.ToolTip"));
             this.MinToTrayCheckBox.UseVisualStyleBackColor = true;
             this.MinToTrayCheckBox.CheckedChanged += new System.EventHandler(this.MinToTrayCheckBox_CheckedChanged);
             // 
@@ -403,26 +380,22 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.StartOnSystemCheckBox, "StartOnSystemCheckBox");
             this.StartOnSystemCheckBox.Name = "StartOnSystemCheckBox";
-            this.toolTip.SetToolTip(this.StartOnSystemCheckBox, resources.GetString("StartOnSystemCheckBox.ToolTip"));
             this.StartOnSystemCheckBox.UseVisualStyleBackColor = true;
             // 
             // UpdateToBetaCheckBox
             // 
             resources.ApplyResources(this.UpdateToBetaCheckBox, "UpdateToBetaCheckBox");
             this.UpdateToBetaCheckBox.Name = "UpdateToBetaCheckBox";
-            this.toolTip.SetToolTip(this.UpdateToBetaCheckBox, resources.GetString("UpdateToBetaCheckBox.ToolTip"));
             this.UpdateToBetaCheckBox.UseVisualStyleBackColor = true;
             // 
             // DontSavePasswordsCheckBox
             // 
             resources.ApplyResources(this.DontSavePasswordsCheckBox, "DontSavePasswordsCheckBox");
             this.DontSavePasswordsCheckBox.Name = "DontSavePasswordsCheckBox";
-            this.toolTip.SetToolTip(this.DontSavePasswordsCheckBox, resources.GetString("DontSavePasswordsCheckBox.ToolTip"));
             this.DontSavePasswordsCheckBox.UseVisualStyleBackColor = true;
             // 
             // defaultActionComboBox
             // 
-            resources.ApplyResources(this.defaultActionComboBox, "defaultActionComboBox");
             this.defaultActionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.defaultActionComboBox.DropDownWidth = 160;
             this.defaultActionComboBox.FormattingEnabled = true;
@@ -430,45 +403,40 @@ namespace TransmissionRemoteDotnet.Forms
             resources.GetString("defaultActionComboBox.Items"),
             resources.GetString("defaultActionComboBox.Items1"),
             resources.GetString("defaultActionComboBox.Items2")});
+            resources.ApplyResources(this.defaultActionComboBox, "defaultActionComboBox");
             this.defaultActionComboBox.Name = "defaultActionComboBox";
-            this.toolTip.SetToolTip(this.defaultActionComboBox, resources.GetString("defaultActionComboBox.ToolTip"));
             // 
             // defaultActionLabel
             // 
             resources.ApplyResources(this.defaultActionLabel, "defaultActionLabel");
             this.defaultActionLabel.Name = "defaultActionLabel";
-            this.toolTip.SetToolTip(this.defaultActionLabel, resources.GetString("defaultActionLabel.ToolTip"));
             // 
             // DeleteTorrentCheckBox
             // 
             resources.ApplyResources(this.DeleteTorrentCheckBox, "DeleteTorrentCheckBox");
             this.DeleteTorrentCheckBox.Name = "DeleteTorrentCheckBox";
-            this.toolTip.SetToolTip(this.DeleteTorrentCheckBox, resources.GetString("DeleteTorrentCheckBox.ToolTip"));
             this.DeleteTorrentCheckBox.UseVisualStyleBackColor = true;
             // 
             // AutoCheckUpdateCheckBox
             // 
             resources.ApplyResources(this.AutoCheckUpdateCheckBox, "AutoCheckUpdateCheckBox");
             this.AutoCheckUpdateCheckBox.Name = "AutoCheckUpdateCheckBox";
-            this.toolTip.SetToolTip(this.AutoCheckUpdateCheckBox, resources.GetString("AutoCheckUpdateCheckBox.ToolTip"));
             this.AutoCheckUpdateCheckBox.UseVisualStyleBackColor = true;
             // 
             // UploadPromptCheckBox
             // 
             resources.ApplyResources(this.UploadPromptCheckBox, "UploadPromptCheckBox");
             this.UploadPromptCheckBox.Name = "UploadPromptCheckBox";
-            this.toolTip.SetToolTip(this.UploadPromptCheckBox, resources.GetString("UploadPromptCheckBox.ToolTip"));
             this.UploadPromptCheckBox.UseVisualStyleBackColor = true;
             // 
             // tabServersSettings
             // 
-            resources.ApplyResources(this.tabServersSettings, "tabServersSettings");
             this.tabServersSettings.Controls.Add(this.removeServerButton);
             this.tabServersSettings.Controls.Add(this.addServerButton);
             this.tabServersSettings.Controls.Add(this.tabServerSettings);
             this.tabServersSettings.Controls.Add(this.listServers);
+            resources.ApplyResources(this.tabServersSettings, "tabServersSettings");
             this.tabServersSettings.Name = "tabServersSettings";
-            this.toolTip.SetToolTip(this.tabServersSettings, resources.GetString("tabServersSettings.ToolTip"));
             this.tabServersSettings.UseVisualStyleBackColor = true;
             // 
             // removeServerButton
@@ -476,7 +444,6 @@ namespace TransmissionRemoteDotnet.Forms
             resources.ApplyResources(this.removeServerButton, "removeServerButton");
             this.removeServerButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.remove16;
             this.removeServerButton.Name = "removeServerButton";
-            this.toolTip.SetToolTip(this.removeServerButton, resources.GetString("removeServerButton.ToolTip"));
             this.removeServerButton.UseVisualStyleBackColor = true;
             this.removeServerButton.Click += new System.EventHandler(this.removeServerToolStripMenuItem_Click);
             // 
@@ -485,26 +452,23 @@ namespace TransmissionRemoteDotnet.Forms
             resources.ApplyResources(this.addServerButton, "addServerButton");
             this.addServerButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.add16;
             this.addServerButton.Name = "addServerButton";
-            this.toolTip.SetToolTip(this.addServerButton, resources.GetString("addServerButton.ToolTip"));
             this.addServerButton.UseVisualStyleBackColor = true;
             this.addServerButton.Click += new System.EventHandler(this.addServerToolStripMenuItem_Click);
             // 
             // tabServerSettings
             // 
-            resources.ApplyResources(this.tabServerSettings, "tabServerSettings");
             this.tabServerSettings.Controls.Add(this.tabPage1);
             this.tabServerSettings.Controls.Add(this.tabPage2);
             this.tabServerSettings.Controls.Add(this.tabPage3);
             this.tabServerSettings.Controls.Add(this.tabPage5);
             this.tabServerSettings.Controls.Add(this.tabPage6);
             this.tabServerSettings.Controls.Add(this.tabSamba);
+            resources.ApplyResources(this.tabServerSettings, "tabServerSettings");
             this.tabServerSettings.Name = "tabServerSettings";
             this.tabServerSettings.SelectedIndex = 0;
-            this.toolTip.SetToolTip(this.tabServerSettings, resources.GetString("tabServerSettings.ToolTip"));
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.label18);
             this.tabPage1.Controls.Add(this.RefreshRateTrayValue);
             this.tabPage1.Controls.Add(this.SaveServerButton);
@@ -517,15 +481,14 @@ namespace TransmissionRemoteDotnet.Forms
             this.tabPage1.Controls.Add(this.RetryLimitValue);
             this.tabPage1.Controls.Add(this.PortField);
             this.tabPage1.Controls.Add(this.RefreshRateValue);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            this.toolTip.SetToolTip(this.tabPage1, resources.GetString("tabPage1.ToolTip"));
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
             resources.ApplyResources(this.label18, "label18");
             this.label18.Name = "label18";
-            this.toolTip.SetToolTip(this.label18, resources.GetString("label18.ToolTip"));
             // 
             // RefreshRateTrayValue
             // 
@@ -541,7 +504,6 @@ namespace TransmissionRemoteDotnet.Forms
             0,
             0});
             this.RefreshRateTrayValue.Name = "RefreshRateTrayValue";
-            this.toolTip.SetToolTip(this.RefreshRateTrayValue, resources.GetString("RefreshRateTrayValue.ToolTip"));
             this.RefreshRateTrayValue.Value = new decimal(new int[] {
             1,
             0,
@@ -552,7 +514,6 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.SaveServerButton, "SaveServerButton");
             this.SaveServerButton.Name = "SaveServerButton";
-            this.toolTip.SetToolTip(this.SaveServerButton, resources.GetString("SaveServerButton.ToolTip"));
             this.SaveServerButton.UseVisualStyleBackColor = true;
             this.SaveServerButton.Click += new System.EventHandler(this.SaveServerButton_Click);
             // 
@@ -560,39 +521,33 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.UseSSLCheckBox, "UseSSLCheckBox");
             this.UseSSLCheckBox.Name = "UseSSLCheckBox";
-            this.toolTip.SetToolTip(this.UseSSLCheckBox, resources.GetString("UseSSLCheckBox.ToolTip"));
             this.UseSSLCheckBox.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.toolTip.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // HostField
             // 
             resources.ApplyResources(this.HostField, "HostField");
             this.HostField.Name = "HostField";
-            this.toolTip.SetToolTip(this.HostField, resources.GetString("HostField.ToolTip"));
             this.HostField.TextChanged += new System.EventHandler(this.HostField_TextChanged);
             // 
             // label10
             // 
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
-            this.toolTip.SetToolTip(this.label10, resources.GetString("label10.ToolTip"));
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.toolTip.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.toolTip.SetToolTip(this.label3, resources.GetString("label3.ToolTip"));
             // 
             // RetryLimitValue
             // 
@@ -603,7 +558,6 @@ namespace TransmissionRemoteDotnet.Forms
             0,
             -2147483648});
             this.RetryLimitValue.Name = "RetryLimitValue";
-            this.toolTip.SetToolTip(this.RetryLimitValue, resources.GetString("RetryLimitValue.ToolTip"));
             // 
             // PortField
             // 
@@ -619,7 +573,6 @@ namespace TransmissionRemoteDotnet.Forms
             0,
             0});
             this.PortField.Name = "PortField";
-            this.toolTip.SetToolTip(this.PortField, resources.GetString("PortField.ToolTip"));
             this.PortField.Value = new decimal(new int[] {
             1,
             0,
@@ -640,7 +593,6 @@ namespace TransmissionRemoteDotnet.Forms
             0,
             0});
             this.RefreshRateValue.Name = "RefreshRateValue";
-            this.toolTip.SetToolTip(this.RefreshRateValue, resources.GetString("RefreshRateValue.ToolTip"));
             this.RefreshRateValue.Value = new decimal(new int[] {
             1,
             0,
@@ -649,35 +601,31 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.ClearPasswordCheckBox);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.EnableAuthCheckBox);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.PassField);
             this.tabPage2.Controls.Add(this.UserField);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
-            this.toolTip.SetToolTip(this.tabPage2, resources.GetString("tabPage2.ToolTip"));
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // ClearPasswordCheckBox
             // 
             resources.ApplyResources(this.ClearPasswordCheckBox, "ClearPasswordCheckBox");
             this.ClearPasswordCheckBox.Name = "ClearPasswordCheckBox";
-            this.toolTip.SetToolTip(this.ClearPasswordCheckBox, resources.GetString("ClearPasswordCheckBox.ToolTip"));
             this.ClearPasswordCheckBox.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.toolTip.SetToolTip(this.label5, resources.GetString("label5.ToolTip"));
             // 
             // EnableAuthCheckBox
             // 
             resources.ApplyResources(this.EnableAuthCheckBox, "EnableAuthCheckBox");
             this.EnableAuthCheckBox.Name = "EnableAuthCheckBox";
-            this.toolTip.SetToolTip(this.EnableAuthCheckBox, resources.GetString("EnableAuthCheckBox.ToolTip"));
             this.EnableAuthCheckBox.UseVisualStyleBackColor = true;
             this.EnableAuthCheckBox.CheckedChanged += new System.EventHandler(this.EnableAuthCheckBox_CheckedChanged);
             // 
@@ -685,23 +633,19 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.toolTip.SetToolTip(this.label4, resources.GetString("label4.ToolTip"));
             // 
             // PassField
             // 
             resources.ApplyResources(this.PassField, "PassField");
             this.PassField.Name = "PassField";
-            this.toolTip.SetToolTip(this.PassField, resources.GetString("PassField.ToolTip"));
             // 
             // UserField
             // 
             resources.ApplyResources(this.UserField, "UserField");
             this.UserField.Name = "UserField";
-            this.toolTip.SetToolTip(this.UserField, resources.GetString("UserField.ToolTip"));
             // 
             // tabPage3
             // 
-            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.ClearProxyPasswordCheckBox);
             this.tabPage3.Controls.Add(this.ProxyAuthEnableCheckBox);
             this.tabPage3.Controls.Add(this.label6);
@@ -713,22 +657,20 @@ namespace TransmissionRemoteDotnet.Forms
             this.tabPage3.Controls.Add(this.ProxyHostField);
             this.tabPage3.Controls.Add(this.ProxyUserField);
             this.tabPage3.Controls.Add(this.ProxyPassField);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
-            this.toolTip.SetToolTip(this.tabPage3, resources.GetString("tabPage3.ToolTip"));
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // ClearProxyPasswordCheckBox
             // 
             resources.ApplyResources(this.ClearProxyPasswordCheckBox, "ClearProxyPasswordCheckBox");
             this.ClearProxyPasswordCheckBox.Name = "ClearProxyPasswordCheckBox";
-            this.toolTip.SetToolTip(this.ClearProxyPasswordCheckBox, resources.GetString("ClearProxyPasswordCheckBox.ToolTip"));
             this.ClearProxyPasswordCheckBox.UseVisualStyleBackColor = true;
             // 
             // ProxyAuthEnableCheckBox
             // 
             resources.ApplyResources(this.ProxyAuthEnableCheckBox, "ProxyAuthEnableCheckBox");
             this.ProxyAuthEnableCheckBox.Name = "ProxyAuthEnableCheckBox";
-            this.toolTip.SetToolTip(this.ProxyAuthEnableCheckBox, resources.GetString("ProxyAuthEnableCheckBox.ToolTip"));
             this.ProxyAuthEnableCheckBox.UseVisualStyleBackColor = true;
             this.ProxyAuthEnableCheckBox.CheckedChanged += new System.EventHandler(this.ProxyAuthEnableCheckBox_CheckedChanged);
             // 
@@ -736,32 +678,28 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.toolTip.SetToolTip(this.label6, resources.GetString("label6.ToolTip"));
             // 
             // label8
             // 
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.toolTip.SetToolTip(this.label8, resources.GetString("label8.ToolTip"));
             // 
             // EnableProxyCombo
             // 
-            resources.ApplyResources(this.EnableProxyCombo, "EnableProxyCombo");
             this.EnableProxyCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EnableProxyCombo.FormattingEnabled = true;
             this.EnableProxyCombo.Items.AddRange(new object[] {
             resources.GetString("EnableProxyCombo.Items"),
             resources.GetString("EnableProxyCombo.Items1"),
             resources.GetString("EnableProxyCombo.Items2")});
+            resources.ApplyResources(this.EnableProxyCombo, "EnableProxyCombo");
             this.EnableProxyCombo.Name = "EnableProxyCombo";
-            this.toolTip.SetToolTip(this.EnableProxyCombo, resources.GetString("EnableProxyCombo.ToolTip"));
             this.EnableProxyCombo.SelectedIndexChanged += new System.EventHandler(this.EnableProxyCombo_SelectedIndexChanged);
             // 
             // label9
             // 
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.toolTip.SetToolTip(this.label9, resources.GetString("label9.ToolTip"));
             // 
             // ProxyPortField
             // 
@@ -777,7 +715,6 @@ namespace TransmissionRemoteDotnet.Forms
             0,
             0});
             this.ProxyPortField.Name = "ProxyPortField";
-            this.toolTip.SetToolTip(this.ProxyPortField, resources.GetString("ProxyPortField.ToolTip"));
             this.ProxyPortField.Value = new decimal(new int[] {
             8080,
             0,
@@ -788,75 +725,64 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.toolTip.SetToolTip(this.label7, resources.GetString("label7.ToolTip"));
             // 
             // ProxyHostField
             // 
             resources.ApplyResources(this.ProxyHostField, "ProxyHostField");
             this.ProxyHostField.Name = "ProxyHostField";
-            this.toolTip.SetToolTip(this.ProxyHostField, resources.GetString("ProxyHostField.ToolTip"));
             // 
             // ProxyUserField
             // 
             resources.ApplyResources(this.ProxyUserField, "ProxyUserField");
             this.ProxyUserField.Name = "ProxyUserField";
-            this.toolTip.SetToolTip(this.ProxyUserField, resources.GetString("ProxyUserField.ToolTip"));
             // 
             // ProxyPassField
             // 
             resources.ApplyResources(this.ProxyPassField, "ProxyPassField");
             this.ProxyPassField.Name = "ProxyPassField";
-            this.toolTip.SetToolTip(this.ProxyPassField, resources.GetString("ProxyPassField.ToolTip"));
             // 
             // tabPage5
             // 
-            resources.ApplyResources(this.tabPage5, "tabPage5");
             this.tabPage5.Controls.Add(this.label15);
             this.tabPage5.Controls.Add(this.linkLabel1);
             this.tabPage5.Controls.Add(this.label13);
             this.tabPage5.Controls.Add(this.PlinkCmdTextBox);
             this.tabPage5.Controls.Add(this.PlinkEnableCheckBox);
+            resources.ApplyResources(this.tabPage5, "tabPage5");
             this.tabPage5.Name = "tabPage5";
-            this.toolTip.SetToolTip(this.tabPage5, resources.GetString("tabPage5.ToolTip"));
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
             resources.ApplyResources(this.label15, "label15");
             this.label15.Name = "label15";
-            this.toolTip.SetToolTip(this.label15, resources.GetString("label15.ToolTip"));
             // 
             // linkLabel1
             // 
             resources.ApplyResources(this.linkLabel1, "linkLabel1");
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.TabStop = true;
-            this.toolTip.SetToolTip(this.linkLabel1, resources.GetString("linkLabel1.ToolTip"));
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label13
             // 
             resources.ApplyResources(this.label13, "label13");
             this.label13.Name = "label13";
-            this.toolTip.SetToolTip(this.label13, resources.GetString("label13.ToolTip"));
             // 
             // PlinkCmdTextBox
             // 
             resources.ApplyResources(this.PlinkCmdTextBox, "PlinkCmdTextBox");
             this.PlinkCmdTextBox.Name = "PlinkCmdTextBox";
-            this.toolTip.SetToolTip(this.PlinkCmdTextBox, resources.GetString("PlinkCmdTextBox.ToolTip"));
             // 
             // PlinkEnableCheckBox
             // 
             resources.ApplyResources(this.PlinkEnableCheckBox, "PlinkEnableCheckBox");
             this.PlinkEnableCheckBox.Name = "PlinkEnableCheckBox";
-            this.toolTip.SetToolTip(this.PlinkEnableCheckBox, resources.GetString("PlinkEnableCheckBox.ToolTip"));
             this.PlinkEnableCheckBox.UseVisualStyleBackColor = true;
             this.PlinkEnableCheckBox.CheckedChanged += new System.EventHandler(this.PlinkEnableCheckBox_CheckedChanged);
             // 
             // tabPage6
             // 
-            resources.ApplyResources(this.tabPage6, "tabPage6");
             this.tabPage6.Controls.Add(this.ClearDestPathHistoryButton);
             this.tabPage6.Controls.Add(this.StartPausedCheckBox);
             this.tabPage6.Controls.Add(this.customPathTextBox);
@@ -865,15 +791,14 @@ namespace TransmissionRemoteDotnet.Forms
             this.tabPage6.Controls.Add(this.label16);
             this.tabPage6.Controls.Add(this.downloadLimitItems);
             this.tabPage6.Controls.Add(this.uploadLimitItems);
+            resources.ApplyResources(this.tabPage6, "tabPage6");
             this.tabPage6.Name = "tabPage6";
-            this.toolTip.SetToolTip(this.tabPage6, resources.GetString("tabPage6.ToolTip"));
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // ClearDestPathHistoryButton
             // 
             resources.ApplyResources(this.ClearDestPathHistoryButton, "ClearDestPathHistoryButton");
             this.ClearDestPathHistoryButton.Name = "ClearDestPathHistoryButton";
-            this.toolTip.SetToolTip(this.ClearDestPathHistoryButton, resources.GetString("ClearDestPathHistoryButton.ToolTip"));
             this.ClearDestPathHistoryButton.UseVisualStyleBackColor = true;
             this.ClearDestPathHistoryButton.Click += new System.EventHandler(this.ClearDestPathHistoryButton_Click);
             // 
@@ -881,76 +806,66 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.StartPausedCheckBox, "StartPausedCheckBox");
             this.StartPausedCheckBox.Name = "StartPausedCheckBox";
-            this.toolTip.SetToolTip(this.StartPausedCheckBox, resources.GetString("StartPausedCheckBox.ToolTip"));
             this.StartPausedCheckBox.UseVisualStyleBackColor = true;
             // 
             // customPathTextBox
             // 
             resources.ApplyResources(this.customPathTextBox, "customPathTextBox");
             this.customPathTextBox.Name = "customPathTextBox";
-            this.toolTip.SetToolTip(this.customPathTextBox, resources.GetString("customPathTextBox.ToolTip"));
             // 
             // label12
             // 
             resources.ApplyResources(this.label12, "label12");
             this.label12.Name = "label12";
-            this.toolTip.SetToolTip(this.label12, resources.GetString("label12.ToolTip"));
             // 
             // label17
             // 
             resources.ApplyResources(this.label17, "label17");
             this.label17.Name = "label17";
-            this.toolTip.SetToolTip(this.label17, resources.GetString("label17.ToolTip"));
             // 
             // label16
             // 
             resources.ApplyResources(this.label16, "label16");
             this.label16.Name = "label16";
-            this.toolTip.SetToolTip(this.label16, resources.GetString("label16.ToolTip"));
             // 
             // downloadLimitItems
             // 
             resources.ApplyResources(this.downloadLimitItems, "downloadLimitItems");
             this.downloadLimitItems.Name = "downloadLimitItems";
-            this.toolTip.SetToolTip(this.downloadLimitItems, resources.GetString("downloadLimitItems.ToolTip"));
             // 
             // uploadLimitItems
             // 
             resources.ApplyResources(this.uploadLimitItems, "uploadLimitItems");
             this.uploadLimitItems.Name = "uploadLimitItems";
-            this.toolTip.SetToolTip(this.uploadLimitItems, resources.GetString("uploadLimitItems.ToolTip"));
             // 
             // tabSamba
             // 
-            resources.ApplyResources(this.tabSamba, "tabSamba");
             this.tabSamba.Controls.Add(this.groupBox1);
             this.tabSamba.Controls.Add(this.RemoveShareButton);
             this.tabSamba.Controls.Add(this.listSambaShareMappings);
+            resources.ApplyResources(this.tabSamba, "tabSamba");
             this.tabSamba.Name = "tabSamba";
-            this.toolTip.SetToolTip(this.tabSamba, resources.GetString("tabSamba.ToolTip"));
             this.tabSamba.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.MappingHelpButton);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.AddShareButton);
             this.groupBox1.Controls.Add(this.UnixPathPrefixTextBox);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.SambaShareTextBox);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
-            this.toolTip.SetToolTip(this.groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // MappingHelpButton
             // 
-            resources.ApplyResources(this.MappingHelpButton, "MappingHelpButton");
             this.MappingHelpButton.BackgroundImage = global::TransmissionRemoteDotnet.Properties.Resources.help14;
+            resources.ApplyResources(this.MappingHelpButton, "MappingHelpButton");
             this.MappingHelpButton.FlatAppearance.BorderSize = 0;
             this.MappingHelpButton.Name = "MappingHelpButton";
             this.MappingHelpButton.TabStop = false;
-            this.toolTip.SetToolTip(this.MappingHelpButton, resources.GetString("MappingHelpButton.ToolTip"));
             this.MappingHelpButton.UseMnemonic = false;
             this.MappingHelpButton.UseVisualStyleBackColor = false;
             // 
@@ -958,13 +873,11 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
-            this.toolTip.SetToolTip(this.label11, resources.GetString("label11.ToolTip"));
             // 
             // AddShareButton
             // 
             resources.ApplyResources(this.AddShareButton, "AddShareButton");
             this.AddShareButton.Name = "AddShareButton";
-            this.toolTip.SetToolTip(this.AddShareButton, resources.GetString("AddShareButton.ToolTip"));
             this.AddShareButton.UseVisualStyleBackColor = true;
             this.AddShareButton.Click += new System.EventHandler(this.AddShareButton_Click);
             // 
@@ -972,42 +885,36 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.UnixPathPrefixTextBox, "UnixPathPrefixTextBox");
             this.UnixPathPrefixTextBox.Name = "UnixPathPrefixTextBox";
-            this.toolTip.SetToolTip(this.UnixPathPrefixTextBox, resources.GetString("UnixPathPrefixTextBox.ToolTip"));
             this.UnixPathPrefixTextBox.TextChanged += new System.EventHandler(this.UnixPathPrefixTextBox_TextChanged);
             // 
             // label14
             // 
             resources.ApplyResources(this.label14, "label14");
             this.label14.Name = "label14";
-            this.toolTip.SetToolTip(this.label14, resources.GetString("label14.ToolTip"));
             // 
             // SambaShareTextBox
             // 
             resources.ApplyResources(this.SambaShareTextBox, "SambaShareTextBox");
             this.SambaShareTextBox.Name = "SambaShareTextBox";
-            this.toolTip.SetToolTip(this.SambaShareTextBox, resources.GetString("SambaShareTextBox.ToolTip"));
             this.SambaShareTextBox.TextChanged += new System.EventHandler(this.UnixPathPrefixTextBox_TextChanged);
             // 
             // RemoveShareButton
             // 
             resources.ApplyResources(this.RemoveShareButton, "RemoveShareButton");
             this.RemoveShareButton.Name = "RemoveShareButton";
-            this.toolTip.SetToolTip(this.RemoveShareButton, resources.GetString("RemoveShareButton.ToolTip"));
             this.RemoveShareButton.UseVisualStyleBackColor = true;
             this.RemoveShareButton.Click += new System.EventHandler(this.RemoveShareButton_Click);
             // 
             // listSambaShareMappings
             // 
-            resources.ApplyResources(this.listSambaShareMappings, "listSambaShareMappings");
             this.listSambaShareMappings.FormattingEnabled = true;
+            resources.ApplyResources(this.listSambaShareMappings, "listSambaShareMappings");
             this.listSambaShareMappings.Name = "listSambaShareMappings";
-            this.toolTip.SetToolTip(this.listSambaShareMappings, resources.GetString("listSambaShareMappings.ToolTip"));
             this.listSambaShareMappings.SelectedIndexChanged += new System.EventHandler(this.listSambaShareMappings_SelectedIndexChanged);
             this.listSambaShareMappings.DoubleClick += new System.EventHandler(this.listSambaShareMappings_DoubleClick);
             // 
             // listServers
             // 
-            resources.ApplyResources(this.listServers, "listServers");
             this.listServers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnName,
             this.columnHost,
@@ -1017,11 +924,11 @@ namespace TransmissionRemoteDotnet.Forms
             this.listServers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listServers.HideSelection = false;
             this.listServers.LabelEdit = true;
+            resources.ApplyResources(this.listServers, "listServers");
             this.listServers.MultiSelect = false;
             this.listServers.Name = "listServers";
             this.listServers.ShowGroups = false;
             this.listServers.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.toolTip.SetToolTip(this.listServers, resources.GetString("listServers.ToolTip"));
             this.listServers.UseCompatibleStateImageBehavior = false;
             this.listServers.View = System.Windows.Forms.View.Details;
             this.listServers.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.listServers_AfterLabelEdit);
@@ -1041,48 +948,45 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // ServersMenuStrip
             // 
-            resources.ApplyResources(this.ServersMenuStrip, "ServersMenuStrip");
             this.ServersMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addServerToolStripMenuItem,
             this.removeServerToolStripMenuItem});
             this.ServersMenuStrip.Name = "ServersMenuStrip";
-            this.toolTip.SetToolTip(this.ServersMenuStrip, resources.GetString("ServersMenuStrip.ToolTip"));
+            resources.ApplyResources(this.ServersMenuStrip, "ServersMenuStrip");
             // 
             // addServerToolStripMenuItem
             // 
-            resources.ApplyResources(this.addServerToolStripMenuItem, "addServerToolStripMenuItem");
             this.addServerToolStripMenuItem.Image = global::TransmissionRemoteDotnet.Properties.Resources.add16;
             this.addServerToolStripMenuItem.Name = "addServerToolStripMenuItem";
+            resources.ApplyResources(this.addServerToolStripMenuItem, "addServerToolStripMenuItem");
             this.addServerToolStripMenuItem.Click += new System.EventHandler(this.addServerToolStripMenuItem_Click);
             // 
             // removeServerToolStripMenuItem
             // 
-            resources.ApplyResources(this.removeServerToolStripMenuItem, "removeServerToolStripMenuItem");
             this.removeServerToolStripMenuItem.Image = global::TransmissionRemoteDotnet.Properties.Resources.remove16;
             this.removeServerToolStripMenuItem.Name = "removeServerToolStripMenuItem";
+            resources.ApplyResources(this.removeServerToolStripMenuItem, "removeServerToolStripMenuItem");
             this.removeServerToolStripMenuItem.Click += new System.EventHandler(this.removeServerToolStripMenuItem_Click);
             // 
             // tabRssSettings
             // 
-            resources.ApplyResources(this.tabRssSettings, "tabRssSettings");
             this.tabRssSettings.Controls.Add(this.listRssFeeds);
             this.tabRssSettings.Controls.Add(this.groupFeed);
+            resources.ApplyResources(this.tabRssSettings, "tabRssSettings");
             this.tabRssSettings.Name = "tabRssSettings";
-            this.toolTip.SetToolTip(this.tabRssSettings, resources.GetString("tabRssSettings.ToolTip"));
             this.tabRssSettings.UseVisualStyleBackColor = true;
             // 
             // listRssFeeds
             // 
-            resources.ApplyResources(this.listRssFeeds, "listRssFeeds");
             this.listRssFeeds.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnFeedName,
             this.columnFeedUrl});
+            resources.ApplyResources(this.listRssFeeds, "listRssFeeds");
             this.listRssFeeds.FullRowSelect = true;
             this.listRssFeeds.HideSelection = false;
             this.listRssFeeds.MultiSelect = false;
             this.listRssFeeds.Name = "listRssFeeds";
             this.listRssFeeds.ShowGroups = false;
-            this.toolTip.SetToolTip(this.listRssFeeds, resources.GetString("listRssFeeds.ToolTip"));
             this.listRssFeeds.UseCompatibleStateImageBehavior = false;
             this.listRssFeeds.View = System.Windows.Forms.View.Details;
             this.listRssFeeds.SelectedIndexChanged += new System.EventHandler(this.listRssFeeds_SelectedIndexChanged);
@@ -1098,22 +1002,20 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // groupFeed
             // 
-            resources.ApplyResources(this.groupFeed, "groupFeed");
             this.groupFeed.Controls.Add(this.RemoveFeedButton);
             this.groupFeed.Controls.Add(this.AddFeedButton);
             this.groupFeed.Controls.Add(this.FeedNameTextBox);
             this.groupFeed.Controls.Add(this.FeedUrlLabel);
             this.groupFeed.Controls.Add(this.FeedUrlTextBox);
             this.groupFeed.Controls.Add(this.FeedNameLabel);
+            resources.ApplyResources(this.groupFeed, "groupFeed");
             this.groupFeed.Name = "groupFeed";
             this.groupFeed.TabStop = false;
-            this.toolTip.SetToolTip(this.groupFeed, resources.GetString("groupFeed.ToolTip"));
             // 
             // RemoveFeedButton
             // 
             resources.ApplyResources(this.RemoveFeedButton, "RemoveFeedButton");
             this.RemoveFeedButton.Name = "RemoveFeedButton";
-            this.toolTip.SetToolTip(this.RemoveFeedButton, resources.GetString("RemoveFeedButton.ToolTip"));
             this.RemoveFeedButton.UseVisualStyleBackColor = true;
             this.RemoveFeedButton.Click += new System.EventHandler(this.RemoveFeedButton_Click);
             // 
@@ -1121,7 +1023,6 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.AddFeedButton, "AddFeedButton");
             this.AddFeedButton.Name = "AddFeedButton";
-            this.toolTip.SetToolTip(this.AddFeedButton, resources.GetString("AddFeedButton.ToolTip"));
             this.AddFeedButton.UseVisualStyleBackColor = true;
             this.AddFeedButton.Click += new System.EventHandler(this.AddFeedButton_Click);
             // 
@@ -1129,82 +1030,73 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.FeedNameTextBox, "FeedNameTextBox");
             this.FeedNameTextBox.Name = "FeedNameTextBox";
-            this.toolTip.SetToolTip(this.FeedNameTextBox, resources.GetString("FeedNameTextBox.ToolTip"));
             this.FeedNameTextBox.TextChanged += new System.EventHandler(this.FeedNameTextBox_TextChanged);
             // 
             // FeedUrlLabel
             // 
             resources.ApplyResources(this.FeedUrlLabel, "FeedUrlLabel");
             this.FeedUrlLabel.Name = "FeedUrlLabel";
-            this.toolTip.SetToolTip(this.FeedUrlLabel, resources.GetString("FeedUrlLabel.ToolTip"));
             // 
             // FeedUrlTextBox
             // 
             resources.ApplyResources(this.FeedUrlTextBox, "FeedUrlTextBox");
             this.FeedUrlTextBox.Name = "FeedUrlTextBox";
-            this.toolTip.SetToolTip(this.FeedUrlTextBox, resources.GetString("FeedUrlTextBox.ToolTip"));
             this.FeedUrlTextBox.TextChanged += new System.EventHandler(this.FeedNameTextBox_TextChanged);
             // 
             // FeedNameLabel
             // 
             resources.ApplyResources(this.FeedNameLabel, "FeedNameLabel");
             this.FeedNameLabel.Name = "FeedNameLabel";
-            this.toolTip.SetToolTip(this.FeedNameLabel, resources.GetString("FeedNameLabel.ToolTip"));
             // 
             // tabSkinSettings
             // 
-            resources.ApplyResources(this.tabSkinSettings, "tabSkinSettings");
             this.tabSkinSettings.Controls.Add(this.trayImageBrowse);
             this.tabSkinSettings.Controls.Add(this.toolbarImageBrowse);
             this.tabSkinSettings.Controls.Add(this.stateImageBrowse);
             this.tabSkinSettings.Controls.Add(this.infopanelImageBrowse);
+            resources.ApplyResources(this.tabSkinSettings, "tabSkinSettings");
             this.tabSkinSettings.Name = "tabSkinSettings";
-            this.toolTip.SetToolTip(this.tabSkinSettings, resources.GetString("tabSkinSettings.ToolTip"));
             this.tabSkinSettings.UseVisualStyleBackColor = true;
             // 
             // trayImageBrowse
             // 
-            resources.ApplyResources(this.trayImageBrowse, "trayImageBrowse");
             this.trayImageBrowse.FileName = "";
             this.trayImageBrowse.ImageNumber = 5;
+            resources.ApplyResources(this.trayImageBrowse, "trayImageBrowse");
             this.trayImageBrowse.MaxHeight = 48;
             this.trayImageBrowse.MinHeight = 48;
             this.trayImageBrowse.Name = "trayImageBrowse";
             this.trayImageBrowse.Title = "Изображения иконки в трее";
-            this.toolTip.SetToolTip(this.trayImageBrowse, resources.GetString("trayImageBrowse.ToolTip"));
             // 
             // toolbarImageBrowse
             // 
-            resources.ApplyResources(this.toolbarImageBrowse, "toolbarImageBrowse");
             this.toolbarImageBrowse.FileName = "";
             this.toolbarImageBrowse.ImageNumber = 0;
+            resources.ApplyResources(this.toolbarImageBrowse, "toolbarImageBrowse");
             this.toolbarImageBrowse.MaxHeight = 32;
             this.toolbarImageBrowse.MinHeight = 16;
             this.toolbarImageBrowse.Name = "toolbarImageBrowse";
             this.toolbarImageBrowse.Title = "Изображения панели инструментов";
-            this.toolTip.SetToolTip(this.toolbarImageBrowse, resources.GetString("toolbarImageBrowse.ToolTip"));
             // 
             // stateImageBrowse
             // 
-            resources.ApplyResources(this.stateImageBrowse, "stateImageBrowse");
             this.stateImageBrowse.FileName = "";
             this.stateImageBrowse.ImageNumber = 0;
+            resources.ApplyResources(this.stateImageBrowse, "stateImageBrowse");
             this.stateImageBrowse.MaxHeight = 16;
             this.stateImageBrowse.MinHeight = 16;
             this.stateImageBrowse.Name = "stateImageBrowse";
             this.stateImageBrowse.Title = "Изображения состояний";
-            this.toolTip.SetToolTip(this.stateImageBrowse, resources.GetString("stateImageBrowse.ToolTip"));
             // 
             // infopanelImageBrowse
             // 
-            resources.ApplyResources(this.infopanelImageBrowse, "infopanelImageBrowse");
             this.infopanelImageBrowse.FileName = "";
             this.infopanelImageBrowse.ImageNumber = 0;
+            resources.ApplyResources(this.infopanelImageBrowse, "infopanelImageBrowse");
             this.infopanelImageBrowse.MaxHeight = 16;
             this.infopanelImageBrowse.MinHeight = 16;
             this.infopanelImageBrowse.Name = "infopanelImageBrowse";
             this.infopanelImageBrowse.Title = "Изображения информационной панели торрента";
-            this.toolTip.SetToolTip(this.infopanelImageBrowse, resources.GetString("infopanelImageBrowse.ToolTip"));
             // 
             // openImageFileDialog
             // 
@@ -1214,7 +1106,7 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // LocalSettingsDialog
             // 
-            this.AcceptButton = this.SaveButton;
+            this.AcceptButton = this.SaveAndConnectButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseDialogButton;
@@ -1226,7 +1118,6 @@ namespace TransmissionRemoteDotnet.Forms
             this.MaximizeBox = false;
             this.Name = "LocalSettingsDialog";
             this.ShowInTaskbar = false;
-            this.toolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.LocalSettingsDialog_Load);
             this.tabSettings.ResumeLayout(false);
             this.tabGlobalSettings.ResumeLayout(false);

@@ -107,8 +107,8 @@ namespace TransmissionRemoteDotnet.Forms
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.label18 = new System.Windows.Forms.Label();
             this.speedResComboBox = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lblDownload = new System.Windows.Forms.Label();
+            this.lblUpload = new System.Windows.Forms.Label();
             this.speedGraph = new TransmissionRemoteDotnet.CustomControls.Graphing.C2DPushGraph();
             this.tabControlImageList = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -742,8 +742,8 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.label20);
-            this.splitContainer1.Panel2.Controls.Add(this.label19);
+            this.splitContainer1.Panel2.Controls.Add(this.lblDownload);
+            this.splitContainer1.Panel2.Controls.Add(this.lblUpload);
             this.splitContainer1.Panel2.Controls.Add(this.speedGraph);
             // 
             // splitContainer2
@@ -770,24 +770,24 @@ namespace TransmissionRemoteDotnet.Forms
             this.speedResComboBox.Name = "speedResComboBox";
             this.speedResComboBox.SelectedIndexChanged += new System.EventHandler(this.SpeedResComboBox_SelectedIndexChanged);
             // 
-            // label20
+            // lblDownload
             // 
-            this.label20.BackColor = System.Drawing.Color.MidnightBlue;
-            resources.ApplyResources(this.label20, "label20");
-            this.label20.ForeColor = System.Drawing.Color.Green;
-            this.label20.Name = "label20";
+            this.lblDownload.BackColor = System.Drawing.Color.SteelBlue;
+            resources.ApplyResources(this.lblDownload, "lblDownload");
+            this.lblDownload.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblDownload.Name = "lblDownload";
             // 
-            // label19
+            // lblUpload
             // 
-            this.label19.BackColor = System.Drawing.Color.MidnightBlue;
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.ForeColor = System.Drawing.Color.Yellow;
-            this.label19.Name = "label19";
+            this.lblUpload.BackColor = System.Drawing.Color.SteelBlue;
+            resources.ApplyResources(this.lblUpload, "lblUpload");
+            this.lblUpload.ForeColor = System.Drawing.Color.GreenYellow;
+            this.lblUpload.Name = "lblUpload";
             // 
             // speedGraph
             // 
             this.speedGraph.AutoAdjustPeek = true;
-            this.speedGraph.BackColor = System.Drawing.Color.MidnightBlue;
+            this.speedGraph.BackColor = System.Drawing.Color.SteelBlue;
             resources.ApplyResources(this.speedGraph, "speedGraph");
             this.speedGraph.GridColor = System.Drawing.Color.LightBlue;
             this.speedGraph.GridDashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
@@ -1642,8 +1642,8 @@ namespace TransmissionRemoteDotnet.Forms
         private ComboBox speedResComboBox;
         private C2DPushGraph speedGraph;
         private GroupBox groupBox1;
-        private Label label20;
-        private Label label19;
+        private Label lblDownload;
+        private Label lblUpload;
         private ImageList tabControlImageList;
         private ToolStripButton recheckTorrentButton;
         private ToolStripButton removeAndDeleteButton;

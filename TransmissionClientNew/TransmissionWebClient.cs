@@ -16,8 +16,6 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
@@ -28,20 +26,15 @@ namespace TransmissionRemoteDotnet
 {
     public class TransmissionWebClient : WebClient
     {
-        private bool authenticate;
-        private bool rpc;
-        private static string x_transmission_session_id;
+        private readonly bool _authenticate;
+        private readonly bool _rpc;
 
-        public static string X_transmission_session_id
-        {
-            get { return x_transmission_session_id; }
-            set { x_transmission_session_id = value; }
-        }
+        public static string XTransmissionSessionId { get; set; }
 
         public TransmissionWebClient(bool rpc, bool authenticate)
         {
-            this.rpc = rpc;
-            this.authenticate = authenticate;
+            _rpc = rpc;
+            _authenticate = authenticate;
         }
 
         public static bool ValidateServerCertificate(
@@ -56,10 +49,7 @@ namespace TransmissionRemoteDotnet
         public event EventHandler<ResultEventArgs> Completed;
         internal void OnCompleted(ICommand result)
         {
-            if (Completed != null)
-            {
-                Completed(this, new ResultEventArgs() { Result = result });
-            }
+            Completed?.Invoke(this, new ResultEventArgs { Result = result });
         }
 
         protected override WebRequest GetWebRequest(Uri address)
@@ -67,14 +57,12 @@ namespace TransmissionRemoteDotnet
             WebRequest request = base.GetWebRequest(address);
             try
             {
-                if (request.GetType() == typeof(HttpWebRequest))
-                {
-                    SetupWebRequest((HttpWebRequest)request, rpc, authenticate);
-                }
+                if (request?.GetType() == typeof(HttpWebRequest))
+                    SetupWebRequest((HttpWebRequest)request, _rpc, _authenticate);
             }
             catch (PasswordEmptyException)
             {
-                this.CancelAsync();
+                CancelAsync();
             }
             return request;
         }
@@ -84,14 +72,12 @@ namespace TransmissionRemoteDotnet
             request.KeepAlive = false;
             request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate");
             request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
-            request.UserAgent = string.Format("{0}/{1}", AboutDialog.AssemblyProduct, AboutDialog.AssemblyVersion);
-            if (x_transmission_session_id != null && authenticate && rpc)
-                request.Headers["X-Transmission-Session-Id"] = x_transmission_session_id;
+            request.UserAgent = $"{AboutDialog.AssemblyProduct}/{AboutDialog.AssemblyVersion}";
+            if (XTransmissionSessionId != null && authenticate && rpc)
+                request.Headers["X-Transmission-Session-Id"] = XTransmissionSessionId;
             if (!rpc)
-            {
                 request.CookieContainer = PersistentCookies.GetCookieContainerForUrl(request.RequestUri);
-            }
-            Settings.TransmissionServer settings = Program.Settings.Current;
+            TransmissionServer settings = Program.Settings.Current;
             if (settings.AuthEnabled && authenticate)
             {
                 request.Credentials = new NetworkCredential(settings.Username, settings.ValidPassword);

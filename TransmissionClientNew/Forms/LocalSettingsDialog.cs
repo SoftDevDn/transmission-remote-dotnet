@@ -217,26 +217,20 @@ namespace TransmissionRemoteDotnet.Forms
         private void SaveButton_Click(object sender, EventArgs e)
         {
             AskToSaveServerIfNeed();
-            LocalSettings sett = Program.Settings;
-            string originalHost = sett.Current.Host;
-            int originalPort = sett.Current.Port;
             SaveSettings();
-            if (Program.Connected && (sett.Current.Host != originalHost || sett.Current.Port != originalPort))
-            {
-                Program.Connected = false;
-                Program.Form.Connect();
-            }
-            Close();
         }
 
         private void SaveAndConnectButton_Click(object sender, EventArgs e)
         {
             AskToSaveServerIfNeed();
             SaveSettings();
+            //LocalSettings sett = Program.Settings;
+            //string originalHost = sett.Current.Host;
+            //int originalPort = sett.Current.Port;
+            //if (Program.Connected && (sett.Current.Host != originalHost || sett.Current.Port != originalPort))
             if (Program.Connected)
                 Program.Connected = false;
             Program.Form.Connect();
-            Close();
         }
 
         private void EnableAuthCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -264,9 +258,7 @@ namespace TransmissionRemoteDotnet.Forms
         private void PlinkPathButton_Click(object sender, EventArgs e)
         {
             if (PlinkPathOpenFileDialog.ShowDialog() == DialogResult.OK)
-            {
                 PlinkPathTextBox.Text = PlinkPathOpenFileDialog.FileName;
-            }
         }
 
         private void PlinkEnableCheckBox_CheckedChanged(object sender, EventArgs e)
