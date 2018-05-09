@@ -586,4 +586,7 @@
   <data name="UnauthorizedUserError" xml:space="preserve">
     <value>Incorrect password or user name has been entered.</value>
   </data>
+  <data name="NotifyIconLimitWarning" xml:space="preserve">
+    <value>Text limited to 127 characters</value>
+  </data>
 </root>

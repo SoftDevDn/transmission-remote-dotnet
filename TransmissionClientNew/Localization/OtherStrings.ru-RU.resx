@@ -556,4 +556,7 @@
   <data name="Reannounce" xml:space="preserve">
     <value>Переанонсировать (получить больше пиров)</value>
   </data>
+  <data name="NotifyIconLimitWarning" xml:space="preserve">
+    <value>Текст ограничен 127 символами</value>
+  </data>
 </root>

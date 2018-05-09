@@ -1447,12 +1447,7 @@ namespace TransmissionRemoteDotnet.Forms
             }
             if (totalPaused + totalDownloading > 0)
             {
-                if (totalDownloading == 0)
-                {
-                    _taskbar.SetNormal(true);
-                }
-                else
-                    _taskbar.SetNormal(false);
+                _taskbar.SetNormal(totalDownloading == 0);
 
                 if (totalPaused + totalPausedFinished == totalTorrents)
                     _taskbar.SetPaused();
@@ -1463,15 +1458,15 @@ namespace TransmissionRemoteDotnet.Forms
                 _taskbar.SetNoProgress();
 
             return string.Format(
-                selected > 1 ? "{0} {1}, {2} {3} | {4} {5}: {6} {7}, {8} {9} | {12} {13}: {14} / {15}"
-                      : "{0} {1}, {2} {3} | {4} {5}: {6} {7}, {8} {9} | {10} / {11}", Toolbox.GetSpeed(totalDownload), OtherStrings.Down.ToLower(), Toolbox.GetSpeed(totalUpload), OtherStrings.Up.ToLower(), totalTorrents, OtherStrings.Torrents.ToLower(), totalDownloading, OtherStrings.Downloading.ToLower(), totalSeeding, OtherStrings.Seeding.ToLower(), Toolbox.GetFileSize(totalDownloadedSize), Toolbox.GetFileSize(totalSize), selected, OtherStrings.ItemsSelected, Toolbox.GetFileSize(selectedDownloadedSize), Toolbox.GetFileSize(selectedSize));
+                selected > 1 ? "{0:0.00} {1}, {2} {3} | {4} {5}: {6} {7}, {8} {9} | {12} {13}: {14} / {15}"
+                      : "{0:0.00} {1}, {2} {3} | {4} {5}: {6} {7}, {8} {9} | {10} / {11}", Toolbox.GetSpeed(totalDownload), OtherStrings.Down.ToLower(), Toolbox.GetSpeed(totalUpload), OtherStrings.Up.ToLower(), totalTorrents, OtherStrings.Torrents.ToLower(), totalDownloading, OtherStrings.Downloading.ToLower(), totalSeeding, OtherStrings.Seeding.ToLower(), Toolbox.GetFileSize(totalDownloadedSize), Toolbox.GetFileSize(totalSize), selected, OtherStrings.ItemsSelected, Toolbox.GetFileSize(selectedDownloadedSize), Toolbox.GetFileSize(selectedSize));
         }
 
         public void UpdateStatus(string text, bool updatenotify)
         {
             toolStripStatusLabel.Text = text;
             if (updatenotify)
-                notifyIcon.Text = text.Length < 64 ? text : text.Substring(0, 63);
+                Fixes.SetNotifyIconText(notifyIcon, text.Replace(" | ", "\n")); //notifyIcon.Text = text.Length < 64 ? text : text.Substring(0, 63);
         }
 
         public void addTorrentButton_Click(object sender, EventArgs e)

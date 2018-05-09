@@ -826,6 +826,15 @@ namespace TransmissionRemoteDotnet.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Text limited to 127 characters.
+        /// </summary>
+        internal static string NotifyIconLimitWarning {
+            get {
+                return ResourceManager.GetString("NotifyIconLimitWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No upgrade available.
         /// </summary>
         internal static string NoUpgradeAvailable {

@@ -347,7 +347,7 @@ namespace TransmissionRemoteDotnet
             if (bytes >= 1073741824 && maxsize >= MaxSize.MsGiga)
             {
                 decimal size = decimal.Divide(bytes, 1073741824);
-                return $"{size:##.##} {OtherStrings.GigabyteShort}";
+                return $"{size:N} {OtherStrings.GigabyteShort}";
             }
             if (bytes >= 1048576 && maxsize >= MaxSize.MsMega)
             {
@@ -359,12 +359,12 @@ namespace TransmissionRemoteDotnet
                 decimal size = decimal.Divide(bytes, 1024);
                 return $"{size:##.##} {OtherStrings.KilobyteShort}";
             }
-            if ((bytes > 0) && maxsize >= MaxSize.MsByte)
+            if (bytes > 0 && maxsize >= MaxSize.MsByte)
             {
                 decimal size = bytes;
                 return $"{size:##.##} {OtherStrings.Byte[0]}";
             }
-            return "0 " + OtherStrings.Byte[0];
+            return "0.00 " + OtherStrings.Byte[0];
         }
 
         public static string GetExecuteLocation()

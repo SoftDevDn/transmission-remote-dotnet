@@ -162,13 +162,13 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        static bool resumeconnect = false;
+        static bool _resumeConnect = false;
         static void SystemEvents_PowerModeChanged(object sender, PowerModeChangedEventArgs e)
         {
             switch (e.Mode)
             {
                 case PowerModes.Suspend:
-                    resumeconnect = Connected;
+                    _resumeConnect = Connected;
                     Connected = false;
                     Thread.Sleep(300);
                     break;
@@ -180,7 +180,7 @@ namespace TransmissionRemoteDotnet
                         if (!pinge.Cancelled && pinge.Error != null)
                         {
                             if (pinge.Reply.Status == IPStatus.Success)
-                                Connected = resumeconnect;
+                                Connected = _resumeConnect;
                             else if (--counter > 0)
                                 resumepinger.SendAsync("127.0.0.1", 100);
                         }
@@ -201,16 +201,16 @@ namespace TransmissionRemoteDotnet
             Log(title, body, -1, true);
         }
 
-        public static void Log(string title, string body, long UpdateSerial)
+        public static void Log(string title, string body, long updateSerial)
         {
-            Log(title, body, UpdateSerial, false);
+            Log(title, body, updateSerial, false);
         }
 
-        public static void Log(string title, string body, long UpdateSerial, bool debug)
+        public static void Log(string title, string body, long updateSerial, bool debug)
         {
             DateTime dt = DateTime.Now;
-            LogListViewItem logItem = new LogListViewItem(dt.ToString() + "." + dt.Millisecond);
-            logItem.UpdateSerial = UpdateSerial;
+            LogListViewItem logItem = new LogListViewItem(dt + "." + dt.Millisecond);
+            logItem.UpdateSerial = updateSerial;
             logItem.Debug = debug;
             logItem.SubItems.Add(title);
             logItem.SubItems.Add(body);
@@ -218,10 +218,7 @@ namespace TransmissionRemoteDotnet
             {
                 logItems.Add(logItem);
             }
-            if (OnError != null)
-            {
-                OnError(null, null);
-            }
+            OnError?.Invoke(null, null);
         }
         
         static void singleInstance_ArgumentsReceived(object sender, ArgumentsReceivedEventArgs e)
