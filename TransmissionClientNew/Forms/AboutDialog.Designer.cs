@@ -154,6 +154,7 @@ namespace TransmissionRemoteDotnet.Forms
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.okButton;
             this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.logoPictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
