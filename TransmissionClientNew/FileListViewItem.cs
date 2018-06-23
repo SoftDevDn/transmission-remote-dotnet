@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Jayrock.Json;
+﻿using Jayrock.Json;
 using System.Windows.Forms;
 using TransmissionRemoteDotnet.CustomControls;
 using TransmissionRemoteDotnet.Localization;
@@ -10,62 +7,50 @@ namespace TransmissionRemoteDotnet
 {
     public class FileListViewItem : ListViewItem
     {
-        public int FileIndex
-        {
-            get;
-            set;
-        }
+        public int FileIndex { get; set; }
 
         private void SetText(int idx, string str)
         {
-            if (!str.Equals(base.SubItems[idx].Text))
-                base.SubItems[idx].Text = str;
+            if (!str.Equals(SubItems[idx].Text))
+                SubItems[idx].Text = str;
         }
 
-        private string _extension;
-        public string Extension
-        {
-            get { return this._extension; }
-            set
-            {
-                this._extension = value;
-            }
-        }
+        public string Extension { get; set; }
 
         public string TypeName
         {
-            get { return base.SubItems[1].Text; }
-            set { SetText(1, value); }
+            get => SubItems[1].Text;
+            set => SetText(1, value);
         }
 
         public long FileSize
         {
-            get { return (long)base.SubItems[2].Tag; }
+            get => (long)SubItems[2].Tag;
             set
             {
-                base.SubItems[2].Tag = value;
+                SubItems[2].Tag = value;
                 SetText(2, Toolbox.GetFileSize(value));
             }
         }
 
         public long BytesCompleted
         {
-            get { return (long)base.SubItems[3].Tag; }
+            get => (long)SubItems[3].Tag;
             set
             {
-                base.SubItems[3].Tag = value;
+                SubItems[3].Tag = value;
                 SetText(3, Toolbox.GetFileSize(value));
-                this.Progress = Toolbox.CalcPercentage(value, this.FileSize);
+                Progress = Toolbox.CalcPercentage(value, FileSize);
             }
         }
 
         private bool _wanted;
         public bool Wanted
         {
-            get { return this._wanted; }
+            get => _wanted;
             set
             {
-                this._wanted = value;
+                _wanted = value;
                 SetText(5, value ? OtherStrings.No : OtherStrings.Yes);
             }
         }
@@ -73,20 +58,20 @@ namespace TransmissionRemoteDotnet
         private int _priority;
         public int Priority
         {
-            get { return this._priority; }
+            get => _priority;
             set
             {
-                this._priority = value;
+                _priority = value;
                 SetText(6, Toolbox.FormatPriority(value));
             }
         }
 
         public decimal Progress
         {
-            get { return (decimal)base.SubItems[4].Tag; }
+            get => (decimal)SubItems[4].Tag;
             set
             {
-                base.SubItems[4].Tag = value;
+                SubItems[4].Tag = value;
                 SetText(4, value + "%");
             }
         }
@@ -95,43 +80,40 @@ namespace TransmissionRemoteDotnet
             : base()
         {
             for (int i = 0; i < 6; i++)
-                base.SubItems.Add("");
+                SubItems.Add("");
             string name = (string)file[ProtocolConstants.FIELD_NAME];
-            this.FileName = Toolbox.TrimPath(name);
-            base.SubItems[0].Tag = name.Length != this.FileName.Length;
-            this.FileIndex = index;
-            string[] split = this.Name.Split('.');
+            FileName = Toolbox.TrimPath(name);
+            SubItems[0].Tag = name.Length != FileName.Length;
+            FileIndex = index;
+            string[] split = Name.Split('.');
             if (split.Length > 1)
             {
-                this.Extension = split[split.Length - 1].ToLower();
-                if (Program.Form.fileIconImageList.Images.ContainsKey(this.Extension) || IconReader.AddToImgList(this.Extension, Program.Form.fileIconImageList))
+                Extension = split[split.Length - 1].ToLower();
+                if (Program.Form.fileIconImageList.Images.ContainsKey(Extension) || IconReader.AddToImgList(Extension, Program.Form.fileIconImageList))
                 {
-                    this.TypeName = IconReader.GetTypeName(this.Extension);
-                    base.ImageKey = this.Extension;
+                    TypeName = IconReader.GetTypeName(Extension);
+                    ImageKey = Extension;
                 }
                 else
-                    this.TypeName = this.Extension;
+                    TypeName = Extension;
             }
-            this.FileSize = Toolbox.ToLong(file[ProtocolConstants.FIELD_LENGTH]);
-            this.Update(file, wanted, priorities);
+            FileSize = Toolbox.ToLong(file[ProtocolConstants.FIELD_LENGTH]);
+            Update(file, wanted, priorities);
         }
 
         public void Update(JsonObject fileObj, JsonArray wanted, JsonArray priorities)
         {
-            this.BytesCompleted = Toolbox.ToLong(fileObj[ProtocolConstants.FIELD_BYTESCOMPLETED]);
+            BytesCompleted = Toolbox.ToLong(fileObj[ProtocolConstants.FIELD_BYTESCOMPLETED]);
             if (wanted != null)
-                this.Wanted = Toolbox.ToBool(wanted[this.FileIndex]);
+                Wanted = Toolbox.ToBool(wanted[FileIndex]);
             if (priorities != null)
-                this.Priority = Toolbox.ToInt(priorities[this.FileIndex]);
+                Priority = Toolbox.ToInt(priorities[FileIndex]);
         }
 
         public string FileName
         {
-            get { return base.Name; }
-            set
-            {
-                base.Name = base.Text = base.SubItems[0].Text = base.ToolTipText = value;
-            }
+            get => Name;
+            set => Name = Text = SubItems[0].Text = ToolTipText = value;
         }
     }
 }

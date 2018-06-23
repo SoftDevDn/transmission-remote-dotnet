@@ -73,16 +73,6 @@ namespace TransmissionRemoteDotnet.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap all16 {
-            get {
-                object obj = ResourceManager.GetObject("all16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap altspeed_off {
             get {
                 object obj = ResourceManager.GetObject("altspeed_off", resourceCulture);
@@ -96,16 +86,6 @@ namespace TransmissionRemoteDotnet.Properties {
         internal static System.Drawing.Bitmap altspeed_on {
             get {
                 object obj = ResourceManager.GetObject("altspeed_on", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap apply16 {
-            get {
-                object obj = ResourceManager.GetObject("apply16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,16 +116,6 @@ namespace TransmissionRemoteDotnet.Properties {
         internal static System.Drawing.Bitmap disconnect {
             get {
                 object obj = ResourceManager.GetObject("disconnect", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap down16 {
-            get {
-                object obj = ResourceManager.GetObject("down16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,16 +313,6 @@ namespace TransmissionRemoteDotnet.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pause16 {
-            get {
-                object obj = ResourceManager.GetObject("pause16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap peer16 {
             get {
                 object obj = ResourceManager.GetObject("peer16", resourceCulture);
@@ -423,29 +383,9 @@ namespace TransmissionRemoteDotnet.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap player_reload16 {
-            get {
-                object obj = ResourceManager.GetObject("player_reload16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap properties {
             get {
                 object obj = ResourceManager.GetObject("properties", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap queue16 {
-            get {
-                object obj = ResourceManager.GetObject("queue16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -513,9 +453,9 @@ namespace TransmissionRemoteDotnet.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap up16 {
+        internal static System.Drawing.Bitmap state_all {
             get {
-                object obj = ResourceManager.GetObject("up16", resourceCulture);
+                object obj = ResourceManager.GetObject("state_all", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -523,9 +463,79 @@ namespace TransmissionRemoteDotnet.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap warning16 {
+        internal static System.Drawing.Bitmap state_apply {
             get {
-                object obj = ResourceManager.GetObject("warning16", resourceCulture);
+                object obj = ResourceManager.GetObject("state_apply", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap state_download {
+            get {
+                object obj = ResourceManager.GetObject("state_download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap state_incomplete {
+            get {
+                object obj = ResourceManager.GetObject("state_incomplete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap state_pause {
+            get {
+                object obj = ResourceManager.GetObject("state_pause", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap state_queue {
+            get {
+                object obj = ResourceManager.GetObject("state_queue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap state_reload {
+            get {
+                object obj = ResourceManager.GetObject("state_reload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap state_upload {
+            get {
+                object obj = ResourceManager.GetObject("state_upload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap state_warning {
+            get {
+                object obj = ResourceManager.GetObject("state_warning", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

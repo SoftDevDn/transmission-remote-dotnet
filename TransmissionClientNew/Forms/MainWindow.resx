@@ -175,7 +175,7 @@
     <value>stateListBox</value>
   </data>
   <data name="&gt;&gt;stateListBox.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.GListBox, Transmission Remote, Version=3.25.6704.3393, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.GListBox, Transmission Remote, Version=3.25.6748.40764, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;stateListBox.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel1</value>
@@ -280,7 +280,7 @@
     <value>torrentListView</value>
   </data>
   <data name="&gt;&gt;torrentListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.ListViewNf, Transmission Remote, Version=3.25.6704.3393, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.ListViewNf, Transmission Remote, Version=3.25.6748.40764, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;torrentListView.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel2</value>
@@ -388,7 +388,7 @@
     <value>piecesGraph</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.PiecesGraph, Transmission Remote, Version=3.25.6704.3393, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.PiecesGraph, Transmission Remote, Version=3.25.6748.40764, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Parent" xml:space="preserve">
     <value>progressOrPiecesPanel</value>
@@ -505,7 +505,7 @@
     <value>generalTorrentInfo</value>
   </data>
   <data name="&gt;&gt;generalTorrentInfo.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.TorrentGeneralInfo, Transmission Remote, Version=3.25.6704.3393, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.TorrentGeneralInfo, Transmission Remote, Version=3.25.6748.40764, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;generalTorrentInfo.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
@@ -634,7 +634,7 @@
     <value>trackersListView</value>
   </data>
   <data name="&gt;&gt;trackersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.ListViewNf, Transmission Remote, Version=3.25.6704.3393, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.ListViewNf, Transmission Remote, Version=3.25.6748.40764, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackersListView.Parent" xml:space="preserve">
     <value>trackersTorrentNameGroupBox</value>
@@ -754,7 +754,7 @@
     <value>filesListView</value>
   </data>
   <data name="&gt;&gt;filesListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.ListViewNf, Transmission Remote, Version=3.25.6704.3393, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.ListViewNf, Transmission Remote, Version=3.25.6748.40764, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filesListView.Parent" xml:space="preserve">
     <value>filesTableLayoutPanel</value>
@@ -991,7 +991,7 @@
     <value>peersListView</value>
   </data>
   <data name="&gt;&gt;peersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.ListViewNf, Transmission Remote, Version=3.25.6704.3393, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.ListViewNf, Transmission Remote, Version=3.25.6748.40764, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;peersListView.Parent" xml:space="preserve">
     <value>peersTorrentNameGroupBox</value>
@@ -1264,7 +1264,7 @@
     <value>speedGraph</value>
   </data>
   <data name="&gt;&gt;speedGraph.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.25.6704.3393, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.25.6748.40764, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;speedGraph.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -1417,7 +1417,7 @@
     <value>torrentAndTabsSplitContainer</value>
   </data>
   <data name="&gt;&gt;torrentAndTabsSplitContainer.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SplitContainerFix, Transmission Remote, Version=3.25.6704.3393, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SplitContainerFix, Transmission Remote, Version=3.25.6748.40764, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;torrentAndTabsSplitContainer.Parent" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
@@ -3455,6 +3455,6 @@
     <value>MainWindow</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.CultureForm, Transmission Remote, Version=3.25.6704.3393, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.CultureForm, Transmission Remote, Version=3.25.6748.40764, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

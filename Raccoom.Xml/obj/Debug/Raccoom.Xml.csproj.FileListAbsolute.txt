@@ -4,4 +4,3 @@ D:\Documents\GIT\transmission-remote-dotnet\Raccoom.Xml\bin\Debug\Raccoom.Xml.pd
 D:\Documents\GIT\transmission-remote-dotnet\Raccoom.Xml\obj\Debug\Raccoom.Xml.csproj.CoreCompileInputs.cache
 D:\Documents\GIT\transmission-remote-dotnet\Raccoom.Xml\obj\Debug\Raccoom.Xml.dll
 D:\Documents\GIT\transmission-remote-dotnet\Raccoom.Xml\obj\Debug\Raccoom.Xml.pdb
-D:\Documents\GIT\transmission-remote-dotnet\Raccoom.Xml\obj\Debug\Raccoom.Xml.csprojResolveAssemblyReference.cache

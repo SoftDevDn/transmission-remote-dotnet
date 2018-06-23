@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 using Jayrock.Json;
 using System.Net;
-using System.Drawing;
-using System.ComponentModel;
 using TransmissionRemoteDotnet.CustomControls;
 
 namespace TransmissionRemoteDotnet

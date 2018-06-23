@@ -41,7 +41,7 @@ namespace TransmissionRemoteDotnet
                     taskbarManager.GetProperty("ApplicationId").GetValue(_windowsTaskbar, null)
                 });
 
-                _iconPause = System.Drawing.Icon.FromHandle(Properties.Resources.pause16.GetHicon());
+                _iconPause = System.Drawing.Icon.FromHandle(Properties.Resources.state_pause.GetHicon());
                 _iconPauseAll = System.Drawing.Icon.FromHandle(Properties.Resources.player_pause_all.GetHicon());
                 _iconStartAll = System.Drawing.Icon.FromHandle(Properties.Resources.player_play_all.GetHicon());
                 _iconAddTorrent = System.Drawing.Icon.FromHandle(Properties.Resources.add16.GetHicon());

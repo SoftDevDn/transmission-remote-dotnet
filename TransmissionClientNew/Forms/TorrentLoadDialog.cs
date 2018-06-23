@@ -212,6 +212,7 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void TorrentLoadBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            // TODO: Find error "Invalid torrent file specified"
             if (e.Result.GetType() == typeof(List<ListViewItem>))
             {
                 filesListView.BeginUpdate();

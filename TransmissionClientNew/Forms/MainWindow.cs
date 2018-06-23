@@ -76,10 +76,10 @@ namespace TransmissionRemoteDotnet.Forms
         private WebClient _refreshWebClient = new WebClient();
         private WebClient _filesWebClient = new WebClient();
         private static FindDialog _findDialog;
-        private readonly List<Bitmap> _defaulttoolbarimages;
-        private readonly List<Bitmap> _defaultstateimages;
-        private readonly List<Bitmap> _defaultinfopanelimages;
-        private readonly List<Bitmap> _defaulttrayimages;
+        private List<Bitmap> _defaulttoolbarimages;
+        private List<Bitmap> _defaultstateimages;
+        private List<Bitmap> _defaultinfopanelimages;
+        private List<Bitmap> _defaulttrayimages;
         private TaskbarHelper _taskbar;
 
         public MainWindow()
@@ -96,6 +96,34 @@ namespace TransmissionRemoteDotnet.Forms
             Program.OnTorrentsUpdated += Program_onTorrentsUpdated;
             InitializeComponent();
             CreateTrayContextMenu();
+            PrepareImages();
+
+            mainVerticalSplitContainer.Panel1Collapsed = true;
+            refreshTimer.Interval = Program.Settings.Current.RefreshRate * 1000;
+            filesTimer.Interval = Program.Settings.Current.RefreshRate * 1000 * LocalSettingsSingleton.FILES_REFRESH_MULTIPLICANT;
+            torrentListView.ListViewItemSorter = _lvwColumnSorter = new ListViewItemSorter();
+            filesListView.ListViewItemSorter = _filesLvwColumnSorter = new FilesListViewItemSorter();
+            peersListView.ListViewItemSorter = _peersLvwColumnSorter = new PeersListViewItemSorter();
+
+            InitStaticContextMenus();
+            InitStateListBox();
+
+            speedResComboBox.Items.AddRange(OtherStrings.SpeedResolutions.Split('|'));
+            speedResComboBox.SelectedIndex = Math.Min(2, speedResComboBox.Items.Count - 1);
+
+            RestoreFormProperties();
+            CreateProfileMenu();
+            //OpenGeoipDatabase();
+            LoadSkins();
+
+            peersListView.SmallImageList = GeoIPCountry.FlagImageList;
+
+            PopulateLanguagesMenu();
+            OneTorrentsSelected(false, null);
+        }
+
+        private void PrepareImages()
+        {
             _defaultinfopanelimages = new List<Bitmap>();
             _defaultinfopanelimages.Add(Resources.info16);
             generalTabPage.ImageIndex = 0;
@@ -110,15 +138,15 @@ namespace TransmissionRemoteDotnet.Forms
             tabControlImageList.Images.AddRange(_defaultinfopanelimages.ToArray());
             _defaultstateimages = new List<Bitmap>
             {
-                Resources.all16,
-                Resources.down16,
-                Resources.pause16,
-                Resources.apply16,
-                Resources.up16,
-                Resources.player_reload16,
-                Resources.warning16,
-                Resources.incomplete16,
-                Resources.queue16
+                Resources.state_all,
+                Resources.state_download,
+                Resources.state_pause,
+                Resources.state_apply,
+                Resources.state_upload,
+                Resources.state_reload,
+                Resources.state_warning,
+                Resources.state_incomplete,
+                Resources.state_queue
             };
             stateListBoxImageList.Images.AddRange(_defaultstateimages.ToArray());
             stateListBoxImageList.Images.Add(tabControlImageList.Images[1]);
@@ -186,24 +214,6 @@ namespace TransmissionRemoteDotnet.Forms
                 fileToolStripMenuItem.DropDown.ImageList = optionsToolStripMenuItem.DropDown.ImageList =
                 torrentToolStripMenuItem.DropDown.ImageList = viewToolStripMenuItem.DropDown.ImageList =
                 helpToolStripMenuItem.DropDown.ImageList = toolStripImageList;
-
-            mainVerticalSplitContainer.Panel1Collapsed = true;
-            refreshTimer.Interval = Program.Settings.Current.RefreshRate * 1000;
-            filesTimer.Interval = Program.Settings.Current.RefreshRate * 1000 * LocalSettingsSingleton.FILES_REFRESH_MULTIPLICANT;
-            torrentListView.ListViewItemSorter = _lvwColumnSorter = new ListViewItemSorter();
-            filesListView.ListViewItemSorter = _filesLvwColumnSorter = new FilesListViewItemSorter();
-            peersListView.ListViewItemSorter = _peersLvwColumnSorter = new PeersListViewItemSorter();
-            InitStaticContextMenus();
-            InitStateListBox();
-            speedResComboBox.Items.AddRange(OtherStrings.SpeedResolutions.Split('|'));
-            speedResComboBox.SelectedIndex = Math.Min(2, speedResComboBox.Items.Count - 1);
-            RestoreFormProperties();
-            CreateProfileMenu();
-            //OpenGeoipDatabase();
-            LoadSkins();
-            peersListView.SmallImageList = GeoIPCountry.FlagImageList;
-            PopulateLanguagesMenu();
-            OneTorrentsSelected(false, null);
         }
 
         private void LoadSkins()

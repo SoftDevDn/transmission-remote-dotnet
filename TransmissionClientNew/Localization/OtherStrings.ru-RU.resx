@@ -544,6 +544,9 @@
   <data name="UploadLimit" xml:space="preserve">
     <value>Ограничение на отдачу</value>
   </data>
+  <data name="Queued" xml:space="preserve">
+    <value>В очереди</value>
+  </data>
   <data name="Querying" xml:space="preserve">
     <value>Запрос...</value>
   </data>

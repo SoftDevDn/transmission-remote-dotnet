@@ -17,12 +17,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 using Jayrock.Json;
-using System.Collections;
 using System.Drawing;
-using System.Text.RegularExpressions;
 using TransmissionRemoteDotnet.CustomControls;
 using TransmissionRemoteDotnet.Forms;
 using TransmissionRemoteDotnet.Localization;

@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using Jayrock.Json;
 using Jayrock.Json.Conversion;
-using Microsoft.Win32;
 using System.Windows.Forms;
 using TransmissionRemoteDotnet.CustomControls;
 using TransmissionRemoteDotnet.Localization;

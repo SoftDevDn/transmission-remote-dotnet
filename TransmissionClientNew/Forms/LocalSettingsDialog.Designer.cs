@@ -313,7 +313,7 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // useLocalCookiesWarningButton
             // 
-            this.useLocalCookiesWarningButton.BackgroundImage = global::TransmissionRemoteDotnet.Properties.Resources.warning16;
+            this.useLocalCookiesWarningButton.BackgroundImage = global::TransmissionRemoteDotnet.Properties.Resources.state_warning;
             resources.ApplyResources(this.useLocalCookiesWarningButton, "useLocalCookiesWarningButton");
             this.useLocalCookiesWarningButton.FlatAppearance.BorderSize = 0;
             this.useLocalCookiesWarningButton.Name = "useLocalCookiesWarningButton";

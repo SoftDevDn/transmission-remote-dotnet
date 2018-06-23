@@ -35,35 +35,29 @@ namespace TransmissionRemoteDotnet.Commands
             JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
             JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
             if (torrents.Count != 1)
-            {
                 return;
-            }
+
             JsonObject torrent = (JsonObject)torrents[0];
             JsonArray files = (JsonArray)torrent[ProtocolConstants.FIELD_FILES];
             if (files == null)
-            {
                 return;
-            }
+
             int id = Toolbox.ToInt(torrent[ProtocolConstants.FIELD_ID]);
-            Torrent t = (Torrent)form.Invoke(new GetTorrentDelegate(delegate()
+            var t = (Torrent)form.Invoke(new GetTorrentDelegate(delegate
             {
                 lock (Program.TorrentIndex)
                 {
                     foreach (KeyValuePair<string, Torrent> st in Program.TorrentIndex)
-                    {
                         if (st.Value.Id == id)
                             return st.Value;
-                    }
                 }
                 return null;
             }));
             if (t == null)
-            {
                 return;
-            }
             JsonArray priorities = (JsonArray)torrent[ProtocolConstants.FIELD_PRIORITIES];
             JsonArray wanted = (JsonArray)torrent[ProtocolConstants.FIELD_WANTED];
-            bool havepriority = (priorities != null && wanted != null);
+            bool havepriority = priorities != null && wanted != null;
             ImageList imgList = Program.Form.fileIconImageList;
             for (int i = 0; i < files.Length; i++)
             {
@@ -77,7 +71,7 @@ namespace TransmissionRemoteDotnet.Commands
                 }
                 else
                 {
-                    Program.Form.Invoke(new MethodInvoker(delegate()
+                    Program.Form.Invoke(new MethodInvoker(delegate
                     {
                         item.Update(file, wanted, priorities);
                     }));

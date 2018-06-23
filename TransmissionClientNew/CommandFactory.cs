@@ -20,20 +20,18 @@
  * pattern which contains the logic for updating the UI. */
 
 using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Net;
 using Jayrock.Json;
 using Jayrock.Json.Conversion;
 using System.IO;
-using System.IO.Compression;
 using TransmissionRemoteDotnet.Commands;
 using TransmissionRemoteDotnet.Forms;
 using TransmissionRemoteDotnet.Localization;
 
 namespace TransmissionRemoteDotnet
 {
-    public class CommandFactory
+    public static class CommandFactory
     {
         private static readonly Encoding TransmissionEncoding = Encoding.UTF8;
         private static int _requestid;
@@ -63,21 +61,21 @@ namespace TransmissionRemoteDotnet
 #if LOGRPC
             Program.LogDebug("RPC request: " + r, data.ToString());
 #endif
-            wc.UploadDataCompleted += new UploadDataCompletedEventHandler(wc_UploadDataCompleted);
+            wc.UploadDataCompleted += wc_UploadDataCompleted;
             wc.UploadDataAsync(new Uri(Program.Settings.Current.RpcUrl), null, bdata, new TransmissonRequest(r, bdata, allowRecursion));
             return wc;
         }
 
         static void wc_UploadDataCompleted(object sender, UploadDataCompletedEventArgs e)
         {
-            ICommand cmd;
             if (!e.Cancelled)
             {
+                ICommand cmd;
                 if (e.Error != null)
                 {
-                    WebException ex = e.Error as WebException;
+                    var ex = e.Error as WebException;
                     string title = OtherStrings.Error;
-                    if (ex.Response != null)
+                    if (ex?.Response != null)
                     {
                         HttpWebResponse response = (HttpWebResponse)ex.Response;
                         if (response.StatusCode == HttpStatusCode.Conflict && ((TransmissonRequest)e.UserState).allowRecursion)
@@ -88,7 +86,7 @@ namespace TransmissionRemoteDotnet
                                 if (!string.IsNullOrEmpty(sessionid))
                                 {
                                     TransmissionWebClient.XTransmissionSessionId = sessionid;
-                                    (sender as TransmissionWebClient).UploadDataAsync(new Uri(Program.Settings.Current.RpcUrl), null, ((TransmissonRequest)e.UserState).data, new TransmissonRequest(((TransmissonRequest)e.UserState).requestid, ((TransmissonRequest)e.UserState).data, false));
+                                    ((TransmissionWebClient) sender).UploadDataAsync(new Uri(Program.Settings.Current.RpcUrl), null, ((TransmissonRequest)e.UserState).data, new TransmissonRequest(((TransmissonRequest)e.UserState).requestid, ((TransmissonRequest)e.UserState).data, false));
                                     return;
                                 }
                             }
@@ -117,7 +115,7 @@ namespace TransmissionRemoteDotnet
                             }
                         }
                     }
-                    cmd = new ErrorCommand(title, ex.Message, false);
+                    cmd = new ErrorCommand(title, ex?.Message, false);
                 }
                 else
                 {
@@ -152,7 +150,7 @@ namespace TransmissionRemoteDotnet
                                     cmd = new TorrentGetCommand(jsonResponse);
                                     break;
                                 case (short)ResponseTag.SessionGet:
-                                    cmd = new SessionCommand(jsonResponse, (sender as WebClient).Headers);
+                                    cmd = new SessionCommand(jsonResponse, ((WebClient) sender).Headers);
                                     break;
                                 case (short)ResponseTag.SessionStats:
                                     cmd = new SessionStatsCommand(jsonResponse);
@@ -181,7 +179,7 @@ namespace TransmissionRemoteDotnet
                     }
                     catch (JsonException ex)
                     {
-                        cmd = new ErrorCommand(String.Format("{0} ({1})", OtherStrings.UnableToParse, ex.GetType()), GetString(e.Result), false);
+                        cmd = new ErrorCommand($"{OtherStrings.UnableToParse} ({ex.GetType()})", GetString(e.Result), false);
                     }
                     catch (Exception ex)
                     {
@@ -197,7 +195,7 @@ namespace TransmissionRemoteDotnet
                     Console.WriteLine(ee.Message);
                     Program.LogDebug(ee.Source, ee.Message);
                 }
-                (sender as TransmissionWebClient).OnCompleted(cmd);
+                ((TransmissionWebClient) sender).OnCompleted(cmd);
             }
             else
             {

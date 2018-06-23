@@ -34,7 +34,7 @@ namespace Raccoom.Xml.Xml
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
 		/// <summary>Items</summary>
-		private OpmlOutlineCollection _items;
+		private readonly OpmlOutlineCollection _items;
 		/// <summary>the document that the body is assigned to.</summary>
 		private OpmlDocument _document;
 		
@@ -45,7 +45,7 @@ namespace Raccoom.Xml.Xml
 		/// <summary>Initializes a new instance of OpmlBody</summary>
 		public OpmlBody ()
 		{
-			this._items = new OpmlOutlineCollection(this);
+			_items = new OpmlOutlineCollection(this);
 		}
 		
 		#endregion
@@ -57,60 +57,44 @@ namespace Raccoom.Xml.Xml
 			[System.ComponentModel.Browsable(false)]
 		#endif
 		/// <summary>Gets the document that the body is assigned to.</summary>
-		[System.Xml.Serialization.XmlIgnore]
+		[XmlIgnore]
 		[System.ComponentModel.Category("Data"), System.ComponentModel.Description("Gets the document that the body is assigned to.")]
 		public OpmlDocument Document
 		{
 			get
 			{
-				return _document;
+				return Document1;
 			}
 		}
 		
 		internal void SetDocument (OpmlDocument value)
 		{
-			this._document = value;
-			this._items.SetDocument(value);
+			Document1 = value;
+			_items.SetDocument(value);
 		}
 		
 		/// <summary>Gets the document that the outline is assigned to.</summary>
-		[System.Xml.Serialization.XmlIgnore]
-		IOpmlDocument IOpmlBody.Document
-		{
-			get
-			{
-				return Document;
-			}
-		}
-		
-		/// <summary>Outline elements.</summary>
+		[XmlIgnore]
+		IOpmlDocument IOpmlBody.Document => Document;
+
+	    /// <summary>Outline elements.</summary>
 		[System.ComponentModel.Category("OpmlBody"), System.ComponentModel.Description("Outline elements.")]
 		[XmlElement("outline")]
-		public virtual OpmlOutlineCollection Items
-		{
-			get
-			{
-				return _items;
-			}
-		}
+		public virtual OpmlOutlineCollection Items => _items;
+
+	    // end Items
 		
-		// end Items
-		
-		System.Collections.ICollection IOpmlBody.Items
-		{
-			get
-			{
-				return Items as System.Collections.ICollection;
-			}
-		}
-		
-		// end Items
-		
-		/// <summary>
-		/// Obtains the String representation of this instance. 
-		/// </summary>
-		/// <returns>The friendly name</returns>
-		public override string ToString ()
+		System.Collections.ICollection IOpmlBody.Items => Items;
+
+        public OpmlDocument Document1 { get => _document; set => _document = value; }
+
+        // end Items
+
+        /// <summary>
+        /// Obtains the String representation of this instance. 
+        /// </summary>
+        /// <returns>The friendly name</returns>
+        public override string ToString ()
 		{
 			return "Outlines: " +_items.Count.ToString();
 		}

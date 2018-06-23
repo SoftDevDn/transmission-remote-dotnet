@@ -622,8 +622,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RemoteSettingsDialog.cs-CZ.resx">
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
@@ -978,15 +978,15 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Flags.Designer.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -1084,14 +1084,12 @@
     <None Include="Resources\net_add.png" />
     <None Include="Resources\viewmag+.png" />
     <None Include="Resources\_16x16_remove.png" />
-    <None Include="Resources\apply16.png" />
     <None Include="Resources\folder16.png" />
     <None Include="Resources\server16.png" />
     <None Include="Resources\peer16.png" />
     <None Include="Resources\info16.png" />
     <None Include="Resources\pipe16.png" />
     <None Include="Resources\player_reload.png" />
-    <None Include="Resources\player_reload16.png" />
     <None Include="Resources\remove_and_delete.png" />
     <None Include="Resources\hwinfo.png" />
     <None Include="Resources\kgpg_edit.png" />
@@ -1100,14 +1098,9 @@
     <None Include="Resources\reannounce.png" />
     <None Include="Resources\gnome-logo_d.png" />
     <None Include="Resources\gnome-logo_l.png" />
-    <None Include="Resources\16x16_ledpurple.png" />
-    <None Include="Resources\down16.png" />
-    <None Include="Resources\pause16.png" />
-    <None Include="Resources\up16.png" />
     <None Include="Resources\samba.png" />
     <None Include="Resources\player_pause_all.png" />
     <None Include="Resources\player_play_all.png" />
-    <None Include="Resources\error16.png" />
     <None Include="Resources\xmag.png" />
     <None Include="Resources\welcomefinish.png" />
     <None Include="Resources\help14.png" />
@@ -1119,7 +1112,15 @@
     <None Include="Resources\maxmind.png" />
     <None Include="Resources\EngNumberFormatInfo.xml" />
     <Content Include="Resources\edit16.png" />
-    <None Include="Resources\queue16.png" />
+    <Content Include="Resources\StateImages\state_all.png" />
+    <Content Include="Resources\StateImages\state_apply.png" />
+    <Content Include="Resources\StateImages\state_download.png" />
+    <Content Include="Resources\StateImages\state_incomplete.png" />
+    <Content Include="Resources\StateImages\state_pause.png" />
+    <Content Include="Resources\StateImages\state_queue.png" />
+    <Content Include="Resources\StateImages\state_reload.png" />
+    <Content Include="Resources\StateImages\state_upload.png" />
+    <Content Include="Resources\StateImages\state_warning.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

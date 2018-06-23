@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Jayrock.Json;
+﻿using Jayrock.Json;
 
 namespace TransmissionRemoteDotnet.Settings
 {

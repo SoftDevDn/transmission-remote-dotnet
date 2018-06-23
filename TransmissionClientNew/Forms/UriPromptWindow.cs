@@ -57,7 +57,7 @@ namespace TransmissionRemoteDotnet.Forms
                     downloadProgressBar.Value = 0;
                     downloadProgressBar.Visible = true;
                     okDialogButton.Enabled = false;
-                    WebClient webClient = new TransmissionWebClient(false, false);
+                    var webClient = new TransmissionWebClient(false, false);
                     webClient.DownloadProgressChanged += webClient_DownloadProgressChanged;
                     webClient.DownloadFileCompleted += webClient_DownloadFileCompleted;
                     webClient.DownloadFileAsync(_currentUri, target, target);
@@ -129,8 +129,15 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void UriPromptWindow_Load(object sender, EventArgs e)
         {
-                Uri uri = new Uri(Clipboard.GetText());
+            try
+            {
+                var uri = new Uri(Clipboard.GetText());
                 urlTextBox.Text = uri.ToString();
+            }
+            catch
+            {
+                urlTextBox.Text = string.Empty;
+            }
         }
 
         private void UseTorrentLoadDialogCheckBox_CheckedChanged(object sender, EventArgs e)

@@ -23,73 +23,75 @@ namespace TransmissionRemoteDotnet.CustomControls
 {
     public partial class PiecesGraph : UserControl
     {
-        private byte[] bits;
-        private int len;
-        private bool valid = false;
-        private Bitmap bmp;
+        private byte[] _bits;
+        private int _len;
+        private bool _valid;
+        private Bitmap _bmp;
         public PiecesGraph()
         {
-            bmp = new Bitmap(this.Width, this.Height);
-            len = 0;
+            _bmp = new Bitmap(Width, Height);
+            _len = 0;
             // Set Optimized Double Buffer to reduce flickering
-            this.SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.UserPaint, true);
 //            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
             // Redraw when resized
-            this.SetStyle(ControlStyles.ResizeRedraw, true);
-            this.Invalidated += new InvalidateEventHandler(PiecesGraph_Invalidated);
+            SetStyle(ControlStyles.ResizeRedraw, true);
+            Invalidated += PiecesGraph_Invalidated;
         }
 
         void PiecesGraph_Invalidated(object sender, InvalidateEventArgs e)
         {
-            if (valid) return;
-            using (Graphics g = Graphics.FromImage(bmp))
+            if (_valid) return;
+            using (Graphics g = Graphics.FromImage(_bmp))
             {
                 g.Clear(BackColor);
-                int c_bit = 0, num_bits, bits_got;
-                float bitsperrow = (bmp.Width > 0 ? (float)len / (float)bmp.Width : 0), chunk_done;
+                int cBit = 0;
+                float bitsperrow = _bmp.Width > 0 ? _len / (float)_bmp.Width : 0;
 
                 if (bitsperrow > 0)
                 {
-                    for (int n = 0; n < bmp.Width; n++)
+                    for (int n = 0; n < _bmp.Width; n++)
                     {
-                        num_bits = (int)(bitsperrow * (n + 1)) - c_bit;
-                        bits_got = 0;
-                        for (int i = 0; i < num_bits; i++)
+                        int numBits = (int)(bitsperrow * (n + 1)) - cBit;
+                        int bitsGot = 0;
+                        for (int i = 0; i < numBits; i++)
                         {
-                            if (BitGet(bits, len, c_bit + i))
-                                bits_got++;
+                            if (BitGet(_bits, _len, cBit + i))
+                                bitsGot++;
                         }
-                        if (num_bits > 0)
-                            chunk_done = (float)bits_got / (float)num_bits;
-                        else if (BitGet(bits, len, c_bit))
-                            chunk_done = 1;
+                        float chunkDone;
+                        if (numBits > 0)
+                            chunkDone = (float)bitsGot / numBits;
+                        else if (BitGet(_bits, _len, cBit))
+                            chunkDone = 1;
                         else
-                            chunk_done = 0;
-                        Color fill = Color.FromArgb((int)(BackColor.R * (1 - chunk_done) + (ForeColor.R) * chunk_done), (int)(BackColor.G * (1 - chunk_done) + (ForeColor.G) * chunk_done), (int)(BackColor.B * (1 - chunk_done) + (ForeColor.B) * chunk_done));
+                            chunkDone = 0;
 
-                        g.DrawLine(new Pen(fill), n, 0, n, bmp.Height);
+                        Color fill = Color.FromArgb((int)(BackColor.R * (1 - chunkDone) + ForeColor.R * chunkDone), (int)(BackColor.G * (1 - chunkDone) + ForeColor.G * chunkDone), (int)(BackColor.B * (1 - chunkDone) + ForeColor.B * chunkDone));
 
-                        c_bit += num_bits;
+                        g.DrawLine(new Pen(fill), n, 0, n, _bmp.Height);
+
+                        cBit += numBits;
                     }
                 }
             }
-            valid = true;
+            _valid = true;
         }
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            bmp.Dispose();
-            bmp = new Bitmap(this.Width, this.Height);
-            valid = false;
+            _bmp.Dispose();
+            _bmp = new Bitmap(Width, Height);
+            _valid = false;
             Invalidate();
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            e.Graphics.DrawImage(bmp, 0, 0);
+            e.Graphics.DrawImage(_bmp, 0, 0);
         }
 
         private bool BitGet(byte[] array, int len, int index)
@@ -101,17 +103,17 @@ namespace TransmissionRemoteDotnet.CustomControls
 
         public void ApplyBits(byte[] b, int len)
         {
-            this.len = len;
-            this.bits = b;
-            valid = false;
+            _len = len;
+            _bits = b;
+            _valid = false;
             Invalidate();
         }
 
         public void ClearBits()
         {
-            this.len = 0;
-            this.bits = new byte[0];
-            valid = false;
+            _len = 0;
+            _bits = new byte[0];
+            _valid = false;
             Invalidate();
         }
     }
