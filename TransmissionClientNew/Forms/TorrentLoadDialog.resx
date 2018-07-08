@@ -163,7 +163,7 @@
     <value>filesListView</value>
   </data>
   <data name="&gt;&gt;filesListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.ListViewNf, Transmission Remote, Version=3.25.6679.33514, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.ListViewNf, Transmission Remote, Version=3.25.6763.28688, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filesListView.Parent" xml:space="preserve">
     <value>TorrentContentsGroupBox</value>
@@ -424,7 +424,7 @@
     <value>DateLabel</value>
   </data>
   <data name="&gt;&gt;DateLabel.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.33514, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6763.28688, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;DateLabel.Parent" xml:space="preserve">
     <value>TorrentContentsPanel</value>
@@ -448,7 +448,7 @@
     <value>SizeLabel</value>
   </data>
   <data name="&gt;&gt;SizeLabel.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.33514, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6763.28688, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SizeLabel.Parent" xml:space="preserve">
     <value>TorrentContentsPanel</value>
@@ -472,7 +472,7 @@
     <value>CommentLabel</value>
   </data>
   <data name="&gt;&gt;CommentLabel.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.33514, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6763.28688, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;CommentLabel.Parent" xml:space="preserve">
     <value>TorrentContentsPanel</value>
@@ -499,7 +499,7 @@
     <value>NameLabel</value>
   </data>
   <data name="&gt;&gt;NameLabel.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6679.33514, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.SelectableLabel, Transmission Remote, Version=3.25.6763.28688, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;NameLabel.Parent" xml:space="preserve">
     <value>TorrentContentsPanel</value>
@@ -1016,7 +1016,7 @@
     <value>640, 384</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>TorrentLoadDialog</value>
@@ -1061,6 +1061,6 @@
     <value>TorrentLoadDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CustomControls.CultureForm, Transmission Remote, Version=3.25.6679.33514, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CustomControls.CultureForm, Transmission Remote, Version=3.25.6763.28688, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

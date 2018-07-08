@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddTrackerUrl" xml:space="preserve">
-    <value>Add tracker announce URL</value>
+    <value>Добавить URL-адрес объявления трекера</value>
   </data>
   <data name="AddUrl" xml:space="preserve">
-    <value>Добавить URL</value>
+    <value>Добавить URL-адрес</value>
   </data>
   <data name="EditTrackerUrl" xml:space="preserve">
-    <value>Edit tracker announce URL</value>
+    <value>Изменить URL-адрес объявления трекера</value>
   </data>
   <data name="EditUrl" xml:space="preserve">
-    <value>Изменить URL</value>
+    <value>Изменить URL-адрес</value>
   </data>
   <data name="InvalidUrl" xml:space="preserve">
     <value>Неправильный URL</value>
@@ -148,7 +148,7 @@
     <value>{0} (avg. {1})</value>
   </data>
   <data name="UnableToOpenNetworkShare" xml:space="preserve">
-    <value>Не удалось открыть сетевой ресурс</value>
+    <value>Невозможно открыть сетевой ресурс</value>
   </data>
   <data name="OpenNetworkShareDir" xml:space="preserve">
     <value>Открыть папку, содержащую объект</value>
@@ -170,7 +170,7 @@
     <value>{0} ({1} done) ({2} valid) ({3} total)</value>
   </data>
   <data name="UnableRunPlink" xml:space="preserve">
-    <value>Unable to run plink</value>
+    <value>Невозможно запустить plink</value>
   </data>
   <data name="UnixPathExists" xml:space="preserve">
     <value>Unix-путь существует</value>
@@ -179,7 +179,7 @@
     <value>Неправильное расположение RPC</value>
   </data>
   <data name="FeedExists" xml:space="preserve">
-    <value>Feed exists</value>
+    <value>Feed существует</value>
   </data>
   <data name="OpenImageFilter" xml:space="preserve">
     <value>PNG Image|*.png</value>
@@ -197,7 +197,7 @@
     <value>Загрузка данного торрента завершена.</value>
   </data>
   <data name="HttpError" xml:space="preserve">
-    <value>Daemon try to download something, but the http result is:{0}{1}</value>
+    <value>Daemon пытается что-то загрузить, но результат http: {0}{1}</value>
     <comment>{0} is the newline char</comment>
   </data>
   <data name="NoHostnameSet" xml:space="preserve">
@@ -232,13 +232,13 @@
     <value>Пустой файл</value>
   </data>
   <data name="UnknownResponseTag" xml:space="preserve">
-    <value>Unknown response tag</value>
+    <value>Неизвестный тег ответа</value>
   </data>
   <data name="GeoipInitError" xml:space="preserve">
     <value>Ошибка инициализации БД Geoip ({0})</value>
   </data>
   <data name="BandwidthAllocation" xml:space="preserve">
-    <value>Bandwidth allocation</value>
+    <value>Приоритет скорости</value>
   </data>
   <data name="MultipleTorrentProperties" xml:space="preserve">
     <value>Свойства группы торрентов</value>
@@ -247,7 +247,7 @@
     <value>Неизвестный</value>
   </data>
   <data name="UnableToOpen" xml:space="preserve">
-    <value>Не удалось открыть</value>
+    <value>Невозможно открыть</value>
   </data>
   <data name="LoadingFile" xml:space="preserve">
     <value>Загрузка {0}...</value>
@@ -561,5 +561,8 @@
   </data>
   <data name="NotifyIconLimitWarning" xml:space="preserve">
     <value>Текст ограничен 127 символами</value>
+  </data>
+  <data name="UpgradeNote" xml:space="preserve">
+    <value>Доступность этой опции может потребовать обновления transmission-daemon.</value>
   </data>
 </root>

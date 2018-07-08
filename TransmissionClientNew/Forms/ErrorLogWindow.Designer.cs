@@ -72,12 +72,10 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // splitContainer1.Panel1
             // 
-            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
             this.splitContainer1.Panel1.Controls.Add(this.errorListView);
             // 
             // splitContainer1.Panel2
             // 
-            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
             this.splitContainer1.Panel2.Controls.Add(this.DebugCheckBox);
             this.splitContainer1.Panel2.Controls.Add(this.clearButton);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
@@ -85,11 +83,11 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             // errorListView
             // 
-            resources.ApplyResources(this.errorListView, "errorListView");
             this.errorListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            resources.ApplyResources(this.errorListView, "errorListView");
             this.errorListView.FullRowSelect = true;
             this.errorListView.HideSelection = false;
             this.errorListView.Name = "errorListView";
