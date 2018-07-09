@@ -112,8 +112,8 @@ namespace TransmissionRemoteDotnet.Forms
                 bool withoption = useTorrentLoadDialogCheckBox.Enabled && useTorrentLoadDialogCheckBox.Checked;
                 if (withoption)
                 {
-                    TorrentLoadDialog dialog = new TorrentLoadDialog((string)e.UserState);
-                    dialog.ShowDialog();
+                    var dialog = new TorrentLoadDialog((string)e.UserState);
+                    dialog.ShowDialog(this);
                 }
                 else
                     Program.Form.SetupAction(CommandFactory.RequestAsync(Requests.TorrentAddByFile((string)e.UserState, true)));

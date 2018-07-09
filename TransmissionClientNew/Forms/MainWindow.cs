@@ -871,13 +871,9 @@ namespace TransmissionRemoteDotnet.Forms
             else
             {
                 if (Program.Connected)
-                {
                     Upload(files, uploadprompt);
-                }
                 else
-                {
                     ShowMustBeConnectedDialog(files, uploadprompt);
-                }
             }
         }
 
@@ -1502,8 +1498,8 @@ namespace TransmissionRemoteDotnet.Forms
                 {
                     if (uploadprompt)
                     {
-                        TorrentLoadDialog dialog = new TorrentLoadDialog(s);
-                        dialog.ShowDialog();
+                        var dialog = new TorrentLoadDialog(s);
+                        dialog.ShowDialog(this);
                     }
                     else
                     {
@@ -2449,7 +2445,7 @@ namespace TransmissionRemoteDotnet.Forms
             if (Program.Connected && (Program.DaemonDescriptor.Version < 1.60 || Program.DaemonDescriptor.Version >= 1.7))
                 if (openTorrentFileDialog.ShowDialog() == DialogResult.OK)
                     foreach (string fileName in openTorrentFileDialog.FileNames)
-                        new TorrentLoadDialog(fileName).ShowDialog();
+                        new TorrentLoadDialog(fileName).ShowDialog(this);
         }
 
         private void BackgroundProcessStart(ProcessStartInfo info)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using Jayrock.Json;
@@ -25,6 +26,12 @@ namespace TransmissionRemoteDotnet.Forms
         #endregion
 
         #region Properties
+        public sealed override string Text
+        {
+            get => base.Text;
+            set => base.Text = value;
+        }
+
         private string DestinationPath
         {
             get => destinationComboBox.Text;
@@ -52,8 +59,7 @@ namespace TransmissionRemoteDotnet.Forms
         {
             string destination = Toolbox.ConvertUnixPathToWinPath(DestinationPath);
 
-            var fbd = new FolderBrowserDialog();
-            fbd.SelectedPath = destination;
+            var fbd = new FolderBrowserDialog { SelectedPath = destination };
             if (fbd.ShowDialog() != DialogResult.OK)
                 return;
 
@@ -224,7 +230,7 @@ namespace TransmissionRemoteDotnet.Forms
                 NameLabel.Text = _torrent.Name;
                 CommentLabel.Text = _torrent.Comment;
                 SizeLabel.Text = string.Format("{0} ({1} x {2})", Toolbox.GetFileSize(_torrent.Size), _torrent.Pieces.Count, Toolbox.GetFileSize(_torrent.PieceLength));
-                DateLabel.Text = _torrent.CreationDate.ToString();
+                DateLabel.Text = _torrent.CreationDate.ToString(CultureInfo.CurrentUICulture);
                 Text = _torrent.Name;
                 toolStripStatusLabel.Text = "";
             }
