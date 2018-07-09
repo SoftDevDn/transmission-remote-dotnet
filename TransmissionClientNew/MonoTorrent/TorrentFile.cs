@@ -57,7 +57,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public int EndPieceIndex
         {
-            get { return this.endPiece; }
+            get { return endPiece; }
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public byte[] MD5
         {
-            get { return this.md5; }
+            get { return md5; }
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public byte[] SHA1
         {
-            get { return this.sha1; }
+            get { return sha1; }
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public int StartPieceIndex
         {
-            get { return this.startPiece; }
+            get { return startPiece; }
         }
 
         #endregion
@@ -120,12 +120,12 @@ namespace TransmissionRemoteDotnet.MonoTorrent
 
         public TorrentFile(string path, long length, int startIndex, int endIndex, byte[] md5, byte[] ed2k, byte[] sha1)
         {
-            this.endPiece = endIndex;
+            endPiece = endIndex;
             this.length = length;
             this.md5 = md5;
             this.path = path;
             this.sha1 = sha1;
-            this.startPiece = startIndex;
+            startPiece = startIndex;
         }
 
         #endregion

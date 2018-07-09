@@ -180,11 +180,12 @@ namespace TransmissionRemoteDotnet.Forms
         {
             try
             {
-                List<ListViewItem> items = new List<ListViewItem>();
+                var items = new List<ListViewItem>();
                 _torrent = MonoTorrent.Torrent.Load(new FileStream(_path, FileMode.Open, FileAccess.Read));
+                Array.Sort(_torrent.Files, (t1, t2) => String.Compare(t1.Path, t2.Path, StringComparison.Ordinal));
                 foreach (TorrentFile file in _torrent.Files)
                 {
-                    ListViewItem item = new ListViewItem(file.Path);
+                    var item = new ListViewItem(file.Path);
 #if !MONO
                     string[] split = file.Path.Split('.');
                     if (split.Length > 1)
@@ -219,26 +220,28 @@ namespace TransmissionRemoteDotnet.Forms
         private void TorrentLoadBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             // TODO: Find error "Invalid torrent file specified"
-            if (e.Result.GetType() == typeof(List<ListViewItem>))
-            {
-                filesListView.BeginUpdate();
-                foreach (ListViewItem item in (List<ListViewItem>)e.Result)
-                    filesListView.Items.Add(item);
-                Toolbox.StripeListView(filesListView);
-                filesListView.Enabled = btnOk.Enabled = altDestDirCheckBox.Enabled = altPeerLimitCheckBox.Enabled = startTorrentCheckBox.Enabled = true;
-                filesListView.EndUpdate();
-                NameLabel.Text = _torrent.Name;
-                CommentLabel.Text = _torrent.Comment;
-                SizeLabel.Text = string.Format("{0} ({1} x {2})", Toolbox.GetFileSize(_torrent.Size), _torrent.Pieces.Count, Toolbox.GetFileSize(_torrent.PieceLength));
-                DateLabel.Text = _torrent.CreationDate.ToString(CultureInfo.CurrentUICulture);
-                Text = _torrent.Name;
-                toolStripStatusLabel.Text = "";
-            }
-            else
+            if (e.Result.GetType() != typeof(List<ListViewItem>))
             {
                 Exception ex = (Exception)e.Result;
                 MessageBox.Show(ex.Message, OtherStrings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            filesListView.BeginUpdate();
+
+            var result = (List<ListViewItem>)e.Result;
+            foreach (ListViewItem item in result)
+                filesListView.Items.Add(item);
+            
+            Toolbox.StripeListView(filesListView);
+            filesListView.Enabled = btnOk.Enabled = altDestDirCheckBox.Enabled = altPeerLimitCheckBox.Enabled = startTorrentCheckBox.Enabled = true;
+            filesListView.EndUpdate();
+            NameLabel.Text = _torrent.Name;
+            CommentLabel.Text = _torrent.Comment;
+            SizeLabel.Text = string.Format("{0} ({1} x {2})", Toolbox.GetFileSize(_torrent.Size), _torrent.Pieces.Count, Toolbox.GetFileSize(_torrent.PieceLength));
+            DateLabel.Text = _torrent.CreationDate.ToString(CultureInfo.CurrentUICulture);
+            Text = _torrent.Name;
+            toolStripStatusLabel.Text = "";
         }
 
         private void altDestDirCheckBox_CheckedChanged(object sender, EventArgs e)

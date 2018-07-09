@@ -1098,7 +1098,7 @@ namespace TransmissionRemoteDotnet.Forms
             {
                 Show();
                 if (WindowState == FormWindowState.Minimized)
-                    WindowState = (FormWindowState?) notifyIcon.Tag ?? FormWindowState.Normal;
+                    WindowState = (FormWindowState?)notifyIcon.Tag ?? FormWindowState.Normal;
                 Activate();
                 BringToFront();
             }
@@ -2516,7 +2516,7 @@ namespace TransmissionRemoteDotnet.Forms
         {
             JsonObject request = Requests.CreateBasicObject(ProtocolConstants.METHOD_SESSIONSET);
             JsonObject arguments = Requests.GetArgObject(request);
-            arguments.Put(ProtocolConstants.FIELD_ALTSPEEDENABLED, !(bool)AltSpeedButton.Tag);
+            arguments.Put(ProtocolConstants.FIELD_ALTSPEEDENABLED, (bool)AltSpeedButton.Tag);
             CommandFactory.RequestAsync(request).Completed +=
                 delegate (object dsender, ResultEventArgs de)
                 {

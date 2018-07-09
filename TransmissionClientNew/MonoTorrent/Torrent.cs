@@ -82,7 +82,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public List<MonoTorrentCollection<string>> AnnounceUrls
         {
-            get { return this.announceUrls; }
+            get { return announceUrls; }
         }
 
 
@@ -91,7 +91,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public BEncodedValue AzureusProperties
         {
-            get { return this.azureusProperties; }
+            get { return azureusProperties; }
         }
 
 
@@ -100,7 +100,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public string Comment
         {
-            get { return this.comment; }
+            get { return comment; }
         }
 
 
@@ -109,7 +109,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public string CreatedBy
         {
-            get { return this.createdBy; }
+            get { return createdBy; }
         }
 
 
@@ -118,7 +118,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public DateTime CreationDate
         {
-            get { return this.creationDate; }
+            get { return creationDate; }
         }
 
 
@@ -127,7 +127,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public byte[] ED2K
         {
-            get { return this.ed2k; }
+            get { return ed2k; }
         }
 
 
@@ -136,7 +136,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public string Encoding
         {
-            get { return this.encoding; }
+            get { return encoding; }
         }
 
 
@@ -145,7 +145,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public TorrentFile[] Files
         {
-            get { return this.torrentFiles; }
+            get { return torrentFiles; }
         }
 
 
@@ -175,8 +175,8 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return name; }
+            set { name = value; }
         }
 
 
@@ -185,7 +185,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public BEncodedList Nodes
         {
-            get { return this.nodes; }
+            get { return nodes; }
         }
 
 
@@ -203,7 +203,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public Hashes Pieces
         {
-            get { return this.pieces; }
+            get { return pieces; }
         }
 
 
@@ -221,7 +221,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public string PublisherUrl
         {
-            get { return this.publisherUrl; }
+            get { return publisherUrl; }
         }
 
 
@@ -230,7 +230,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public byte[] SHA1
         {
-            get { return this.sha1; }
+            get { return sha1; }
         }
 
 
@@ -239,8 +239,8 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public long Size
         {
-            get { return this.size; }
-            set { this.size = value; }
+            get { return size; }
+            set { size = value; }
         }
 
 
@@ -258,7 +258,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public string TorrentPath
         {
-            get { return this.torrentPath; }
+            get { return torrentPath; }
             internal set { torrentPath = value; }
         }
 
@@ -267,7 +267,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public List<string> GetRightHttpSeeds
         {
-            get { return this.getRightHttpSeeds; }
+            get { return getRightHttpSeeds; }
         }
 
         #endregion Properties
@@ -277,16 +277,16 @@ namespace TransmissionRemoteDotnet.MonoTorrent
 
         protected Torrent()
         {
-            this.announceUrls = new List<MonoTorrentCollection<string>>();
-            this.comment = string.Empty;
-            this.createdBy = string.Empty;
-            this.creationDate = new DateTime(1970, 1, 1, 0, 0, 0);
-            this.encoding = string.Empty;
-            this.name = string.Empty;
-            this.publisher = string.Empty;
-            this.publisherUrl = string.Empty;
-            this.source = string.Empty;
-            this.getRightHttpSeeds = new List<string>();
+            announceUrls = new List<MonoTorrentCollection<string>>();
+            comment = string.Empty;
+            createdBy = string.Empty;
+            creationDate = new DateTime(1970, 1, 1, 0, 0, 0);
+            encoding = string.Empty;
+            name = string.Empty;
+            publisher = string.Empty;
+            publisherUrl = string.Empty;
+            source = string.Empty;
+            getRightHttpSeeds = new List<string>();
         }
 
         #endregion
@@ -325,7 +325,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
 
         public override string ToString()
         {
-            return this.name;
+            return name;
         }
 
         #endregion Public Methods
@@ -343,7 +343,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
             if (data.Length % 20 != 0)
                 throw new Exception("Invalid infohash detected");
 
-            this.pieces = new Hashes(data, data.Length / 20);
+            pieces = new Hashes(data, data.Length / 20);
         }
 
 
@@ -445,7 +445,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
                 files.Add(new TorrentFile(path, length, startIndex, endIndex, md5sum, ed2k, sha1));
             }
 
-            this.torrentFiles = files.ToArray();
+            torrentFiles = files.ToArray();
         }
 
 
@@ -457,7 +457,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         private void ProcessInfo(BEncodedDictionary dictionary)
         {
             metadata = dictionary.Encode();
-            this.pieceLength = int.Parse(dictionary["piece length"].ToString());
+            pieceLength = int.Parse(dictionary["piece length"].ToString());
             LoadHashPieces(((BEncodedString)dictionary["pieces"]).TextBytes);
 
             foreach (KeyValuePair<BEncodedString, BEncodedValue> keypair in dictionary)
@@ -465,35 +465,35 @@ namespace TransmissionRemoteDotnet.MonoTorrent
                 switch (keypair.Key.Text)
                 {
                     case ("source"):
-                        this.source = keypair.Value.ToString();
+                        source = keypair.Value.ToString();
                         break;
 
                     case ("sha1"):
-                        this.sha1 = ((BEncodedString)keypair.Value).TextBytes;
+                        sha1 = ((BEncodedString)keypair.Value).TextBytes;
                         break;
 
                     case ("ed2k"):
-                        this.ed2k = ((BEncodedString)keypair.Value).TextBytes;
+                        ed2k = ((BEncodedString)keypair.Value).TextBytes;
                         break;
 
                     case ("publisher-url.utf-8"):
                         if (keypair.Value.ToString().Length > 0)
-                            this.publisherUrl = keypair.Value.ToString();
+                            publisherUrl = keypair.Value.ToString();
                         break;
 
                     case ("publisher-url"):
                         if ((String.IsNullOrEmpty(publisherUrl)) && (keypair.Value.ToString().Length > 0))
-                            this.publisherUrl = keypair.Value.ToString();
+                            publisherUrl = keypair.Value.ToString();
                         break;
 
                     case ("publisher.utf-8"):
                         if (keypair.Value.ToString().Length > 0)
-                            this.publisher = keypair.Value.ToString();
+                            publisher = keypair.Value.ToString();
                         break;
 
                     case ("publisher"):
                         if ((String.IsNullOrEmpty(publisher)) && (keypair.Value.ToString().Length > 0))
-                            this.publisher = keypair.Value.ToString();
+                            publisher = keypair.Value.ToString();
                         break;
 
                     case ("files"):
@@ -502,12 +502,12 @@ namespace TransmissionRemoteDotnet.MonoTorrent
 
                     case ("name.utf-8"):
                         if (keypair.Value.ToString().Length > 0)
-                            this.name = keypair.Value.ToString();
+                            name = keypair.Value.ToString();
                         break;
 
                     case ("name"):
-                        if ((String.IsNullOrEmpty(this.name)) && (keypair.Value.ToString().Length > 0))
-                            this.name = keypair.Value.ToString();
+                        if ((String.IsNullOrEmpty(name)) && (keypair.Value.ToString().Length > 0))
+                            name = keypair.Value.ToString();
                         break;
 
                     case ("piece length"):  // Already handled
@@ -517,7 +517,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
                         break;      // This is a singlefile torrent
 
                     case ("private"):
-                        this.isPrivate = (keypair.Value.ToString() == "1") ? true : false;
+                        isPrivate = (keypair.Value.ToString() == "1") ? true : false;
                         break;
 
                     default:
@@ -525,18 +525,18 @@ namespace TransmissionRemoteDotnet.MonoTorrent
                 }
             }
 
-            if (this.torrentFiles == null)   // Not a multi-file torrent
+            if (torrentFiles == null)   // Not a multi-file torrent
             {
                 long length = long.Parse(dictionary["length"].ToString());
-                this.size = length;
-                string path = this.name;
+                size = length;
+                string path = name;
                 byte[] md5 = (dictionary.ContainsKey("md5")) ? ((BEncodedString)dictionary["md5"]).TextBytes : null;
                 byte[] ed2k = (dictionary.ContainsKey("ed2k")) ? ((BEncodedString)dictionary["ed2k"]).TextBytes : null;
                 byte[] sha1 = (dictionary.ContainsKey("sha1")) ? ((BEncodedString)dictionary["sha1"]).TextBytes : null;
 
-                this.torrentFiles = new TorrentFile[1];
+                torrentFiles = new TorrentFile[1];
                 int endPiece = Math.Min(Pieces.Count - 1, (int)((size + (pieceLength - 1)) / pieceLength));
-                this.torrentFiles[0] = new TorrentFile(path, length, 0, endPiece, md5, ed2k, sha1);
+                torrentFiles[0] = new TorrentFile(path, length, 0, endPiece, md5, ed2k, sha1);
             }
         }
 
@@ -554,7 +554,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
             Check.Path(path);
 
             using (Stream s = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
-                return Torrent.Load(s, path);
+                return Load(s, path);
         }
 
         /// <summary>
@@ -582,7 +582,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
             if (stream == null)
                 throw new ArgumentNullException("stream");
 
-            return Torrent.Load(stream, "");
+            return Load(stream, "");
         }
 
         /// <summary>
@@ -606,7 +606,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
                 throw new Exception("Could not download .torrent file from the specified url", ex);
             }
 
-            return Torrent.Load(location);
+            return Load(location);
         }
 
         /// <summary>
@@ -622,7 +622,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
 
             try
             {
-                torrent = Torrent.Load(path);
+                torrent = Load(path);
             }
             catch
             {
@@ -645,7 +645,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
 
             try
             {
-                torrent = Torrent.Load(data);
+                torrent = Load(data);
             }
             catch
             {
@@ -668,7 +668,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
 
             try
             {
-                torrent = Torrent.Load(stream);
+                torrent = Load(stream);
             }
             catch
             {
@@ -693,7 +693,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
 
             try
             {
-                torrent = Torrent.Load(url, location);
+                torrent = Load(url, location);
             }
             catch
             {
@@ -717,7 +717,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
             try
             {
                 //Torrent t = Torrent.Load(BEncodedValue.Decode<BEncodedDictionary>(stream));
-                Torrent t = Torrent.Load(BEncodedDictionary.DecodeTorrent(stream));
+                Torrent t = Load(BEncodedDictionary.DecodeTorrent(stream));
                 t.torrentPath = path;
                 return t;
             }

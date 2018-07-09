@@ -1,56 +1,52 @@
 /* http://www.codeproject.com/KB/combobox/glistbox.aspx
  * + some of my fixes. */
 
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace TransmissionRemoteDotnet.CustomControls
 {
-    public class GListBox : ListBox
+    public sealed class GListBox : ListBox
     {
-        private ImageList _myImageList;
-        public ImageList ImageList
-        {
-            get { return _myImageList; }
-            set { _myImageList = value; }
-        }
+        public ImageList ImageList { get; set; }
 
         public GListBox()
         {
-            this.DrawMode = DrawMode.OwnerDrawFixed;
-            this.SetStyle(  
-                ControlStyles.OptimizedDoubleBuffer |  
-                ControlStyles.ResizeRedraw |  
-                ControlStyles.UserPaint,  
-                true);  
+            DrawMode = DrawMode.OwnerDrawFixed;
+            SetStyle(
+                ControlStyles.OptimizedDoubleBuffer |
+                ControlStyles.ResizeRedraw |
+                ControlStyles.UserPaint,
+                true);
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             Region iRegion = new Region(e.ClipRectangle);
-            e.Graphics.FillRegion(new SolidBrush(this.BackColor), iRegion);
-            if (this.Items.Count > 0)
+            e.Graphics.FillRegion(new SolidBrush(BackColor), iRegion);
+            if (Items.Count > 0)
             {
-                for (int i = 0; i < this.Items.Count; ++i)
+                for (int i = 0; i < Items.Count; ++i)
                 {
-                    System.Drawing.Rectangle irect = this.GetItemRectangle(i);
+                    Rectangle irect = GetItemRectangle(i);
                     if (e.ClipRectangle.IntersectsWith(irect))
                     {
-                        if ((this.SelectionMode == SelectionMode.One && this.SelectedIndex == i)
-                          || (this.SelectionMode == SelectionMode.MultiSimple && this.SelectedIndices.Contains(i))
-                          || (this.SelectionMode == SelectionMode.MultiExtended && this.SelectedIndices.Contains(i)))
+                        if ((SelectionMode == SelectionMode.One && SelectedIndex == i)
+                          || (SelectionMode == SelectionMode.MultiSimple && SelectedIndices.Contains(i))
+                          || (SelectionMode == SelectionMode.MultiExtended && SelectedIndices.Contains(i)))
                         {
-                            OnDrawItem(new DrawItemEventArgs(e.Graphics, this.Font,
+                            OnDrawItem(new DrawItemEventArgs(e.Graphics, Font,
                                 irect, i,
-                                DrawItemState.Selected, this.ForeColor,
-                                this.BackColor));
+                                DrawItemState.Selected, ForeColor,
+                                BackColor));
                         }
                         else
                         {
-                            OnDrawItem(new DrawItemEventArgs(e.Graphics, this.Font,
+                            OnDrawItem(new DrawItemEventArgs(e.Graphics, Font,
                                 irect, i,
-                                DrawItemState.Default, this.ForeColor,
-                                this.BackColor));
+                                DrawItemState.Default, ForeColor,
+                                BackColor));
                         }
 #if !MONO
                         iRegion.Complement(irect);
@@ -89,7 +85,7 @@ namespace TransmissionRemoteDotnet.CustomControls
                     }
                 }
             }
-            Items.Remove(toRemove);
+            Items.Remove(toRemove ?? throw new InvalidOperationException());
         }
 
         protected override void OnDrawItem(DrawItemEventArgs e)
@@ -104,8 +100,8 @@ namespace TransmissionRemoteDotnet.CustomControls
                     GListBoxItem item = (GListBoxItem)Items[e.Index];
                     if (item.ImageIndex != -1)
                     {
-                        Size imageSize = _myImageList.ImageSize;
-                        _myImageList.Draw(e.Graphics, bounds.Left, bounds.Top, item.ImageIndex);
+                        Size imageSize = ImageList.ImageSize;
+                        ImageList.Draw(e.Graphics, bounds.Left, bounds.Top, item.ImageIndex);
                         e.Graphics.DrawString(item.TextWithCounter, e.Font, new SolidBrush(e.ForeColor),
                             bounds.Left + imageSize.Width, bounds.Top);
                     }
@@ -130,16 +126,8 @@ namespace TransmissionRemoteDotnet.CustomControls
         private void DrawStringItem(DrawItemEventArgs e)
         {
             Rectangle bounds = e.Bounds;
-            if (Items.Count > e.Index)
-            {
-                e.Graphics.DrawString(Items[e.Index].ToString(), e.Font,
-                    new SolidBrush(e.ForeColor), bounds.Left, bounds.Top);
-            }
-            else
-            {
-                e.Graphics.DrawString(Text, e.Font, new SolidBrush(e.ForeColor),
-                    bounds.Left, bounds.Top);
-            }
+            string s = Items.Count > e.Index ? Items[e.Index].ToString() : Text;
+            e.Graphics.DrawString(s, e.Font, new SolidBrush(e.ForeColor), bounds.Left, bounds.Top);
         }
     }
 }

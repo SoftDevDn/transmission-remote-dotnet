@@ -53,7 +53,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         public byte[] TextBytes
         {
-            get { return this.textBytes; }
+            get { return textBytes; }
         }
         private byte[] textBytes;
         #endregion
@@ -73,7 +73,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         /// <param name="value"></param>
         public BEncodedString(char[] value)
-            : this(System.Text.Encoding.UTF8.GetBytes(value))
+            : this(Encoding.UTF8.GetBytes(value))
         {
         }
 
@@ -82,7 +82,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// </summary>
         /// <param name="value">Initial value for the string</param>
         public BEncodedString(string value)
-            : this(System.Text.Encoding.UTF8.GetBytes(value))
+            : this(Encoding.UTF8.GetBytes(value))
         {
         }
 
@@ -93,7 +93,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// <param name="value"></param>
         public BEncodedString(byte[] value)
         {
-            this.textBytes = value;
+            textBytes = value;
         }
 
 
@@ -155,7 +155,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
                 if (!int.TryParse(length, out letterCount))
                     throw new BEncodingException(string.Format("Invalid BEncodedString. Length was '{0}' instead of a number", length));
 
-                this.textBytes = new byte[letterCount];
+                textBytes = new byte[letterCount];
                 if (reader.Read(textBytes, 0, letterCount) != letterCount)
                     throw new BEncodingException("Couldn't decode string");
             }
@@ -203,16 +203,16 @@ namespace TransmissionRemoteDotnet.MonoTorrent
                 return 1;
 
             int difference=0;
-            int length = this.textBytes.Length > other.textBytes.Length ? other.textBytes.Length : this.textBytes.Length;
+            int length = textBytes.Length > other.textBytes.Length ? other.textBytes.Length : textBytes.Length;
 
             for (int i = 0; i < length; i++)
-                if ((difference = this.textBytes[i].CompareTo(other.textBytes[i])) != 0)
+                if ((difference = textBytes[i].CompareTo(other.textBytes[i])) != 0)
                     return difference;
 
-            if (this.textBytes.Length == other.textBytes.Length)
+            if (textBytes.Length == other.textBytes.Length)
                 return 0;
 
-            return this.textBytes.Length > other.textBytes.Length ? 1 : -1;
+            return textBytes.Length > other.textBytes.Length ? 1 : -1;
         }
 
         #endregion
@@ -233,21 +233,21 @@ namespace TransmissionRemoteDotnet.MonoTorrent
             else
                 return false;
 
-            return Toolbox.ByteMatch(this.textBytes, other.textBytes);
+            return Toolbox.ByteMatch(textBytes, other.textBytes);
         }
 
         public override int GetHashCode()
         {
             int hash = 0;
-            for (int i = 0; i < this.textBytes.Length; i++)
-                hash += this.textBytes[i];
+            for (int i = 0; i < textBytes.Length; i++)
+                hash += textBytes[i];
 
             return hash;
         }
 
         public override string ToString()
         {
-            return System.Text.Encoding.UTF8.GetString(textBytes);
+            return Encoding.UTF8.GetString(textBytes);
         }
 
         #endregion

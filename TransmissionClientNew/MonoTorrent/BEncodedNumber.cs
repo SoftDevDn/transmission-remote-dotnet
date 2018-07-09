@@ -28,6 +28,7 @@
 
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TransmissionRemoteDotnet.MonoTorrent
 {
@@ -40,12 +41,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// <summary>
         /// The value of the BEncodedNumber
         /// </summary>
-        public long Number
-        {
-            get { return number; }
-            set { number = value; }
-        }
-        internal long number;
+        private long Number { get; set; }
         #endregion
 
 
@@ -59,9 +55,9 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// Create a new BEncoded number with the given value
         /// </summary>
         /// <param name="initialValue">The inital value of the BEncodedNumber</param>
-        public BEncodedNumber(long value)
+        public BEncodedNumber(long initialValue)
         {
-            this.number = value;
+            Number = initialValue;
         }
 
         public static implicit operator BEncodedNumber(long value)
@@ -81,11 +77,11 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// <returns></returns>
         public override int Encode(byte[] buffer, int offset)
         {
-            long number = this.number;
+            long number = Number;
 
             int written = offset;
             buffer[written++] = (byte)'i';
-            
+
             if (number < 0)
             {
                 buffer[written++] = (byte)'-';
@@ -121,7 +117,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         internal override void DecodeInternal(RawReader reader)
         {
             if (reader == null)
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
 
             try
             {
@@ -129,11 +125,12 @@ namespace TransmissionRemoteDotnet.MonoTorrent
                     throw new BEncodingException("Invalid data found. Aborting.");
 
                 int letter;
-                while (((letter = reader.PeekChar()) != -1) && letter != 'e')
+                while ((letter = reader.PeekChar()) != -1 && letter != 'e')
                 {
-                    if(letter < '0' || letter > '9')
-                        throw new BEncodingException("Invalid number found.");
-                    number = number * 10 + (letter - '0');
+                    // TODO: Maybe should completely use a nuget package for BEncode.
+                    //if (letter < '0' || letter > '9')
+                    //throw new BEncodingException("Invalid number found.");
+                    Number = Number * 10 + (letter - '0');
                     reader.ReadChar();
                 }
                 if (reader.ReadByte() != 'e')        //remove the trailing 'e'
@@ -158,7 +155,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// <returns></returns>
         public override int LengthInBytes()
         {
-            long number = this.number;
+            long number = Number;
             int count = 2; // account for the 'i' and 'e'
 
             if (number == 0)
@@ -187,15 +184,15 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         public int CompareTo(BEncodedNumber other)
         {
             if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
-            return this.number.CompareTo(other.number);
+            return Number.CompareTo(other.Number);
         }
 
 
         public int CompareTo(long other)
         {
-            return this.number.CompareTo(other);
+            return Number.CompareTo(other);
         }
         #endregion
 
@@ -208,20 +205,20 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// <returns></returns>
         public override bool Equals(object obj)
         {
-            BEncodedNumber obj2 = obj as BEncodedNumber;
-            if (obj2 == null)
+            if (!(obj is BEncodedNumber obj2))
                 return false;
 
-            return (this.number == obj2.number);
+            return Number == obj2.Number;
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
+        [SuppressMessage("ReSharper", "NonReadonlyMemberInGetHashCode")]
         public override int GetHashCode()
         {
-            return this.number.GetHashCode();
+            return Number.GetHashCode();
         }
 
         /// <summary>
@@ -230,7 +227,7 @@ namespace TransmissionRemoteDotnet.MonoTorrent
         /// <returns></returns>
         public override string ToString()
         {
-            return (this.number.ToString());
+            return Number.ToString();
         }
         #endregion
     }
