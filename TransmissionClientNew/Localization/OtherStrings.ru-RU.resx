@@ -565,4 +565,10 @@
   <data name="UpgradeNote" xml:space="preserve">
     <value>Доступность этой опции может потребовать обновления transmission-daemon.</value>
   </data>
+  <data name="AltSpeedOff" xml:space="preserve">
+    <value>Выкл. альтернативную скорость</value>
+  </data>
+  <data name="AltSpeedOn" xml:space="preserve">
+    <value>Вкл. альтернативную скорость</value>
+  </data>
 </root>

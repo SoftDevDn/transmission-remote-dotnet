@@ -589,4 +589,10 @@
   <data name="NotifyIconLimitWarning" xml:space="preserve">
     <value>Text limited to 127 characters</value>
   </data>
+  <data name="AltSpeedOff" xml:space="preserve">
+    <value>Alt Speed Off</value>
+  </data>
+  <data name="AltSpeedOn" xml:space="preserve">
+    <value>Alt Speed On</value>
+  </data>
 </root>

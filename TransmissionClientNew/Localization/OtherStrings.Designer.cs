@@ -88,6 +88,24 @@ namespace TransmissionRemoteDotnet.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alt Speed Off.
+        /// </summary>
+        internal static string AltSpeedOff {
+            get {
+                return ResourceManager.GetString("AltSpeedOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alt Speed On.
+        /// </summary>
+        internal static string AltSpeedOn {
+            get {
+                return ResourceManager.GetString("AltSpeedOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Author.
         /// </summary>
         internal static string Author {

@@ -83,9 +83,29 @@ namespace TransmissionRemoteDotnet.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap altspeed_off_waiting {
+            get {
+                object obj = ResourceManager.GetObject("altspeed_off_waiting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap altspeed_on {
             get {
                 object obj = ResourceManager.GetObject("altspeed_on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap altspeed_on_waiting {
+            get {
+                object obj = ResourceManager.GetObject("altspeed_on_waiting", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

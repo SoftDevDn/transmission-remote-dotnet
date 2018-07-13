@@ -191,6 +191,8 @@ namespace TransmissionRemoteDotnet.Forms
                 new ToolStripBitmap { Name = "openterm", Image = Resources.openterm, Controls = new ToolStripItem[]{remoteCmdButton} },
                 new ToolStripBitmap { Name = "altspeed_on", Image = Resources.altspeed_on, Controls = new ToolStripItem[]{} },
                 new ToolStripBitmap { Name = "altspeed_off", Image = Resources.altspeed_off, Controls = new ToolStripItem[]{AltSpeedButton} },
+                new ToolStripBitmap { Name = "altspeed_on_waiting", Image = Resources.altspeed_on_waiting, Controls = new ToolStripItem[]{} },
+                new ToolStripBitmap { Name = "altspeed_off_waiting", Image = Resources.altspeed_off_waiting, Controls = new ToolStripItem[]{} },
                 new ToolStripBitmap { Name = "configure", Image = Resources.configure, Controls = new ToolStripItem[]{localConfigureButton, localSettingsToolStripMenuItem} },
                 new ToolStripBitmap { Name = "netconfigure", Image = Resources.netconfigure, Controls = new ToolStripItem[]{remoteConfigureButton, remoteSettingsToolStripMenuItem} },
                 new ToolStripBitmap { Name = "hwinfo", Image = Resources.hwinfo, Controls = new ToolStripItem[]{sessionStatsButton, statsToolStripMenuItem} },
@@ -656,6 +658,7 @@ namespace TransmissionRemoteDotnet.Forms
         {
             AltSpeedButton.ImageIndex = enabled ? toolStripImageList.Images.IndexOfKey("altspeed_on") : toolStripImageList.Images.IndexOfKey("altspeed_off");
             AltSpeedButton.Tag = enabled;
+            AltSpeedButton.Text = enabled ? OtherStrings.AltSpeedOff : OtherStrings.AltSpeedOn;
         }
 
         public void SetRemoteCmdButtonVisible(bool connected)
@@ -2489,11 +2492,9 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void connectButton_DropDownOpening(object sender, EventArgs e)
         {
-            ToolStripDropDownItem connectitem = sender as ToolStripDropDownItem;
+            ToolStripDropDownItem connectitem = (ToolStripDropDownItem) sender;
             foreach (ToolStripMenuItem item in connectitem.DropDownItems)
-            {
                 item.Checked = Program.Settings.CurrentProfile.Equals(item.ToString());
-            }
         }
 
         private void findToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2507,23 +2508,25 @@ namespace TransmissionRemoteDotnet.Forms
                     _findDialog.Show();
                 }
                 else
-                {
                     _findDialog.Focus();
-                }
         }
 
         private void AltSpeedButton_Click(object sender, EventArgs e)
         {
             JsonObject request = Requests.CreateBasicObject(ProtocolConstants.METHOD_SESSIONSET);
             JsonObject arguments = Requests.GetArgObject(request);
-            arguments.Put(ProtocolConstants.FIELD_ALTSPEEDENABLED, (bool)AltSpeedButton.Tag);
+
+            var isAltSpeed = (bool) AltSpeedButton.Tag;
+
+            // Changes image to temporary waiting state
+            AltSpeedButton.ImageIndex = isAltSpeed ? toolStripImageList.Images.IndexOfKey("altspeed_on_waiting") : toolStripImageList.Images.IndexOfKey("altspeed_off_waiting");
+
+            arguments.Put(ProtocolConstants.FIELD_ALTSPEEDENABLED, !isAltSpeed);
             CommandFactory.RequestAsync(request).Completed +=
                 delegate (object dsender, ResultEventArgs de)
                 {
                     if (de.Result.GetType() != typeof(ErrorCommand) && !_sessionWebClient.IsBusy)
-                    {
                         _sessionWebClient = CommandFactory.RequestAsync(Requests.SessionGet());
-                    }
                 };
         }
         class ToolStripBitmap
@@ -2581,7 +2584,7 @@ namespace TransmissionRemoteDotnet.Forms
         readonly Pen _lightLightGray = new Pen(Color.FromArgb(-1447447));
         private void DrawSubItem(DrawListViewSubItemEventArgs e, decimal width, bool focused)
         {
-            Rectangle rect, origrect = e.Bounds;
+            Rectangle origrect = e.Bounds;
             if (focused)
             {
                 // Draw the background and focus rectangle for a selected item.
@@ -2596,7 +2599,7 @@ namespace TransmissionRemoteDotnet.Forms
             origrect.Y += 1;
             origrect.Height -= 3;
             origrect.Width -= 3;
-            rect = origrect;
+            Rectangle rect = origrect;
             e.Graphics.FillRectangle(new SolidBrush(e.Item.BackColor), rect);
             rect.Width = (int)((double)width / 100.0 * origrect.Width);
 

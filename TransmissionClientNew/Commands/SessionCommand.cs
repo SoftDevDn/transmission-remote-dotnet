@@ -77,9 +77,7 @@ namespace TransmissionRemoteDotnet.Commands
         {
             MainWindow form = Program.Form;
             if (form.InvokeRequired)
-            {
                 form.Invoke(new ExecuteDelegate(Execute));
-            }
             else
             {
                 if (!Program.Connected)
@@ -101,9 +99,7 @@ namespace TransmissionRemoteDotnet.Commands
                     }
                 }
                 else
-                {
                     form.SetAltSpeedButtonState(Toolbox.ToBool(Program.DaemonDescriptor.SessionData[ProtocolConstants.FIELD_ALTSPEEDENABLED]));
-                }
             }
         }
     }

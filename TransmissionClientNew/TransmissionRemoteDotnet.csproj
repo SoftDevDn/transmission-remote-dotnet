@@ -1096,8 +1096,6 @@
     <None Include="Resources\openterm.png" />
     <None Include="Resources\incomplete.png" />
     <None Include="Resources\reannounce.png" />
-    <None Include="Resources\gnome-logo_d.png" />
-    <None Include="Resources\gnome-logo_l.png" />
     <None Include="Resources\samba.png" />
     <None Include="Resources\player_pause_all.png" />
     <None Include="Resources\player_play_all.png" />
@@ -1121,6 +1119,10 @@
     <Content Include="Resources\StateImages\state_reload.png" />
     <Content Include="Resources\StateImages\state_upload.png" />
     <Content Include="Resources\StateImages\state_warning.png" />
+    <None Include="Resources\ToolbarImages\altspeed_off.png" />
+    <None Include="Resources\ToolbarImages\altspeed_off_waiting.png" />
+    <None Include="Resources\ToolbarImages\altspeed_on.png" />
+    <None Include="Resources\ToolbarImages\altspeed_on_waiting.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -1161,6 +1163,7 @@
       <Name>Raccoom.Xml</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

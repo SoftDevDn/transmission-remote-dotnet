@@ -250,12 +250,6 @@
   <data name="label18.Text" xml:space="preserve">
     <value>Масштаб:</value>
   </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>Закачка</value>
-  </data>
-  <data name="label19.Text" xml:space="preserve">
-    <value>Отдача</value>
-  </data>
   <data name="connectButton.Text" xml:space="preserve">
     <value>Подключиться</value>
   </data>
