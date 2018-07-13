@@ -191,7 +191,7 @@ namespace TransmissionRemoteDotnet.Forms
             foreach (ListViewItem lvi in listServers.Items)
             {
                 TransmissionServer ts = lvi.Tag as TransmissionServer;
-                sett.Servers.Add(lvi.Name, lvi.Tag as TransmissionServer);
+                sett.Servers.Add(lvi.Name, ts);
             }
             if (AutoConnectComboBox.SelectedItem != null && sett.Servers.ContainsKey(AutoConnectComboBox.SelectedItem as string))
                 sett.AutoConnect = AutoConnectComboBox.SelectedItem as string;
@@ -274,6 +274,10 @@ namespace TransmissionRemoteDotnet.Forms
 
         private void HostField_TextChanged(object sender, EventArgs e)
         {
+            // TODO: Make sure what is doing here.
+            if (!HostField.Focused || string.IsNullOrEmpty(HostField.Text))
+                return;
+
             var builder = new UriBuilder(HostField.Text);
             Uri uri = builder.Uri;
             HostField.Text = uri.Host;
@@ -464,7 +468,7 @@ namespace TransmissionRemoteDotnet.Forms
         {
             try
             {
-                Uri u = new Uri(FeedUrlTextBox.Text);
+                var u = new Uri(FeedUrlTextBox.Text);
                 AddFeedButton.Enabled = FeedNameTextBox.Text.Length > 0;
             }
             catch

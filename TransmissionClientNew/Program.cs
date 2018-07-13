@@ -31,90 +31,48 @@ namespace TransmissionRemoteDotnet
 {
     static class Program
     {
-        private const int TCP_SINGLE_INSTANCE_PORT = 24452;
-        private const string APPLICATION_GUID = "{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}";
+        // TODO: Implement autoapdater from https://github.com/ravibpatel/AutoUpdater.NET.
+        private const int TcpSingleInstancePort = 24452;
+        private const string ApplicationGuid = "{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}";
 
         public static event EventHandler OnConnStatusChanged;
         public static event EventHandler OnTorrentsUpdated;
         public static event EventHandler OnError;
 
-        private static Boolean connected = false;
-        private static DateTime startupTime;
-
-        private static UICultureChanger culturechanger = new UICultureChanger();
-        public static UICultureChanger CultureChanger
-        {
-            get { return Program.culturechanger; }
-        }
-
-        private static MainWindow form;
-        public static MainWindow Form
-        {
-            get { return Program.form; }
-        }
-
-        private static LocalSettings settings = new LocalSettings();
-        public static LocalSettings Settings
-        {
-            get { return Program.settings; }
-            set { Program.settings = value; }
-        }
-
-        private static Dictionary<string, Torrent> torrentIndex = new Dictionary<string, Torrent>();
-        public static Dictionary<string, Torrent> TorrentIndex
-        {
-            get { return Program.torrentIndex; }
-        }
-
-        private static TransmissionDaemonDescriptor daemonDescriptor = new TransmissionDaemonDescriptor();
-        public static TransmissionDaemonDescriptor DaemonDescriptor
-        {
-            get { return Program.daemonDescriptor; }
-            set { Program.daemonDescriptor = value; }
-        }
-
-        private static List<LogListViewItem> logItems = new List<LogListViewItem>();
-        public static List<LogListViewItem> LogItems
-        {
-            get { return Program.logItems; }
-        }
-
-        private static List<string> uploadQueue = new List<string>();
-        public static List<string> UploadQueue
-        {
-            get { return Program.uploadQueue; }
-        }
-
-        private static bool uploadPrompt;
-        public static bool UploadPrompt
-        {
-            get { return Program.uploadPrompt; }
-            set { Program.uploadPrompt = value; }
-        }
+        private static Boolean _connected;
+        private static DateTime _startupTime;
+        public static UICultureChanger CultureChanger { get; } = new UICultureChanger();
+        public static MainWindow Form { get; private set; }
+        public static LocalSettings Settings { get; private set; } = new LocalSettings();
+        public static Dictionary<string, Torrent> TorrentIndex { get; } = new Dictionary<string, Torrent>();
+        public static TransmissionDaemonDescriptor DaemonDescriptor { get; set; } = new TransmissionDaemonDescriptor();
+        public static List<LogListViewItem> LogItems { get; } = new List<LogListViewItem>();
+        public static List<string> UploadQueue { get; } = new List<string>();
+        public static bool UploadPrompt { get; set; }
 
 
         [STAThread]
         static void Main(string[] args)
         {
-            startupTime = DateTime.Now;
+            _startupTime = DateTime.Now;
 #if DEBUG
             // In debug builds we'd prefer to have it dump us into the debugger
 #else
-            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.Automatic);
-            Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
+            Application.ThreadException += Application_ThreadException;
 #endif
 
-            culturechanger.ApplyHelp = culturechanger.ApplyText = culturechanger.ApplyToolTip = true;
-            culturechanger.ApplyLocation = culturechanger.ApplySize = false;
-            settings = LocalSettings.TryLoad();
-            uploadPrompt = settings.UploadPrompt;
+            CultureChanger.ApplyHelp = CultureChanger.ApplyText = CultureChanger.ApplyToolTip = true;
+            CultureChanger.ApplyLocation = CultureChanger.ApplySize = false;
+            Settings = LocalSettings.TryLoad();
+            UploadPrompt = Settings.UploadPrompt;
             args = Array.FindAll(args, str => !str.Equals("/m"));
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(settings.Locale, true);
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Settings.Locale, true);
 #if DOTNET35
-            using (NamedPipeSingleInstance singleInstance = new TCPSingleInstance(TCP_SINGLE_INSTANCE_PORT))
+            using (NamedPipeSingleInstance singleInstance = new TCPSingleInstance(TcpSingleInstancePort))
 #else
-            using (TcpSingleInstance singleInstance = new TcpSingleInstance(TCP_SINGLE_INSTANCE_PORT))
+            using (TcpSingleInstance singleInstance = new TcpSingleInstance(TcpSingleInstancePort))
 #endif
             {
                 if (singleInstance.IsFirstInstance)
@@ -125,6 +83,7 @@ namespace TransmissionRemoteDotnet
                     }
                     catch
                     {
+                        // ignored
 #if MONO
 #pragma warning disable 618
                         ServicePointManager.CertificatePolicy = new PromiscuousCertificatePolicy();
@@ -140,12 +99,12 @@ namespace TransmissionRemoteDotnet
                     SystemEvents.PowerModeChanged += SystemEvents_PowerModeChanged;
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
-                    form = new MainWindow();
-                    form.Load += delegate
+                    Form = new MainWindow();
+                    Form.Load += delegate
                     {
                         singleInstance.ListenForArgumentsFromSuccessiveInstances();
                     };
-                    Application.Run(form);
+                    Application.Run(Form);
                 }
                 else
                 {
@@ -161,7 +120,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        static bool _resumeConnect = false;
+        static bool _resumeConnect;
         static void SystemEvents_PowerModeChanged(object sender, PowerModeChangedEventArgs e)
         {
             switch (e.Mode)
@@ -213,21 +172,21 @@ namespace TransmissionRemoteDotnet
             logItem.Debug = debug;
             logItem.SubItems.Add(title);
             logItem.SubItems.Add(body);
-            lock (logItems)
+            lock (LogItems)
             {
-                logItems.Add(logItem);
+                LogItems.Add(logItem);
             }
             OnError?.Invoke(null, null);
         }
         
         static void singleInstance_ArgumentsReceived(object sender, ArgumentsReceivedEventArgs e)
         {
-            if (form != null)
+            if (Form != null)
             {
                 if (e.Args.Length > 0)
-                    form.AddQueue(e.Args, uploadPrompt);
+                    Form.AddQueue(e.Args, UploadPrompt);
                 else
-                    form.InvokeShow();
+                    Form.InvokeShow();
             }
         }
 
@@ -240,37 +199,34 @@ namespace TransmissionRemoteDotnet
         {
             set
             {
-                if (value.Equals(connected))
+                if (value.Equals(_connected))
                     return;
-                connected = value;
-                if (connected)
+                _connected = value;
+                if (_connected)
                 {
-                    ProtocolConstants.SetupStatusValues(Program.DaemonDescriptor.RpcVersion >= 14);
+                    ProtocolConstants.SetupStatusValues(DaemonDescriptor.RpcVersion >= 14);
                 }
                 else
                 {
-                    if (form.InvokeRequired)
-                        form.Invoke((MethodInvoker)delegate { form.torrentListView.Items.Clear(); });
+                    if (Form.InvokeRequired)
+                        Form.Invoke((MethodInvoker)delegate { Form.torrentListView.Items.Clear(); });
                     else
-                        form.torrentListView.Items.Clear(); //cant access ui thread as we are on a worker/events thread if power events sets connected state
-                    torrentIndex.Clear();
-                    Program.DaemonDescriptor.UpdateSerial = 0;
+                        Form.torrentListView.Items.Clear(); //cant access ui thread as we are on a worker/events thread if power events sets connected state
+                    TorrentIndex.Clear();
+                    DaemonDescriptor.UpdateSerial = 0;
                 }
                 if (OnConnStatusChanged != null)
                 {
                     OnConnStatusChanged(null, null);
                 }
             }
-            get
-            {
-                return connected;
-            }
+            get => _connected;
         }
 
         private static void UnhandledException(Exception ex)
         {
-            UnhandledException el = new UnhandledException(ex, startupTime);
-            System.Threading.Thread t = new System.Threading.Thread(el.DoLog);
+            UnhandledException el = new UnhandledException(ex, _startupTime);
+            Thread t = new Thread(el.DoLog);
             t.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
             t.Start();
             string errorFormat;

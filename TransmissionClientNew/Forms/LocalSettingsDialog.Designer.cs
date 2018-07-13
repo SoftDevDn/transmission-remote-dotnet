@@ -532,7 +532,6 @@ namespace TransmissionRemoteDotnet.Forms
             // 
             resources.ApplyResources(this.HostField, "HostField");
             this.HostField.Name = "HostField";
-            this.HostField.TextChanged += new System.EventHandler(this.HostField_TextChanged);
             // 
             // label10
             // 
